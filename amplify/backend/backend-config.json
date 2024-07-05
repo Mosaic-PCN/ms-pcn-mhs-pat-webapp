@@ -49,5 +49,23 @@
       "providerPlugin": "awscloudformation",
       "service": "Lambda"
     }
+  },
+  "parameters": {
+    "AMPLIFY_function_mspcnmhspatwebappcc393683_deploymentBucketName": {
+      "usedBy": [
+        {
+          "category": "function",
+          "resourceName": "mspcnmhspatwebappcc393683"
+        }
+      ]
+    },
+    "AMPLIFY_function_mspcnmhspatwebappcc393683_s3Key": {
+      "usedBy": [
+        {
+          "category": "function",
+          "resourceName": "mspcnmhspatwebappcc393683"
+        }
+      ]
+    }
   }
 }

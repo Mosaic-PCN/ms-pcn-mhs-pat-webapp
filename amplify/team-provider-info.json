@@ -20,7 +20,13 @@
         "mhspatlambda": {},
         "mspcnmhspatwebapp19c92c7e": {},
         "mhspatsubmissionhandler": {},
-        "mspcnmhspatwebappcc393683": {}
+        "mspcnmhspatwebappcc393683": {
+          "deploymentBucketName": "amplify-mspcnmhspatwebapp-dev-9a22e-deployment",
+          "s3Key": "amplify-builds/mspcnmhspatwebappcc393683-3763504761736355696b-build.zip"
+        }
+      },
+      "api": {
+        "apia60e6b50": {}
       }
     }
   }
