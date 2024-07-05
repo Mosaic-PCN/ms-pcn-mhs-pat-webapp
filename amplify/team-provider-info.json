@@ -9,11 +9,18 @@
       "UnauthRoleName": "amplify-mspcnmhspatwebapp-dev-9a22e-unauthRole",
       "StackName": "amplify-mspcnmhspatwebapp-dev-9a22e",
       "StackId": "arn:aws:cloudformation:ca-central-1:560740352519:stack/amplify-mspcnmhspatwebapp-dev-9a22e/b85328e0-39bb-11ef-88d5-0e7d3444633b",
-      "AmplifyAppId": "d2inwrh4j3omsh"
+      "AmplifyAppId": "d2inwrh4j3omsh",
+      "APIGatewayAuthURL": "https://s3.amazonaws.com/amplify-mspcnmhspatwebapp-dev-9a22e-deployment/amplify-cfn-templates/api/APIGatewayAuthStack.json"
     },
     "categories": {
       "auth": {
         "mspcnmhspatwebapp1a41336f": {}
+      },
+      "function": {
+        "mhspatlambda": {},
+        "mspcnmhspatwebapp19c92c7e": {},
+        "mhspatsubmissionhandler": {},
+        "mspcnmhspatwebappcc393683": {}
       }
     }
   }
