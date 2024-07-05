@@ -24,7 +24,9 @@ export const VerticalDividerExample = () => (
 function App({ signOut }) {
   return (
     <View className="App">
-      <Card>
+        <Header />
+        <Card>
+
         <Image src={logo} className="App-logo" alt="logo" />
         {/* <Image
           alt="Amplify logo"
