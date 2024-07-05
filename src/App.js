@@ -1,8 +1,8 @@
 import logo from "./pcn.jpeg";
-
+import React from 'react';
 import "@aws-amplify/ui-react/styles.css";
-import Header from './Header';  // Import the Header component
-
+import Header from './components/Header';
+import Form from './components/Form';
 import {
   withAuthenticator,
   Button,
@@ -24,25 +24,10 @@ export const VerticalDividerExample = () => (
 
 function App({ signOut }) {
   return (
-    <View className="App">
-        <Header />
-        <Card>
-        <Image src={logo} className="App-logo" alt="logo" />
-        <Image
-          alt="MHS-PAT"
-          src="/pcn.jpeg"
-          objectFit="initial"
-          objectPosition="50% 50%"
-          backgroundColor="initial"
-          height="75%"
-          width="75%"
-          opacity="100%"
-          onClick={() => alert('📸 Say cheese!')}
-        />
-        <Heading level={1}>MHS-PAT!</Heading>
-      </Card>
-      <Button onClick={signOut}>Sign Out</Button>
-    </View>
+    <div className="App">
+      <Header />
+      <Form />
+    </div>
   );
 }
 

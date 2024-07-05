@@ -7,7 +7,7 @@ const Header = () => {
         <header className="header">
             <img src={process.env.PUBLIC_URL + '/pcn.jpeg'} alt="Company Logo" className="logo" />
             <div className="banner-text">
-                <h1 className="text">MHS - PAT</h1>
+                <h1 className="text">Amin</h1>
             </div>
         </header>
     );

@@ -1,0 +1,21 @@
+.banner {
+    background-color: #000;  /* Change to your desired background color */
+    padding: 1em;  /* Adjust padding */
+    display: flex;
+    align-items: center;
+}
+
+.logo {
+    height: 100px;  /* Adjust height */
+    width: auto;
+    margin-right: 1em;
+}
+
+.banner-text {
+    flex: 1;
+}
+
+.text {
+    color: white;  /* Change to your desired text color */
+    margin: 0;
+}
