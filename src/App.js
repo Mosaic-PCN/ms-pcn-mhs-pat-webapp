@@ -1,6 +1,7 @@
 import logo from "./pcn.jpeg";
 
 import "@aws-amplify/ui-react/styles.css";
+import Header from './Header';  // Import the Header component
 
 import {
   withAuthenticator,
@@ -26,10 +27,9 @@ function App({ signOut }) {
     <View className="App">
         <Header />
         <Card>
-
         <Image src={logo} className="App-logo" alt="logo" />
-        {/* <Image
-          alt="Amplify logo"
+        <Image
+          alt="MHS-PAT"
           src="/pcn.jpeg"
           objectFit="initial"
           objectPosition="50% 50%"
@@ -38,8 +38,8 @@ function App({ signOut }) {
           width="75%"
           opacity="100%"
           onClick={() => alert('📸 Say cheese!')}
-        /> */}
-        <Heading level={1}>We now have Auth!</Heading>
+        />
+        <Heading level={1}>MHS-PAT!</Heading>
       </Card>
       <Button onClick={signOut}>Sign Out</Button>
     </View>
