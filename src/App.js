@@ -1,34 +1,35 @@
-import logo from "./pcn.jpeg";
-import React from 'react';
-import "@aws-amplify/ui-react/styles.css";
-import Header from './components/Header';
-import Form from './components/Form';
-import {
-  withAuthenticator,
-  Button,
-  Heading,
-  Image,
-  View,
-  Card,
-} from "@aws-amplify/ui-react";
+import React, { useEffect, useState } from 'react';
+import Amplify, { Auth } from 'aws-amplify';
+import { withAuthenticator } from '@aws-amplify/ui-react';
+import awsExports from './aws-exports';
+import './App.css';
 
-import { Flex, Text, Divider } from '@aws-amplify/ui-react';
+Amplify.configure(awsExports);
 
-export const VerticalDividerExample = () => (
-  <Flex direction="row" justifyContent="space-around">
-    <Text>Before</Text>
-    <Divider orientation="vertical" />
-    <Text>After</Text>
-  </Flex>
-);
+function App() {
+    const [user, setUser] = useState(null);
 
-function App({ signOut }) {
-  return (
-    <div className="App">
-      <Header />
-      <Form />
-    </div>
-  );
+    useEffect(() => {
+        Auth.currentAuthenticatedUser()
+            .then(user => {
+                setUser(user);
+            })
+            .catch(err => console.log(err));
+    }, []);
+
+    return (
+        <div className="App">
+            <header className="App-header">
+                <h1>Welcome to the App</h1>
+                {user && (
+                    <div>
+                        <p>Username: {user.username}</p>
+                        <p>Email: {user.attributes.email}</p>
+                    </div>
+                )}
+            </header>
+        </div>
+    );
 }
 
-export default withAuthenticator(App);
+export default withAuthenticator(App, { hideSignUp: true });
