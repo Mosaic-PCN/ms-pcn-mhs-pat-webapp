@@ -13,11 +13,7 @@ function App() {
       {({ signOut, user }) => (
         <div className="App">
         <header className="App-header">
-          <h1>Welcome to MHS-PAT!</h1>
-          <p>Username: {user.username}</p>
-          <p>User: {user.attributes}</p>
-          const userAttributes = await fetchUserAttributes();
-          console.log('Email:', userAttributes.email);
+          <h1>Welcome to MHS-PAT {user.username}!</h1>
           <button onClick={signOut}>Sign Out</button>
         </header>
       </div>
