@@ -10,7 +10,21 @@ import './App.css';
 
 Amplify.configure(awsExports);
 
+
 function App() {
+
+    const handleNextClick = (user) => {
+        const recordId = Math.random().toString(36).substring(2, 15); // Generate a random ID
+        const timestamp = new Date().toISOString(); // Get the current timestamp
+        const username = user.username; // Get the current username
+
+        console.log(`Record ID: ${recordId}`);
+        console.log(`Timestamp: ${timestamp}`);
+        console.log(`Username: ${username}`);
+    };
+
+
+
     return (
         <Authenticator hideSignUp={true}>
             {({ signOut, user }) => (
@@ -22,8 +36,7 @@ function App() {
                         </Card>
                         <div className="button-container">
                             <button type="button" className="btn btn-primary">Previous</button>
-                            <button type="submit" className="btn btn-primary">Next</button>
-                        </div>
+                            <button type="button" className="btn btn-primary" onClick={() => handleNextClick(user)}>Next</button>                        </div>
                     </main>
                 </div>
             )}
