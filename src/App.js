@@ -1,35 +1,29 @@
-import React, { useEffect, useState } from 'react';
-import Amplify, { Auth } from 'aws-amplify';
-import { withAuthenticator } from '@aws-amplify/ui-react';
-import awsExports from './aws-exports';
 import './App.css';
+import { Amplify } from 'aws-amplify';
+import { Authenticator, withAuthenticator } from '@aws-amplify/ui-react';
+// import { fetchUserAttributes } from '@aws-amplify/auth';
+import '@aws-amplify/ui-react/styles.css';
+import awsExports from './aws-exports';
 
 Amplify.configure(awsExports);
 
 function App() {
-    const [user, setUser] = useState(null);
-
-    useEffect(() => {
-        Auth.currentAuthenticatedUser()
-            .then(user => {
-                setUser(user);
-            })
-            .catch(err => console.log(err));
-    }, []);
-
-    return (
+  return (
+    <Authenticator hideSignUp> 
+      {({ signOut, user }) => (
         <div className="App">
-            <header className="App-header">
-                <h1>Welcome to the App</h1>
-                {user && (
-                    <div>
-                        <p>Username: {user.username}</p>
-                        <p>Email: {user.attributes.email}</p>
-                    </div>
-                )}
-            </header>
-        </div>
-    );
+        <header className="App-header">
+          <h1>Welcome to MHS-PAT!</h1>
+          <p>Username: {user.username}</p>
+          <p>User: {user.attributes}</p>
+          const userAttributes = await fetchUserAttributes();
+          console.log('Email:', userAttributes.email);
+          <button onClick={signOut}>Sign Out</button>
+        </header>
+      </div>
+    )}
+    </Authenticator>
+  );
 }
 
 export default withAuthenticator(App, { hideSignUp: true });
