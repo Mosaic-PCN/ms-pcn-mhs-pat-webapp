@@ -1,4 +1,5 @@
 import React, { useEffect, useState } from 'react';
+import Select from 'react-select';
 import './Dropdown.css';
 
 const Dropdown = ({ label, id, name, required }) => {
@@ -13,24 +14,29 @@ const Dropdown = ({ label, id, name, required }) => {
                 return response.text();
             })
             .then(data => {
-                const parsedOptions = data.split('\n').map(option => option.trim()).filter(option => option);
+                const parsedOptions = data.split('\n').map(option => ({ label: option.trim(), value: option.trim() })).filter(option => option.label);
                 setOptions(parsedOptions);
             })
             .catch(error => {
                 console.error('Error fetching options:', error);
-                setOptions(['Error loading options']);
+                setOptions([{ label: 'Error loading options', value: '' }]);
             });
     }, []);
 
     return (
         <div className="form-group standard-width">
             <label htmlFor={id}>{label}</label>
-            <select id={id} name={name} className="form-control" required={required}>
-                <option value="">Choose...</option>
-                {options.map((option, index) => (
-                    <option key={index} value={option}>{option}</option>
-                ))}
-            </select>
+            <Select
+                id={id}
+                name={name}
+                options={options}
+                className="react-select-container"
+                classNamePrefix="react-select"
+                isSearchable
+                placeholder="Choose..."
+                isClearable
+                required={required}
+            />
         </div>
     );
 };

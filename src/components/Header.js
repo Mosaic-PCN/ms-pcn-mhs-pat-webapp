@@ -5,7 +5,7 @@ const Header = ({ signOut, user }) => {
     return (
         <header className="header">
             <div className="left-section">
-                <img src={`${process.env.PUBLIC_URL}/pcn.jpeg`} alt="Company Logo" className="logo" />
+                <img src={"/pcn.jpeg"} alt="PCN Logo" className="logo" />
                 <h1 className="title">MHS-PAT</h1>
             </div>
             <div className="right-section">
