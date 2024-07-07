@@ -1,0 +1,17 @@
+{
+  "version": 1,
+  "paths": {
+    "/submit": {
+      "name": "/submit",
+      "lambdaFunction": "MhsPatSubmissionHandler",
+      "permissions": {
+        "setting": "private",
+        "auth": [
+          "create",
+          "read",
+          "update"
+        ]
+      }
+    }
+  }
+}
