@@ -1,9 +1,21 @@
-import React from 'react';
+import React, { useEffect, useState } from 'react';
 
 const Form = () => {
+    const [options, setOptions] = useState([]);
+
+    useEffect(() => {
+        fetch('/clinic-options.txt')
+            .then(response => response.text())
+            .then(data => {
+                const parsedOptions = data.split('\n').map(option => option.trim()).filter(option => option);
+                setOptions(parsedOptions);
+            })
+            .catch(error => console.error('Error fetching options:', error));
+    }, []);
+
     return (
         <main className="container mt-5">
-            <h3>Welcome to MHS-PAT! Please submit the forms. </h3>
+            <h2>Select an Option</h2>
             <form action="/submit" method="POST">
                 <div className="form-group">
                     <label htmlFor="workDate">Date</label>
@@ -13,9 +25,9 @@ const Form = () => {
                     <label htmlFor="clinic_name">Clinic Name</label>
                     <select id="clinic_name" name="clinic_name" className="form-control" required>
                         <option value="">Choose...</option>
-                        <option value="clinic1">Clinic 1</option>
-                        <option value="clinic2">Clinic 2</option>
-                        <option value="clinic3">Clinic 3</option>
+                        {options.map((option, index) => (
+                            <option key={index} value={option}>{option}</option>
+                        ))}
                     </select>
                 </div>
                 <div className="form-group">
