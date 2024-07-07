@@ -51,6 +51,22 @@
     }
   },
   "parameters": {
+    "AMPLIFY_function_MhsPatSubmissionHandler_deploymentBucketName": {
+      "usedBy": [
+        {
+          "category": "function",
+          "resourceName": "MhsPatSubmissionHandler"
+        }
+      ]
+    },
+    "AMPLIFY_function_MhsPatSubmissionHandler_s3Key": {
+      "usedBy": [
+        {
+          "category": "function",
+          "resourceName": "MhsPatSubmissionHandler"
+        }
+      ]
+    },
     "AMPLIFY_function_mspcnmhspatwebappcc393683_deploymentBucketName": {
       "usedBy": [
         {
