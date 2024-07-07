@@ -1,13 +1,11 @@
 import React from 'react';
-import './Header.css';  // Make sure you create a CSS file for styling
+import './Header.css';
 
 const Header = () => {
     return (
-        <header className="banner d-flex align-items-center">
+        <header className="header">
             <img src={`${process.env.PUBLIC_URL}/pcn.jpeg`} alt="Company Logo" className="logo" />
-            <div className="banner-text flex-grow-1">
-                <h1 className="text-white mb-0">MHS - PAT</h1>
-            </div>
+            <h1 className="title">Welcome to the MHS-PAT!</h1>
         </header>
     );
 };
