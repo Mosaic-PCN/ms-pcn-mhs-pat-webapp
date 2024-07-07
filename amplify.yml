@@ -26,6 +26,7 @@ backend:
         - python3 -m pip install --user virtualenv
     build:
       commands:
+        - export PATH=$PATH:$HOME/.local/bin # Ensure the local bin is in the path
         - pipenv install
         - amplifyPush --simple
   artifacts:
