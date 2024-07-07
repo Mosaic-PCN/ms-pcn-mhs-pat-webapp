@@ -1,19 +1,55 @@
 .header {
     display: flex;
     align-items: center;
+    justify-content: space-between;
     padding: 10px;
     background-color: #282c34;
     /* Adjust the background color as needed */
+    position: fixed;
+    /* Ensure the header stays at the top */
+    width: 100%;
+    top: 0;
+    left: 0;
+    z-index: 1000;
+}
+
+.left-section {
+    display: flex;
+    align-items: center;
+}
+
+.right-section {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-end;
 }
 
 .logo {
     height: 50px;
     /* Adjust the size as needed */
-    margin-right: 20px;
+    margin-right: 10px;
+    /* Space between logo and title */
 }
 
 .title {
     color: white;
     /* Adjust the text color as needed */
     font-size: 1.5rem;
+}
+
+.sign-out-btn {
+    background-color: transparent;
+    border: none;
+    color: white;
+    cursor: pointer;
+    font-size: 1rem;
+}
+
+.username {
+    color: white;
+    /* Adjust the text color as needed */
+    font-size: 0.8rem;
+    /* Adjust the font size as needed */
+    margin-top: 5px;
+    /* Space between sign-out button and username */
 }

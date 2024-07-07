@@ -1,0 +1,27 @@
+.card {
+    background-color: #fff;
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    padding: 20px;
+    margin: 20px;
+    max-width: 1000px;
+    /* Adjust based on your preference */
+    text-align: left;
+    /* Ensure text is aligned to the left */
+}
+
+.card-title {
+    font-size: 1.5rem;
+    margin-bottom: 10px;
+    text-align: left;
+    /* Ensure title is aligned to the left */
+    margin-top: 0;
+    /* Remove any top margin */
+    padding-top: 0;
+    /* Remove any top padding */
+}
+
+.card-content {
+    font-size: 1rem;
+}

@@ -12,3 +12,8 @@
   font-size: calc(10px + 2vmin);
   color: white;
 }
+
+.App-main {
+  margin-top: 100px;
+  /* Increase this value to add more space */
+}

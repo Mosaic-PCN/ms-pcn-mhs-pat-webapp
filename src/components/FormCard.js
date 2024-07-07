@@ -1,11 +1,10 @@
 import React from 'react';
-import './Card.css';
+import './FormCard.css';
 
-const Card = ({ title, content, children }) => {
+const Card = ({ title, children }) => {
     return (
         <div className="card">
             <h2 className="card-title">{title}</h2>
-            {/* <p className="card-content">{content}</p> */}
             {children}
         </div>
     );

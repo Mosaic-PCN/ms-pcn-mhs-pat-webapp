@@ -1,19 +1,23 @@
 import React, { useEffect, useState } from 'react';
+import './Dropdown.css';
 
-const Dropdown = () => {
+const Dropdown = ({ label, id, name, required }) => {
     const [options, setOptions] = useState([]);
 
     useEffect(() => {
-        fetch('/options.json')
-            .then(response => response.json())
-            .then(data => setOptions(data.options))
+        fetch('/clinic-options.txt')
+            .then(response => response.text())
+            .then(data => {
+                const parsedOptions = data.split('\n').map(option => option.trim()).filter(option => option);
+                setOptions(parsedOptions);
+            })
             .catch(error => console.error('Error fetching options:', error));
     }, []);
 
     return (
-        <div className="form-group">
-            <label htmlFor="dynamicDropdown">Select an option:</label>
-            <select id="dynamicDropdown" name="dynamicDropdown" className="form-control" required>
+        <div className="form-group standard-width">
+            <label htmlFor={id}>{label}</label>
+            <select id={id} name={name} className="form-control" required={required}>
                 <option value="">Choose...</option>
                 {options.map((option, index) => (
                     <option key={index} value={option}>{option}</option>
