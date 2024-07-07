@@ -6,12 +6,20 @@ const Dropdown = ({ label, id, name, required }) => {
 
     useEffect(() => {
         fetch('/clinic-options.txt')
-            .then(response => response.text())
+            .then(response => {
+                if (!response.ok) {
+                    throw new Error('Network response was not ok');
+                }
+                return response.text();
+            })
             .then(data => {
                 const parsedOptions = data.split('\n').map(option => option.trim()).filter(option => option);
                 setOptions(parsedOptions);
             })
-            .catch(error => console.error('Error fetching options:', error));
+            .catch(error => {
+                console.error('Error fetching options:', error);
+                setOptions(['Error loading options']);
+            });
     }, []);
 
     return (
