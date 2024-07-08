@@ -1,0 +1,15 @@
+{
+  "version": 1,
+  "paths": {
+    "/user/{email}": {
+      "name": "/user/{email}",
+      "lambdaFunction": "MshPatUserHandler",
+      "permissions": {
+        "setting": "private",
+        "auth": [
+          "read"
+        ]
+      }
+    }
+  }
+}

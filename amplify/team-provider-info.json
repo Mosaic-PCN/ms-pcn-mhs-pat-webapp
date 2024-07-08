@@ -27,11 +27,16 @@
         "MhsPatSubmissionHandler": {
           "deploymentBucketName": "amplify-mspcnmhspatwebapp-dev-9a22e-deployment",
           "s3Key": "amplify-builds/MhsPatSubmissionHandler-53473263633448554732-build.zip"
+        },
+        "MshPatUserHandler": {
+          "deploymentBucketName": "amplify-mspcnmhspatwebapp-dev-9a22e-deployment",
+          "s3Key": "amplify-builds/MshPatUserHandler-46434134734f78466457-build.zip"
         }
       },
       "api": {
         "apia60e6b50": {},
-        "MhsPatAPI": {}
+        "MhsPatAPI": {},
+        "api548a117c": {}
       }
     }
   }

@@ -13,6 +13,20 @@
       ],
       "providerPlugin": "awscloudformation",
       "service": "API Gateway"
+    },
+    "api548a117c": {
+      "dependsOn": [
+        {
+          "attributes": [
+            "Name",
+            "Arn"
+          ],
+          "category": "function",
+          "resourceName": "MshPatUserHandler"
+        }
+      ],
+      "providerPlugin": "awscloudformation",
+      "service": "API Gateway"
     }
   },
   "auth": {
@@ -48,6 +62,11 @@
       "build": true,
       "providerPlugin": "awscloudformation",
       "service": "Lambda"
+    },
+    "MshPatUserHandler": {
+      "build": true,
+      "providerPlugin": "awscloudformation",
+      "service": "Lambda"
     }
   },
   "parameters": {
@@ -64,6 +83,22 @@
         {
           "category": "function",
           "resourceName": "MhsPatSubmissionHandler"
+        }
+      ]
+    },
+    "AMPLIFY_function_MshPatUserHandler_deploymentBucketName": {
+      "usedBy": [
+        {
+          "category": "function",
+          "resourceName": "MshPatUserHandler"
+        }
+      ]
+    },
+    "AMPLIFY_function_MshPatUserHandler_s3Key": {
+      "usedBy": [
+        {
+          "category": "function",
+          "resourceName": "MshPatUserHandler"
         }
       ]
     },
