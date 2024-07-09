@@ -1,11 +1,11 @@
 import React, { useState } from 'react';
-import './Form.css';
 import Dropdown from './Dropdown';
 import CustomDropdown from './CustomDropdown';
 import DatePicker from 'react-datepicker';
 import RadioButtonGroup from './RadioButtonGroup';
 import SelectDropdown from './SelectDropdown';
 import 'react-datepicker/dist/react-datepicker.css';
+import './Form.css';
 
 const Form = () => {
     const [startDate, setStartDate] = useState(new Date());
@@ -15,10 +15,15 @@ const Form = () => {
         console.log("Form submitted");
     };
 
-    const radioOptions = [
-        { label: 'Option 1', value: 'option1' },
-        { label: 'Option 2', value: 'option2' },
-        { label: 'Option 3', value: 'option3' }
+    const radioOptions_virtual = [
+        { label: 'Virtual', value: 'virtual_session' },
+        { label: 'In-person', value: 'inperson_session' }
+    ];
+
+    const radioOptions_group = [
+        { label: '1:1', value: 'one_one_session' },
+        { label: 'Group', value: 'group_session' },
+        { label: 'Non-Visit Encounter', value: 'non_visit' }
     ];
 
     const roleOptions = [
@@ -26,9 +31,7 @@ const Form = () => {
         { label: 'PCC', value: 'pcc' },
         { label: 'PF', value: 'pf' },
         { label: 'HPF', value: 'hpf' },
-        { label: 'Activity Membership Coordinator', value: 'activity-membership-coord' },
-        { label: 'Session Lead', value: 'session-lead' },  // Example session type
-        { label: 'Session Assistant', value: 'session-assistant' }  // Example session type
+        { label: 'Activity Membership Coordinator', value: 'activity-membership-coord' }
     ];
 
     return (
@@ -44,10 +47,13 @@ const Form = () => {
                         placeholderText="Select a date"
                     />
                 </div>
-                <Dropdown label="Clinic Name" id="clinic_name" name="clinic_name" required={true} />
-                <CustomDropdown label="Duration" id="duration" name="duration" required={true} />
-                <RadioButtonGroup label="Choose an option" name="options" options={radioOptions} required={true} />
-                <SelectDropdown label="Role" id="activity" name="activity" options={roleOptions} required={true} />
+                {/* <Dropdown label="Clinic Name" id="clinic_name" name="clinic_name" />
+                <CustomDropdown label="Duration" id="duration" name="duration" />
+                <SelectDropdown label="Role" id="activity" name="activity" options={roleOptions} /> */}
+                <CustomDropdown label="Duration" id="duration" name="duration" />
+                <RadioButtonGroup label="Session Type:" name="options" options={radioOptions_virtual} />
+                <RadioButtonGroup label=" " name="options" options={radioOptions_group} />
+
             </form>
         </main>
     );

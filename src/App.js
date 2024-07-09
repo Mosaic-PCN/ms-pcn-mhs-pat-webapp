@@ -1,25 +1,16 @@
-// src/App.js
 import React, { useState } from 'react';
 import { Amplify } from 'aws-amplify';
 import { post } from 'aws-amplify/api';
 import { Authenticator, withAuthenticator } from '@aws-amplify/ui-react';
 import '@aws-amplify/ui-react/styles.css';
-import awsExports from './aws-exports';
-// import awsmobile from './aws-exports';
-
+// import awsExports from './aws-exports';
 import Header from './components/Header';
 import Form from './components/Form';
 import Card from './components/FormCard';
 // import awsconfig from "./aws-exports";
-// import amplifyconfig from './amplifyconfiguration.json';
+import amplifyconfig from './amplifyconfiguration.json';
 import './App.css';
-import { generateClient } from 'aws-amplify/api';
-import config from './amplifyconfiguration.json';
-Amplify.configure(config);
-
-const client = generateClient();
-
-Amplify.configure(awsExports);
+Amplify.configure(amplifyconfig);
 
 function App() {
     const [username, setUsername] = useState('');
@@ -46,10 +37,6 @@ function App() {
                     'Content-Type': 'application/json'
                 } // OPTIONAL
             };
-
-            const response = await post(apiName, path, Options);
-            console.log('POST call succeeded');
-            console.log(response);
 
         } catch (error) {
             console.error(error);
