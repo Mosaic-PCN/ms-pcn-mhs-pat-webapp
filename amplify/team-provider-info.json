@@ -31,12 +31,54 @@
         "MshPatUserHandler": {
           "deploymentBucketName": "amplify-mspcnmhspatwebapp-dev-9a22e-deployment",
           "s3Key": "amplify-builds/MshPatUserHandler-46434134734f78466457-build.zip"
+        },
+        "SubmissionHandler": {
+          "deploymentBucketName": "amplify-mspcnmhspatwebapp-dev-9a22e-deployment",
+          "s3Key": "amplify-builds/SubmissionHandler-31536c794d6852794163-build.zip"
         }
       },
       "api": {
         "apia60e6b50": {},
-        "MhsPatAPI": {},
-        "api548a117c": {}
+        "submissionAPI": {},
+        "mspcnmhspatwebapp": {},
+        "recordSubmission": {}
+      }
+    }
+  },
+  "prd": {
+    "awscloudformation": {
+      "AuthRoleName": "amplify-mspcnmhspatwebapp-prd-44764-authRole",
+      "UnauthRoleArn": "arn:aws:iam::560740352519:role/amplify-mspcnmhspatwebapp-prd-44764-unauthRole",
+      "AuthRoleArn": "arn:aws:iam::560740352519:role/amplify-mspcnmhspatwebapp-prd-44764-authRole",
+      "Region": "ca-central-1",
+      "DeploymentBucketName": "amplify-mspcnmhspatwebapp-prd-44764-deployment",
+      "UnauthRoleName": "amplify-mspcnmhspatwebapp-prd-44764-unauthRole",
+      "StackName": "amplify-mspcnmhspatwebapp-prd-44764",
+      "StackId": "arn:aws:cloudformation:ca-central-1:560740352519:stack/amplify-mspcnmhspatwebapp-prd-44764/c592a200-3e03-11ef-b167-06cb159b3a7b",
+      "AmplifyAppId": "d2inwrh4j3omsh"
+    },
+    "categories": {
+      "auth": {
+        "mspcnmhspatwebapp1a41336f": {}
+      },
+      "function": {
+        "MhsPatSubmissionHandler": {
+          "deploymentBucketName": "amplify-mspcnmhspatwebapp-prd-44764-deployment",
+          "s3Key": "amplify-builds/MhsPatSubmissionHandler-324d714430437162736b-build.zip"
+        },
+        "MshPatUserHandler": {
+          "deploymentBucketName": "amplify-mspcnmhspatwebapp-prd-44764-deployment",
+          "s3Key": "amplify-builds/MshPatUserHandler-464e787134396c457875-build.zip"
+        },
+        "SubmissionHandler": {
+          "deploymentBucketName": "amplify-mspcnmhspatwebapp-prd-44764-deployment",
+          "s3Key": "amplify-builds/SubmissionHandler-676b4657584243397255-build.zip"
+        }
+      },
+      "api": {
+        "submissionAPI": {},
+        "recordSubmission": {},
+        "mspcnmhspatwebapp": {}
       }
     }
   }

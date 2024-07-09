@@ -1,41 +1,29 @@
 /* eslint-disable */
 // this is an auto generated file. This will be overwritten
 
-export const getEncoutnerModel = /* GraphQL */ `
-  query GetEncoutnerModel($id: ID!) {
-    getEncoutnerModel(id: $id) {
+export const getNote = /* GraphQL */ `
+  query GetNote($id: ID!) {
+    getNote(id: $id) {
       id
-      encounter_id
-      record_id
-      clinic_name
-      date
-      in_person
-      group
-      non_visit
-      org_time
+      name
+      description
       createdAt
       updatedAt
       __typename
     }
   }
 `;
-export const listEncoutnerModels = /* GraphQL */ `
-  query ListEncoutnerModels(
-    $filter: ModelEncoutnerModelFilterInput
+export const listNotes = /* GraphQL */ `
+  query ListNotes(
+    $filter: ModelNoteFilterInput
     $limit: Int
     $nextToken: String
   ) {
-    listEncoutnerModels(filter: $filter, limit: $limit, nextToken: $nextToken) {
+    listNotes(filter: $filter, limit: $limit, nextToken: $nextToken) {
       items {
         id
-        encounter_id
-        record_id
-        clinic_name
-        date
-        in_person
-        group
-        non_visit
-        org_time
+        name
+        description
         createdAt
         updatedAt
         __typename

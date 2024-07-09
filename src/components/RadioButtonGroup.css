@@ -1,0 +1,10 @@
+.form-check {
+    display: inline-block;
+    margin-right: 15px;
+    /* Adjust space between radio buttons as needed */
+}
+
+.form-check-input {
+    margin-right: 5px;
+    /* Space between radio button and label */
+}

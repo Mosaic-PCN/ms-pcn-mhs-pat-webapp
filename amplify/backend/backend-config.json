@@ -1,6 +1,22 @@
 {
   "api": {
-    "MhsPatAPI": {
+    "mspcnmhspatwebapp": {
+      "dependsOn": [],
+      "output": {
+        "authConfig": {
+          "additionalAuthenticationProviders": [],
+          "defaultAuthentication": {
+            "apiKeyConfig": {
+              "apiKeyExpirationDays": 7
+            },
+            "authenticationType": "API_KEY"
+          }
+        }
+      },
+      "providerPlugin": "awscloudformation",
+      "service": "AppSync"
+    },
+    "recordSubmission": {
       "dependsOn": [
         {
           "attributes": [
@@ -8,13 +24,13 @@
             "Arn"
           ],
           "category": "function",
-          "resourceName": "MhsPatSubmissionHandler"
+          "resourceName": "SubmissionHandler"
         }
       ],
       "providerPlugin": "awscloudformation",
       "service": "API Gateway"
     },
-    "api548a117c": {
+    "submissionAPI": {
       "dependsOn": [
         {
           "attributes": [
@@ -22,7 +38,7 @@
             "Arn"
           ],
           "category": "function",
-          "resourceName": "MshPatUserHandler"
+          "resourceName": "SubmissionHandler"
         }
       ],
       "providerPlugin": "awscloudformation",
@@ -67,6 +83,12 @@
       "build": true,
       "providerPlugin": "awscloudformation",
       "service": "Lambda"
+    },
+    "SubmissionHandler": {
+      "build": true,
+      "dependsOn": [],
+      "providerPlugin": "awscloudformation",
+      "service": "Lambda"
     }
   },
   "parameters": {
@@ -99,6 +121,22 @@
         {
           "category": "function",
           "resourceName": "MshPatUserHandler"
+        }
+      ]
+    },
+    "AMPLIFY_function_SubmissionHandler_deploymentBucketName": {
+      "usedBy": [
+        {
+          "category": "function",
+          "resourceName": "SubmissionHandler"
+        }
+      ]
+    },
+    "AMPLIFY_function_SubmissionHandler_s3Key": {
+      "usedBy": [
+        {
+          "category": "function",
+          "resourceName": "SubmissionHandler"
         }
       ]
     },

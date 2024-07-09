@@ -1,7 +1,10 @@
 import React, { useState } from 'react';
 import './Form.css';
 import Dropdown from './Dropdown';
+import CustomDropdown from './CustomDropdown';
 import DatePicker from 'react-datepicker';
+import RadioButtonGroup from './RadioButtonGroup';
+import SelectDropdown from './SelectDropdown';
 import 'react-datepicker/dist/react-datepicker.css';
 
 const Form = () => {
@@ -9,9 +12,24 @@ const Form = () => {
 
     const handleSubmit = (event) => {
         event.preventDefault();
-        // Add form submission logic here
         console.log("Form submitted");
     };
+
+    const radioOptions = [
+        { label: 'Option 1', value: 'option1' },
+        { label: 'Option 2', value: 'option2' },
+        { label: 'Option 3', value: 'option3' }
+    ];
+
+    const roleOptions = [
+        { label: 'EMR', value: 'emr' },
+        { label: 'PCC', value: 'pcc' },
+        { label: 'PF', value: 'pf' },
+        { label: 'HPF', value: 'hpf' },
+        { label: 'Activity Membership Coordinator', value: 'activity-membership-coord' },
+        { label: 'Session Lead', value: 'session-lead' },  // Example session type
+        { label: 'Session Assistant', value: 'session-assistant' }  // Example session type
+    ];
 
     return (
         <main className="container mt-5">
@@ -27,17 +45,9 @@ const Form = () => {
                     />
                 </div>
                 <Dropdown label="Clinic Name" id="clinic_name" name="clinic_name" required={true} />
-                <div className="form-group standard-width">
-                    <label htmlFor="activity">Role</label>
-                    <select className="form-control" id="activity" name="activity" required>
-                        <option value="">Choose...</option>
-                        <option value="emr">EMR</option>
-                        <option value="pcc">PCC</option>
-                        <option value="pf">PF</option>
-                        <option value="hpf">HPF</option>
-                        <option value="activity-membership-coord">Activity Membership Coordinator</option>
-                    </select>
-                </div>
+                <CustomDropdown label="Duration" id="duration" name="duration" required={true} />
+                <RadioButtonGroup label="Choose an option" name="options" options={radioOptions} required={true} />
+                <SelectDropdown label="Role" id="activity" name="activity" options={roleOptions} required={true} />
             </form>
         </main>
     );

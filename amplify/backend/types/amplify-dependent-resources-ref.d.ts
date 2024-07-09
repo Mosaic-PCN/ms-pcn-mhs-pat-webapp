@@ -1,11 +1,16 @@
 export type AmplifyDependentResourcesAttributes = {
   "api": {
-    "MhsPatAPI": {
+    "mspcnmhspatwebapp": {
+      "GraphQLAPIEndpointOutput": "string",
+      "GraphQLAPIIdOutput": "string",
+      "GraphQLAPIKeyOutput": "string"
+    },
+    "recordSubmission": {
       "ApiId": "string",
       "ApiName": "string",
       "RootUrl": "string"
     },
-    "api548a117c": {
+    "submissionAPI": {
       "ApiId": "string",
       "ApiName": "string",
       "RootUrl": "string"
@@ -31,6 +36,13 @@ export type AmplifyDependentResourcesAttributes = {
       "Region": "string"
     },
     "MshPatUserHandler": {
+      "Arn": "string",
+      "LambdaExecutionRole": "string",
+      "LambdaExecutionRoleArn": "string",
+      "Name": "string",
+      "Region": "string"
+    },
+    "SubmissionHandler": {
       "Arn": "string",
       "LambdaExecutionRole": "string",
       "LambdaExecutionRoleArn": "string",
