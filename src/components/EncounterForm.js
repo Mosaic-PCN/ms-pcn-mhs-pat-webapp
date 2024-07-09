@@ -5,7 +5,7 @@ import CustomDropdown from './CustomDropdown';
 import DatePicker from 'react-datepicker';
 import RadioButtonGroup from './RadioButtonGroup';
 import 'react-datepicker/dist/react-datepicker.css';
-import './Form.css';
+import './EncounterForm.css';
 
 const Form = () => {
     const [startDate, setStartDate] = useState(new Date());

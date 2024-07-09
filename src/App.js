@@ -5,7 +5,7 @@ import { Authenticator, withAuthenticator } from '@aws-amplify/ui-react';
 import '@aws-amplify/ui-react/styles.css';
 // import awsExports from './aws-exports';
 import Header from './components/Header';
-import Form from './components/Form';
+import Form from './components/EncounterForm';
 import Card from './components/FormCard';
 // import awsconfig from "./aws-exports";
 import amplifyconfig from './amplifyconfiguration.json';
@@ -52,6 +52,9 @@ function App() {
                         <Card title="Encounter Information">
                             <Form />
                         </Card>
+                        <Card title="Stakeholders">
+                        </Card>
+
                         <div className="button-container">
                             <button type="button" className="btn btn-primary">Previous</button>
                             <button type="button" className="btn btn-primary" onClick={() => handleSubmit(user)}>Next</button>
