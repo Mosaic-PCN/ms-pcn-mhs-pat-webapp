@@ -5,7 +5,9 @@ import { Authenticator, withAuthenticator } from '@aws-amplify/ui-react';
 import '@aws-amplify/ui-react/styles.css';
 // import awsExports from './aws-exports';
 import Header from './components/Header';
-import Form from './components/EncounterForm';
+import EncounterForm from './components/EncounterForm';
+import StakeholderForm from './components/StakeholdersFrom';
+
 import Card from './components/FormCard';
 // import awsconfig from "./aws-exports";
 import amplifyconfig from './amplifyconfiguration.json';
@@ -50,9 +52,10 @@ function App() {
                     <Header signOut={signOut} user={user} />
                     <main className="App-main">
                         <Card title="Encounter Information">
-                            <Form />
+                            <EncounterForm />
                         </Card>
                         <Card title="Stakeholders">
+                            <StakeholderForm />
                         </Card>
 
                         <div className="button-container">

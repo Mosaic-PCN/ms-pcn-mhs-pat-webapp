@@ -19,7 +19,6 @@
   flex-direction: row;
   flex-wrap: wrap;
   /* Add this line to allow the items to wrap onto the next line if necessary */
-
   align-items: flex-start;
   /* Align items to the start (left) */
   padding-left: 10px;

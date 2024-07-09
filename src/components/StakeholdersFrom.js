@@ -7,13 +7,13 @@ import RadioButtonGroup from './RadioButtonGroup';
 import 'react-datepicker/dist/react-datepicker.css';
 import './EncounterForm.css';
 
-const EncounterForm = () => {
+const StakeholderForm = () => {
     const [startDate, setStartDate] = useState(new Date());
 
-    const handleSubmit = (event) => {
-        event.preventDefault();
-        console.log("Form submitted");
-    };
+    // const handleSubmit = (event) => {
+    //     event.preventDefault();
+    //     console.log("Form submitted");
+    // };
 
     const radioOptions_virtual = [
         { label: 'Virtual', value: 'virtual_session' },
@@ -36,7 +36,9 @@ const EncounterForm = () => {
 
     return (
         <main className="container mt-5">
-            <form onSubmit={handleSubmit} method="POST">
+            {/* <form onSubmit={handleSubmit} method="POST"> */}
+            <form>
+
                 <div className="form-group standard-width">
                     <label htmlFor="workDate">Date</label>
                     <DatePicker
@@ -57,4 +59,4 @@ const EncounterForm = () => {
     );
 };
 
-export default EncounterForm;
+export default StakeholderForm;
