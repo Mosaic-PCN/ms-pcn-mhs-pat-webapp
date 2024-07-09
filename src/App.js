@@ -1,15 +1,18 @@
 import React, { useState } from 'react';
 import { Amplify } from 'aws-amplify';
-import { get, post, put } from '@aws-amplify/api-rest'; // import the methods you need
+import { post } from 'aws-amplify/api';
+
+// import { get, post, put } from '@aws-amplify/api-rest'; // import the methods you need
 import { Authenticator, withAuthenticator } from '@aws-amplify/ui-react';
 import '@aws-amplify/ui-react/styles.css';
 import awsExports from './aws-exports';
 import Header from './components/Header';
 import Form from './components/Form';
 import Card from './components/FormCard';
-import awsconfig from "./aws-exports";
-import amplifyconfig from './amplifyconfiguration.json';
+// import awsconfig from "./aws-exports";
+// import amplifyconfig from './amplifyconfiguration.json';
 import './App.css';
+
 
 Amplify.configure(awsExports);
 
@@ -26,7 +29,7 @@ function App() {
             console.log(`Record ID: ${recordId}`);
             console.log(`Timestamp: ${timestamp}`);
             // console.log(`Username: ${username}`);
-            const apiName = 'MhsPatAPI'; // Replace with your API name
+            const apiName = 'MhsPatSubmissionApi'; // Replace with your API name
             const path = "/submit"; // Replace with your API path
             const myInit = {
                 body: { recordId, timestamp, username: user.username, data }, // request body
