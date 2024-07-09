@@ -1,18 +1,23 @@
+// src/components/SelectDropdown.js
 import React from 'react';
+import Select from 'react-select';
 import './SelectDropdown.css';
 
 const SelectDropdown = ({ label, id, name, options, required }) => {
     return (
         <div className="form-group standard-width">
             <label htmlFor={id}>{label}</label>
-            <select className="form-control" id={id} name={name} required={required}>
-                <option value="">Choose...</option>
-                {options.map((option, index) => (
-                    <option key={index} value={option.value}>
-                        {option.label}
-                    </option>
-                ))}
-            </select>
+            <Select
+                id={id}
+                name={name}
+                options={options}
+                className="react-select-container"
+                classNamePrefix="react-select"
+                isSearchable
+                placeholder="Choose..."
+                isClearable
+                required={required}
+            />
         </div>
     );
 };

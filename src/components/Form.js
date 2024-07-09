@@ -1,9 +1,9 @@
 import React, { useState } from 'react';
 import Dropdown from './Dropdown';
+import SelectDropdown from './SelectDropdown';
 import CustomDropdown from './CustomDropdown';
 import DatePicker from 'react-datepicker';
 import RadioButtonGroup from './RadioButtonGroup';
-import SelectDropdown from './SelectDropdown';
 import 'react-datepicker/dist/react-datepicker.css';
 import './Form.css';
 
@@ -31,7 +31,7 @@ const Form = () => {
         { label: 'PCC', value: 'pcc' },
         { label: 'PF', value: 'pf' },
         { label: 'HPF', value: 'hpf' },
-        { label: 'Activity Membership Coordinator', value: 'activity-membership-coord' }
+        { label: 'Activity Membership Coordinator', value: 'activity_membership_coord' }
     ];
 
     return (
@@ -47,13 +47,11 @@ const Form = () => {
                         placeholderText="Select a date"
                     />
                 </div>
-                {/* <Dropdown label="Clinic Name" id="clinic_name" name="clinic_name" />
-                <CustomDropdown label="Duration" id="duration" name="duration" />
-                <SelectDropdown label="Role" id="activity" name="activity" options={roleOptions} /> */}
-                <CustomDropdown label="Duration" id="duration" name="duration" />
-                <RadioButtonGroup label="Session Type:" name="options" options={radioOptions_virtual} />
-                <RadioButtonGroup label=" " name="options" options={radioOptions_group} />
-
+                <Dropdown label="Clinic Name" id="clinic_name" name="clinic_name" />
+                <SelectDropdown label="Role" id="activity" name="activity" options={roleOptions} />
+                <RadioButtonGroup label="Session Type:" name="virtual_options" options={radioOptions_virtual} />
+                <RadioButtonGroup label=" " name="group_options" options={radioOptions_group} />
+                <CustomDropdown label="Org Time" id="org_time" name="duration" />
             </form>
         </main>
     );
