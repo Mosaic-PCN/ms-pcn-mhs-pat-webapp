@@ -7,8 +7,14 @@ import RadioButtonGroup from './RadioButtonGroup';
 import 'react-datepicker/dist/react-datepicker.css';
 import './EncounterForm.css';
 
-const EncounterForm = () => {
+const EncounterForm = (onRoleChange) => {
     const [startDate, setStartDate] = useState(new Date());
+    const [selectedRole, setSelectedRole] = useState('');
+
+    const handleRoleChange = (selectedOption) => {
+        setSelectedRole(selectedOption.value);
+        onRoleChange(selectedOption.value);
+    };
 
     const handleSubmit = (event) => {
         event.preventDefault();
@@ -48,7 +54,7 @@ const EncounterForm = () => {
                     />
                 </div>
                 <Dropdown label="Clinic Name" id="clinic_name" name="clinic_name" />
-                <SelectDropdown label="Role" id="activity" name="activity" options={roleOptions} />
+                <SelectDropdown label="Role" id="activity" name="activity" options={roleOptions} onChange={handleRoleChange} />
                 <RadioButtonGroup label="Session Type:" name="virtual_options" options={radioOptions_virtual} />
                 <RadioButtonGroup label=" " name="group_options" options={radioOptions_group} />
                 <CustomDropdown label="Org Time" id="org_time" name="duration" />
