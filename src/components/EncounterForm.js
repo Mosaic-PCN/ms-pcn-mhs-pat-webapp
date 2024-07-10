@@ -52,6 +52,14 @@ const EncounterForm = () => {
                 <RadioButtonGroup label="Session Type:" name="virtual_options" options={radioOptions_virtual} />
                 <RadioButtonGroup label=" " name="group_options" options={radioOptions_group} />
                 <CustomDropdown label="Org Time" id="org_time" name="duration" />
+
+                <div className="form-group">
+                    <label htmlFor="editor">Encounter Notes:</label>
+                    <textarea id="notes" name="notes" rows="6" cols="33" className="modern-textarea">
+                        Type here...
+                    </textarea>
+                </div>
+
             </form>
         </main>
     );

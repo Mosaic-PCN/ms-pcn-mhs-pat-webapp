@@ -1,8 +1,15 @@
 import React, { useState } from 'react';
 import NumberDropdown from './NumberDropdown';
+import SelectDropdown from './SelectDropdown';
 import './StakeholdersForm.css';
 
 const StakeholderForm = () => {
+
+    const yes_no_Options = [
+        { label: 'Yes', value: 'yes' },
+        { label: 'No', value: 'non' },
+    ];
+
     return (
         <main className="container mt-5">
             <stakeholder-form>
@@ -23,6 +30,10 @@ const StakeholderForm = () => {
                     <NumberDropdown label="EMRs" id="EMRs" name="EMRs" required={true} max={10} />
                     <NumberDropdown label="HPF" id="HPF" name="HPF" required={true} max={10} />
                     <NumberDropdown label="Membership Coordinator" id="Membership_Coordinator" name="Membership_Coordinator" required={true} max={5} />
+                    <NumberDropdown label="MDT" id="MDT" name="MDT" required={true} max={10} />
+                    {/* <NumberDropdown label="Dyad" id="Dyad" name="Dyad" required={true} max={5} /> */}
+                    <SelectDropdown label="Dyad" id="Dyad" name="Dyad" options={yes_no_Options} />
+
                 </div>
             </stakeholder-form>
         </main>
