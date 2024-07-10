@@ -13,7 +13,7 @@ const EncounterForm = (onRoleChange) => {
 
     const handleRoleChange = (selectedOption) => {
         setSelectedRole(selectedOption.value);
-        onRoleChange(selectedOption.value);
+        onRoleChange(selectedOption.value); // Call the passed function
     };
 
     const handleSubmit = (event) => {

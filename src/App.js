@@ -14,13 +14,20 @@ import EMRFormCard from './components/EMRFormCard';
 // import awsconfig from "./aws-exports";
 import amplifyconfig from './amplifyconfiguration.json';
 import './App.css';
+import NextPage from './components/NextPage';
+import { useHistory } from 'react-router-dom';
+import { BrowserRouter as Router, Route, Routes, useNavigate } from 'react-router-dom';
+
 
 Amplify.configure(amplifyconfig);
 
-function App() {
-    const [username, setUsername] = useState('');
+function MainForm() {
     const [showEMRForm, setShowEMRForm] = useState(false);
-    const [data, setData] = useState('')
+    const navigate = useNavigate();
+
+    const goToNextPage = () => {
+        navigate('/next');
+    };
 
     const handleSubmit = async (user) => {
         try {
@@ -30,18 +37,18 @@ function App() {
             console.log(`Record ID: ${recordId}`);
             console.log(`Timestamp: ${timestamp}`);
 
-            const apiName = 'submissionAPI'; // Correct API name from aws-exports.js
+            const apiName = 'submissionAPI';
             const path = "/submit";
             const Options = {
                 body: {
                     recordId,
                     timestamp,
                     username: user.username,
-                    data
-                }, // request body
+                    data: {}
+                },
                 headers: {
                     'Content-Type': 'application/json'
-                } // OPTIONAL
+                }
             };
 
         } catch (error) {
@@ -57,6 +64,13 @@ function App() {
         }
     };
 
+    const handleNextClick = (user) => {
+        if (showEMRForm) {
+            navigate('/emr-form');
+        } else {
+            handleSubmit(user);
+        }
+    };
 
     return (
         <Authenticator hideSignUp={true}>
@@ -65,22 +79,30 @@ function App() {
                     <Header signOut={signOut} user={user} />
                     <main className="App-main">
                         <Card title="Encounter Information">
-                            <EncounterForm />
+                            <EncounterForm onRoleChange={handleRoleChange} />
                         </Card>
                         <StakeholdersCard title="Stakeholders">
                             <StakeholderForm />
                         </StakeholdersCard>
-                        <EMRFormCard title="Stakeholders">
-                            <EMRForm />
-                        </EMRFormCard>
                         <div className="button-container">
-                            {/* <button type="button" className="btn btn-primary">Previous</button> */}
-                            <button type="button" className="btn btn-primary" onClick={() => handleSubmit(user)}>Next</button>
+                            <button type="button" className="btn btn-primary" onClick={goToNextPage}>Next</button>
                         </div>
                     </main>
                 </div>
             )}
         </Authenticator>
+    );
+}
+
+function App() {
+    return (
+        <Router>
+            <Routes>
+                <Route path="/" element={<MainForm />} />
+                <Route path="/emr-form" element={<EMRForm />} />
+                <Route path="/next" element={<EMRForm />} />
+            </Routes>
+        </Router>
     );
 }
 
