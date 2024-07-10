@@ -7,8 +7,9 @@ import '@aws-amplify/ui-react/styles.css';
 import Header from './components/Header';
 import EncounterForm from './components/EncounterForm';
 import StakeholderForm from './components/StakeholdersFrom';
-
 import Card from './components/FormCard';
+import StakeholdersCard from './components/FormCardStakeholders';
+
 // import awsconfig from "./aws-exports";
 import amplifyconfig from './amplifyconfiguration.json';
 import './App.css';
@@ -54,9 +55,9 @@ function App() {
                         <Card title="Encounter Information">
                             <EncounterForm />
                         </Card>
-                        <Card title="Stakeholders">
+                        <StakeholdersCard title="Stakeholders">
                             <StakeholderForm />
-                        </Card>
+                        </StakeholdersCard>
 
                         <div className="button-container">
                             <button type="button" className="btn btn-primary">Previous</button>

@@ -1,0 +1,8 @@
+stakeholder-form {
+    display: flex;
+    justify-content: space-between;
+}
+
+.column {
+    flex: 1;
+}

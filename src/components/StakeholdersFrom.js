@@ -1,60 +1,30 @@
 import React, { useState } from 'react';
-import Dropdown from './Dropdown';
-import SelectDropdown from './SelectDropdown';
-import CustomDropdown from './CustomDropdown';
-import DatePicker from 'react-datepicker';
-import RadioButtonGroup from './RadioButtonGroup';
-import 'react-datepicker/dist/react-datepicker.css';
-import './EncounterForm.css';
+import NumberDropdown from './NumberDropdown';
+import './StakeholdersForm.css';
 
 const StakeholderForm = () => {
-    const [startDate, setStartDate] = useState(new Date());
-
-    // const handleSubmit = (event) => {
-    //     event.preventDefault();
-    //     console.log("Form submitted");
-    // };
-
-    const radioOptions_virtual = [
-        { label: 'Virtual', value: 'virtual_session' },
-        { label: 'In-person', value: 'inperson_session' }
-    ];
-
-    const radioOptions_group = [
-        { label: '1:1', value: 'one_one_session' },
-        { label: 'Group', value: 'group_session' },
-        { label: 'Non-Visit Encounter', value: 'non_visit' }
-    ];
-
-    const roleOptions = [
-        { label: 'EMR', value: 'emr' },
-        { label: 'PCC', value: 'pcc' },
-        { label: 'PF', value: 'pf' },
-        { label: 'HPF', value: 'hpf' },
-        { label: 'Activity Membership Coordinator', value: 'activity_membership_coord' }
-    ];
-
     return (
         <main className="container mt-5">
-            {/* <form onSubmit={handleSubmit} method="POST"> */}
-            <form>
-
-                <div className="form-group standard-width">
-                    <label htmlFor="workDate">Date</label>
-                    <DatePicker
-                        selected={startDate}
-                        onChange={(date) => setStartDate(date)}
-                        className="form-control"
-                        dateFormat="yyyy/MM/dd"
-                        placeholderText="Select a date"
-                    />
+            <stakeholder-form>
+                <div className="column">
+                    <NumberDropdown label="Member phys MHSP" id="Member_phys_MHSP" name="Member_phys_MHSP" required={true} max={10} />
+                    <NumberDropdown label="Member phys General" id="Member_phys_General" name="Member_phys_General" required={true} max={10} />
+                    <NumberDropdown label="Non-Member Phys" id="Non_Member_Phys" name="Non_Member_Phys" required={true} max={10} />
+                    <NumberDropdown label="NP - MHSP" id="NP_MHSP" name="NP_MHSP" required={true} max={10} />
+                    <NumberDropdown label="NP - General" id="NP_General" name="NP_General" required={true} max={10} />
+                    <NumberDropdown label="MOA" id="MOA" name="MOA" required={true} max={10} />
+                    <NumberDropdown label="CLIN MGR" id="CLIN_MGR" name="CLIN_MGR" required={true} max={10} />
+                    <NumberDropdown label="CLIN OWN" id="CLIN_OWN" name="CLIN_OWN" required={true} max={10} />
                 </div>
-                <Dropdown label="Clinic Name" id="clinic_name" name="clinic_name" />
-                <SelectDropdown label="Role" id="activity" name="activity" options={roleOptions} />
-                <RadioButtonGroup label="Session Type:" name="virtual_options" options={radioOptions_virtual} />
-                <RadioButtonGroup label=" " name="group_options" options={radioOptions_group} />
-                <CustomDropdown label="Org Time" id="org_time" name="duration" />
-            </form>
+                <div className="column">
+                    <NumberDropdown label="PCC - Mosaic" id="PCC_Mosaic" name="PCC_Mosaic" required={true} max={10} />
+                    <NumberDropdown label="PCC - Clinic" id="PCC_Clinic" name="PCC_Clinic" required={true} max={10} />
+                    <NumberDropdown label="PF" id="PF" name="PF" required={true} max={10} />
+                    <NumberDropdown label="EMRs" id="EMRs" name="EMRs" required={true} max={10} />
+                    <NumberDropdown label="HPF" id="HPF" name="HPF" required={true} max={10} />
+                    <NumberDropdown label="Membership Coordinator" id="Membership_Coordinator" name="Membership_Coordinator" required={true} max={5} />
+                </div>
+            </stakeholder-form>
         </main>
     );
 };
