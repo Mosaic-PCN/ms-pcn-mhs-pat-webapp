@@ -1,5 +1,5 @@
 import React, { useState, useContext } from 'react';
-import { AppContext } from '../AppContext'; // Import context
+import { AppContext } from '../AppContext';
 import Dropdown from './Dropdown';
 import SelectDropdown from './SelectDropdown';
 import CustomDropdown from './CustomDropdown';

@@ -23,7 +23,23 @@ const Summary = () => {
         sessionType: 'Session Type',
         meetingType: 'Meeting Type',
         orgTime: 'Org Time',
-        notes: 'Encounter Notes'
+        notes: 'Encounter Notes',
+        memberPhysMHSP: 'Member phys MHSP',
+        memberPhysGen: 'Member phys General',
+        nonMemberPhys: 'Non-Member Phys',
+        NpMhsp: 'NP - MHSP',
+        NpGen: 'NP - General',
+        moe: 'MOA',
+        clinMgr: 'CLIN MGR',
+        clinOwn: 'CLIN OWN',
+        pccMosaic: 'PCC - Mosaic',
+        pccClinic: 'PCC - Clinic',
+        pf: 'PF',
+        emrs: 'EMRs',
+        hpf: 'HPF',
+        memberCoord: 'Membership Coordinator',
+        mdt: 'MDT',
+        dyad: 'Dyad',
     };
 
     const submitData = () => {
