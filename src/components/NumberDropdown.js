@@ -1,7 +1,7 @@
 import React from 'react';
 import Select from 'react-select';
 
-const NumberDropdown = ({ label, id, name, required, max }) => {
+const NumberDropdown = ({ label, id, name, required, max, place_holder }) => {
     const options = [];
     for (let i = 0; i <= max; i++) {
         options.push({ value: i, label: i.toString() });
@@ -17,7 +17,7 @@ const NumberDropdown = ({ label, id, name, required, max }) => {
                 className="react-select-container"
                 classNamePrefix="react-select"
                 isSearchable
-                placeholder="Counts"
+                placeholder={place_holder}
                 isClearable
                 required={required}
             />

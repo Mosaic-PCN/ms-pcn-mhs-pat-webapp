@@ -7,18 +7,14 @@ import RadioButtonGroup from './RadioButtonGroup';
 import 'react-datepicker/dist/react-datepicker.css';
 import './EncounterForm.css';
 
-const EncounterForm = (onRoleChange) => {
+const EncounterForm = ({ onRoleChange }) => {
     const [startDate, setStartDate] = useState(new Date());
     const [selectedRole, setSelectedRole] = useState('');
 
     const handleRoleChange = (selectedOption) => {
+        console.log('picked', selectedOption);
         setSelectedRole(selectedOption.value);
-        onRoleChange(selectedOption.value); // Call the passed function
-    };
-
-    const handleSubmit = (event) => {
-        event.preventDefault();
-        console.log("Form submitted");
+        onRoleChange(selectedOption.value);
     };
 
     const radioOptions_virtual = [
@@ -42,7 +38,8 @@ const EncounterForm = (onRoleChange) => {
 
     return (
         <main className="container mt-5">
-            <form onSubmit={handleSubmit} method="POST">
+            {/* <form onSubmit={handleSubmit} method="POST"> */}
+            <form>
                 <div className="form-group standard-width">
                     <label htmlFor="workDate">Date</label>
                     <DatePicker

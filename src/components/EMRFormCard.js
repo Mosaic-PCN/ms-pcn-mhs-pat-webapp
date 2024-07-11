@@ -1,10 +1,10 @@
 import React from 'react';
-import './StakeholdersFormCard.css';
+import './EMRFormCard.css';
 
 const EMRCard = ({ title, children }) => {
     return (
-        <div className="stakeholdercard">
-            <h2 className="stakeholder-card-title">{title}</h2>
+        <div className="emrcard">
+            <h2 className="emr-card-title">{title}</h2>
             {children}
         </div>
     );

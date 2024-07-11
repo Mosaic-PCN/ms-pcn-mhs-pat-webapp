@@ -1,27 +1,45 @@
 .form-group {
-    margin-bottom: 1rem;
+    margin-bottom: 0.5rem;
+    /* Reduce the margin-bottom */
 }
 
 .form-group label {
     display: block;
-    margin-bottom: 0.5rem;
+    margin-bottom: 0.25rem;
+    /* Reduce the margin-bottom */
     font-weight: bold;
+}
+
+.form-group .ind-menu {
+    font-weight: normal;
 }
 
 .form-control {
     width: 100%;
-    padding: 0.5rem;
-    margin-bottom: 1rem;
+    padding: 0.2rem;
+    margin-bottom: 0.2rem;
+    /* Reduce the margin-bottom */
     font-size: 1rem;
 }
 
 .dropdown-row {
     display: flex;
-    gap: 1rem;
+    gap: 0rem;
+    /* Space between dropdowns */
 }
 
 .react-select-container {
     flex: 1;
-    min-width: 200px;
+    min-width: 140px;
     /* Adjust the minimum width as needed */
+    margin-bottom: 0.5rem;
+    /* Reduce the margin-bottom */
+}
+
+/* Additional styles to ensure proper alignment */
+.dropdown-container {
+    display: flex;
+    flex-direction: column;
+    gap: 0.15rem;
+    /* Adjust the gap between label and dropdown */
 }
