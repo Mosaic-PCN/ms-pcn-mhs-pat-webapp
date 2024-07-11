@@ -4,7 +4,7 @@ import './Dropdown.css';
 import { generateTimeOptions } from '../utils';
 
 
-const CustomDropdown = ({ label, id, name, required }) => {
+const CustomDropdown = ({ label, id, name, required, place_holder }) => {
     const options = generateTimeOptions();
 
     return (
@@ -17,7 +17,7 @@ const CustomDropdown = ({ label, id, name, required }) => {
                 className="react-select-container"
                 classNamePrefix="react-select"
                 isSearchable
-                placeholder="Choose..."
+                placeholder={place_holder}
                 isClearable
                 required={required}
             />

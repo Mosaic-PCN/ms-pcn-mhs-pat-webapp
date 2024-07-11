@@ -41,16 +41,19 @@ const PFForm = () => {
         <main className="container mt-5">
             <div className="pf-form">
                 <div className="pf-column">
-                    <label htmlFor="qi_template">Documentation - QI template</label>
-                    <CustomDropdown label="Indirect Time" id="org_time" name="duration" />
-                    <label htmlFor="qi_template">Documentation - Menu of Service templates</label>
-                    <CustomDropdown label="Indirect Time" id="org_time" name="duration" />
-                    <label htmlFor="qi_template">Documentation - Clinic Processes</label>
-                    <CustomDropdown label="Indirect Time" id="org_time" name="duration" />
-                    <label htmlFor="qi_template">Documentation - Other</label>
-                    <CustomDropdown label="Indirect Time" id="org_time" name="duration" />
-                    <label htmlFor="qi_template">Scheduling appointments</label>
-                    <CustomDropdown label="Indirect Time" id="org_time" name="duration" />
+                    {/* <label htmlFor="qi_template"></label> */}
+                    <CustomDropdown label="Documentation - QI template" id="org_time" name="duration" place_holder="Indirect Time" />
+                    {/* <label htmlFor="qi_template"></label> */}
+                    <CustomDropdown label="Documentation - Menu of Service templates" id="org_time" name="duration" place_holder="Indirect Time" />
+                    {/* <label htmlFor="qi_template">s</label> */}
+                    <CustomDropdown label="Documentation - Clinic Processe" id="org_time" name="duration" place_holder="Indirect Time" />
+                    {/* <label htmlFor="qi_template"></label> */}
+                    <CustomDropdown label="Documentation - Other" id="org_time" name="duration" place_holder="Indirect Time" />
+                    {/* <label htmlFor="qi_template"></label> */}
+                    <CustomDropdown label="Scheduling appointments" id="org_time" name="duration" place_holder="Indirect Time" />
+                    <TripleDropdown label="MHS team game planning" id="inputId" name="inputName" required={true} options1={options1} options2={options2} options3={options3} label1={label1} label2={label_direct} label3={label_indirect} />
+                    <TripleDropdown label="Provider or clinic inquiry" id="inputId" name="inputName" required={true} options1={options1} options2={options2} options3={options3} label1={label1} label2={label_direct} label3={label_indirect} />
+                    <TripleDropdown label="Liaise with external partners" id="inputId" name="inputName" required={true} options1={options1} options2={options2} options3={options3} label1={label1} label2={label_direct} label3={label_indirect} />
                 </div>
                 <div className="pf-column">
                     <TripleDropdown label="Meeting - C&C" id="inputId" name="inputName" required={true} options1={options1} options2={options2} options3={options3} label1={label1} label2={label_direct} label3={label_clinic_prep} />
@@ -59,17 +62,16 @@ const PFForm = () => {
                     <TripleDropdown label="Meeting - QI" id="inputId" name="inputName" required={true} options1={options1} options2={options2} options3={options3} label1={label1} label2={label_clinic_provider} label3={label_clinic_prep} />
                     <TripleDropdown label="Material dropoff" id="C_C_visit" name="C_C_visit" required={true} options1={options1} options2={options2} options3={options3} label1={label1} label2={label_clinic_provider} label3={label_clinic_prep} />
                     <TripleDropdown label="Clinic Activity - other" id="C_C_visit" name="C_C_visit" required={true} options1={options1} options2={options2} options3={options3} label1={label1} label2={label_clinic_provider} label3={label_clinic_prep} />
-
                 </div>
                 <div className="pf-column">
                     <TripleDropdown label="Recieving training" id="QI_template" name="QI_template" required={true} options1={options1} options2={options2} options3={options3} label1={label1} label2={label_direct} label3={label_indirect} />
                     <TripleDropdown label="Providing training" id="Service_templates" name="Service_templates" required={true} options1={options1} options2={options2} options3={options3} label1={label1} label2={label_direct} label3={label_indirect} />
                     <TripleDropdown label="Training material creation" id="inputId" name="inputName" required={true} options1={options1} options2={options2} options3={options3} label1={label1} label2={label_direct} label3={label_indirect} />
-                    <NumberDropdown className="QI projects Started " label="Member phys MHSP" id="Member_phys_MHSP" name="Member_phys_MHSP" required={true} max={10} place_holder="Count" />
-                    <NumberDropdown className="QI projects adopted" label="Member phys MHSP" id="Member_phys_MHSP" name="Member_phys_MHSP" required={true} max={10} place_holder="Count" />
-                    <NumberDropdown className="QI projects adapted" label="Member phys MHSP" id="Member_phys_MHSP" name="Member_phys_MHSP" required={true} max={10} place_holder="Count" />
-                    <NumberDropdown className="QI projects abandoned" label="Member phys MHSP" id="Member_phys_MHSP" name="Member_phys_MHSP" required={true} max={10} place_holder="Count" />
-                    <NumberDropdown className="QI project cancelled" label="Member phys MHSP" id="Member_phys_MHSP" name="Member_phys_MHSP" required={true} max={10} place_holder="Count" />
+                    <NumberDropdown className="number-dropdown" label="QI projects StartedP" id="Member_phys_MHSP" name="Member_phys_MHSP" required={true} max={10} place_holder="Count" />
+                    <NumberDropdown className="number-dropdown" label="QI projects adoptedP" id="Member_phys_MHSP" name="Member_phys_MHSP" required={true} max={10} place_holder="Count" />
+                    <NumberDropdown className="number-dropdown" label="QI projects adapted" id="Member_phys_MHSP" name="Member_phys_MHSP" required={true} max={10} place_holder="Count" />
+                    <NumberDropdown className="number-dropdown" label="QI projects abandonedP" id="Member_phys_MHSP" name="Member_phys_MHSP" required={true} max={10} place_holder="Count" />
+                    <NumberDropdown className="number-dropdown" label="QI project cancelled" id="Member_phys_MHSP" name="Member_phys_MHSP" required={true} max={10} place_holder="Count" />
                 </div>
             </div>
         </main>
