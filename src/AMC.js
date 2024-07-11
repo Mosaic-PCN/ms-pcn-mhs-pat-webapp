@@ -17,6 +17,13 @@ import AMCCard from './components/AMCFormCard';
 Amplify.configure(amplifyconfig);
 
 function AMC() {
+
+    const navigate = useNavigate();
+
+    const goToSummaryPage = () => {
+        navigate('/summary');
+    };
+
     return (
         <Authenticator hideSignUp={true}>
             {({ signOut, user }) => (
@@ -26,6 +33,9 @@ function AMC() {
                         <AMCCard title="Activity Membership Coordinator">
                             <AMCForm />
                         </AMCCard>
+                        <div className="button-container">
+                            <button type="button" className="btn btn-primary" onClick={goToSummaryPage}>Next</button>
+                        </div>
 
                     </main>
                 </div>

@@ -11,7 +11,6 @@ import PF from './PF';
 import HPF from './HPF';
 import AMC from './AMC';
 import Summary from './Summary';
-
 import EncounterForm from './components/EncounterForm';
 import StakeholderForm from './components/StakeholdersFrom';
 import Card from './components/FormCard';
@@ -22,6 +21,8 @@ import './App.css';
 import NextPage from './components/NextPage';
 import { useHistory } from 'react-router-dom';
 import { BrowserRouter as Router, Route, Routes, useNavigate } from 'react-router-dom';
+import { AppProvider } from './AppContext'; // Import AppProvider
+
 Amplify.configure(amplifyconfig);
 
 
@@ -121,17 +122,21 @@ function MainForm() {
 
 function App() {
     return (
-        <Router>
-            <Routes>
-                <Route path="/" element={<MainForm />} />
-                <Route path="/emr" element={<EMR />} />
-                <Route path="/pcc" element={<PCC />} />
-                <Route path="/pf" element={<PF />} />
-                <Route path="/hpf" element={<HPF />} />
-                <Route path="/amc" element={<AMC />} />
-                <Route path="/summary" element={<Summary />} />
-            </Routes>
-        </Router>
+        <AppProvider>
+
+            <Router>
+                <Routes>
+                    <Route path="/" element={<MainForm />} />
+                    <Route path="/emr" element={<EMR />} />
+                    <Route path="/pcc" element={<PCC />} />
+                    <Route path="/pf" element={<PF />} />
+                    <Route path="/hpf" element={<HPF />} />
+                    <Route path="/amc" element={<AMC />} />
+                    <Route path="/summary" element={<Summary />} />
+                </Routes>
+            </Router>
+        </AppProvider>
+
     );
 }
 

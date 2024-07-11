@@ -1,0 +1,17 @@
+.summary-container {
+    padding: 20px;
+    background: #f9f9f9;
+    border-radius: 8px;
+    max-width: 800px;
+    margin: auto;
+    margin-top: 80px;
+    /* Adjust this value to create enough space below the header */
+}
+
+.summary-container h2 {
+    margin-bottom: 20px;
+}
+
+.summary-container p {
+    margin: 10px 0;
+}

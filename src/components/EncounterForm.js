@@ -1,4 +1,3 @@
-import React, { useState } from 'react';
 import Dropdown from './Dropdown';
 import SelectDropdown from './SelectDropdown';
 import CustomDropdown from './CustomDropdown';
@@ -6,15 +5,25 @@ import DatePicker from 'react-datepicker';
 import RadioButtonGroup from './RadioButtonGroup';
 import 'react-datepicker/dist/react-datepicker.css';
 import './EncounterForm.css';
+import React, { useState, useContext } from 'react';
+import { AppContext } from '../AppContext'; // Import context
+
 
 const EncounterForm = ({ onRoleChange }) => {
     const [startDate, setStartDate] = useState(new Date());
     const [selectedRole, setSelectedRole] = useState('');
+    const { updateFormData } = useContext(AppContext); // Use context
+
 
     const handleRoleChange = (selectedOption) => {
         console.log('picked', selectedOption);
         setSelectedRole(selectedOption.value);
         onRoleChange(selectedOption.value);
+    };
+
+    const handleDateChange = (date) => {
+        setStartDate(date);
+        updateFormData({ workDate: date });
     };
 
     const radioOptions_virtual = [
@@ -44,13 +53,13 @@ const EncounterForm = ({ onRoleChange }) => {
                     <label htmlFor="workDate">Date</label>
                     <DatePicker
                         selected={startDate}
-                        onChange={(date) => setStartDate(date)}
+                        onChange={handleDateChange}
                         className="form-control"
                         dateFormat="yyyy/MM/dd"
                         placeholderText="Select a date"
                     />
                 </div>
-                <Dropdown label="Clinic Name" id="clinic_name" name="clinic_name" />
+                <Dropdown label="Clinic Name" id="clinic_name" name="clinic_name" onChange={handleRoleChange} />/>
                 <SelectDropdown label="Role" id="activity" name="activity" options={roleOptions} onChange={handleRoleChange} />
                 <RadioButtonGroup label="Session Type:" name="virtual_options" options={radioOptions_virtual} />
                 <RadioButtonGroup label=" " name="group_options" options={radioOptions_group} />
