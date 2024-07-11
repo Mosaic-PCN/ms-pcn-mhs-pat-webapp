@@ -16,12 +16,31 @@ const Summary = () => {
         console.log('Data submitted!');
     };
 
+    const fieldLabels = {
+        workDate: 'Date',
+        clinicName: 'Clinic Name',
+        role: 'Role',
+        sessionType: 'Session Type',
+        meetingType: 'Meeting Type',
+        orgTime: 'Org Time',
+        notes: 'Encounter Notes'
+    };
+
     const renderSummary = () => {
-        return Object.keys(formData).map((key) => (
-            <p key={key}>
-                <strong>{key.charAt(0).toUpperCase() + key.slice(1)}:</strong> {formData[key].toString()}
-            </p>
-        ));
+        return Object.keys(formData).map((key) => {
+            let value = formData[key];
+
+            // Format the date
+            if (key === 'workDate' && value) {
+                value = new Date(value).toLocaleDateString();
+            }
+
+            return (
+                <p key={key}>
+                    <strong>{fieldLabels[key] || key.charAt(0).toUpperCase() + key.slice(1)}:</strong> {value.toString()}
+                </p>
+            );
+        });
     };
 
     return (
@@ -34,7 +53,7 @@ const Summary = () => {
                         {renderSummary()}
                     </div>
                     <div className="button-container">
-                        <button type="button" className="btn btn-primary" onClick={submitData}>Next</button>
+                        <button type="button" className="btn btn-primary" onClick={submitData}>Submit</button>
                     </div>
                 </div>
             )}
