@@ -14,15 +14,15 @@ const TripleDropdown = ({ label, id, name, required, options1, options2, options
             <div className="dropdown-row">
                 <div className="dropdown-container">
                     {/* <label className="ind-menu" htmlFor={`${id}-dropdown1`}>{label1}</label> */}
-                    <NumberDropdown className="number-dropdown" label="Count" id="count" name="count" required={true} max={max_count} />
+                    <NumberDropdown className="number-dropdown" label={label1} id="count" name="count" required={true} max={max_count} />
                 </div>
                 <div className="dropdown-container">
                     {/* <label className="ind-menu" htmlFor={`${id}-dropdown1`}>{label2}</label> */}
-                    <CustomDropdown label="Direct Time" id="org_time" name="duration" />
+                    <CustomDropdown label={label2} id="org_time" name="duration" />
                 </div>
                 <div className="dropdown-container">
                     {/* <label className="ind-menu" htmlFor={`${id}-dropdown1`}>{label3}</label> */}
-                    <CustomDropdown label="Indirect Time" id="org_time" name="duration" />
+                    <CustomDropdown label={label3} id="org_time" name="duration" />
                 </div>
             </div>
         </div>

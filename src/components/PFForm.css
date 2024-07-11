@@ -1,10 +1,10 @@
-.hpf-form {
+.pf-form {
     display: flex;
     flex-direction: row;
     justify-content: space-between;
 }
 
-.hpf-column {
+.pff-column {
     flex: 1;
     display: flex;
     flex-direction: column;
@@ -22,13 +22,13 @@
     /* Adjust the width as needed */
 }
 
-.hpf-form .amc-column {
+.pf-form .amc-column {
     flex: 1;
     margin: 1rem;
 }
 
-.hpf-form .number-dropdown,
-.hpf-form .select-dropdown {
+.pf-form .number-dropdown,
+.pf-form .select-dropdown {
     padding: 0.25rem;
     font-size: 0.875rem;
     /* Smaller font size */
