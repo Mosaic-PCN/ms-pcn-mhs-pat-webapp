@@ -37,3 +37,19 @@
     /* Adjust the value as needed */
     width: 100%;
 }
+
+.radio-group {
+    display: flex;
+    flex-direction: row;
+    gap: 10px;
+    /* Adjust gap between radio buttons as needed */
+}
+
+.form-check-inline {
+    display: flex;
+    align-items: center;
+}
+
+.form-check-input {
+    margin-right: 5px;
+}

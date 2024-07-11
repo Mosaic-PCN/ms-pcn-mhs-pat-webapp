@@ -12,6 +12,10 @@ Amplify.configure(amplifyconfig);
 const Summary = () => {
     const { formData } = useContext(AppContext);
 
+    const submitData = () => {
+        console.log('Data submitted!');
+    };
+
     const renderSummary = () => {
         return Object.keys(formData).map((key) => (
             <p key={key}>
@@ -28,6 +32,9 @@ const Summary = () => {
                     <div className="summary-container">
                         <h2>Summary</h2>
                         {renderSummary()}
+                    </div>
+                    <div className="button-container">
+                        <button type="button" className="btn btn-primary" onClick={submitData}>Next</button>
                     </div>
                 </div>
             )}

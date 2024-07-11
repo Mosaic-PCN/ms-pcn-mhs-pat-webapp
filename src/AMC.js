@@ -36,7 +36,6 @@ function AMC() {
                         <div className="button-container">
                             <button type="button" className="btn btn-primary" onClick={goToSummaryPage}>Next</button>
                         </div>
-
                     </main>
                 </div>
             )}

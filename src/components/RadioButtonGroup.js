@@ -1,22 +1,26 @@
 import React from 'react';
-import './RadioButtonGroup.css';
 
-const RadioButtonGroup = ({ label, name, options, required }) => {
+const RadioButtonGroup = ({ label, name, options, onChange }) => {
+    const handleChange = (event) => {
+        const selectedValue = event.target.value;
+        onChange({ value: selectedValue });
+    };
+
     return (
         <div className="form-group">
             <label>{label}</label>
-            <div>
-                {options.map((option, index) => (
-                    <div key={index} className="form-check">
+            <div className="radio-group">
+                {options.map((option) => (
+                    <div key={option.value} className="form-check form-check-inline">
                         <input
-                            type="radio"
-                            id={`${name}-${option.value}`}
-                            name={name}
-                            value={option.value}
                             className="form-check-input"
-                            required={required}
+                            type="radio"
+                            name={name}
+                            id={`${name}-${option.value}`}
+                            value={option.value}
+                            onChange={handleChange}
                         />
-                        <label htmlFor={`${name}-${option.value}`} className="form-check-label">
+                        <label className="form-check-label" htmlFor={`${name}-${option.value}`}>
                             {option.label}
                         </label>
                     </div>

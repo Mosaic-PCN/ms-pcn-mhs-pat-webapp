@@ -1,3 +1,5 @@
+import React, { useState, useContext } from 'react';
+import { AppContext } from '../AppContext'; // Import context
 import Dropdown from './Dropdown';
 import SelectDropdown from './SelectDropdown';
 import CustomDropdown from './CustomDropdown';
@@ -5,18 +7,15 @@ import DatePicker from 'react-datepicker';
 import RadioButtonGroup from './RadioButtonGroup';
 import 'react-datepicker/dist/react-datepicker.css';
 import './EncounterForm.css';
-import React, { useState, useContext } from 'react';
-import { AppContext } from '../AppContext'; // Import context
-
 
 const EncounterForm = ({ onRoleChange }) => {
     const [startDate, setStartDate] = useState(new Date());
     const [selectedRole, setSelectedRole] = useState('');
     const { updateFormData } = useContext(AppContext); // Use context
 
-
     const handleRoleChange = (selectedOption) => {
         setSelectedRole(selectedOption.value);
+        updateFormData({ role: selectedOption.value });
         onRoleChange(selectedOption.value);
     };
 
@@ -25,14 +24,34 @@ const EncounterForm = ({ onRoleChange }) => {
         updateFormData({ workDate: date });
     };
 
+    const handleClinicNameChange = (selectedOption) => {
+        updateFormData({ clinicName: selectedOption.value });
+    };
+
+    const handleSessionTypeChange = (selectedOption) => {
+        updateFormData({ sessionType: selectedOption.value });
+    };
+
+    const handleGroupTypeChange = (selectedOption) => {
+        updateFormData({ meetingType: selectedOption.value });
+    };
+
+    const handleOrgTimeChange = (selectedOption) => {
+        updateFormData({ orgTime: selectedOption.value });
+    };
+
+    const handleNotesChange = (e) => {
+        updateFormData({ notes: e.target.value });
+    };
+
     const radioOptions_virtual = [
-        { label: 'Virtual', value: 'virtual_session' },
-        { label: 'In-person', value: 'inperson_session' }
+        { label: 'Virtual', value: 'virtual' },
+        { label: 'In-person', value: 'in-person' }
     ];
 
     const radioOptions_group = [
-        { label: '1:1', value: 'one_one_session' },
-        { label: 'Group', value: 'group_session' },
+        { label: '1:1', value: '1:1' },
+        { label: 'Group', value: 'group-session' },
         { label: 'Non-Visit Encounter', value: 'non_visit' }
     ];
 
@@ -46,7 +65,6 @@ const EncounterForm = ({ onRoleChange }) => {
 
     return (
         <main className="container mt-5">
-            {/* <form onSubmit={handleSubmit} method="POST"> */}
             <form>
                 <div className="form-group standard-width">
                     <label htmlFor="workDate">Date</label>
@@ -58,19 +76,18 @@ const EncounterForm = ({ onRoleChange }) => {
                         placeholderText="Select a date"
                     />
                 </div>
-                <Dropdown label="Clinic Name" id="clinic_name" name="clinic_name" onChange={handleRoleChange} />/>
+                <Dropdown label="Clinic Name" id="clinic_name" name="clinic_name" onChange={handleClinicNameChange} />
                 <SelectDropdown label="Role" id="activity" name="activity" options={roleOptions} onChange={handleRoleChange} />
-                <RadioButtonGroup label="Session Type:" name="virtual_options" options={radioOptions_virtual} />
-                <RadioButtonGroup label=" " name="group_options" options={radioOptions_group} />
-                <CustomDropdown label="Org Time" id="org_time" name="duration" />
+                <RadioButtonGroup label="Session Type:" name="session_type" options={radioOptions_virtual} onChange={handleSessionTypeChange} />
+                <RadioButtonGroup label="Meeting Type:" name="meeting_type" options={radioOptions_group} onChange={handleGroupTypeChange} />
+                <CustomDropdown label="Org Time" id="org_time" name="duration" onChange={handleOrgTimeChange} />
 
                 <div className="form-group">
                     <label htmlFor="editor">Encounter Notes:</label>
-                    <textarea id="notes" name="notes" rows="6" cols="33" className="modern-textarea" onChange={(e) => updateFormData({ notes: e.target.value })}>
+                    <textarea id="notes" name="notes" rows="6" cols="33" className="modern-textarea" onChange={handleNotesChange}>
                         Type here...
                     </textarea>
                 </div>
-
             </form>
         </main>
     );
