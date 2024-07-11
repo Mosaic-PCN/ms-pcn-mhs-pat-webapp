@@ -7,16 +7,15 @@ stakeholder-form {
     flex: 1;
 }
 
-
 .container {
-    max-width: 800px;
+    max-width: 900px;
     margin: auto;
 }
 
-.column {
+.stakeholder-column {
     display: flex;
     flex-direction: column;
-    gap: 1rem;
+    gap: 2rem;
 }
 
 .number-dropdown,
