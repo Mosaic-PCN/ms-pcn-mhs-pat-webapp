@@ -10,13 +10,12 @@ import './EncounterForm.css';
 
 const EncounterForm = ({ onRoleChange }) => {
     const [startDate, setStartDate] = useState(new Date());
-    const [selectedRole, setSelectedRole] = useState('');
     const { updateFormData } = useContext(AppContext); // Use context
 
     const handleRoleChange = (selectedOption) => {
-        setSelectedRole(selectedOption.value);
-        updateFormData({ role: selectedOption.value });
-        onRoleChange(selectedOption.value);
+        const role = selectedOption.value;
+        updateFormData({ role });
+        onRoleChange(role);
     };
 
     const handleDateChange = (date) => {
@@ -81,7 +80,6 @@ const EncounterForm = ({ onRoleChange }) => {
                 <RadioButtonGroup label="Session Type:" name="session_type" options={radioOptions_virtual} onChange={handleSessionTypeChange} />
                 <RadioButtonGroup label="Meeting Type:" name="meeting_type" options={radioOptions_group} onChange={handleGroupTypeChange} />
                 <CustomDropdown label="Org Time" id="org_time" name="duration" onChange={handleOrgTimeChange} />
-
                 <div className="form-group">
                     <label htmlFor="editor">Encounter Notes:</label>
                     <textarea id="notes" name="notes" rows="6" cols="33" className="modern-textarea" onChange={handleNotesChange}>
