@@ -6,6 +6,7 @@ import Header from './components/Header';
 import { AppContext } from './AppContext';
 import amplifyconfig from './amplifyconfiguration.json';
 import { ToastContainer, toast } from 'react-toastify';
+import { useNavigate } from 'react-router-dom';
 import 'react-toastify/dist/ReactToastify.css';
 import './Summary.css';
 
@@ -13,6 +14,7 @@ Amplify.configure(amplifyconfig);
 
 const Summary = () => {
     const { formData, resetFormData } = useContext(AppContext);
+    const navigate = useNavigate();
 
     const fieldLabels = {
         workDate: 'Date',
@@ -64,7 +66,8 @@ const Summary = () => {
                         {renderSummary()}
                     </div>
                     <div className="button-container">
-                        <button type="button" className="btn btn-primary" onClick={submitData}>Submit</button>
+                        <button type="button" className="btn btn-primary" onClick={() => navigate(-1)}>Previous</button>
+                        <button type="submit" className="btn btn-primary" onClick={submitData}>Submit</button>
                     </div>
                     <ToastContainer />
                 </div>

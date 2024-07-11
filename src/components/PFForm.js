@@ -36,27 +36,23 @@ const PFForm = () => {
     const label_clinic_provider = "Time with Provider";
     const label_clinic_prep = "Preparation";
 
-
     return (
         <main className="container mt-5">
             <div className="pf-form">
                 <div className="pf-column">
-                    {/* <label htmlFor="qi_template"></label> */}
                     <CustomDropdown label="Documentation - QI template" id="org_time" name="duration" place_holder="Indirect Time" />
-                    {/* <label htmlFor="qi_template"></label> */}
                     <CustomDropdown label="Documentation - Menu of Service templates" id="org_time" name="duration" place_holder="Indirect Time" />
-                    {/* <label htmlFor="qi_template">s</label> */}
-                    <CustomDropdown label="Documentation - Clinic Processe" id="org_time" name="duration" place_holder="Indirect Time" />
-                    {/* <label htmlFor="qi_template"></label> */}
+                    <CustomDropdown label="Documentation - Clinic Processes" id="org_time" name="duration" place_holder="Indirect Time" />
                     <CustomDropdown label="Documentation - Other" id="org_time" name="duration" place_holder="Indirect Time" />
-                    {/* <label htmlFor="qi_template"></label> */}
                     <CustomDropdown label="Scheduling appointments" id="org_time" name="duration" place_holder="Indirect Time" />
-                    <TripleDropdown label="MHS team game planning" id="inputId" name="inputName" required={true} options1={options1} options2={options2} options3={options3} label1={label1} label2={label_direct} label3={label_indirect} />
-                    <TripleDropdown label="Provider or clinic inquiry" id="inputId" name="inputName" required={true} options1={options1} options2={options2} options3={options3} label1={label1} label2={label_direct} label3={label_indirect} />
-                    <TripleDropdown label="Liaise with external partners" id="inputId" name="inputName" required={true} options1={options1} options2={options2} options3={options3} label1={label1} label2={label_direct} label3={label_indirect} />
+                    <NumberDropdown className="number-dropdown" label="QI projects Started" id="Member_phys_MHSP" name="Member_phys_MHSP" required={true} max={10} place_holder="Count" />
+                    <NumberDropdown className="number-dropdown" label="QI projects adopted" id="Member_phys_MHSP" name="Member_phys_MHSP" required={true} max={10} place_holder="Count" />
+                    <NumberDropdown className="number-dropdown" label="QI projects adapted" id="Member_phys_MHSP" name="Member_phys_MHSP" required={true} max={10} place_holder="Count" />
+                    <NumberDropdown className="number-dropdown" label="QI projects abandoned" id="Member_phys_MHSP" name="Member_phys_MHSP" required={true} max={10} place_holder="Count" />
+                    <NumberDropdown className="number-dropdown" label="QI project cancelled" id="Member_phys_MHSP" name="Member_phys_MHSP" required={true} max={10} place_holder="Count" />
                 </div>
-                <div className="pf-column">
-                    <TripleDropdown label="Meeting - C&C" id="inputId" name="inputName" required={true} options1={options1} options2={options2} options3={options3} label1={label1} label2={label_direct} label3={label_clinic_prep} />
+                <div className="pf-column pf-column">
+                    <TripleDropdown label="Meeting - C&C" id="inputId" name="inputName" required={true} options1={options1} options2={options2} options3={options3} label1={label1} label2={label_clinic_provider} label3={label_clinic_prep} />
                     <TripleDropdown label="Meeting - New Member meet and greet" id="inputId" name="inputName" required={true} options1={options1} options2={options2} options3={options3} label1={label1} label2={label_clinic_provider} label3={label_clinic_prep} />
                     <TripleDropdown label="Meeting - CII/CPAR" id="inputId" name="inputName" required={true} options1={options1} options2={options2} options3={options3} label1={label1} label2={label_clinic_provider} label3={label_clinic_prep} />
                     <TripleDropdown label="Meeting - QI" id="inputId" name="inputName" required={true} options1={options1} options2={options2} options3={options3} label1={label1} label2={label_clinic_provider} label3={label_clinic_prep} />
@@ -64,14 +60,12 @@ const PFForm = () => {
                     <TripleDropdown label="Clinic Activity - other" id="C_C_visit" name="C_C_visit" required={true} options1={options1} options2={options2} options3={options3} label1={label1} label2={label_clinic_provider} label3={label_clinic_prep} />
                 </div>
                 <div className="pf-column">
-                    <TripleDropdown label="Recieving training" id="QI_template" name="QI_template" required={true} options1={options1} options2={options2} options3={options3} label1={label1} label2={label_direct} label3={label_indirect} />
+                    <TripleDropdown label="MHS team game planning" id="inputId" name="inputName" required={true} options1={options1} options2={options2} options3={options3} label1={label1} label2={label_direct} label3={label_indirect} />
+                    <TripleDropdown label="Provider or clinic inquiry" id="inputId" name="inputName" required={true} options1={options1} options2={options2} options3={options3} label1={label1} label2={label_direct} label3={label_indirect} />
+                    <TripleDropdown label="Liaise with external partners" id="inputId" name="inputName" required={true} options1={options1} options2={options2} options3={options3} label1={label1} label2={label_direct} label3={label_indirect} />
+                    <TripleDropdown label="Receiving training" id="QI_template" name="QI_template" required={true} options1={options1} options2={options2} options3={options3} label1={label1} label2={label_direct} label3={label_indirect} />
                     <TripleDropdown label="Providing training" id="Service_templates" name="Service_templates" required={true} options1={options1} options2={options2} options3={options3} label1={label1} label2={label_direct} label3={label_indirect} />
                     <TripleDropdown label="Training material creation" id="inputId" name="inputName" required={true} options1={options1} options2={options2} options3={options3} label1={label1} label2={label_direct} label3={label_indirect} />
-                    <NumberDropdown className="number-dropdown" label="QI projects StartedP" id="Member_phys_MHSP" name="Member_phys_MHSP" required={true} max={10} place_holder="Count" />
-                    <NumberDropdown className="number-dropdown" label="QI projects adoptedP" id="Member_phys_MHSP" name="Member_phys_MHSP" required={true} max={10} place_holder="Count" />
-                    <NumberDropdown className="number-dropdown" label="QI projects adapted" id="Member_phys_MHSP" name="Member_phys_MHSP" required={true} max={10} place_holder="Count" />
-                    <NumberDropdown className="number-dropdown" label="QI projects abandonedP" id="Member_phys_MHSP" name="Member_phys_MHSP" required={true} max={10} place_holder="Count" />
-                    <NumberDropdown className="number-dropdown" label="QI project cancelled" id="Member_phys_MHSP" name="Member_phys_MHSP" required={true} max={10} place_holder="Count" />
                 </div>
             </div>
         </main>

@@ -22,6 +22,10 @@ function PF() {
         navigate('/summary');
     };
 
+    const goToHomePage = () => {
+        navigate('/');
+    };
+
     return (
         <Authenticator hideSignUp={true}>
             {({ signOut, user }) => (
@@ -32,7 +36,8 @@ function PF() {
                             <PFForm />
                         </PFCard>
                         <div className="button-container">
-                            <button type="button" className="btn btn-primary" onClick={goToSummaryPage}>Next</button>
+                            <button type="button" className="btn btn-primary" onClick={goToHomePage}>Previous</button>
+                            <button type="Submit" className="btn btn-primary" onClick={goToSummaryPage}>Next</button>
                         </div>
                     </main>
                 </div>

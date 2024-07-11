@@ -1,4 +1,4 @@
-.stakeholders-card {
+.pcccard {
     background-color: #fff;
     border: 1px solid #ddd;
     border-radius: 8px;
@@ -19,7 +19,7 @@
     /* Change this to the color you want */
 }
 
-.stakeholders-card-title {
+.pcc-card-title {
     font-size: 1.5rem;
     margin-bottom: 10px;
     text-align: left;

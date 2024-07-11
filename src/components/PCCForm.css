@@ -1,4 +1,4 @@
-stakeholders-form {
+pcc-form {
     display: flex;
     justify-content: space-between;
 }
@@ -12,7 +12,7 @@ stakeholders-form {
     margin: auto;
 }
 
-.stakeholders-column {
+.pcc-column {
     display: flex;
     flex-direction: column;
     gap: 2rem;
@@ -24,19 +24,19 @@ stakeholders-form {
     /* Adjust the width as needed */
 }
 
-stakeholders-form {
+pcc-form {
     display: flex;
     flex-direction: row;
     justify-content: space-between;
 }
 
-.stakeholders-form .column {
+.pcc-form .column {
     flex: 1;
     margin: 0 1rem;
 }
 
-.stakeholders-form .number-dropdown,
-.stakeholders-form .select-dropdown {
+.pcc-form .number-dropdown,
+.pcc-form .select-dropdown {
     padding: 0.25rem;
     font-size: 0.875rem;
     /* Smaller font size */
