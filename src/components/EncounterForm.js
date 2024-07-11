@@ -16,7 +16,6 @@ const EncounterForm = ({ onRoleChange }) => {
 
 
     const handleRoleChange = (selectedOption) => {
-        console.log('picked', selectedOption);
         setSelectedRole(selectedOption.value);
         onRoleChange(selectedOption.value);
     };
@@ -67,7 +66,7 @@ const EncounterForm = ({ onRoleChange }) => {
 
                 <div className="form-group">
                     <label htmlFor="editor">Encounter Notes:</label>
-                    <textarea id="notes" name="notes" rows="6" cols="33" className="modern-textarea">
+                    <textarea id="notes" name="notes" rows="6" cols="33" className="modern-textarea" onChange={(e) => updateFormData({ notes: e.target.value })}>
                         Type here...
                     </textarea>
                 </div>

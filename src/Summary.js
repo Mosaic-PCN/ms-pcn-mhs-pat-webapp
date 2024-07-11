@@ -1,17 +1,24 @@
 import React, { useContext } from 'react';
 import { Amplify } from 'aws-amplify';
-import { post } from 'aws-amplify/api';
 import { Authenticator, withAuthenticator } from '@aws-amplify/ui-react';
 import '@aws-amplify/ui-react/styles.css';
 import Header from './components/Header';
 import { AppContext } from './AppContext';
 import amplifyconfig from './amplifyconfiguration.json';
-import './Summary.css'; // Import the updated Summary.css
+import './Summary.css';
 
 Amplify.configure(amplifyconfig);
 
 const Summary = () => {
     const { formData } = useContext(AppContext);
+
+    const renderSummary = () => {
+        return Object.keys(formData).map((key) => (
+            <p key={key}>
+                <strong>{key.charAt(0).toUpperCase() + key.slice(1)}:</strong> {formData[key].toString()}
+            </p>
+        ));
+    };
 
     return (
         <Authenticator hideSignUp={true}>
@@ -20,10 +27,7 @@ const Summary = () => {
                     <Header signOut={signOut} user={user} />
                     <div className="summary-container">
                         <h2>Summary</h2>
-                        <p><strong>Date:</strong> {formData.workDate && formData.workDate.toString()}</p>
-                        <p><strong>Role:</strong> {formData.role}</p>
-                        <p><strong>Notes:</strong> {formData.notes}</p>
-                        {/* Add more fields as needed */}
+                        {renderSummary()}
                     </div>
                 </div>
             )}
