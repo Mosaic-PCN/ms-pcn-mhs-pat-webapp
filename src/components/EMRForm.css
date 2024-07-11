@@ -1,39 +1,41 @@
-.form-group {
+.emr-form {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+}
+
+.emr-column {
+    flex: 1;
     display: flex;
     flex-direction: column;
-    align-items: flex-start;
-    margin-bottom: 20px;
+    gap: 0.1rem;
+    margin: 0rem 4rem;
+    /* Adjust the margin to control space between columns */
 }
 
-.form-group label {
-    width: 100%;
-    text-align: left;
-    margin-bottom: 5px;
+.emr-container {
+    max-width: 900px;
+    /* Adjust the max-width as needed */
+    margin: auto;
 }
 
-.form-control {
+.number-dropdown,
+.select-dropdown,
+.custom-dropdown {
     width: 100%;
-    padding: 10px;
-    border-radius: 4px;
-    border: 1px solid #ccc;
-    font-size: 16px;
-    box-sizing: border-box;
+    /* Ensure dropdowns take full width of the container */
+    padding: 0.14rem;
+    font-size: 0.875rem;
+    margin-bottom: 0.1rem;
+    /* Reduce the vertical margin between dropdowns */
 }
 
-.react-datepicker-wrapper {
-    width: 100%;
+.form-group {
+    margin-bottom: 0.5rem;
+    /* Reduce the margin-bottom to decrease vertical spacing */
 }
 
-.react-datepicker__input-container {
-    width: 100%;
-}
-
-.react-datepicker-ignore-onclickoutside {
-    width: 100%;
-}
-
-.standard-width {
-    max-width: 300px;
-    /* Adjust the value as needed */
-    width: 100%;
+.react-select-container {
+    margin-bottom: 0.5rem;
+    /* Reduce the margin-bottom to decrease vertical spacing */
 }

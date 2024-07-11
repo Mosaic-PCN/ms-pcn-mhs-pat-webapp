@@ -10,7 +10,7 @@ import './EncounterForm.css';
 
 const EncounterForm = ({ onRoleChange }) => {
     const [startDate, setStartDate] = useState(new Date());
-    const { updateFormData } = useContext(AppContext); // Use context
+    const { updateFormData } = useContext(AppContext);
 
     const handleRoleChange = (selectedOption) => {
         const role = selectedOption.value;
@@ -21,6 +21,10 @@ const EncounterForm = ({ onRoleChange }) => {
     const handleDateChange = (date) => {
         setStartDate(date);
         updateFormData({ workDate: date });
+    };
+
+    const handleLocationChange = (selectedOption) => {
+        updateFormData({ location: selectedOption.value });
     };
 
     const handleClinicNameChange = (selectedOption) => {
@@ -39,8 +43,12 @@ const EncounterForm = ({ onRoleChange }) => {
         updateFormData({ orgTime: selectedOption.value });
     };
 
-    const handleNotesChange = (e) => {
-        updateFormData({ notes: e.target.value });
+    // const handleNotesChange = (e) => {
+    //     updateFormData({ notes: e.target.value });
+    // };
+
+    const handleGamePlanTimeChange = (selectedOption) => {
+        updateFormData({ orgTime: selectedOption.value });
     };
 
     const radioOptions_virtual = [
@@ -59,7 +67,13 @@ const EncounterForm = ({ onRoleChange }) => {
         { label: 'PCC', value: 'pcc' },
         { label: 'PF', value: 'pf' },
         { label: 'HPF', value: 'hpf' },
-        { label: 'Activity Membership Coordinator', value: 'activity_membership_coord' }
+        { label: 'Activity Membership Coordinator', value: 'amc' }
+    ];
+
+    const locationOptions = [
+        { label: 'Home', value: 'home' },
+        { label: 'Mosaic Central Offices', value: 'mosaic_offices' },
+        { label: 'Clinic', value: 'clinic' }
     ];
 
     return (
@@ -75,17 +89,20 @@ const EncounterForm = ({ onRoleChange }) => {
                         placeholderText="Select a date"
                     />
                 </div>
+                <SelectDropdown label="Service Location" id="location" name="service_location" options={locationOptions} onChange={handleLocationChange} />
                 <Dropdown label="Clinic Name" id="clinic_name" name="clinic_name" onChange={handleClinicNameChange} />
                 <SelectDropdown label="Role" id="activity" name="activity" options={roleOptions} onChange={handleRoleChange} />
                 <RadioButtonGroup label="Session Type:" name="session_type" options={radioOptions_virtual} onChange={handleSessionTypeChange} />
                 <RadioButtonGroup label="Meeting Type:" name="meeting_type" options={radioOptions_group} onChange={handleGroupTypeChange} />
-                <CustomDropdown label="Org Time" id="org_time" name="duration" onChange={handleOrgTimeChange} />
-                <div className="form-group">
+                <CustomDropdown label="Org Time" id="org_time" name="org_time" onChange={handleOrgTimeChange} />
+                <CustomDropdown label="Game Planning" id="game_time" name="game_time" onChange={handleGamePlanTimeChange} />
+
+                {/* <div className="form-group">
                     <label htmlFor="editor">Encounter Notes:</label>
                     <textarea id="notes" name="notes" rows="6" cols="33" className="modern-textarea" onChange={handleNotesChange}>
                         Type here...
                     </textarea>
-                </div>
+                </div> */}
             </form>
         </main>
     );

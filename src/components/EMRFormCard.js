@@ -3,7 +3,7 @@ import './EMRFormCard.css';
 
 const EMRCard = ({ title, children }) => {
     return (
-        <div className="emrcard">
+        <div className="emr-card">
             <h2 className="emr-card-title">{title}</h2>
             {children}
         </div>

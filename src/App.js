@@ -65,7 +65,7 @@ function MainForm() {
                             <StakeholderForm />
                         </StakeholdersCard>
                         <div className="button-container">
-                            <button type="button" className="btn btn-primary" onClick={handleNextClick}>Next</button>
+                            <button type="submit" className="btn btn-primary" onClick={handleNextClick}>Next</button>
                         </div>
                     </main>
                 </div>
