@@ -11,7 +11,6 @@ import NextPage from './components/NextPage';
 import { useHistory } from 'react-router-dom';
 import { BrowserRouter as Router, Route, Routes, useNavigate } from 'react-router-dom';
 import EMRCard from './components/EMRFormCard';
-import EMRFormCard from './components/EMRFormCard';
 
 Amplify.configure(amplifyconfig);
 
@@ -19,8 +18,12 @@ function EMR() {
 
     const navigate = useNavigate();
 
-    const goToSummaryPage = () => {
-        navigate('/summary');
+    // const goToSummaryPage = () => {
+    //     navigate('/summary');
+    // };
+
+    const goToNotesPage = () => {
+        navigate('/notes');
     };
 
     const goToHomePage = () => {
@@ -40,7 +43,7 @@ function EMR() {
                     </main>
                     <div className="button-container">
                         <button type="button" className="btn btn-primary" onClick={goToHomePage}>Previous</button>
-                        <button type="Submit" className="btn btn-primary" onClick={goToSummaryPage}>Next</button>
+                        <button type="Submit" className="btn btn-primary" onClick={goToNotesPage}>Next</button>
                     </div>
                 </div>
             )}

@@ -3,9 +3,9 @@
     flex-direction: row;
     justify-content: flex-start;
     /* Ensure columns start from the left */
-    align-items: flex-start;
+    align-items: flex-stretch;
     /* Align items to the start */
-    gap: 1rem;
+    gap: 5rem;
     /* Adjust gap between columns as needed */
 }
 
@@ -18,7 +18,7 @@
 }
 
 .emr-container {
-    max-width: 1200px;
+    max-width: 600px;
     /* Adjust the max-width as needed */
     margin: auto;
     /* Center the container */
@@ -36,11 +36,11 @@
 }
 
 .form-group {
-    margin-bottom: 0.5rem;
+    margin-bottom: 0.2rem;
     /* Reduce the margin-bottom to decrease vertical spacing */
 }
 
 .react-select-container {
-    margin-bottom: 0.5rem;
+    margin-bottom: 0.1rem;
     /* Reduce the margin-bottom to decrease vertical spacing */
 }

@@ -1,33 +1,44 @@
 .form-group {
-    display: flex;
-    align-items: center;
-    /* Center align the items vertically */
-    margin-bottom: 0rem;
+    margin-bottom: 0.5rem;
+    width: 100%;
+    /* Ensure the form group takes full width */
 }
 
 .form-group label {
-    flex-shrink: 0;
-    /* Prevent the label from shrinking */
-    white-space: nowrap;
-    /* Prevent the label from breaking into multiple lines */
-    margin-right: 1px;
-    /* Add some space between the label and the dropdown */
+    display: block;
+    margin-bottom: 0.25rem;
+    font-weight: bold;
+}
+
+.form-group .ind-menu {
+    font-weight: normal;
+}
+
+.form-control {
+    width: 100%;
+    padding: 0.2rem;
+    margin-bottom: 0.2rem;
+    font-size: 1rem;
+}
+
+.dropdown-row {
+    display: flex;
+    gap: 0rem;
 }
 
 .react-select-container {
-    flex-grow: 1;
-    /* Allow the dropdown to take up the remaining space */
-    min-width: 40px;
-    /* Set a minimum width for the dropdown */
+    flex: 1;
+    min-width: 300px;
+    /* Adjust this value to make the dropdowns wider */
+    margin-bottom: 0.5rem;
     width: 100%;
+    /* Ensure the dropdown takes full width */
 }
 
-.standard-width {
-    max-width: 200px;
-    /* Adjust the value as needed */
+.dropdown-container {
+    display: flex;
+    flex-direction: column;
+    gap: 0.15rem;
     width: 100%;
-}
-
-.react-select__control {
-    width: 100%;
+    /* Ensure the container takes full width */
 }

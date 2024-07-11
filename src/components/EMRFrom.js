@@ -39,7 +39,7 @@ const EMRForm = () => {
                     <NumberDropdown className="number-dropdown" label="Membership Coordinator" id="Membership_Coordinator" name="Membership_Coordinator" required max={5} place_holder="Count" onChange={handleChange('memberCoord')} />
                 </div>
                 <div className="emr-column">
-                    <DoubleDropdown label="Liaise with external partners (e.g. EMR vendor)" id="inputId" name="inputName" required options={options} />
+                    <DoubleDropdown label="Liaise with external partners" id="inputId" name="inputName" required options={options} />
                     <TripleDropdown label="Provider or clinic inquiry" id="inputId" name="inputName" required options={options} max_count={100} />
                     <TripleDropdown label="MHS team game planning" id="inputId" name="inputName" required options={options} max_count={8} />
                     <TripleDropdown label="EMR mapping" id="C_C_visit" name="C_C_visit" required options={options} />
@@ -49,7 +49,7 @@ const EMRForm = () => {
                 </div>
                 <div className="emr-column">
                     <TripleDropdown label="Meeting - C&C" id="inputId" name="inputName" required options={options} />
-                    <TripleDropdown label="Meeting - New Member meet and greet" id="inputId" name="inputName" required options={options} />
+                    <TripleDropdown label="Meeting - New Member" id="inputId" name="inputName" required options={options} />
                     <TripleDropdown label="Meeting - CII/CPAR" id="inputId" name="inputName" required options={options} />
                     <TripleDropdown label="Meeting - QI" id="inputId" name="inputName" required options={options} />
                     <TripleDropdown label="Material dropoff" id="inputId" name="inputName" required options={options} />

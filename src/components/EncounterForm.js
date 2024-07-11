@@ -43,10 +43,6 @@ const EncounterForm = ({ onRoleChange }) => {
         updateFormData({ orgTime: selectedOption.value });
     };
 
-    // const handleNotesChange = (e) => {
-    //     updateFormData({ notes: e.target.value });
-    // };
-
     const handleGamePlanTimeChange = (selectedOption) => {
         updateFormData({ orgTime: selectedOption.value });
     };
@@ -97,12 +93,6 @@ const EncounterForm = ({ onRoleChange }) => {
                 <CustomDropdown label="Org Time" id="org_time" name="org_time" onChange={handleOrgTimeChange} />
                 <CustomDropdown label="Game Planning" id="game_time" name="game_time" onChange={handleGamePlanTimeChange} />
 
-                {/* <div className="form-group">
-                    <label htmlFor="editor">Encounter Notes:</label>
-                    <textarea id="notes" name="notes" rows="6" cols="33" className="modern-textarea" onChange={handleNotesChange}>
-                        Type here...
-                    </textarea>
-                </div> */}
             </form>
         </main>
     );

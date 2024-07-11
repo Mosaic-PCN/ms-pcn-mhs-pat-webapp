@@ -30,10 +30,11 @@
 
 .react-select-container {
     flex: 1;
-    min-width: 300px;
-    /* Adjust this value to make the dropdowns wider */
+    min-width: 400px;
+    /* Increased width to 400px */
     margin-bottom: 0.5rem;
 }
+
 
 /* Additional styles to ensure proper alignment */
 .dropdown-container {

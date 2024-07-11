@@ -8,6 +8,7 @@ import PCC from './PCC';
 import PF from './PF';
 import HPF from './HPF';
 import AMC from './AMC';
+import Notes from './Notes';
 import Summary from './Summary';
 import EncounterForm from './components/EncounterForm';
 import StakeholderForm from './components/StakeholdersFrom';
@@ -16,7 +17,7 @@ import StakeholdersCard from './components/StakeholdersFormCard';
 import amplifyconfig from './amplifyconfiguration.json';
 import './App.css';
 import { BrowserRouter as Router, Route, Routes, useNavigate } from 'react-router-dom';
-import { AppProvider } from './AppContext'; // Import AppProvider
+import { AppProvider } from './AppContext';
 
 Amplify.configure(amplifyconfig);
 
@@ -86,6 +87,7 @@ function App() {
                     <Route path="/hpf" element={<HPF />} />
                     <Route path="/amc" element={<AMC />} />
                     <Route path="/summary" element={<Summary />} />
+                    <Route path="/notes" element={<Notes />} />
                 </Routes>
             </Router>
         </AppProvider>
