@@ -1,7 +1,6 @@
 import React from 'react';
 import './DoubleDropdown.css';
 import CustomDropdown from './CustomDropdown';
-
 import { generateTimeOptions } from '../utils';
 
 

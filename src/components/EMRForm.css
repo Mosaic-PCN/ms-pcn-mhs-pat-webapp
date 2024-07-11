@@ -1,22 +1,27 @@
 .emr-form {
     display: flex;
     flex-direction: row;
-    justify-content: space-between;
+    justify-content: flex-start;
+    /* Ensure columns start from the left */
+    align-items: flex-start;
+    /* Align items to the start */
+    gap: 1rem;
+    /* Adjust gap between columns as needed */
 }
 
 .emr-column {
     flex: 1;
     display: flex;
     flex-direction: column;
-    gap: 0.1rem;
-    margin: 0rem 4rem;
-    /* Adjust the margin to control space between columns */
+    gap: 0.5rem;
+    /* Adjust the gap between dropdowns */
 }
 
 .emr-container {
-    max-width: 900px;
+    max-width: 1200px;
     /* Adjust the max-width as needed */
     margin: auto;
+    /* Center the container */
 }
 
 .number-dropdown,
@@ -24,9 +29,9 @@
 .custom-dropdown {
     width: 100%;
     /* Ensure dropdowns take full width of the container */
-    padding: 0.14rem;
+    padding: 0.25rem;
     font-size: 0.875rem;
-    margin-bottom: 0.1rem;
+    margin-bottom: 0.5rem;
     /* Reduce the vertical margin between dropdowns */
 }
 
