@@ -5,16 +5,14 @@ import '@aws-amplify/ui-react/styles.css';
 import Header from './components/Header';
 import { AppContext } from './AppContext';
 import amplifyconfig from './amplifyconfiguration.json';
+import { ToastContainer, toast } from 'react-toastify';
+import 'react-toastify/dist/ReactToastify.css';
 import './Summary.css';
 
 Amplify.configure(amplifyconfig);
 
 const Summary = () => {
-    const { formData } = useContext(AppContext);
-
-    const submitData = () => {
-        console.log('Data submitted!');
-    };
+    const { formData, resetFormData } = useContext(AppContext);
 
     const fieldLabels = {
         workDate: 'Date',
@@ -24,6 +22,19 @@ const Summary = () => {
         meetingType: 'Meeting Type',
         orgTime: 'Org Time',
         notes: 'Encounter Notes'
+    };
+
+    const submitData = () => {
+        toast.success('Data submitted successfully!', {
+            position: "top-right",
+            autoClose: 5000,
+            hideProgressBar: false,
+            closeOnClick: true,
+            pauseOnHover: true,
+            draggable: true,
+            progress: undefined,
+        });
+        resetFormData();
     };
 
     const renderSummary = () => {
@@ -55,6 +66,7 @@ const Summary = () => {
                     <div className="button-container">
                         <button type="button" className="btn btn-primary" onClick={submitData}>Submit</button>
                     </div>
+                    <ToastContainer />
                 </div>
             )}
         </Authenticator>

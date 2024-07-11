@@ -1,0 +1,35 @@
+.amc-card {
+    background-color: #fffefe;
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    padding: 16px;
+    margin: 10px;
+    max-width: 1800px;
+    /* Adjust based on your preference */
+    width: 100%;
+    /* Make the card take full width available */
+    text-align: left;
+    /* Ensure text is aligned to the left */
+    border-width: 1px;
+    /* Adjust this value to your liking */
+    border-style: solid;
+    /* This makes the border visible */
+    border-color: rgb(110, 93, 93);
+    /* Change this to the color you want */
+}
+
+.amc-card-title {
+    font-size: 1.5rem;
+    margin-bottom: 10px;
+    text-align: left;
+    /* Ensure title is aligned to the left */
+    margin-top: 0;
+    /* Remove any top margin */
+    padding-top: 0;
+    /* Remove any top padding */
+}
+
+.card-content {
+    font-size: 1rem;
+}
