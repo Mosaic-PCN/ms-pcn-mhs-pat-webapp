@@ -4,17 +4,30 @@ export const AppContext = createContext();
 
 export const AppProvider = ({ children }) => {
     const initialFormData = {
-        workDate: '',
-        clinicName: '',
-        role: '',
-        sessionType: '',
-        meetingType: '',
-        orgTime: '',
-        gamePlanTime: '',
-        notes: '',
-        selectedLocation: '',
-        selectedRole: '',
-
+        // workDate: '',
+        // clinicName: '',
+        // activity: '',
+        // sessionType: '',
+        // meetingType: '',
+        // orgTime: '',
+        // gamePlanTime: '',
+        // memberPhysMHSP: '',
+        // memberPhysGen: '',
+        // nonMemberPhys: '',
+        // NpMhsp: '',
+        // NpGen: '',
+        // moe: '',
+        // clinMgr: '',
+        // clinOwn: '',
+        // pccMosaic: '',
+        // pccClinic: '',
+        // pf: '',
+        // emrs: '',
+        // hpf: '',
+        // memberCoord: '',
+        // mdt: '',
+        // dyad: '',
+        // notes: '',
     };
 
     const [formData, setFormData] = useState(() => {
@@ -38,53 +51,55 @@ export const AppProvider = ({ children }) => {
         localStorage.removeItem('formData');
     };
 
-    const validateForm = () => {
-        let valid = true;
-        let errors = {};
+    // const validateForm = () => {
+    //     let valid = true;
+    //     let errors = {};
 
-        if (!formData.workDate) {
-            valid = false;
-            errors.workDate = "Date is required";
-        }
-        if (!formData.location) {
-            valid = false;
-            errors.location = "Location is required";
-        }
-        if (!formData.clinicName) {
-            valid = false;
-            errors.clinicName = "Clinic Name is required";
-        }
-        if (!formData.role) {
-            valid = false;
-            errors.role = "Role is required";
-        }
-        if (!formData.sessionType) {
-            valid = false;
-            errors.sessionType = "Session Type is required";
-        }
-        if (!formData.meetingType) {
-            valid = false;
-            errors.meetingType = "Meeting Type is required";
-        }
-        if (!formData.orgTime) {
-            valid = false;
-            errors.orgTime = "Org Time is required";
-        }
-        if (!formData.gamePlanTime) {
-            valid = false;
-            errors.gamePlanTime = "Game Planning Time is required";
-        }
+    //     if (!formData.workDate) {
+    //         valid = false;
+    //         errors.workDate = "Date is required";
+    //     }
+    //     if (!formData.location) {
+    //         valid = false;
+    //         errors.location = "Location is required";
+    //     }
+    //     if (!formData.clinicName) {
+    //         valid = false;
+    //         errors.clinicName = "Clinic Name is required";
+    //     }
+    //     if (!formData.role) {
+    //         valid = false;
+    //         errors.role = "Role is required";
+    //     }
+    //     if (!formData.sessionType) {
+    //         valid = false;
+    //         errors.sessionType = "Session Type is required";
+    //     }
+    //     if (!formData.meetingType) {
+    //         valid = false;
+    //         errors.meetingType = "Meeting Type is required";
+    //     }
+    //     if (!formData.orgTime) {
+    //         valid = false;
+    //         errors.orgTime = "Org Time is required";
+    //     }
+    //     if (!formData.gamePlanTime) {
+    //         valid = false;
+    //         errors.gamePlanTime = "Game Planning Time is required";
+    //     }
 
-        setErrors(errors);
-        return valid;
-    };
+    //     setErrors(errors);
+    //     return valid;
+    // };
 
     useEffect(() => {
         localStorage.setItem('formData', JSON.stringify(formData));
     }, [formData]);
 
     return (
-        <AppContext.Provider value={{ formData, updateFormData, resetFormData, errors, validateForm }}>
+        // <AppContext.Provider value={{ formData, updateFormData, resetFormData, errors, validateForm }}>
+        <AppContext.Provider value={{ formData, updateFormData, resetFormData, errors }}>
+
             {children}
         </AppContext.Provider>
     );

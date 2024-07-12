@@ -3,35 +3,37 @@ import Select from 'react-select';
 import { AppContext } from '../AppContext';
 import './Dropdown.css';
 
-const Dropdown = ({ label, id, name, onChange, required }) => {
-    const [options, setOptions] = useState([]);
+const Dropdown = ({ label, id, name, options, onChange, required, loadOptionsFromFile }) => {
+    const [localOptions, setLocalOptions] = useState(options); // Default to provided options
     const { formData, updateFormData } = useContext(AppContext);
 
+
     useEffect(() => {
-        fetch('/clinic-options.txt')
-            .then(response => {
-                if (!response.ok) {
-                    throw new Error('Network response was not ok');
-                }
-                return response.text();
-            })
-            .then(data => {
-                const parsedOptions = data.split('\n').map(option => ({ label: option.trim(), value: option.trim() })).filter(option => option.label);
-                setOptions(parsedOptions);
-            })
-            .catch(error => {
-                console.error('Error fetching options:', error);
-                setOptions([{ label: 'Error loading options', value: '' }]);
-            });
-    }, []);
+        if (loadOptionsFromFile) {
+            fetch('/clinic-options.txt')
+                .then(response => {
+                    if (!response.ok) {
+                        throw new Error('Network response was not ok');
+                    }
+                    return response.text();
+                })
+                .then(data => {
+                    const parsedOptions = data.split('\n').map(option => ({ label: option.trim(), value: option.trim() })).filter(option => option.label);
+                    setLocalOptions(parsedOptions);
+                })
+                .catch(error => {
+                    console.error('Error fetching options:', error);
+                    setLocalOptions([{ label: 'Error loading options', value: '' }]);
+                });
+        }
+    }, [loadOptionsFromFile]); // Only run if loadOptionsFromFile is true
 
     const handleSelectChange = (selectedOption) => {
         updateFormData({ [name]: selectedOption?.value || null });
     };
 
-    // Determine initial value from formData, and find matching label if it exists
     const initialValue = formData[name]
-        ? options.find(option => option.value === formData[name]) || { label: formData[name], value: formData[name] } // Handle cases where the option isn't yet fetched
+        ? localOptions.find(option => option.value === formData[name]) || { label: formData[name], value: formData[name] }
         : null;
 
     return (
@@ -40,8 +42,8 @@ const Dropdown = ({ label, id, name, onChange, required }) => {
             <Select
                 id={id}
                 name={name}
-                value={initialValue} // Set the initial value from formData
-                options={options}
+                value={initialValue}
+                options={localOptions}
                 onChange={handleSelectChange}
                 className="react-select-container"
                 classNamePrefix="react-select"

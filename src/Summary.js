@@ -22,13 +22,17 @@ const Summary = () => {
     // const formData = location.state?.formData || {};
     // const navigate = useNavigate();
 
+    // const fieldLabels = {
     const fieldLabels = {
         workDate: 'Date',
+        location: 'Service Location',  // Updated key to 'location'
         clinicName: 'Clinic Name',
-        role: 'Role',
+        activity: 'Role',
+        // role: 'Role',
         sessionType: 'Session Type',
         meetingType: 'Meeting Type',
         orgTime: 'Org Time',
+        gameTime: 'Game Plan Time',
         notes: 'Encounter Notes',
         memberPhysMHSP: 'Member phys MHSP',
         memberPhysGen: 'Member phys General',
