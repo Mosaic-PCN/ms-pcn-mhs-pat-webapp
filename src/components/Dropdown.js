@@ -4,7 +4,7 @@ import { AppContext } from '../AppContext';
 import './Dropdown.css';
 
 const Dropdown = ({ label, id, name, options, onChange, required, loadOptionsFromFile }) => {
-    const [localOptions, setLocalOptions] = useState(options); // Default to provided options
+    const [localOptions, setLocalOptions] = useState(options || []); // Start with provided options, if any
     const { formData, updateFormData } = useContext(AppContext);
 
 

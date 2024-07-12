@@ -50,14 +50,14 @@ const EncounterForm = ({ onRoleChange }) => {
     };
 
     const radioOptions_virtual = [
-        { label: 'Virtual', value: 'virtual' },
-        { label: 'In-person', value: 'in-person' }
+        { label: 'Virtual', value: 'Virtual' },
+        { label: 'In-person', value: 'In-Person' }
     ];
 
     const radioOptions_group = [
         { label: '1:1', value: '1:1' },
-        { label: 'Group', value: 'group-session' },
-        { label: 'Non-Visit Encounter', value: 'non_visit' }
+        { label: 'Group', value: 'Group' },
+        { label: 'Non-Visit Encounter', value: 'Non Visit' }
     ];
 
     const roleOptions = [
@@ -92,7 +92,7 @@ const EncounterForm = ({ onRoleChange }) => {
                 <Dropdown label="Clinic Name" id="clinic_name" name="clinicName" onChange={handleClinicNameChange} required loadOptionsFromFile={true}
                 />
                 {/* <Dropdown label="Clinic Name" id="clinic_name" name="clinicName" onChange={handleClinicNameChange} required /> */}
-                <SelectDropdown label="Role" id="activity" name="activity" options={roleOptions} onChange={handleRoleChange} required />
+                <SelectDropdown label="Role" id="activity" name="activity" options={roleOptions} onChange={handleRoleChange} value={formData.role || ''} />
                 <RadioButtonGroup label="Session Type:" name="sessionType" options={radioOptions_virtual} onChange={handleSessionTypeChange} value={formData.sessionType || ''} />
                 <RadioButtonGroup label="Meeting Type:" name="meetingType" options={radioOptions_group} onChange={handleMeetingTypeChange} value={formData.meetingType || ''} />
                 <CustomDropdown label="Org Time" id="org_time" name="orgTime" onChange={handleOrgTimeChange} required />
