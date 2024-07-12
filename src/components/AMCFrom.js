@@ -44,7 +44,6 @@ const AMCForm = () => {
                     <TripleDropdown label="Administration - quarterly packs" id="inputId" name="inputName" required={true} options1={options1} options2={options2} options3={options3} label1={label1} label2={label2} label3={label3} />
                 </div>
                 <div className="amc-column">
-                    <TripleDropdown label="Administration - member benefits programs " id="inputId" name="inputName" required={true} options1={options1} options2={options2} options3={options3} label1={label1} label2={label2} label3={label3} />
                     <TripleDropdown label="Administration - agreements (MAA, MHSP, NP, physio)" id="inputId" name="inputName" required={true} options1={options1} options2={options2} options3={options3} label1={label1} label2={label2} label3={label3} />
                     <TripleDropdown label="Administration - other" id="inputId" name="inputName" required={true} options1={options1} options2={options2} options3={options3} label1={label1} label2={label2} label3={label3} />
                     <TripleDropdown label="Documentation - processes" id="inputId" name="inputName" required={true} options1={options1} options2={options2} options3={options3} label1={label1} label2={label2} label3={label3} />

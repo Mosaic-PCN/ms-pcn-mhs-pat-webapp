@@ -93,8 +93,8 @@ const StakeholderForm = () => {
         <main className="container mt-5">
             <stakeholders-form>
                 <div className="stakeholders-column">
-                    <NumberDropdown className="number-dropdown" label="Member phys MHSP" id="Member_phys_MHSP" name="Member_phys_MHSP" required={true} max={10} place_holder="Count" onChange={handleMemberPhysMhspChange} />
-                    <NumberDropdown className="number-dropdown" label="Member phys General" id="Member_phys_General" name="Member_phys_General" required={true} max={10} place_holder="Count" onChange={handleMemberPhysGenChange} />
+                    <NumberDropdown className="number-dropdown" label="Member phys MHSP" id="Member_phys_MHSP" name="Member_phys_MHSP" required={true} max={50} place_holder="Count" onChange={handleMemberPhysMhspChange} />
+                    <NumberDropdown className="number-dropdown" label="Member phys General" id="Member_phys_General" name="Member_phys_General" required={true} max={50} place_holder="Count" onChange={handleMemberPhysGenChange} />
                     <NumberDropdown className="number-dropdown" label="Non-Member Phys" id="Non_Member_Phys" name="Non_Member_Phys" required={true} max={10} place_holder="Count" onChange={handleNonMemberChange} />
                     <NumberDropdown className="number-dropdown" label="NP - MHSP" id="NP_MHSP" name="NP_MHSP" required={true} max={10} place_holder="Count" onChange={handleNpMhspChange} />
                     <NumberDropdown className="number-dropdown" label="NP - General" id="NP_General" name="NP_General" required={true} max={10} place_holder="Count" onChange={handleNpGenChange} />

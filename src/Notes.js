@@ -45,7 +45,7 @@ function Notes() {
                         <div className="form-group">
                             <label htmlFor="editor">Encounter Notes:</label>
                             <textarea id="notes" name="notes" rows="20" cols="200" className="modern-textarea" onChange={handleNotesChange}>
-                                Type here...
+                                Please type here....
                             </textarea>
                         </div>
 
