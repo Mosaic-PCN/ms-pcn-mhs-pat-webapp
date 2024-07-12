@@ -14,8 +14,6 @@ const EncounterForm = ({ onRoleChange }) => {
     const { formData, updateFormData, errors } = useContext(AppContext);
     const [startDate, setStartDate] = useState(formData.workDate ? new Date(formData.workDate) : new Date());
 
-
-
     const handleRoleChange = (selectedOption) => {
         const role = selectedOption.value;
         updateFormData({ role });
@@ -89,7 +87,7 @@ const EncounterForm = ({ onRoleChange }) => {
                         placeholderText="Select a date"
                     />
                 </div>
-                <SelectDropdown label="Service Location" id="location" name="service_location" options={locationOptions} onChange={handleLocationChange} value={formData.location || ''} // Default from formData
+                <SelectDropdown label="Service Location" id="service_location" name="service_location" options={locationOptions} onChange={handleLocationChange} value={formData.location || ''} // Default from formData
                     required />
                 <Dropdown label="Clinic Name" id="clinic_name" name="clinic_name" onChange={handleClinicNameChange} required />
                 <SelectDropdown label="Role" id="activity" name="activity" options={roleOptions} onChange={handleRoleChange} required />
