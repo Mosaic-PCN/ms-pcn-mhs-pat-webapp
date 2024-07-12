@@ -1,9 +1,11 @@
-import React, { useEffect, useState } from 'react';
+import React, { useEffect, useState, useContext } from 'react';
 import Select from 'react-select';
+import { AppContext } from '../AppContext';
 import './Dropdown.css';
 
-const Dropdown = ({ label, id, name, required }) => {
+const Dropdown = ({ label, id, name, onChange, required }) => {
     const [options, setOptions] = useState([]);
+    const { formData, updateFormData } = useContext(AppContext);
 
     useEffect(() => {
         fetch('/clinic-options.txt')
@@ -23,13 +25,24 @@ const Dropdown = ({ label, id, name, required }) => {
             });
     }, []);
 
+    const handleSelectChange = (selectedOption) => {
+        updateFormData({ [name]: selectedOption?.value || null });
+    };
+
+    // Determine initial value from formData, and find matching label if it exists
+    const initialValue = formData[name]
+        ? options.find(option => option.value === formData[name]) || { label: formData[name], value: formData[name] } // Handle cases where the option isn't yet fetched
+        : null;
+
     return (
         <div className="form-group standard-width">
             <label htmlFor={id}>{label}</label>
             <Select
                 id={id}
                 name={name}
+                value={initialValue} // Set the initial value from formData
                 options={options}
+                onChange={handleSelectChange}
                 className="react-select-container"
                 classNamePrefix="react-select"
                 isSearchable

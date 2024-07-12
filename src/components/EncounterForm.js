@@ -9,8 +9,12 @@ import 'react-datepicker/dist/react-datepicker.css';
 import './EncounterForm.css';
 
 const EncounterForm = ({ onRoleChange }) => {
-    const [startDate, setStartDate] = useState(new Date());
-    const { updateFormData } = useContext(AppContext);
+    // const [startDate, setStartDate] = useState(new Date());
+    // const { updateFormData, formData, errors } = useContext(AppContext);
+    const { formData, updateFormData, errors } = useContext(AppContext);
+    const [startDate, setStartDate] = useState(formData.workDate ? new Date(formData.workDate) : new Date());
+
+
 
     const handleRoleChange = (selectedOption) => {
         const role = selectedOption.value;
@@ -44,7 +48,7 @@ const EncounterForm = ({ onRoleChange }) => {
     };
 
     const handleGamePlanTimeChange = (selectedOption) => {
-        updateFormData({ orgTime: selectedOption.value });
+        updateFormData({ gamePlanTime: selectedOption.value });
     };
 
     const radioOptions_virtual = [
@@ -85,14 +89,14 @@ const EncounterForm = ({ onRoleChange }) => {
                         placeholderText="Select a date"
                     />
                 </div>
-                <SelectDropdown label="Service Location" id="location" name="service_location" options={locationOptions} onChange={handleLocationChange} />
-                <Dropdown label="Clinic Name" id="clinic_name" name="clinic_name" onChange={handleClinicNameChange} />
-                <SelectDropdown label="Role" id="activity" name="activity" options={roleOptions} onChange={handleRoleChange} />
-                <RadioButtonGroup label="Session Type:" name="session_type" options={radioOptions_virtual} onChange={handleSessionTypeChange} />
-                <RadioButtonGroup label="Meeting Type:" name="meeting_type" options={radioOptions_group} onChange={handleGroupTypeChange} />
-                <CustomDropdown label="Org Time" id="org_time" name="org_time" onChange={handleOrgTimeChange} />
-                <CustomDropdown label="Game Planning" id="game_time" name="game_time" onChange={handleGamePlanTimeChange} />
-
+                <SelectDropdown label="Service Location" id="location" name="service_location" options={locationOptions} onChange={handleLocationChange} value={formData.location || ''} // Default from formData
+                    required />
+                <Dropdown label="Clinic Name" id="clinic_name" name="clinic_name" onChange={handleClinicNameChange} required />
+                <SelectDropdown label="Role" id="activity" name="activity" options={roleOptions} onChange={handleRoleChange} required />
+                <RadioButtonGroup label="Session Type:" name="session_type" options={radioOptions_virtual} onChange={handleSessionTypeChange} value={formData.sessionType || ''} />
+                <RadioButtonGroup label="Meeting Type:" name="meeting_type" options={radioOptions_group} onChange={handleGroupTypeChange} value={formData.meetingType || ''} />
+                <CustomDropdown label="Org Time" id="org_time" name="org_time" onChange={handleOrgTimeChange} required />
+                <CustomDropdown label="Game Planning" id="game_time" name="game_time" onChange={handleGamePlanTimeChange} required />
             </form>
         </main>
     );

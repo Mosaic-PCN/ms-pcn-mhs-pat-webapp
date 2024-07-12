@@ -1,9 +1,8 @@
 import React from 'react';
 
-const RadioButtonGroup = ({ label, name, options, onChange }) => {
+const RadioButtonGroup = ({ label, name, options, onChange, value }) => {
     const handleChange = (event) => {
-        const selectedValue = event.target.value;
-        onChange({ value: selectedValue });
+        onChange({ value: event.target.value });
     };
 
     return (
@@ -19,6 +18,7 @@ const RadioButtonGroup = ({ label, name, options, onChange }) => {
                             id={`${name}-${option.value}`}
                             value={option.value}
                             onChange={handleChange}
+                            checked={option.value === value}
                         />
                         <label className="form-check-label" htmlFor={`${name}-${option.value}`}>
                             {option.label}

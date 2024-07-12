@@ -1,8 +1,9 @@
-import React, { useState } from 'react';
+import React, { useState, useContext } from 'react';
 import { Amplify } from 'aws-amplify';
 import { Authenticator, withAuthenticator } from '@aws-amplify/ui-react';
 import '@aws-amplify/ui-react/styles.css';
 import Header from './components/Header';
+import { AppContext } from './AppContext';
 import EMR from './EMR';
 import PCC from './PCC';
 import PF from './PF';
@@ -22,8 +23,8 @@ import { AppProvider } from './AppContext';
 Amplify.configure(amplifyconfig);
 
 function MainForm() {
+    const { formData } = useContext(AppContext); // Get formData from context
     const [selectedRole, setSelectedRole] = useState('');
-
     const navigate = useNavigate();
 
     const handleRoleChange = (selectedRole) => {
@@ -33,19 +34,19 @@ function MainForm() {
     const handleNextClick = () => {
         switch (selectedRole) {
             case 'pcc':
-                navigate('/pcc');
+                navigate('/pcc', { state: { formData } });
                 break;
             case 'emr':
-                navigate('/emr');
+                navigate('/emr', { state: { formData } });
                 break;
             case 'pf':
-                navigate('/pf');
+                navigate('/pf', { state: { formData } });
                 break;
             case 'hpf':
-                navigate('/hpf');
+                navigate('/hpf', { state: { formData } });
                 break;
             case 'amc':
-                navigate('/amc');
+                navigate('/amc', { state: { formData } });
                 break;
             default:
                 console.log('Invalid role');

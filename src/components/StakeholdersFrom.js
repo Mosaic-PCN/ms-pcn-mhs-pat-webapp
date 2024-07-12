@@ -5,8 +5,8 @@ import SelectDropdown from './SelectDropdown';
 import './StakeholdersForm.css';
 
 const StakeholderForm = () => {
-    const [startDate, setStartDate] = useState(new Date());
-    const { updateFormData } = useContext(AppContext); // Use context
+    const { formData, updateFormData } = useContext(AppContext);
+    const [startDate, setStartDate] = useState(formData.workDate ? new Date(formData.workDate) : new Date());
 
     const yes_no_Options = [
         { label: 'Yes', value: 'yes' },

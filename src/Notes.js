@@ -4,6 +4,7 @@ import { Authenticator, withAuthenticator } from '@aws-amplify/ui-react';
 import '@aws-amplify/ui-react/styles.css';
 import Header from './components/Header';
 import amplifyconfig from './amplifyconfiguration.json';
+import { useLocation } from 'react-router-dom';
 import './App.css';
 import { AppContext } from './AppContext';
 
@@ -12,18 +13,24 @@ import { BrowserRouter as Router, Route, Routes, useNavigate } from 'react-route
 Amplify.configure(amplifyconfig);
 
 function Notes() {
-
-    const [startDate, setStartDate] = useState(new Date());
-    const { updateFormData } = useContext(AppContext);
+    const { formData, updateFormData } = useContext(AppContext);
     const navigate = useNavigate();
+    const location = useLocation();
+    // const formData = location.state?.formData || {};
+    const [startDate, setStartDate] = useState(new Date());
+    // const { updateFormData } = useContext(AppContext);
+
+    const handleNotesChange = (e) => {
+        updateFormData({ notes: e.target.value });
+    };
 
     const handleDateChange = (date) => {
         setStartDate(date);
         updateFormData({ workDate: date });
     };
 
-    const handleNotesChange = (e) => {
-        updateFormData({ notes: e.target.value });
+    const handlePreviousPage = () => {
+        navigate(-1);
     };
 
     const goToSummaryPage = () => {
@@ -43,7 +50,7 @@ function Notes() {
                         </div>
 
                         <div className="button-container">
-                            <button type="button" className="btn btn-primary" onClick={() => navigate(-1)}>Previous</button>
+                            <button type="button" className="btn btn-primary" onClick={handlePreviousPage}>Previous</button>
                             <button type="submit" className="btn btn-primary" onClick={goToSummaryPage}>Next</button>
                         </div>
                     </main>

@@ -6,6 +6,7 @@ import Header from './components/Header';
 import { AppContext } from './AppContext';
 import amplifyconfig from './amplifyconfiguration.json';
 import { ToastContainer, toast } from 'react-toastify';
+import { useLocation } from 'react-router-dom';
 import { useNavigate } from 'react-router-dom';
 import 'react-toastify/dist/ReactToastify.css';
 import './Summary.css';
@@ -15,6 +16,11 @@ Amplify.configure(amplifyconfig);
 const Summary = () => {
     const { formData, resetFormData } = useContext(AppContext);
     const navigate = useNavigate();
+    const location = useLocation();
+    // const { formData, resetFormData } = useContext(AppContext);
+    // const { resetFormData } = useContext(AppContext);
+    // const formData = location.state?.formData || {};
+    // const navigate = useNavigate();
 
     const fieldLabels = {
         workDate: 'Date',
@@ -55,6 +61,10 @@ const Summary = () => {
         resetFormData();
     };
 
+    const handlePreviousPage = () => {
+        navigate(-1);
+    };
+
     const renderSummary = () => {
         return Object.keys(formData).map((key) => {
             let value = formData[key];
@@ -82,7 +92,9 @@ const Summary = () => {
                         {renderSummary()}
                     </div>
                     <div className="button-container">
-                        <button type="button" className="btn btn-primary" onClick={() => navigate(-1)}>Previous</button>
+                        {/* <button type="button" className="btn btn-primary" onClick={() => navigate(-1)}>Previous</button> */}
+                        <button type="button" className="btn btn-primary" onClick={handlePreviousPage}>Previous</button>
+
                         <button type="submit" className="btn btn-primary" onClick={submitData}>Submit</button>
                     </div>
                     <ToastContainer />
