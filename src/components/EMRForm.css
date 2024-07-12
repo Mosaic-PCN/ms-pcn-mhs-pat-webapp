@@ -5,7 +5,7 @@
     /* Ensure columns start from the left */
     align-items: flex-stretch;
     /* Align items to the start */
-    gap: 6rem;
+    gap: 3rem;
     /* Adjust gap between columns as needed */
 }
 
