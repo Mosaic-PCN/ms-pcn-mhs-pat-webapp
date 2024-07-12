@@ -36,20 +36,20 @@ function EMR() {
                 <div className="App">
                     <Header signOut={signOut} user={user} />
                     <main className="App-main">
-
                         <EMRCard title="EMR">
-                            <EMRForm />
+                            <div className="card-content-wrapper">
+                                <EMRForm />
+                            </div>
                         </EMRCard>
+                        <div className="emr-button-container"> {/* Place the buttons outside the card */}
+                            <button type="button" className="btn btn-primary" onClick={goToHomePage}>Previous</button>
+                            <button type="Submit" className="btn btn-primary" onClick={goToNotesPage}>Next</button>
+                        </div>
                     </main>
-                    <div className="button-container">
-                        <button type="button" className="btn btn-primary" onClick={goToHomePage}>Previous</button>
-                        <button type="Submit" className="btn btn-primary" onClick={goToNotesPage}>Next</button>
-                    </div>
                 </div>
             )}
         </Authenticator>
     );
 }
-
 
 export default withAuthenticator(EMR, { hideSignUp: true });

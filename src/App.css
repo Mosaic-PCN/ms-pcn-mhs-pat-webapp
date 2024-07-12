@@ -21,6 +21,9 @@
   flex-wrap: wrap;
   align-items: flex-start;
   padding-left: 10px;
+  position: relative;
+  /* Make App-main positioned relative */
+
 }
 
 .button-container {
@@ -36,6 +39,30 @@
 .btn-primary {
   margin: 0.5rem 1;
   /* Adjust vertical margin between buttons */
+}
+
+.App-main {
+  /* ... (Your existing styles) ... */
+}
+
+.emr-button-container {
+  position: absolute;
+  top: 100px;
+  /* Adjust for the top margin of App-main */
+  right: 10px;
+  display: flex;
+  flex-direction: column;
+  gap: 5px;
+}
+
+/* Media queries for button container */
+@media (max-width: 768px) {
+  .emr-button-container {}
+}
+
+/* Media queries for button container */
+@media (max-width: 768px) {
+  .pcc-button-container {}
 }
 
 

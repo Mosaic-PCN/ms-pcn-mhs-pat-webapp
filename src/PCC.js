@@ -37,9 +37,11 @@ function PCC() {
                     <Header signOut={signOut} user={user} />
                     <main className="App-main">
                         <PCCCard title="PCC">
-                            <PCCForm />
+                            <div className="card-content-wrapper">
+                                <PCCForm />
+                            </div>
                         </PCCCard>
-                        <div className="button-container">
+                        <div className="pcc-button-container"> {/* Place the buttons outside the card */}
                             <button type="button" className="btn btn-primary" onClick={goToHomePage}>Previous</button>
                             <button type="Submit" className="btn btn-primary" onClick={goToNotesPage}>Next</button>
                         </div>
@@ -49,4 +51,5 @@ function PCC() {
         </Authenticator>
     );
 }
+
 export default withAuthenticator(PCC, { hideSignUp: true });

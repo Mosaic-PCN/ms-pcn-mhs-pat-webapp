@@ -61,7 +61,9 @@ function MainForm() {
                     <Header signOut={signOut} user={user} />
                     <main className="App-main">
                         <Card title="Encounter Information">
-                            <EncounterForm onRoleChange={handleRoleChange} />
+                            <div className="card-content-wrapper"> {/* Added wrapper */}
+                                <EncounterForm onRoleChange={handleRoleChange} />
+                            </div>
                         </Card>
                         <StakeholdersCard title="Stakeholders">
                             <StakeholderForm />

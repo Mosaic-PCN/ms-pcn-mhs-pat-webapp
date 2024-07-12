@@ -17,6 +17,21 @@
     /* This makes the border visible */
     border-color: rgb(170, 165, 165);
     /* Change this to the color you want */
+    position: relative;
+    /* Make card positioned relative */
+}
+
+.emr-button-container {
+    position: absolute;
+    top: 10px;
+    /* Adjust top position as needed */
+    right: 10px;
+    /* Adjust right position as needed */
+    display: flex;
+    flex-direction: column;
+    /* Stack buttons vertically */
+    gap: 5px;
+    /* Add some gap between buttons */
 }
 
 .emr-card-title {
