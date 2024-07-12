@@ -7,18 +7,15 @@ const Dropdown = ({ label, id, name, options, onChange, required, loadOptionsFro
     const [localOptions, setLocalOptions] = useState(options || []); // Start with provided options, if any
     const { formData, updateFormData } = useContext(AppContext);
 
-
     useEffect(() => {
         if (loadOptionsFromFile) {
             fetch('/clinic-options.txt')
-                .then(response => {
-                    if (!response.ok) {
-                        throw new Error('Network response was not ok');
-                    }
-                    return response.text();
-                })
+                .then(response => response.text())
                 .then(data => {
-                    const parsedOptions = data.split('\n').map(option => ({ label: option.trim(), value: option.trim() })).filter(option => option.label);
+                    const parsedOptions = data.split('\n').map(option => ({
+                        label: option.trim(),
+                        value: option.trim()
+                    })).filter(option => option.label);
                     setLocalOptions(parsedOptions);
                 })
                 .catch(error => {
@@ -26,7 +23,7 @@ const Dropdown = ({ label, id, name, options, onChange, required, loadOptionsFro
                     setLocalOptions([{ label: 'Error loading options', value: '' }]);
                 });
         }
-    }, [loadOptionsFromFile]); // Only run if loadOptionsFromFile is true
+    }, [loadOptionsFromFile]); // Run only if loadOptionsFromFile changes
 
     const handleSelectChange = (selectedOption) => {
         updateFormData({ [name]: selectedOption?.value || null });

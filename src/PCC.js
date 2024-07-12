@@ -10,7 +10,7 @@ import { AppContext } from './AppContext';
 // import { useHistory } from 'react-router-dom';
 import { BrowserRouter as Router, Route, Routes, useNavigate } from 'react-router-dom';
 import PCCCard from './components/PCCFormCard';
-import PCCForm from './components/EMRFrom';
+import PCCForm from './components/PCCFrom';
 
 Amplify.configure(amplifyconfig);
 

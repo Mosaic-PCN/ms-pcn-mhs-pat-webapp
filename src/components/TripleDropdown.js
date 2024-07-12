@@ -3,7 +3,6 @@ import Select from 'react-select';
 import './TripleDropdown.css';
 import CustomDropdown from './CustomDropdown';
 import NumberDropdown from './NumberDropdown';
-
 import { generateTimeOptions } from '../utils';
 
 

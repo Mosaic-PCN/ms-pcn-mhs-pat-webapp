@@ -89,10 +89,10 @@ const EncounterForm = ({ onRoleChange }) => {
                 </div>
                 <SelectDropdown label="Service Location" id="service_location" name="service_location" options={locationOptions} onChange={handleLocationChange} value={formData.location || ''}
                     required />
-                <Dropdown label="Clinic Name" id="clinic_name" name="clinicName" onChange={handleClinicNameChange} required loadOptionsFromFile={true}
-                />
+                <Dropdown label="Clinic Name" id="clinic_name" name="clinicName" loadOptionsFromFile={true} onChange={handleClinicNameChange} required />
                 {/* <Dropdown label="Clinic Name" id="clinic_name" name="clinicName" onChange={handleClinicNameChange} required /> */}
-                <SelectDropdown label="Role" id="activity" name="activity" options={roleOptions} onChange={handleRoleChange} value={formData.role || ''} />
+                {/* <SelectDropdown label="Role" id="activity" name="activity" options={roleOptions} onChange={handleRoleChange} value={formData.role || ''} /> */}
+                <Dropdown label="Role" id="activity" name="activity" options={roleOptions} onChange={handleRoleChange} required />
                 <RadioButtonGroup label="Session Type:" name="sessionType" options={radioOptions_virtual} onChange={handleSessionTypeChange} value={formData.sessionType || ''} />
                 <RadioButtonGroup label="Meeting Type:" name="meetingType" options={radioOptions_group} onChange={handleMeetingTypeChange} value={formData.meetingType || ''} />
                 <CustomDropdown label="Org Time" id="org_time" name="orgTime" onChange={handleOrgTimeChange} required />

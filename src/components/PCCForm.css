@@ -1,43 +1,29 @@
-pcc-form {
+.pcc-form {
     display: flex;
     justify-content: space-between;
-}
-
-.column {
-    flex: 1;
+    gap: 100px;
+    /* Adjust gap between columns */
 }
 
 .container {
-    max-width: 900px;
-    margin: auto;
+    max-width: 100px;
+    /* Adjust based on your preference */
+    margin: 0;
+    padding: 1%;
+    /* Add padding around the container */
 }
 
 .pcc-column {
+    flex: 1;
     display: flex;
     flex-direction: column;
-    gap: 2rem;
+    gap: 5px;
+    /* Adjust gap between items in each column */
 }
 
 .number-dropdown,
-.select-dropdown {
-    width: 100px;
-    /* Adjust the width as needed */
-}
-
-pcc-form {
-    display: flex;
-    flex-direction: row;
-    justify-content: space-between;
-}
-
-.pcc-form .column {
-    flex: 1;
-    margin: 0 1rem;
-}
-
-.pcc-form .number-dropdown,
-.pcc-form .select-dropdown {
-    padding: 0.25rem;
-    font-size: 0.875rem;
-    /* Smaller font size */
+.select-dropdown,
+.custom-dropdown {
+    width: 100%;
+    box-sizing: border-box;
 }

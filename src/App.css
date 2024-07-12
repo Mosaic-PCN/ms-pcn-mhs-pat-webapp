@@ -1,7 +1,6 @@
 .App {
   text-align: center;
   font-size: calc(6px + 1vmin);
-  /* Adjust this value to make the font smaller */
 }
 
 .App-header {
@@ -20,11 +19,8 @@
   display: flex;
   flex-direction: row;
   flex-wrap: wrap;
-  /* Add this line to allow the items to wrap onto the next line if necessary */
   align-items: flex-start;
-  /* Align items to the start (left) */
   padding-left: 10px;
-  /* Add some padding on the left */
 }
 
 .button-container {
@@ -33,11 +29,24 @@
   width: 100%;
   max-width: 800px;
   padding: 10px 0;
-  padding-left: 1720px;
-  /* Adjust this value to move the buttons to the right */
+  margin: 0 auto;
+  /* Center the button container */
 }
 
 .btn-primary {
-  margin: 1 20px;
-  /* Add space between buttons if needed */
+  margin: 0 20px;
+}
+
+/* Media queries for button container */
+@media (max-width: 768px) {
+  .button-container {
+    flex-direction: column;
+    /* Stack buttons vertically on small screens */
+    align-items: center;
+  }
+
+  .btn-primary {
+    margin: 10px 0;
+    /* Adjust margin for vertical stacking */
+  }
 }
