@@ -25,17 +25,19 @@
 
 .button-container {
   display: flex;
-  justify-content: space-between;
-  width: 100%;
-  max-width: 800px;
-  padding: 10px 0;
-  margin: 0 auto;
-  /* Center the button container */
+  flex-direction: column;
+  /* Stack buttons vertically */
+  align-items: flex-end;
+  /* Align buttons to the right edge */
+  margin-top: 1rem;
+  /* Optional: Add some space above buttons */
 }
 
 .btn-primary {
-  margin: 0 20px;
+  margin: 0.5rem 1;
+  /* Adjust vertical margin between buttons */
 }
+
 
 /* Media queries for button container */
 @media (max-width: 768px) {

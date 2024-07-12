@@ -6,14 +6,14 @@ import NumberDropdown from './NumberDropdown';
 import { generateTimeOptions } from '../utils';
 
 
-const TripleDropdown = ({ label, id, name, required, options1, options2, options3, label1, label2, label3, max_count }) => {
+const TripleDropdown = ({ label, id, name, label1, label2, label3, max_count }) => {
     return (
         <div className="form-group standard-width">
             <label htmlFor={id}>{label}</label>
             <div className="dropdown-row">
                 <div className="dropdown-container">
                     {/* <label className="ind-menu" htmlFor={`${id}-dropdown1`}>{label1}</label> */}
-                    <NumberDropdown className="number-dropdown" label={label1} id="count" name="count" required={true} max={max_count} />
+                    <NumberDropdown className="number-dropdown" label={label1} id="count" name="count" max={max_count} place_holder="Count" />
                 </div>
                 <div className="dropdown-container">
                     {/* <label className="ind-menu" htmlFor={`${id}-dropdown1`}>{label2}</label> */}

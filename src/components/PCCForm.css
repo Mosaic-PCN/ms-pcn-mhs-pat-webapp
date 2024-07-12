@@ -1,29 +1,50 @@
 .pcc-form {
     display: flex;
-    justify-content: space-between;
-    gap: 100px;
-    /* Adjust gap between columns */
-}
-
-.container {
-    max-width: 100px;
-    /* Adjust based on your preference */
-    margin: 0;
-    padding: 1%;
-    /* Add padding around the container */
+    flex-direction: row;
+    justify-content: flex-start;
+    /* Ensure columns start from the left */
+    align-items: flex-stretch;
+    /* Align items to the start */
+    gap: 3rem;
+    /* Adjust gap between columns as needed */
 }
 
 .pcc-column {
-    flex: 1;
+    flex: 1 1 30%;
+    /* Adjust the flex-grow, flex-shrink, and flex-basis properties for flexibility */
     display: flex;
     flex-direction: column;
-    gap: 5px;
-    /* Adjust gap between items in each column */
+    gap: 0.2rem;
+    /* Adjust the gap between dropdowns */
+    min-width: 400px;
+    /* Ensure each column has a minimum width */
+}
+
+.pcc-container {
+    max-width: 100px;
+    /* Adjust the max-width as needed */
+    width: 100%;
+    margin: auto;
+    /* Center the container */
 }
 
 .number-dropdown,
 .select-dropdown,
 .custom-dropdown {
     width: 100%;
-    box-sizing: border-box;
+    /* Ensure dropdowns take full width of the container */
+    padding: 0.25rem;
+    font-size: 0.875rem;
+    margin-bottom: 0.5rem;
+    /* Reduce the vertical margin between dropdowns */
+}
+
+.form-group {
+    margin-bottom: 0.2rem;
+    /* Reduce the margin-bottom to decrease vertical spacing */
+}
+
+.react-select-container {
+    margin-bottom: 0.1rem;
+    /* Reduce the margin-bottom to decrease vertical spacing */
 }
