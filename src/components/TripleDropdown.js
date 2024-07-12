@@ -17,11 +17,11 @@ const TripleDropdown = ({ label, id, name, required, options1, options2, options
                 </div>
                 <div className="dropdown-container">
                     {/* <label className="ind-menu" htmlFor={`${id}-dropdown1`}>{label2}</label> */}
-                    <CustomDropdown label={label2} id="org_time" name="duration" />
+                    <CustomDropdown label={label2} id="org_time" name="duration" place_holder='Direct Time' />
                 </div>
                 <div className="dropdown-container">
                     {/* <label className="ind-menu" htmlFor={`${id}-dropdown1`}>{label3}</label> */}
-                    <CustomDropdown label={label3} id="org_time" name="duration" />
+                    <CustomDropdown label={label3} id="org_time" name="duration" place_holder='Inirect Time' />
                 </div>
             </div>
         </div>

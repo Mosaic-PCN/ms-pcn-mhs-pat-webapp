@@ -5,21 +5,25 @@
     /* Ensure columns start from the left */
     align-items: flex-stretch;
     /* Align items to the start */
-    gap: 5rem;
+    gap: 6rem;
     /* Adjust gap between columns as needed */
 }
 
 .emr-column {
-    flex: 1;
+    flex: 1 1 30%;
+    /* Adjust the flex-grow, flex-shrink, and flex-basis properties for flexibility */
     display: flex;
     flex-direction: column;
-    gap: 0.5rem;
+    gap: 0.2rem;
     /* Adjust the gap between dropdowns */
+    min-width: 400px;
+    /* Ensure each column has a minimum width */
 }
 
 .emr-container {
-    max-width: 600px;
+    max-width: 100px;
     /* Adjust the max-width as needed */
+    width: 100%;
     margin: auto;
     /* Center the container */
 }

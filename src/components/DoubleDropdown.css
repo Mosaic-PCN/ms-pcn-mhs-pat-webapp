@@ -23,14 +23,15 @@
 
 .dropdown-row {
     display: flex;
-    gap: 0rem;
+    gap: 0.5rem;
+    /* Adjust this value if needed */
 }
 
 .react-select-container {
     flex: 1;
-    min-width: 300px;
+    min-width: 400px;
     /* Adjust this value to make the dropdowns wider */
-    margin-bottom: 0.5rem;
+    margin-bottom: 0.2rem;
     width: 100%;
     /* Ensure the dropdown takes full width */
 }
