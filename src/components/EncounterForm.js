@@ -17,8 +17,14 @@ const EncounterForm = ({ onRoleChange }) => {
     const handleRoleChange = (selectedOption) => {
         const role = selectedOption.value;
         updateFormData({ role });
-        onRoleChange(role);
+        onRoleChange(role); // Call the prop function to update parent state
     };
+
+    // const handleRoleChange = (selectedOption) => {
+    //     const role = selectedOption.value;
+    //     updateFormData({ role });
+    //     onRoleChange(role);
+    // };
 
     const handleDateChange = (date) => {
         setStartDate(date);

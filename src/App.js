@@ -1,4 +1,4 @@
-import React, { useState, useContext } from 'react';
+import React, { useState, useContext, useEffect } from 'react'; // Import useEffect
 import { Amplify } from 'aws-amplify';
 import { Authenticator, withAuthenticator } from '@aws-amplify/ui-react';
 import '@aws-amplify/ui-react/styles.css';
@@ -23,13 +23,20 @@ import { AppProvider } from './AppContext';
 Amplify.configure(amplifyconfig);
 
 function MainForm() {
-    const { formData } = useContext(AppContext); // Get formData from context
-    const [selectedRole, setSelectedRole] = useState('');
+    const { formData } = useContext(AppContext);
+    const [selectedRole, setSelectedRole] = useState(formData.role || '');
     const navigate = useNavigate();
 
     const handleRoleChange = (selectedRole) => {
         setSelectedRole(selectedRole);
     };
+
+    // useEffect(() => {
+    //     // Check selectedRole and navigate on initial render and formData updates
+    //     if (selectedRole) {
+    //         handleNextClick();
+    //     }
+    // }, [selectedRole, formData]);
 
     const handleNextClick = () => {
         switch (selectedRole) {
@@ -61,7 +68,9 @@ function MainForm() {
                     <Header signOut={signOut} user={user} />
                     <main className="App-main">
                         <Card title="Encounter Information">
-                            <EncounterForm onRoleChange={handleRoleChange} />
+                            <div className="card-content-wrapper">
+                                <EncounterForm onRoleChange={handleRoleChange} />
+                            </div>
                         </Card>
                         <StakeholdersCard title="Stakeholders">
                             <StakeholderForm />
