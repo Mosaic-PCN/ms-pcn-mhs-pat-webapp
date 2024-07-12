@@ -11,12 +11,15 @@ import NextPage from './components/NextPage';
 import { useHistory } from 'react-router-dom';
 import { BrowserRouter as Router, Route, Routes, useNavigate } from 'react-router-dom';
 import EMRCard from './components/EMRFormCard';
+import HelpModal from './components/HelpModal'; // Import HelpModal
+
 
 Amplify.configure(amplifyconfig);
 
 function EMR() {
 
     const navigate = useNavigate();
+    const [isHelpModalOpen, setIsHelpModalOpen] = useState(false);
 
     // const goToSummaryPage = () => {
     //     navigate('/summary');
@@ -46,6 +49,11 @@ function EMR() {
                             <button type="Submit" className="btn btn-primary" onClick={goToNotesPage}>Next</button>
                         </div>
                     </main>
+                    <HelpModal
+                        isOpen={isHelpModalOpen}
+                        onRequestClose={() => setIsHelpModalOpen(false)}
+                        content={<div>Here you can provide more explanation about the form...</div>}
+                    />
                 </div>
             )}
         </Authenticator>

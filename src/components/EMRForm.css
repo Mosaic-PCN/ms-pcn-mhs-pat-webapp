@@ -48,3 +48,7 @@
     margin-bottom: 0.2rem;
     /* Reduce the margin-bottom to decrease vertical spacing */
 }
+
+.help-icon {
+    cursor: pointer;
+}

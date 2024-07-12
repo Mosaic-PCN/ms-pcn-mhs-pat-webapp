@@ -51,6 +51,22 @@ export const AppProvider = ({ children }) => {
         localStorage.removeItem('formData');
     };
 
+    const fieldExplanations = {
+        workDate: 'The date of the encounter.',
+        location: 'The location where the encounter occurred.',
+        clinicName: 'The name of the clinic where the encounter took place.',
+        role: 'Your role during the encounter (e.g., EMR, PCC, PF).',
+        sessionType: 'Whether the session was virtual or in-person.',
+        meetingType: 'The type of meeting (e.g., 1:1, group, non-visit).',
+        orgTime: 'Time spent on organization during the encounter.',
+        gamePlanTime: 'Time spent on game planning during the encounter.',
+        // ... Add explanations for other fields in your forms ...
+        memberPhysMHSP: 'Number of Member Physicians specializing in MHSP.',
+        memberPhysGen: 'Number of Member Physicians in General Practice.',
+        nonMemberPhys: 'Number of Non-Member Physicians.',
+        // ... and so on for the rest of your fields ...
+    };
+
     // const validateForm = () => {
     //     let valid = true;
     //     let errors = {};
@@ -98,7 +114,7 @@ export const AppProvider = ({ children }) => {
 
     return (
         // <AppContext.Provider value={{ formData, updateFormData, resetFormData, errors, validateForm }}>
-        <AppContext.Provider value={{ formData, updateFormData, resetFormData, errors }}>
+        <AppContext.Provider value={{ formData, updateFormData, resetFormData, errors, fieldExplanations }}>
 
             {children}
         </AppContext.Provider>
