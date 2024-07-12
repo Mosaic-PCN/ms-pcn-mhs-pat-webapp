@@ -9,12 +9,13 @@ import 'react-datepicker/dist/react-datepicker.css';
 import './EncounterForm.css';
 
 const EncounterForm = ({ onRoleChange }) => {
+    // const [startDate, setStartDate] = useState(new Date());
+    // const { updateFormData, formData, errors } = useContext(AppContext);
     const { formData, updateFormData, errors } = useContext(AppContext);
     const [startDate, setStartDate] = useState(formData.workDate ? new Date(formData.workDate) : new Date());
 
     const handleRoleChange = (selectedOption) => {
         const role = selectedOption.value;
-        console.log('Role changed to:', role); // Debug log
         updateFormData({ role });
         onRoleChange(role);
     };
@@ -88,10 +89,9 @@ const EncounterForm = ({ onRoleChange }) => {
                 </div>
                 <SelectDropdown label="Service Location" id="service_location" name="service_location" options={locationOptions} onChange={handleLocationChange} value={formData.location || ''}
                     required />
-                <Dropdown label="Clinic Name" id="clinic_name" name="clinicName" onChange={handleClinicNameChange} required loadOptionsFromFile={true}
-                />
+                <Dropdown label="Clinic Name" id="clinic_name" name="clinicName" loadOptionsFromFile={true} onChange={handleClinicNameChange} required />
                 {/* <Dropdown label="Clinic Name" id="clinic_name" name="clinicName" onChange={handleClinicNameChange} required /> */}
-                <SelectDropdown label="Role" id="activity" name="activity" options={roleOptions} onChange={handleRoleChange} value={formData.activity || ''} />
+                <SelectDropdown label="Role" id="activity" name="activity" options={roleOptions} onChange={handleRoleChange} value={formData.role || ''} />
                 <RadioButtonGroup label="Session Type:" name="sessionType" options={radioOptions_virtual} onChange={handleSessionTypeChange} value={formData.sessionType || ''} />
                 <RadioButtonGroup label="Meeting Type:" name="meetingType" options={radioOptions_group} onChange={handleMeetingTypeChange} value={formData.meetingType || ''} />
                 <CustomDropdown label="Org Time" id="org_time" name="orgTime" onChange={handleOrgTimeChange} required />
