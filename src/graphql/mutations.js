@@ -1,45 +1,63 @@
 /* eslint-disable */
 // this is an auto generated file. This will be overwritten
 
-export const createNote = /* GraphQL */ `
-  mutation CreateNote(
-    $input: CreateNoteInput!
-    $condition: ModelNoteConditionInput
+export const createEncounter = /* GraphQL */ `
+  mutation CreateEncounter(
+    $input: CreateEncounterInput!
+    $condition: ModelEncounterConditionInput
   ) {
-    createNote(input: $input, condition: $condition) {
+    createEncounter(input: $input, condition: $condition) {
       id
-      name
-      description
+      workDate
+      clinicName
+      role
+      sessionType
+      meetingType
+      orgTime
+      gamePlanTime
+      notes
       createdAt
       updatedAt
       __typename
     }
   }
 `;
-export const updateNote = /* GraphQL */ `
-  mutation UpdateNote(
-    $input: UpdateNoteInput!
-    $condition: ModelNoteConditionInput
+export const updateEncounter = /* GraphQL */ `
+  mutation UpdateEncounter(
+    $input: UpdateEncounterInput!
+    $condition: ModelEncounterConditionInput
   ) {
-    updateNote(input: $input, condition: $condition) {
+    updateEncounter(input: $input, condition: $condition) {
       id
-      name
-      description
+      workDate
+      clinicName
+      role
+      sessionType
+      meetingType
+      orgTime
+      gamePlanTime
+      notes
       createdAt
       updatedAt
       __typename
     }
   }
 `;
-export const deleteNote = /* GraphQL */ `
-  mutation DeleteNote(
-    $input: DeleteNoteInput!
-    $condition: ModelNoteConditionInput
+export const deleteEncounter = /* GraphQL */ `
+  mutation DeleteEncounter(
+    $input: DeleteEncounterInput!
+    $condition: ModelEncounterConditionInput
   ) {
-    deleteNote(input: $input, condition: $condition) {
+    deleteEncounter(input: $input, condition: $condition) {
       id
-      name
-      description
+      workDate
+      clinicName
+      role
+      sessionType
+      meetingType
+      orgTime
+      gamePlanTime
+      notes
       createdAt
       updatedAt
       __typename

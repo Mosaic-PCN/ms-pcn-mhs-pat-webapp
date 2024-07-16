@@ -1,36 +1,60 @@
 /* eslint-disable */
 // this is an auto generated file. This will be overwritten
 
-export const onCreateNote = /* GraphQL */ `
-  subscription OnCreateNote($filter: ModelSubscriptionNoteFilterInput) {
-    onCreateNote(filter: $filter) {
+export const onCreateEncounter = /* GraphQL */ `
+  subscription OnCreateEncounter(
+    $filter: ModelSubscriptionEncounterFilterInput
+  ) {
+    onCreateEncounter(filter: $filter) {
       id
-      name
-      description
+      workDate
+      clinicName
+      role
+      sessionType
+      meetingType
+      orgTime
+      gamePlanTime
+      notes
       createdAt
       updatedAt
       __typename
     }
   }
 `;
-export const onUpdateNote = /* GraphQL */ `
-  subscription OnUpdateNote($filter: ModelSubscriptionNoteFilterInput) {
-    onUpdateNote(filter: $filter) {
+export const onUpdateEncounter = /* GraphQL */ `
+  subscription OnUpdateEncounter(
+    $filter: ModelSubscriptionEncounterFilterInput
+  ) {
+    onUpdateEncounter(filter: $filter) {
       id
-      name
-      description
+      workDate
+      clinicName
+      role
+      sessionType
+      meetingType
+      orgTime
+      gamePlanTime
+      notes
       createdAt
       updatedAt
       __typename
     }
   }
 `;
-export const onDeleteNote = /* GraphQL */ `
-  subscription OnDeleteNote($filter: ModelSubscriptionNoteFilterInput) {
-    onDeleteNote(filter: $filter) {
+export const onDeleteEncounter = /* GraphQL */ `
+  subscription OnDeleteEncounter(
+    $filter: ModelSubscriptionEncounterFilterInput
+  ) {
+    onDeleteEncounter(filter: $filter) {
       id
-      name
-      description
+      workDate
+      clinicName
+      role
+      sessionType
+      meetingType
+      orgTime
+      gamePlanTime
+      notes
       createdAt
       updatedAt
       __typename

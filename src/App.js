@@ -23,7 +23,7 @@ import { AppProvider } from './AppContext';
 Amplify.configure(amplifyconfig);
 
 function MainForm() {
-    const { formData } = useContext(AppContext);
+    const { formData, resetFormData } = useContext(AppContext); // Get formData and resetFormData from context
     const [selectedRole, setSelectedRole] = useState(formData.role || '');
     const navigate = useNavigate();
 
@@ -37,6 +37,14 @@ function MainForm() {
     //         handleNextClick();
     //     }
     // }, [selectedRole, formData]);
+
+    const handleResetClick = () => {
+        resetFormData();
+        setSelectedRole('');
+        navigate('/');
+        // window.localStorage.clear(); // Clear local storage
+        window.location.reload(); // Reload the page to reset state and context
+    };
 
     const handleNextClick = () => {
         switch (selectedRole) {
@@ -76,6 +84,7 @@ function MainForm() {
                             <StakeholderForm />
                         </StakeholdersCard>
                         <div className="button-container">
+                            <button type="button" className="btn btn-secondary" onClick={handleResetClick}>Reset</button>
                             <button type="submit" className="btn btn-primary" onClick={handleNextClick}>Next</button>
                         </div>
                     </main>

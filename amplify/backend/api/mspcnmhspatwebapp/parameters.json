@@ -1,5 +1,6 @@
 {
   "AppSyncApiName": "mspcnmhspatwebapp",
   "DynamoDBBillingMode": "PAY_PER_REQUEST",
-  "DynamoDBEnableServerSideEncryption": false
+  "DynamoDBEnableServerSideEncryption": false,
+  "AuthModeLastUpdated": "2024-07-13T03:49:31.961Z"
 }

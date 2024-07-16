@@ -2,11 +2,15 @@ import React from 'react';
 import ReactDOM from 'react-dom/client';
 import './index.css';
 import App from './App';
+// import Amplify from 'aws-amplify';
 // import reportWebVitals from './reportWebVitals';
 import { Amplify } from 'aws-amplify';
-import config from './aws-exports';
+import awsExports from './aws-exports';
+// import config from './aws-exports';
 
 import { Image } from '@aws-amplify/ui-react';
+
+Amplify.configure(awsExports);
 
 export const DefaultImageExample = () => {
   return (
@@ -17,7 +21,7 @@ export const DefaultImageExample = () => {
 };
 
 
-Amplify.configure(config);
+
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(
