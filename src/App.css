@@ -41,6 +41,11 @@
   /* Adjust vertical margin between buttons */
 }
 
+.btn-secondary {
+  margin: 0.5rem 1;
+  /* Adjust vertical margin between buttons */
+}
+
 .App-main {
   /* ... (Your existing styles) ... */
 }

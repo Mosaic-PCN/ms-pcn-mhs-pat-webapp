@@ -1,4 +1,4 @@
-import React, { useState, useContext, useEffect } from 'react'; // Import useEffect
+import React, { useState, useContext, useEffect } from 'react';
 import { Amplify } from 'aws-amplify';
 import { Authenticator, withAuthenticator } from '@aws-amplify/ui-react';
 import '@aws-amplify/ui-react/styles.css';
@@ -23,7 +23,7 @@ import { AppProvider } from './AppContext';
 Amplify.configure(amplifyconfig);
 
 function MainForm() {
-    const { formData, resetFormData } = useContext(AppContext); // Get formData and resetFormData from context
+    const { formData, resetFormData } = useContext(AppContext);
     const [selectedRole, setSelectedRole] = useState(formData.role || '');
     const navigate = useNavigate();
 
@@ -31,40 +31,36 @@ function MainForm() {
         setSelectedRole(selectedRole);
     };
 
-    // useEffect(() => {
-    //     // Check selectedRole and navigate on initial render and formData updates
-    //     if (selectedRole) {
-    //         handleNextClick();
-    //     }
-    // }, [selectedRole, formData]);
-
     const handleResetClick = () => {
         resetFormData();
         setSelectedRole('');
         navigate('/');
-        // window.localStorage.clear(); // Clear local storage
-        window.location.reload(); // Reload the page to reset state and context
+        window.location.reload();
     };
 
     const handleNextClick = () => {
-        switch (selectedRole) {
-            case 'pcc':
-                navigate('/pcc', { state: { formData } });
-                break;
-            case 'emr':
-                navigate('/emr', { state: { formData } });
-                break;
-            case 'pf':
-                navigate('/pf', { state: { formData } });
-                break;
-            case 'hpf':
-                navigate('/hpf', { state: { formData } });
-                break;
-            case 'amc':
-                navigate('/amc', { state: { formData } });
-                break;
-            default:
-                console.log('Invalid role');
+        if (formData.clinicName === 'Mosaic PCN - Internal') {
+            navigate('/notes', { state: { formData } });
+        } else {
+            switch (selectedRole) {
+                case 'pcc':
+                    navigate('/pcc', { state: { formData } });
+                    break;
+                case 'emr':
+                    navigate('/emr', { state: { formData } });
+                    break;
+                case 'pf':
+                    navigate('/pf', { state: { formData } });
+                    break;
+                case 'hpf':
+                    navigate('/hpf', { state: { formData } });
+                    break;
+                case 'amc':
+                    navigate('/amc', { state: { formData } });
+                    break;
+                default:
+                    console.log('Invalid role');
+            }
         }
         console.log(selectedRole);
     };

@@ -27,6 +27,7 @@ const Dropdown = ({ label, id, name, onChange, required }) => {
 
     const handleSelectChange = (selectedOption) => {
         updateFormData({ [name]: selectedOption?.value || null });
+        onChange(selectedOption); // Call the onChange prop with the selected option
     };
 
     // Determine initial value from formData, and find matching label if it exists
