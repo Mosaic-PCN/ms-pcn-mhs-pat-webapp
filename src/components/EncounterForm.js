@@ -30,7 +30,7 @@ const EncounterForm = ({ onRoleChange }) => {
     };
 
     const handleLocationChange = (selectedOption) => {
-        updateFormData({ location: selectedOption.value });
+        updateFormData({ serviceLocation: selectedOption.value });
     };
 
     const handleClinicNameChange = (selectedOption) => {
@@ -101,7 +101,7 @@ const EncounterForm = ({ onRoleChange }) => {
                         placeholderText="Select a date"
                     />
                 </div>
-                <SelectDropdown label="Service Location" id="service_location" name="service_location" options={locationOptions} onChange={handleLocationChange} value={formData.location || ''}
+                <SelectDropdown label="Service Location" id="service_location" name="serviceLocation" options={locationOptions} onChange={handleLocationChange} value={formData.location || ''}
                     required />
 
                 <div className="checkbox-form-group standard-width">
@@ -123,7 +123,7 @@ const EncounterForm = ({ onRoleChange }) => {
                     required
                 />}
                 {/* <Dropdown label="Clinic Name" id="clinic_name" name="clinicName" onChange={handleClinicNameChange} required /> */}
-                <SelectDropdown label="Role" id="activity" name="activity" options={roleOptions} onChange={handleRoleChange} value={formData.role || ''} />
+                <SelectDropdown label="Role" id="activity" name="role" options={roleOptions} onChange={handleRoleChange} value={formData.role || ''} />
                 {!showMosaicPCNFields && <RadioButtonGroup label="Session Type:" name="sessionType" options={radioOptions_virtual} onChange={handleSessionTypeChange} value={formData.sessionType || ''} />}
                 {!showMosaicPCNFields && < RadioButtonGroup label="Meeting Type:" name="meetingType" options={radioOptions_group} onChange={handleMeetingTypeChange} value={formData.meetingType || ''} />}
                 {showMosaicPCNFields && <CustomDropdown label="Org Time" id="org_time" name="orgTime" onChange={handleOrgTimeChange} required />}

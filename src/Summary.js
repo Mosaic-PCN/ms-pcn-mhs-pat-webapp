@@ -25,9 +25,9 @@ const Summary = () => {
     // const fieldLabels = {
     const fieldLabels = {
         workDate: 'Date',
-        location: 'Service Location',  // Updated key to 'location'
+        serviceLocation: 'Service Location',  // Updated key to 'location'
         clinicName: 'Clinic Name',
-        activity: 'Role',
+        role: 'Role',
         // role: 'Role',
         sessionType: 'Session Type',
         meetingType: 'Meeting Type',
