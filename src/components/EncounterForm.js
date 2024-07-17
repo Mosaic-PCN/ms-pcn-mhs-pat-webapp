@@ -110,7 +110,7 @@ const EncounterForm = ({ onRoleChange }) => {
                         checked={isPcnMosaicInternal}
                         onChange={handleCheckboxChange}
                     />
-                    <label htmlFor="pcnMosaicInternal">PCN Mosaic - Internal</label>
+                    <label htmlFor="pcnMosaicInternal">Mosaic PCN - Internal</label>
                 </div>
 
                 {!showMosaicPCNFields && <Dropdown

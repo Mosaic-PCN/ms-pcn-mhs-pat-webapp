@@ -23,7 +23,7 @@ const Summary = () => {
         serviceLocation: 'Service Location',  // Updated key to 'location'
         clinicName: 'Clinic Name',
         role: 'Role',
-        isPcnMosaicInternal: 'PCN Mosaic Internal',
+        isPcnMosaicInternal: 'Mosaic PCN - Internal',
         sessionType: 'Session Type',
         meetingType: 'Meeting Type',
         orgTime: 'Org Time',
@@ -75,7 +75,7 @@ const Summary = () => {
                     let value = formData[key];
 
                     // Format the date
-                    if (key === 'workDate' && value) {
+                    if (key === 'wor`kDate' && value) {
                         value = new Date(value).toLocaleDateString();
                     }
 

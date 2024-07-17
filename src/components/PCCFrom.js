@@ -38,7 +38,7 @@ const PCCForm = () => {
                     <DoubleDropdown label="Liaise with external partners" id="inputId" name="inputName" required options={options} />
                     <TripleDropdown label="Provider or clinic inquiry" id="inputId" name="inputName" required options={options} max_count={100} />
                     <TripleDropdown label="MHS team game planning" id="inputId" name="inputName" required options={options} max_count={8} />
-                    <TripleDropdown className="number-dropdown" label="Being trained by EMR-S" id="EMRs" name="EMRs" required max={10} place_holder="Count" onChange={handleChange('emrs')} />
+                    <TripleDropdown className="number-dropdown" label="Being trained by EMR-S" id="EMRs" name="EMRS" required max={10} place_holder="Count" onChange={handleChange('emrs')} />
                     <TripleDropdown className="number-dropdown" label="Training clinic administrative staff" id="HPF" name="HPF" required max={10} place_holder="Count" onChange={handleChange('hpf')} />
                     <TripleDropdown className="number-dropdown" label="Training clinic providers (physician, NP, MDT)" id="Membership_Coordinator" name="Membership_Coordinator" required max={5} place_holder="Count" onChange={handleChange('memberCoord')} />
                 </div>
@@ -48,7 +48,7 @@ const PCCForm = () => {
                     <TripleDropdown className="number-dropdown" label="Panel clean up " id="Membership_Coordinator" name="Membership_Coordinator" required={true} max={5} place_holder="Count" />
                     <TripleDropdown className="number-dropdown" label="Meeting - C&C" id="MDT" name="MDT" required={true} max={10} place_holder="Count" />
                     <TripleDropdown className="select-dropdown" label="Meeting - New Member" id="Dyad" name="Dyad" options={yes_no_Options} />
-                    <TripleDropdown className="number-dropdown" label="Meeting - CII/CPAR" id="EMRs" name="EMRs" required={true} max={10} place_holder="Count" />
+                    <TripleDropdown className="number-dropdown" label="Meeting - CII/CPAR" id="EMRs" name="EMRS" required={true} max={10} place_holder="Count" />
                     <TripleDropdown className="number-dropdown" label="Netcare" id="HPF" name="HPF" required={true} max={10} place_holder="Count" />
                     <TripleDropdown className="number-dropdown" label="Meeting - QI" id="Membership_Coordinator" name="Membership_Coordinator" required={true} max={5} place_holder="Count" />
                     <TripleDropdown className="number-dropdown" label="Material dropoff" id="MDT" name="MDT" required={true} max={10} place_holder="Count" />

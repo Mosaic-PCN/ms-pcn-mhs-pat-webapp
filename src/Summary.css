@@ -20,3 +20,9 @@
     column-count: 3;
     column-gap: 3em;
 }
+
+.notes-container {
+    border: 1px solid #ccc;
+    padding: 1em;
+    margin-top: 2em;
+}

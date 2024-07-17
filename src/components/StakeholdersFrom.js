@@ -96,7 +96,7 @@ const StakeholderForm = () => {
                     <NumberDropdown className="number-dropdown" label="PF" id="PF" name="PF" required={true} max={10} place_holder="Count" onChange={handlePfChange} value={formData.PF || ''} />
                 </div>
                 <div className="stakeholders-column">
-                    <NumberDropdown className="number-dropdown" label="EMRs" id="EMRs" name="EMRs" required={true} max={10} place_holder="Count" onChange={handleEmrsChange} value={formData.EMRs || ''} />
+                    <NumberDropdown className="number-dropdown" label="EMRS" id="EMRs" name="EMRS" required={true} max={10} place_holder="Count" onChange={handleEmrsChange} value={formData.EMRS || ''} />
                     <NumberDropdown className="number-dropdown" label="HPF" id="HPF" name="HPF" required={true} max={10} place_holder="Count" onChange={handleHpfChange} value={formData.HPF || ''} />
                     <NumberDropdown className="number-dropdown" label="Membership Coordinator" id="Membership_Coordinator" name="memberCoord" required={true} max={5} place_holder="Count" onChange={handleMemberCoordinatorChange} value={formData.memberCoord || ''} />
                     <NumberDropdown className="number-dropdown" label="MDT" id="MDT" name="MDT" required={true} max={10} place_holder="Count" onChange={handleMdtChange} value={formData.MDT || ''} />
