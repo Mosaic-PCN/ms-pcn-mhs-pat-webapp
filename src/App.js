@@ -61,7 +61,7 @@ function MainForm() {
                 case 'HPF':
                     navigate('/hpf', { state: { formData } });
                     break;
-                case 'MC':
+                case 'Membership Coordinator':
                     navigate('/amc', { state: { formData } });
                     break;
                 default:

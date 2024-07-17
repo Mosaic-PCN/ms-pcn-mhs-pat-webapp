@@ -98,6 +98,11 @@ const Summary = () => {
                     <div className="summary-container">
                         <h2>Summary</h2>
                         {renderSummary()}
+                        <div className="notes-container">
+                            <h3>Encounter Notes:</h3>
+                            <p>{formData.notes}</p>
+                        </div>
+
                     </div>
                     <div className="button-container">
                         {/* <button type="button" className="btn btn-primary" onClick={() => navigate(-1)}>Previous</button> */}
