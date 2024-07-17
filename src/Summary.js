@@ -17,12 +17,7 @@ const Summary = () => {
     const { formData, resetFormData } = useContext(AppContext);
     const navigate = useNavigate();
     const location = useLocation();
-    // const { formData, resetFormData } = useContext(AppContext);
-    // const { resetFormData } = useContext(AppContext);
-    // const formData = location.state?.formData || {};
-    // const navigate = useNavigate();
 
-    // const fieldLabels = {
     const fieldLabels = {
         workDate: 'Date',
         serviceLocation: 'Service Location',  // Updated key to 'location'
@@ -69,6 +64,10 @@ const Summary = () => {
         navigate(-1);
     };
 
+    const goToHomePage = () => {
+        navigate('/');
+    };
+
     const renderSummary = () => {
         return Object.keys(formData).map((key) => {
             let value = formData[key];
@@ -97,8 +96,8 @@ const Summary = () => {
                     </div>
                     <div className="button-container">
                         {/* <button type="button" className="btn btn-primary" onClick={() => navigate(-1)}>Previous</button> */}
+                        <button type="button" className="btn btn-primary" onClick={goToHomePage}>Home</button>
                         <button type="button" className="btn btn-primary" onClick={handlePreviousPage}>Previous</button>
-
                         <button type="submit" className="btn btn-primary" onClick={submitData}>Submit</button>
                     </div>
                     <ToastContainer />

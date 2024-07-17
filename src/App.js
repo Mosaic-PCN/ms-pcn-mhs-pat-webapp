@@ -1,6 +1,7 @@
-import React, { useState, useContext, useEffect } from 'react';
+import React, { useState, useContext, useEffect, useCallback } from 'react'; // Import useCallback
 import { Amplify } from 'aws-amplify';
 import { Authenticator, withAuthenticator } from '@aws-amplify/ui-react';
+import { signOut } from '@aws-amplify/auth';
 import '@aws-amplify/ui-react/styles.css';
 import Header from './components/Header';
 import { AppContext } from './AppContext';
@@ -22,10 +23,15 @@ import { AppProvider } from './AppContext';
 
 Amplify.configure(amplifyconfig);
 
+const INACTIVITY_TIMEOUT_MS = 1 * 60 * 1000; // 5 minutes
+
+
 function MainForm() {
     const { formData, resetFormData } = useContext(AppContext);
     const [selectedRole, setSelectedRole] = useState(formData.role || '');
     const navigate = useNavigate();
+    const [timer, setTimer] = useState(null);
+
 
     const handleRoleChange = (selectedRole) => {
         setSelectedRole(selectedRole);
@@ -65,9 +71,39 @@ function MainForm() {
         console.log(selectedRole);
     };
 
+    // const resetTimer = useCallback(() => {
+    //     if (timer) clearTimeout(timer);
+    //     setTimer(setTimeout(() => {
+    //         handleLogout();
+    //     }, 1 * 60 * 1000)); // 5 minutes
+    // }, [timer]);
+
+    // useEffect(() => {
+    //     window.addEventListener('mousemove', resetTimer);
+    //     window.addEventListener('keypress', resetTimer);
+
+    //     resetTimer();
+
+    //     return () => {
+    //         window.removeEventListener('mousemove', resetTimer);
+    //         window.removeEventListener('keypress', resetTimer);
+    //         if (timer) clearTimeout(timer);
+    //     };
+    // }, [resetTimer]);
+
+    // const handleLogout = useCallback(() => {
+    //     signOut()
+    //         .then(() => {
+    //             console.log('User signed out');
+    //             navigate('/');
+    //         })
+    //         .catch(err => console.log(err));
+    // }, [navigate]);
+
     return (
         <Authenticator hideSignUp={true}>
             {({ signOut, user }) => (
+
                 <div className="App">
                     <Header signOut={signOut} user={user} />
                     <main className="App-main">

@@ -33,6 +33,10 @@ function Notes() {
         navigate(-1);
     };
 
+    const goToHomePage = () => {
+        navigate('/');
+    };
+
     const goToSummaryPage = () => {
         navigate('/summary');
     };
@@ -50,6 +54,7 @@ function Notes() {
                         </div>
 
                         <div className="button-container">
+                            <button type="button" className="btn btn-primary" onClick={goToHomePage}>Home</button>
                             <button type="button" className="btn btn-primary" onClick={handlePreviousPage}>Previous</button>
                             <button type="submit" className="btn btn-primary" onClick={goToSummaryPage}>Next</button>
                         </div>

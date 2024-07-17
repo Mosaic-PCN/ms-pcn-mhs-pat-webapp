@@ -1,4 +1,4 @@
-import React, { useState, useContext } from 'react';
+import React, { useState, useContext, useEffect } from 'react';
 import { AppContext } from '../AppContext';
 import Dropdown from './Dropdown';
 import SelectDropdown from './SelectDropdown';
@@ -9,13 +9,17 @@ import 'react-datepicker/dist/react-datepicker.css';
 import './EncounterForm.css';
 
 const EncounterForm = ({ onRoleChange }) => {
-    // const [startDate, setStartDate] = useState(new Date());
-    // const { updateFormData, formData, errors } = useContext(AppContext);
     const { formData, updateFormData, errors } = useContext(AppContext);
     const [startDate, setStartDate] = useState(formData.workDate ? new Date(formData.workDate) : new Date());
-    const [showOrgTime, setShowOrgTime] = useState(false);
-    const [showMosaicPCNFields, setshowMosaicPCNFields] = useState(false);
-    const [isPcnMosaicInternal, setIsPcnMosaicInternal] = useState(false);
+    // const [showMosaicPCNFields, setshowMosaicPCNFields] = useState(false);
+    const [isPcnMosaicInternal, setIsPcnMosaicInternal] = useState(formData.isPcnMosaicInternal || false);
+    const [showMosaicPCNFields, setshowMosaicPCNFields] = useState(formData.isPcnMosaicInternal || false);
+
+
+    useEffect(() => {
+        setIsPcnMosaicInternal(formData.isPcnMosaicInternal || false);
+        setshowMosaicPCNFields(formData.isPcnMosaicInternal || false);
+    }, [formData]);
 
 
     const handleRoleChange = (selectedOption) => {
@@ -39,12 +43,10 @@ const EncounterForm = ({ onRoleChange }) => {
     };
 
     const handleCheckboxChange = (event) => {
-        setIsPcnMosaicInternal(event.target.checked);
-        updateFormData({ isPcnMosaicInternal: event.target.checked });
         const isChecked = event.target.checked;
-        // setShowOrgTime(event.target.checked);
-        setshowMosaicPCNFields(event.target.checked);
-
+        setIsPcnMosaicInternal(isChecked);
+        setshowMosaicPCNFields(isChecked);
+        updateFormData({ isPcnMosaicInternal: isChecked });
     };
 
     const handleSessionTypeChange = (selectedOption) => {
@@ -107,7 +109,7 @@ const EncounterForm = ({ onRoleChange }) => {
                 <div className="checkbox-form-group standard-width">
                     <input
                         type="checkbox"
-                        id="pcn_osaic_internal"
+                        id="pcnMosaicInternal"
                         name="isPcnMosaicInternal"
                         checked={isPcnMosaicInternal}
                         onChange={handleCheckboxChange}
