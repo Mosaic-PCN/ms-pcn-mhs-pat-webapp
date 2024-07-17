@@ -8,8 +8,6 @@ const SelectDropdown = ({ label, id, name, options, required, onChange }) => {
 
     const handleSelectChange = (selectedOption) => {
         updateFormData({ [name]: selectedOption?.value || null }); // Update formData
-        console.log(selectedOption.value)
-        console.log(name)
         onChange(selectedOption); // Call the original onChange if needed
     };
 

@@ -11,10 +11,8 @@ import './EncounterForm.css';
 const EncounterForm = ({ onRoleChange }) => {
     const { formData, updateFormData, errors } = useContext(AppContext);
     const [startDate, setStartDate] = useState(formData.workDate ? new Date(formData.workDate) : new Date());
-    // const [showMosaicPCNFields, setshowMosaicPCNFields] = useState(false);
     const [isPcnMosaicInternal, setIsPcnMosaicInternal] = useState(formData.isPcnMosaicInternal || false);
     const [showMosaicPCNFields, setshowMosaicPCNFields] = useState(formData.isPcnMosaicInternal || false);
-
 
     useEffect(() => {
         setIsPcnMosaicInternal(formData.isPcnMosaicInternal || false);
@@ -39,7 +37,6 @@ const EncounterForm = ({ onRoleChange }) => {
 
     const handleClinicNameChange = (selectedOption) => {
         updateFormData({ clinicName: selectedOption.value });
-        // setShowOrgTime(selectedOption.value === 'Mosaic PCN - Internal');
     };
 
     const handleCheckboxChange = (event) => {
@@ -62,9 +59,8 @@ const EncounterForm = ({ onRoleChange }) => {
     };
 
     const handleGamePlanTimeChange = (selectedOption) => {
-        updateFormData({ gamePlanTime: selectedOption.value });
+        updateFormData({ gameTime: selectedOption.value });
     };
-
     const radioOptions_virtual = [
         { label: 'Virtual', value: 'Virtual' },
         { label: 'In-person', value: 'In-Person' }
@@ -128,9 +124,8 @@ const EncounterForm = ({ onRoleChange }) => {
                 <SelectDropdown label="Role" id="role" name="role" options={roleOptions} onChange={handleRoleChange} value={formData.role || ''} />
                 {!showMosaicPCNFields && <RadioButtonGroup label="Session Type:" name="sessionType" options={radioOptions_virtual} onChange={handleSessionTypeChange} value={formData.sessionType || ''} />}
                 {!showMosaicPCNFields && < RadioButtonGroup label="Meeting Type:" name="meetingType" options={radioOptions_group} onChange={handleMeetingTypeChange} value={formData.meetingType || ''} />}
-                {showMosaicPCNFields && <CustomDropdown label="Org Time" id="org_time" name="orgTime" onChange={handleOrgTimeChange} required />}
-                {showMosaicPCNFields && <CustomDropdown label="Game Planning" id="game_time" name="gameTime" onChange={handleGamePlanTimeChange} required />}
-            </form>
+                {showMosaicPCNFields && <CustomDropdown label="Org Time" id="org_time" name="orgTime" onChange={handleOrgTimeChange} required value={formData.orgTime || ''} />}
+                {showMosaicPCNFields && <CustomDropdown label="Game Planning" id="game_time" name="gameTime" onChange={handleGamePlanTimeChange} required value={formData.gamePlanTime || ''} />}            </form>
         </main>
     );
 };

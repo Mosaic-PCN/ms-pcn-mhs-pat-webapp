@@ -15,3 +15,8 @@
 .summary-container p {
     margin: 10px 0;
 }
+
+.summary-list {
+    column-count: 3;
+    column-gap: 3em;
+}

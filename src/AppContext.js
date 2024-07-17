@@ -36,7 +36,7 @@ export const AppProvider = ({ children }) => {
         sessionType: 'Whether the session was virtual or in-person.',
         meetingType: 'The type of meeting (e.g., 1:1, group, non-visit).',
         orgTime: 'Time spent on organization during the encounter.',
-        gamePlanTime: 'Time spent on game planning during the encounter.',
+        gameTime: 'Time spent on game planning during the encounter.',
         memberPhysMHSP: 'Number of Member Physicians specializing in MHSP.',
         memberPhysGen: 'Number of Member Physicians in General Practice.',
         nonMemberPhys: 'Number of Non-Member Physicians.',

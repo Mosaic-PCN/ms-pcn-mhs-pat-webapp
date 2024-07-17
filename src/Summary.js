@@ -34,17 +34,17 @@ const Summary = () => {
         nonMemberPhys: 'Non-Member Phys',
         NpMhsp: 'NP - MHSP',
         NpGen: 'NP - General',
-        moe: 'MOA',
+        MOE: 'MOA',
         clinMgr: 'CLIN MGR',
         clinOwn: 'CLIN OWN',
         pccMosaic: 'PCC - Mosaic',
         pccClinic: 'PCC - Clinic',
-        pf: 'PF',
-        emrs: 'EMRs',
-        hpf: 'HPF',
+        PF: 'PF',
+        EMRS: 'EMRS',
+        HPF: 'HPF',
         memberCoord: 'Membership Coordinator',
-        mdt: 'MDT',
-        dyad: 'Dyad',
+        MDT: 'MDT',
+        DYAD: 'DYAD',
     };
 
     const submitData = () => {
@@ -69,20 +69,24 @@ const Summary = () => {
     };
 
     const renderSummary = () => {
-        return Object.keys(formData).map((key) => {
-            let value = formData[key];
+        return (
+            <div className="summary-list">
+                {Object.keys(formData).map((key) => {
+                    let value = formData[key];
 
-            // Format the date
-            if (key === 'workDate' && value) {
-                value = new Date(value).toLocaleDateString();
-            }
+                    // Format the date
+                    if (key === 'workDate' && value) {
+                        value = new Date(value).toLocaleDateString();
+                    }
 
-            return (
-                <p key={key}>
-                    <strong>{fieldLabels[key] || key.charAt(0).toUpperCase() + key.slice(1)}:</strong> {value.toString()}
-                </p>
-            );
-        });
+                    return (
+                        <p key={key}>
+                            <strong>{fieldLabels[key] || key.charAt(0).toUpperCase() + key.slice(1)}:</strong> {value.toString()}
+                        </p>
+                    );
+                })}
+            </div>
+        );
     };
 
     return (
