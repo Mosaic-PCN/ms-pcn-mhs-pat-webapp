@@ -48,7 +48,7 @@ function Notes() {
                     <main className="App-main">
                         <div className="form-group">
                             <label htmlFor="editor">Encounter Notes:</label>
-                            <textarea id="notes" name="notes" rows="20" cols="200" className="modern-textarea" onChange={handleNotesChange}>
+                            <textarea id="notes" name="notes" rows="20" cols="200" className="modern-textarea" onChange={handleNotesChange} value={formData.notes || ''}>
                                 Please type here....
                             </textarea>
                         </div>

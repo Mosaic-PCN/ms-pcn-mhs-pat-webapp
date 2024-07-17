@@ -71,20 +71,21 @@ const Summary = () => {
     const renderSummary = () => {
         return (
             <div className="summary-list">
-                {Object.keys(formData).map((key) => {
-                    let value = formData[key];
+                {
+                    Object.keys(formData).filter(key => key !== 'notes').map((key) => {
+                        let value = formData[key];
 
-                    // Format the date
-                    if (key === 'wor`kDate' && value) {
-                        value = new Date(value).toLocaleDateString();
-                    }
+                        // Format the date
+                        if (key === 'workDate' && value) {
+                            value = new Date(value).toLocaleDateString();
+                        }
 
-                    return (
-                        <p key={key}>
-                            <strong>{fieldLabels[key] || key.charAt(0).toUpperCase() + key.slice(1)}:</strong> {value.toString()}
-                        </p>
-                    );
-                })}
+                        return (
+                            <p key={key}>
+                                <strong>{fieldLabels[key] || key.charAt(0).toUpperCase() + key.slice(1)}:</strong> {value.toString()}
+                            </p>
+                        );
+                    })}
             </div>
         );
     };
