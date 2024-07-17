@@ -43,19 +43,19 @@ function MainForm() {
             navigate('/notes', { state: { formData } });
         } else {
             switch (selectedRole) {
-                case 'pcc':
+                case 'PCC':
                     navigate('/pcc', { state: { formData } });
                     break;
-                case 'emr':
+                case 'EMRS':
                     navigate('/emr', { state: { formData } });
                     break;
-                case 'pf':
+                case 'PF':
                     navigate('/pf', { state: { formData } });
                     break;
-                case 'hpf':
+                case 'HPF':
                     navigate('/hpf', { state: { formData } });
                     break;
-                case 'amc':
+                case 'MC':
                     navigate('/amc', { state: { formData } });
                     break;
                 default:

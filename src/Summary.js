@@ -28,7 +28,7 @@ const Summary = () => {
         serviceLocation: 'Service Location',  // Updated key to 'location'
         clinicName: 'Clinic Name',
         role: 'Role',
-        // role: 'Role',
+        isPcnMosaicInternal: 'PCN Mosaic Internal',
         sessionType: 'Session Type',
         meetingType: 'Meeting Type',
         orgTime: 'Org Time',

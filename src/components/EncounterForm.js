@@ -71,21 +71,21 @@ const EncounterForm = ({ onRoleChange }) => {
     const radioOptions_group = [
         { label: '1:1', value: '1:1' },
         { label: 'Group', value: 'Group' },
-        { label: 'Non-Visit Encounter', value: 'Non Visit' }
+        { label: 'Non-Visit Encounter', value: 'Non-Visit' }
     ];
 
     const roleOptions = [
-        { label: 'EMRS', value: 'emr' },
-        { label: 'PCC', value: 'pcc' },
-        { label: 'PF', value: 'pf' },
-        { label: 'HPF', value: 'hpf' },
-        { label: 'Membership Coordinator', value: 'amc' }
+        { label: 'EMRS', value: 'EMRS' },
+        { label: 'PCC', value: 'PCC' },
+        { label: 'PF', value: 'PF' },
+        { label: 'HPF', value: 'HPF' },
+        { label: 'Membership Coordinator', value: 'Membership Coordinator' }
     ];
 
     const locationOptions = [
-        { label: 'Home', value: 'home' },
-        { label: 'Mosaic Central Offices', value: 'mosaic_offices' },
-        { label: 'Clinic', value: 'clinic' }
+        { label: 'Home', value: 'Home' },
+        { label: 'Mosaic Central Offices', value: 'Mosaic Office' },
+        { label: 'Clinic', value: 'Clinic' }
     ];
 
     return (
@@ -107,8 +107,8 @@ const EncounterForm = ({ onRoleChange }) => {
                 <div className="checkbox-form-group standard-width">
                     <input
                         type="checkbox"
-                        id="pcnMosaicInternal"
-                        name="pcnMosaicInternal"
+                        id="pcn_osaic_internal"
+                        name="isPcnMosaicInternal"
                         checked={isPcnMosaicInternal}
                         onChange={handleCheckboxChange}
                     />
@@ -123,7 +123,7 @@ const EncounterForm = ({ onRoleChange }) => {
                     required
                 />}
                 {/* <Dropdown label="Clinic Name" id="clinic_name" name="clinicName" onChange={handleClinicNameChange} required /> */}
-                <SelectDropdown label="Role" id="activity" name="role" options={roleOptions} onChange={handleRoleChange} value={formData.role || ''} />
+                <SelectDropdown label="Role" id="role" name="role" options={roleOptions} onChange={handleRoleChange} value={formData.role || ''} />
                 {!showMosaicPCNFields && <RadioButtonGroup label="Session Type:" name="sessionType" options={radioOptions_virtual} onChange={handleSessionTypeChange} value={formData.sessionType || ''} />}
                 {!showMosaicPCNFields && < RadioButtonGroup label="Meeting Type:" name="meetingType" options={radioOptions_group} onChange={handleMeetingTypeChange} value={formData.meetingType || ''} />}
                 {showMosaicPCNFields && <CustomDropdown label="Org Time" id="org_time" name="orgTime" onChange={handleOrgTimeChange} required />}
