@@ -30,7 +30,7 @@ function AMC() {
                 <div className="App">
                     <Header signOut={signOut} user={user} />
                     <main className="App-main">
-                        <AMCCard title="Activity Membership Coordinator">
+                        <AMCCard title="Membership Coordinator">
                             <AMCForm />
                         </AMCCard>
                         <div className="button-container">

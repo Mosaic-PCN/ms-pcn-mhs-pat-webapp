@@ -52,7 +52,7 @@ const PCCForm = () => {
                     <TripleDropdown className="number-dropdown" label="Netcare" id="HPF" name="HPF" required={true} max={10} place_holder="Count" />
                     <TripleDropdown className="number-dropdown" label="Meeting - QI" id="Membership_Coordinator" name="Membership_Coordinator" required={true} max={5} place_holder="Count" />
                     <TripleDropdown className="number-dropdown" label="Material dropoff" id="MDT" name="MDT" required={true} max={10} place_holder="Count" />
-                    <TripleDropdown className="select-dropdown" label="" id="Dyad" name="Dyad" options={yes_no_Options} />
+                    <TripleDropdown className="select-dropdown" label="Dyad" id="Dyad" name="Dyad" options={yes_no_Options} />
 
                 </div>
                 <div className="pcc-column">

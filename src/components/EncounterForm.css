@@ -53,3 +53,19 @@
 .form-check-input {
     margin-right: 5px;
 }
+
+.checkbox-form-group {
+    display: flex;
+    align-items: center;
+    margin-bottom: 1rem;
+    /* Optional: Add some space below each form group */
+}
+
+.checkbox-form-group label {
+    margin-right: 0.5rem;
+    /* Adjust the space between label and checkbox */
+}
+
+.checkbox-form-group input[type="checkbox"] {
+    margin-right: 10px;
+}

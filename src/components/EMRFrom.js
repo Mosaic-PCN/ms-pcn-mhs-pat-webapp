@@ -1,16 +1,15 @@
 import React, { useContext } from 'react';
-import NumberDropdown from './NumberDropdown';
 import TripleDropdown from './TripleDropdown';
 import CustomDropdown from './CustomDropdown';
 import DoubleDropdown from './DoubleDropdown';
 import { AppContext } from '../AppContext';
 import HelpIcon from '../HelpIcon';
-import { TooltipProvider } from 'react-tooltip'; // Import TooltipProvider
+import { TooltipProvider } from 'react-tooltip';
 
 import './EMRForm.css';
 
 const EMRForm = () => {
-    const { updateFormData, fieldExplanations } = useContext(AppContext); // Access fieldExplanations
+    const { updateFormData, fieldExplanations } = useContext(AppContext);
 
     const yes_no_Options = [
         { label: 'Yes', value: 'yes' },
