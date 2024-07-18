@@ -53,7 +53,6 @@ export const AppProvider = ({ children }) => {
         SchedulingAppointments: 'Scheduling appointment with clinics/providers',
         LiaiseWithExternalPartners: 'Activities of taking care the questions and inquiries from clinic and providers including the time on research to get the answers',
         ProvideOrClinicInquiry: 'Supporting clinic inquiries, EMR vendors',
-
         EmrMapping: 'EMR optimization such as configeration or referral form etc',
         EmrSearches: 'Search/create searches specific information from EMR',
         EmrDataCollection: 'how many physicians the data collection process served and how much time spent on the data collection as direct time , preparation/documentation as indirect time',

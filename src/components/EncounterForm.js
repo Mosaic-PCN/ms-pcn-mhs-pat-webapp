@@ -19,7 +19,6 @@ const EncounterForm = ({ onRoleChange }) => {
         setshowMosaicPCNFields(formData.isPcnMosaicInternal || false);
     }, [formData]);
 
-
     const handleRoleChange = (selectedOption) => {
         const role = selectedOption.value;
         updateFormData({ role });

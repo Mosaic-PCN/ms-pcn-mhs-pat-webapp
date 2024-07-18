@@ -9,7 +9,7 @@ import { TooltipProvider } from 'react-tooltip';
 import './EMRForm.css';
 
 const EMRForm = () => {
-    const { updateFormData, fieldExplanations } = useContext(AppContext);
+    const { formData, updateFormData, fieldExplanations } = useContext(AppContext);
 
     const yes_no_Options = [
         { label: 'Yes', value: 'yes' },
@@ -22,8 +22,69 @@ const EMRForm = () => {
         { value: 'option3', label: 'Option 3' }
     ];
 
-    const handleChange = (field) => (selectedOption) => {
-        updateFormData({ [field]: selectedOption.value });
+
+    const handleCcVisitChange = (selectedOption) => {
+        updateFormData({ serviceLocation: selectedOption.value });
+    };
+
+    const handleQiTemplateChange = (selectedOption) => {
+        updateFormData({ serviceLocation: selectedOption.value });
+    };
+
+    const handleServiceTemplatesChange = (selectedOption) => {
+        updateFormData({ serviceLocation: selectedOption.value });
+    };
+
+    const handleDocumentationClinicProcessesChange = (selectedOption) => {
+        updateFormData({ serviceLocation: selectedOption.value });
+    };
+
+    const handleDocumentationOtherChange = (selectedOption) => {
+        updateFormData({ serviceLocation: selectedOption.value });
+    };
+
+    const handleSchedulingAppointmentsChange = (selectedOption) => {
+        updateFormData({ serviceLocation: selectedOption.value });
+    };
+
+    const handleLiaiseWithExternalPartnersChange = (selectedOption) => {
+        updateFormData({ serviceLocation: selectedOption.value });
+    };
+
+    const handleProvideOrClinicInquiryChange = (selectedOption) => {
+        updateFormData({ serviceLocation: selectedOption.value });
+    };
+
+    const handleEmrMappingChange = (selectedOption) => {
+        updateFormData({ serviceLocation: selectedOption.value });
+    };
+
+    const handleEmrSearchesChange = (selectedOption) => {
+        updateFormData({ serviceLocation: selectedOption.value });
+    };
+
+    const handleEmrDataCollectionChange = (selectedOption) => {
+        updateFormData({ serviceLocation: selectedOption.value });
+    };
+
+    const handleEmrDataEntryChange = (selectedOption) => {
+        updateFormData({ serviceLocation: selectedOption.value });
+    };
+
+    const handleMeetingCCChange = (selectedOption) => {
+        updateFormData({ serviceLocation: selectedOption.value });
+    };
+
+    const handleMeetingNewMemberChange = (selectedOption) => {
+        updateFormData({ serviceLocation: selectedOption.value });
+    };
+
+    const handleMeetingCIICPARChange = (selectedOption) => {
+        updateFormData({ serviceLocation: selectedOption.value });
+    };
+
+    const handleMeetingMeetingQIChange = (selectedOption) => {
+        updateFormData({ serviceLocation: selectedOption.value });
     };
 
     return (
@@ -31,15 +92,14 @@ const EMRForm = () => {
             <div className="emr-form">
                 <TooltipProvider>
                     <div className="emr-column">
-                        <CustomDropdown label={<>Documentation - C&C visit<HelpIcon id="C_C_visit_help" explanation={fieldExplanations['CcVisit']} /></>} id="C_C_visit" name="CcVisit" place_holder="Indirect Time" />
-                        <CustomDropdown label={<>Documentation - QI template<HelpIcon id="QI_template_help" explanation={fieldExplanations['QiTemplate']} /></>} id="QI_template" name="QiTemplate" place_holder="Indirect Time" />
-                        <CustomDropdown label={<>Documentation - Menu of Service templates<HelpIcon id="Service_templates_help" explanation={fieldExplanations['ServiceTemplates']} /></>} id="Service_templates" name="ServiceTemplates" place_holder="Indirect Time" />
-                        <CustomDropdown label={<>Documentation - Clinic Processes<HelpIcon id="Documentation_Clinic_Processes_help" explanation={fieldExplanations['DocumentationClinicProcesses']} /></>} id="Documentation_Clinic_Processes" name="DocumentationClinicProcesses" place_holder="Indirect Time" />
-                        <CustomDropdown label={<>Documentation - Other<HelpIcon id="Documentation_Other_help" explanation={fieldExplanations['DocumentationOther']} /></>} id="Documentation_Other" name="DocumentationOther" place_holder="Indirect Time" />
-                        <CustomDropdown label={<>Scheduling appointments<HelpIcon id="Scheduling_appointments_help" explanation={fieldExplanations['SchedulingAppointments']} /></>} id="Scheduling_appointments" name="SchedulingAppointments" place_holder="Indirect Time" />
+                        <CustomDropdown label={<>Documentation - C&C visit<HelpIcon id="C_C_visit_help" explanation={fieldExplanations['CcVisit']} /></>} id="C_C_visit" name="CcVisit" place_holder="Indirect Time" onChange={handleCcVisitChange} required value={formData.CcVisit || ''} />
+                        <CustomDropdown label={<>Documentation - QI template<HelpIcon id="QI_template_help" explanation={fieldExplanations['QiTemplate']} /></>} id="QI_template" name="QiTemplate" place_holder="Indirect Time" onChange={handleQiTemplateChange} required value={formData.QiTemplate || ''} />
+                        <CustomDropdown label={<>Documentation - Menu of Service templates<HelpIcon id="Service_templates_help" explanation={fieldExplanations['ServiceTemplates']} /></>} id="Service_templates" name="ServiceTemplates" place_holder="Indirect Time" onChange={handleServiceTemplatesChange} required value={formData.ServiceTemplates || ''} />
+                        <CustomDropdown label={<>Documentation - Clinic Processes<HelpIcon id="Documentation_Clinic_Processes_help" explanation={fieldExplanations['DocumentationClinicProcesses']} /></>} id="Documentation_Clinic_Processes" name="DocumentationClinicProcesses" place_holder="Indirect Time" onChange={handleDocumentationClinicProcessesChange} required value={formData.orgTime || ''} />
+                        <CustomDropdown label={<>Documentation - Other<HelpIcon id="Documentation_Other_help" explanation={fieldExplanations['DocumentationOther']} /></>} id="Documentation_Other" name="DocumentationOther" place_holder="Indirect Time" onChange={handleDocumentationOtherChange} required value={formData.DocumentationOther || ''} />
+                        <CustomDropdown label={<>Scheduling appointments<HelpIcon id="Scheduling_appointments_help" explanation={fieldExplanations['SchedulingAppointments']} /></>} id="Scheduling_appointments" name="SchedulingAppointments" place_holder="Indirect Time" onChange={handleSchedulingAppointmentsChange} required value={formData.SchedulingAppointments || ''} />
                         <DoubleDropdown label={<>Liaise with external partners<HelpIcon id="Liaise_with_external_partners_help" explanation={fieldExplanations['LiaiseWithExternalPartners']} /></>} id="Liaise_with_external_partners" name="LiaiseWithExternalPartners" options={options} />
                         <TripleDropdown label={<>Provider or clinic inquiry<HelpIcon id="Provider_or_clinic_inquiry_help" explanation={fieldExplanations['ProvideOrClinicInquiry']} /></>} id="Provider_or_clinic_inquiry" name="ProvideOrClinicInquiry" options={options} max_count={100} />
-
                     </div>
                     <div className="emr-column">
                         <TripleDropdown label={<>EMR mapping<HelpIcon id="EMR_mapping_help" explanation={fieldExplanations['EmrMapping']} /></>} id="EMR_mapping" name="EmrMapping" options={options} />
@@ -51,13 +111,13 @@ const EMRForm = () => {
                         <TripleDropdown label={<>Meeting - CII/CPAR<HelpIcon id="Meeting_CII_CPAR_help" explanation={fieldExplanations['MeetingCIICPAR']} /></>} id="Meeting_CII_CPAR" name="MeetingCIICPAR" />
                     </div>
                     <div className="emr-column">
-                        <TripleDropdown label={<>Meeting - QI<HelpIcon id="C_C_visit_help" explanation={fieldExplanations['MeetingQI']} /></>} id="Meeting_QI" name="MeetingQI" />
-                        <TripleDropdown label={<>Material dropoff<HelpIcon id="C_C_visit_help" explanation={fieldExplanations['MaterialDropoff']} /></>} id="Material_dropoff" name="MaterialDropoff" />
-                        <TripleDropdown label={<>Clinic Activity - other<HelpIcon id="C_C_visit_help" explanation={fieldExplanations['ClinicActivityOther']} /></>} id="Clinic_Activity_other" name="ClinicActivityOther" />
-                        <TripleDropdown label={<>Recieving training<HelpIcon id="C_C_visit_help" explanation={fieldExplanations['RecievingTraining']} /></>} id="Recieving_training" name="RecievingTraining" />
-                        <TripleDropdown label={<>Training material creation<HelpIcon id="C_C_visit_help" explanation={fieldExplanations['TrainingMaterialCreation']} /></>} id="Training_material_creation" name="TrainingMaterialCreation" />
-                        <TripleDropdown label={<>Training clinic administrative staff<HelpIcon id="C_C_visit_help" explanation={fieldExplanations['TrainingClinicAdmins']} /></>} id="Training_clinic_adminins" name="TrainingClinicAdmins" />
-                        <TripleDropdown label={<>Training clinic providers (physician, NP, MDT)<HelpIcon id="C_C_visit_help" explanation={fieldExplanations['TrainingClinicProviders']} /></>} id="Training_clinic_providers" name="TrainingClinicProviders" />
+                        <TripleDropdown label={<>Meeting - QI<HelpIcon id="Meeting_QI_help" explanation={fieldExplanations['MeetingQI']} /></>} id="Meeting_QI" name="MeetingQI" />
+                        <TripleDropdown label={<>Material dropoff<HelpIcon id="Material_dropoff_help" explanation={fieldExplanations['MaterialDropoff']} /></>} id="Material_dropoff" name="MaterialDropoff" />
+                        <TripleDropdown label={<>Clinic Activity - other<HelpIcon id="Clinic_Activity_other_help" explanation={fieldExplanations['ClinicActivityOther']} /></>} id="Clinic_Activity_other" name="ClinicActivityOther" />
+                        <TripleDropdown label={<>Recieving training<HelpIcon id="Recieving_training_help" explanation={fieldExplanations['RecievingTraining']} /></>} id="Recieving_training" name="RecievingTraining" />
+                        <TripleDropdown label={<>Training material creation<HelpIcon id="Training_material_creation_help" explanation={fieldExplanations['TrainingMaterialCreation']} /></>} id="Training_material_creation" name="TrainingMaterialCreation" />
+                        <TripleDropdown label={<>Training clinic administrative staff<HelpIcon id="Training_clinic_adminins_help" explanation={fieldExplanations['TrainingClinicAdmins']} /></>} id="Training_clinic_adminins" name="TrainingClinicAdmins" />
+                        <TripleDropdown label={<>Training clinic providers (physician, NP, MDT)<HelpIcon id="Training_clinic_providers_help" explanation={fieldExplanations['TrainingClinicProviders']} /></>} id="Training_clinic_providers" name="TrainingClinicProviders" />
                     </div>
                 </TooltipProvider>
 
