@@ -230,7 +230,6 @@ const EMRForm = () => {
         updateFormData({ TrainingClinicProvidersIndirectTime: selectedOption.value });
     };
 
-
     return (
         <main className="container mt-5">
             <div className="emr-form">
@@ -306,7 +305,7 @@ const EMRForm = () => {
                             label={<>EMR mapping<HelpIcon id="EMR_mapping_help" explanation={fieldExplanations['EmrMapping']} /></>}
                             id="EMR_mapping"
                             name="EmrMapping"
-                            max_count={100}
+                            max_count={20}
                             onChangeCount={handleEmrMappingOnChangeCount}
                             onChangeDirectTime={handleEmrMappingOnChangeDirectTime}
                             onChangeIndirectTime={handleEmrMappingOnChangeIndirectTime}
@@ -315,7 +314,7 @@ const EMRForm = () => {
                             label={<>EMR searches<HelpIcon id="EMR_searches_help" explanation={fieldExplanations['EmrSearches']} /></>}
                             id="EMR_searches"
                             name="EmrSearches"
-                            max_count={100}
+                            max_count={20}
                             onChangeCount={handleEmrSearchesOnChangeCount}
                             onChangeDirectTime={handleEmrSearchesOnChangeDirectTime}
                             onChangeIndirectTime={handleEmrSearchesOnChangeIndirectTime}
@@ -324,7 +323,7 @@ const EMRForm = () => {
                             label={<>EMR data collection<HelpIcon id="EMR_data_collection_help" explanation={fieldExplanations['EmrDataCollection']} /></>}
                             id="EMR_data_collection"
                             name="EmrDataCollection"
-                            max_count={100}
+                            max_count={20}
                             onChangeCount={handleEmrDataCollectionOnChangeCount}
                             onChangeDirectTime={handleEmrDataCollectionOnChangeDirectTime}
                             onChangeIndirectTime={handleEmrDataCollectionOnChangeIndirectTime}
@@ -333,7 +332,7 @@ const EMRForm = () => {
                             label={<>EMR data entry<HelpIcon id="EMR_data_entry" explanation={fieldExplanations['EmrDataEntry']} /></>}
                             id="EMR_data_entry"
                             name="EmrDataEntry"
-                            max_count={100}
+                            max_count={20}
                             onChangeCount={handleEmrDataEntryOnChangeCount}
                             onChangeDirectTime={handleEmrDataEntryOnChangeDirectTime}
                             onChangeIndirectTime={handleEmrDataEntryOnChangeIndirectTime}
@@ -342,7 +341,7 @@ const EMRForm = () => {
                             label={<>Meeting - C&C<HelpIcon id="Meeting_C_C_help" explanation={fieldExplanations['MeetingCC']} /></>}
                             id="Meeting_C_C"
                             name="MeetingCC"
-                            max_count={100}
+                            max_count={20}
                             onChangeCount={handleMeetingCCOnChangeCount}
                             onChangeDirectTime={handleMeetingCCOnChangeDirectTime}
                             onChangeIndirectTime={handleMeetingCCOnChangeIndirectTime}
@@ -351,7 +350,7 @@ const EMRForm = () => {
                             label={<>Meeting - New Member<HelpIcon id="Meeting_New_Member_help" explanation={fieldExplanations['MeetingNewMember']} /></>}
                             id="Meeting_New_Member"
                             name="MeetingNewMember"
-                            max_count={100}
+                            max_count={20}
                             onChangeCount={handleMeetingNewMemberOnChangeCount}
                             onChangeDirectTime={handleMeetingNewMemberOnChangeDirectTime}
                             onChangeIndirectTime={handleMeetingNewMemberOnChangeIndirectTime}
@@ -360,7 +359,7 @@ const EMRForm = () => {
                             label={<>Meeting - CII/CPAR<HelpIcon id="Meeting_CII_CPAR_help" explanation={fieldExplanations['MeetingCIICPAR']} /></>}
                             id="Meeting_CII_CPAR"
                             name="MeetingCIICPAR"
-                            max_count={100}
+                            max_count={20}
                             onChangeCount={handleMeetingCIICPAROnChangeCount}
                             onChangeDirectTime={handleMeetingCIICPAROnChangeDirectTime}
                             onChangeIndirectTime={handleMeetingCIICPAROnChangeIndirectTime}
@@ -371,7 +370,7 @@ const EMRForm = () => {
                             label={<>Meeting - QI<HelpIcon id="Meeting_QI_help" explanation={fieldExplanations['MeetingQI']} /></>}
                             id="Meeting_QI"
                             name="MeetingQI"
-                            max_count={100}
+                            max_count={10}
                             onChangeCount={handleMeetingQIOnChangeCount}
                             onChangeDirectTime={handleMeetingQIOnChangeDirectTime}
                             onChangeIndirectTime={handleMeetingQIOnChangeIndirectTime}
@@ -380,7 +379,7 @@ const EMRForm = () => {
                             label={<>Material dropoff<HelpIcon id="Material_dropoff_help" explanation={fieldExplanations['MaterialDropoff']} /></>}
                             id="Material_dropoff"
                             name="MaterialDropoff"
-                            max_count={100}
+                            max_count={10}
                             onChangeCount={handleMaterialDropoffOnChangeCount}
                             onChangeDirectTime={handleMaterialDropoffOnChangeDirectTime}
                             onChangeIndirectTime={handleMaterialDropoffOnChangeIndirectTime}
@@ -389,7 +388,7 @@ const EMRForm = () => {
                             label={<>Clinic Activity - other<HelpIcon id="Clinic_Activity_other_help" explanation={fieldExplanations['ClinicActivityOther']} /></>}
                             id="Clinic_Activity_other"
                             name="ClinicActivityOther"
-                            max_count={100}
+                            max_count={10}
                             onChangeCount={handleClinicActivityOtherOnChangeCount}
                             onChangeDirectTime={handleClinicActivityOtherOnChangeDirectTime}
                             onChangeIndirectTime={handleClinicActivityOtherOnChangeIndirectTime}
@@ -398,7 +397,7 @@ const EMRForm = () => {
                             label={<>Recieving training<HelpIcon id="Recieving_training_help" explanation={fieldExplanations['RecievingTraining']} /></>}
                             id="Recieving_training"
                             name="RecievingTraining"
-                            max_count={100}
+                            max_count={10}
                             onChangeCount={handleRecievingTrainingOnChangeCount}
                             onChangeDirectTime={handleRecievingTrainingOnChangeDirectTime}
                             onChangeIndirectTime={handleRecievingTrainingOnChangeIndirectTime} />
@@ -406,7 +405,7 @@ const EMRForm = () => {
                             label={<>Training material creation<HelpIcon id="Training_material_creation_help" explanation={fieldExplanations['TrainingMaterialCreation']} /></>}
                             id="Training_material_creation"
                             name="TrainingMaterialCreation"
-                            max_count={100}
+                            max_count={10}
                             onChangeCount={handleTrainingMaterialCreationOnChangeCount}
                             onChangeDirectTime={handleTrainingMaterialCreationOnChangeDirectTime}
                             onChangeIndirectTime={handleTrainingMaterialCreationOnChangeIndirectTime}
@@ -415,7 +414,7 @@ const EMRForm = () => {
                             label={<>Training clinic administrative staff<HelpIcon id="Training_clinic_adminins_help" explanation={fieldExplanations['TrainingClinicAdmins']} /></>}
                             id="Training_clinic_adminins"
                             name="TrainingClinicAdmins"
-                            max_count={100}
+                            max_count={10}
                             onChangeCount={handleTrainingClinicAdminsOnChangeCount}
                             onChangeDirectTime={handleTrainingClinicAdminsOnChangeDirectTime}
                             onChangeIndirectTime={handleTrainingClinicAdminsOnChangeIndirectTime}
