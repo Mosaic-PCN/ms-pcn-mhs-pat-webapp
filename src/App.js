@@ -44,7 +44,7 @@ function MainForm() {
     };
 
     const handleNextClick = () => {
-        if (formData.clinicName === 'Mosaic PCN - Internal') {
+        if (formData.isPcnMosaicInternal) {
             navigate('/notes', { state: { formData } });
         } else {
             switch (selectedRole) {
