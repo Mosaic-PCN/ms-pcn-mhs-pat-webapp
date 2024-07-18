@@ -48,6 +48,19 @@ const Summary = () => {
     };
 
     const submitData = () => {
+        if (Object.keys(formData).length === 0) {
+            toast.error('No data to submit. Please fill out the form.', {
+                position: "top-right",
+                autoClose: 5000,
+                hideProgressBar: false,
+                closeOnClick: true,
+                pauseOnHover: true,
+                draggable: true,
+                progress: undefined,
+            });
+            return; // Return early from the function
+        }
+
         toast.success('Data submitted successfully!', {
             position: "top-right",
             autoClose: 5000,
