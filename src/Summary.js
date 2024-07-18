@@ -45,6 +45,59 @@ const Summary = () => {
         memberCoord: 'Membership Coordinator',
         MDT: 'MDT',
         DYAD: 'DYAD',
+        CcVisit: 'Documentation - C&C visit',
+        QiTemplate: 'Documentation - QI template',
+        ServiceTemplates: 'Documentation - Menu of Service templates',
+        DocumentationClinicProcesses: 'Documentation - Clinic Processe',
+        DocumentationOther: 'Documentation - Other',
+        SchedulingAppointments: 'Scheduling appointments',
+        LiaiseWithExternalPartnersDirectTime: 'Liaise with external partners - Direct Time',
+        LiaiseWithExternalPartnersIndirecTime: 'Liaise with external partners - Indirect Time',
+        ProvideOrClinicInquiryberPhysCount: 'Provider or clinic inquiry - Count',
+        ProvideOrClinicInquiryberPhysDirectTime: 'Provider or clinic inquiry - Direct Time',
+        ProvideOrClinicInquiryberPhysIndirectTIme: 'Provider or clinic inquiry - Indirect Time',
+        EmrMappingCount: 'EMR mapping - Count',
+        EmrMappingDirectTime: 'EMR mapping - Direct Time',
+        EmrMappingIndirectTime: 'EMR mapping - Indirect Time',
+        EmrSearchesCount: 'EMR searches - Count',
+        EmrSearchesDirectTime: 'EMR searches - Direct Time',
+        EmrSearchesIndirectTime: 'EMR searches - Indirect Time',
+        EmrDataCollectionCount: 'EMR data collection - Count',
+        EmrDataCollectionDirectTime: 'EMR data collection - Direct Time',
+        EmrDataCollectionIndirectTime: 'EMR data collection - Indirect Time',
+        EmrDataEntryCount: 'EMR data entry - Count',
+        EmrDataEntryDirectTime: 'EMR data entry - Direct Time',
+        EmrDataEntryIndirectTime: 'EMR data entry - Indirect Time',
+        MeetingCCCount: 'Meeting - C&C - Count',
+        MeetingCCDirectTime: 'Meeting - C&C - Direct Time',
+        MeetingCCIndirectTime: 'Meeting - C&C - Indirect Time',
+        MeetingNewMemberCount: 'Meeting - New Member - Count',
+        MeetingNewMemberDirectTime: 'Meeting - New Member - Direct Time',
+        MeetingNewMemberIndirectTime: 'Meeting - New Member - Indirect Time',
+        MeetingCIICPARCount: 'Meeting - CII/CPAR - Count',
+        MeetingCIICPARDirectTime: 'Meeting - CII/CPAR - Direct Time',
+        MeetingCIICPARIndirectTime: 'Meeting - CII/CPAR - Indirect Time',
+        MeetingQICount: 'Meeting - QI - Count',
+        MeetingQIDirectTime: 'Meeting - QI - Direct Time',
+        MeetingQIIndirectTime: 'Meeting - QI - Indirect Time',
+        MaterialDropoffCount: 'Material dropoff - Count',
+        MaterialDropoffDirectTime: 'Material dropoff - Direct Time',
+        MaterialDropoffIndirectTime: 'Material dropoff - Indirect Time',
+        ClinicActivityOtherCount: 'Clinic Activity - other - Count',
+        ClinicActivityOtherDirectTime: 'Clinic Activity - other - Direct Time',
+        ClinicActivityOtherIndirectTime: 'Clinic Activity - other - Indirect Time',
+        RecievingTrainingCount: 'Recieving training - Count',
+        RecievingTrainingDirectTime: 'Recieving training - Direct Time',
+        RecievingTrainingIndirectTime: 'Recieving training - Indirect Time',
+        TrainingMaterialCreationCount: 'Training material creation - Count',
+        TrainingMaterialCreationDirectTime: 'Training material creation - Direct Time',
+        TrainingMaterialCreationIndirectTime: 'Training material creation',
+        TrainingClinicAdminsCount: 'Training clinic administrative staff - Count',
+        TrainingClinicAdminsDirectTime: 'Training clinic administrative staff - Direct Time',
+        TrainingClinicAdminsIndirectTime: 'Training clinic administrative staff',
+        TrainingClinicProvidersCount: 'Training clinic provider - Count - Count',
+        TrainingClinicProvidersDirectTime: 'Training clinic provider - Direct Time',
+        TrainingClinicProvidersIndirectTime: 'Training clinic provider - Indirect Time',
     };
 
     const submitData = () => {
@@ -58,7 +111,7 @@ const Summary = () => {
                 draggable: true,
                 progress: undefined,
             });
-            return; // Return early from the function
+            return;
         }
 
         toast.success('Data submitted successfully!', {
@@ -87,8 +140,6 @@ const Summary = () => {
                 {
                     Object.keys(formData).filter(key => key !== 'notes').map((key) => {
                         let value = formData[key];
-
-                        // Format the date
                         if (key === 'workDate' && value) {
                             value = new Date(value).toLocaleDateString();
                         }

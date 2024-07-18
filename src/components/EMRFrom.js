@@ -236,12 +236,54 @@ const EMRForm = () => {
             <div className="emr-form">
                 <TooltipProvider>
                     <div className="emr-column">
-                        <CustomDropdown label={<>Documentation - C&C visit<HelpIcon id="C_C_visit_help" explanation={fieldExplanations['CcVisit']} /></>} id="C_C_visit" name="CcVisit" place_holder="Indirect Time" onChange={handleCcVisitChange} value={formData.CcVisit || ''} max_count={100} />
-                        <CustomDropdown label={<>Documentation - QI template<HelpIcon id="QI_template_help" explanation={fieldExplanations['QiTemplate']} /></>} id="QI_template" name="QiTemplate" place_holder="Indirect Time" onChange={handleQiTemplateChange} value={formData.QiTemplate || ''} max_count={100} />
-                        <CustomDropdown label={<>Documentation - Menu of Service templates<HelpIcon id="Service_templates_help" explanation={fieldExplanations['ServiceTemplates']} /></>} id="Service_templates" name="ServiceTemplates" place_holder="Indirect Time" onChange={handleServiceTemplatesChange} value={formData.ServiceTemplates || ''} />
-                        <CustomDropdown label={<>Documentation - Clinic Processes<HelpIcon id="Documentation_Clinic_Processes_help" explanation={fieldExplanations['DocumentationClinicProcesses']} /></>} id="Documentation_Clinic_Processes" name="DocumentationClinicProcesses" place_holder="Indirect Time" onChange={handleDocumentationClinicProcessesChange} value={formData.orgTime || ''} />
-                        <CustomDropdown label={<>Documentation - Other<HelpIcon id="Documentation_Other_help" explanation={fieldExplanations['DocumentationOther']} /></>} id="Documentation_Other" name="DocumentationOther" place_holder="Indirect Time" onChange={handleDocumentationOtherChange} value={formData.DocumentationOther || ''} />
-                        <CustomDropdown label={<>Scheduling appointments<HelpIcon id="Scheduling_appointments_help" explanation={fieldExplanations['SchedulingAppointments']} /></>} id="Scheduling_appointments" name="SchedulingAppointments" place_holder="Indirect Time" onChange={handleSchedulingAppointmentsChange} value={formData.SchedulingAppointments || ''} />
+                        <CustomDropdown
+                            label={<>Documentation - C&C visit<HelpIcon id="C_C_visit_help" explanation={fieldExplanations['CcVisit']} /></>}
+                            id="C_C_visit"
+                            name="CcVisit"
+                            place_holder="Indirect Time"
+                            onChange={handleCcVisitChange}
+                            value={formData.CcVisit || ''} max_count={100}
+                        />
+                        <CustomDropdown
+                            label={<>Documentation - QI template<HelpIcon id="QI_template_help" explanation={fieldExplanations['QiTemplate']} /></>}
+                            id="QI_template"
+                            name="QiTemplate"
+                            place_holder="Indirect Time"
+                            onChange={handleQiTemplateChange}
+                            value={formData.QiTemplate || ''} max_count={100}
+                        />
+                        <CustomDropdown
+                            label={<>Documentation - Menu of Service templates<HelpIcon id="Service_templates_help" explanation={fieldExplanations['ServiceTemplates']} /></>}
+                            id="Service_templates"
+                            name="ServiceTemplates"
+                            place_holder="Indirect Time"
+                            onChange={handleServiceTemplatesChange}
+                            value={formData.ServiceTemplates || ''}
+                        />
+                        <CustomDropdown
+                            label={<>Documentation - Clinic Processes<HelpIcon id="Documentation_Clinic_Processes_help" explanation={fieldExplanations['DocumentationClinicProcesses']} /></>}
+                            id="Documentation_Clinic_Processes"
+                            name="DocumentationClinicProcesses"
+                            place_holder="Indirect Time"
+                            onChange={handleDocumentationClinicProcessesChange}
+                            value={formData.orgTime || ''}
+                        />
+                        <CustomDropdown
+                            label={<>Documentation - Other<HelpIcon id="Documentation_Other_help" explanation={fieldExplanations['DocumentationOther']} /></>}
+                            id="Documentation_Other"
+                            name="DocumentationOther"
+                            place_holder="Indirect Time"
+                            onChange={handleDocumentationOtherChange}
+                            value={formData.DocumentationOther || ''}
+                        />
+                        <CustomDropdown
+                            label={<>Scheduling appointments<HelpIcon id="Scheduling_appointments_help" explanation={fieldExplanations['SchedulingAppointments']} /></>}
+                            id="Scheduling_appointments"
+                            name="SchedulingAppointments"
+                            place_holder="Indirect Time"
+                            onChange={handleSchedulingAppointmentsChange}
+                            value={formData.SchedulingAppointments || ''}
+                        />
                         <DoubleDropdown
                             label={<>Liaise with external partners<HelpIcon id="Liaise_with_external_partners_help" explanation={fieldExplanations['LiaiseWithExternalPartners']} /></>}
                             id="Liaise_with_external_partners"
@@ -262,7 +304,8 @@ const EMRForm = () => {
                     <div className="emr-column">
                         <TripleDropdown
                             label={<>EMR mapping<HelpIcon id="EMR_mapping_help" explanation={fieldExplanations['EmrMapping']} /></>}
-                            id="EMR_mapping" name="EmrMapping"
+                            id="EMR_mapping"
+                            name="EmrMapping"
                             max_count={100}
                             onChangeCount={handleEmrMappingOnChangeCount}
                             onChangeDirectTime={handleEmrMappingOnChangeDirectTime}
