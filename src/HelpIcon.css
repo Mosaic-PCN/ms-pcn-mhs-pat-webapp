@@ -4,7 +4,7 @@
 }
 
 .help-icon {
-    background-color: #9a9c9f;
+    background-color: #7abc99;
     color: white;
     border-radius: 50%;
     padding: 0.3em;
@@ -15,7 +15,7 @@
 
 .tooltip {
     position: absolute;
-    background-color: #333;
+    background-color: #7abc99;
     color: #fff;
     padding: 0.5em;
     border-radius: 0.3em;
@@ -23,7 +23,7 @@
     left: 0;
     z-index: 100;
     width: max-content;
-    max-width: 800px;
+    max-width: 1200px;
     /* Increased max-width */
     box-shadow: 0 0 30px rgba(0, 0, 0, 0.1);
     word-wrap: break-word;
