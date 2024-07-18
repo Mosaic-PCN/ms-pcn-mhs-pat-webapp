@@ -80,7 +80,7 @@ const StakeholderForm = () => {
 
     return (
         <main className="container mt-5">
-            <stakeholders-form>
+            <div className="stakeholders-form">
                 <div className="stakeholders-column">
                     <div className="form-group">
                         <label htmlFor="Member_phys_MHSP">
@@ -88,27 +88,105 @@ const StakeholderForm = () => {
                         </label>
                         <NumberDropdown className="number-dropdown" id="Member_phys_MHSP" name="memberPhysMHSP" required={true} max={50} place_holder="Count" onChange={handleMemberPhysMhspChange} value={formData.memberPhysMHSP || ''} />
                     </div>
-                    <NumberDropdown className="number-dropdown" label="Member phys General" id="Member_phys_General" name="memberPhysGen" required={true} max={50} place_holder="Count" onChange={handleMemberPhysGenChange} value={formData.memberPhysGen || ''} />
-                    <NumberDropdown className="number-dropdown" label="Non-Member Phys" id="Non_Member_Phys" name="nonMemberPhys" required={true} max={10} place_holder="Count" onChange={handleNonMemberChange} value={formData.nonMemberPhys || ''} />
-                    <NumberDropdown className="number-dropdown" label="NP - MHSP" id="NP_MHSP" name="NpMhsp" required={true} max={10} place_holder="Count" onChange={handleNpMhspChange} value={formData.NpMhsp || ''} />
-                    <NumberDropdown className="number-dropdown" label="NP - General" id="Np_Gen" name="NpGen" required={true} max={10} place_holder="Count" onChange={handleNpGenChange} value={formData.NpGen || ''} />
-                    <NumberDropdown className="number-dropdown" label="MOA" id="MOA" name="MOE" required={true} max={10} place_holder="Count" onChange={handleMOAChange} value={formData.MOE || ''} />
+                    <div className="form-group">
+                        <label htmlFor="Member_phys_General">
+                            Member phys General <HelpIcon explanation={fieldExplanations.memberPhysGen} />
+                        </label>
+                        <NumberDropdown className="number-dropdown" id="Member_phys_General" name="memberPhysGen" required={true} max={50} place_holder="Count" onChange={handleMemberPhysGenChange} value={formData.memberPhysGen || ''} />
+                    </div>
+                    <div className="form-group">
+                        <label htmlFor="Non_Member_Phys">
+                            Non-Member Phys <HelpIcon explanation={fieldExplanations.nonMemberPhys} />
+                        </label>
+                        <NumberDropdown className="number-dropdown" id="Non_Member_Phys" name="nonMemberPhys" required={true} max={10} place_holder="Count" onChange={handleNonMemberChange} value={formData.nonMemberPhys || ''} />
+                    </div>
+                    <div className="form-group">
+                        <label htmlFor="NP_MHSP">
+                            NP - MHSP <HelpIcon explanation={fieldExplanations.NpMhsp} />
+                        </label>
+                        <NumberDropdown className="number-dropdown" id="NP_MHSP" name="NpMhsp" required={true} max={10} place_holder="Count" onChange={handleNpMhspChange} value={formData.NpMhsp || ''} />
+                    </div>
+                    <div className="form-group">
+                        <label htmlFor="Np_Gen">
+                            NP - General <HelpIcon explanation={fieldExplanations.NpGen} />
+                        </label>
+                        <NumberDropdown className="number-dropdown" id="Np_Gen" name="NpGen" required={true} max={10} place_holder="Count" onChange={handleNpGenChange} value={formData.NpGen || ''} />
+                    </div>
+                    <div className="form-group">
+                        <label htmlFor="MOA">
+                            MOA <HelpIcon explanation={fieldExplanations.MOE} />
+                        </label>
+                        <NumberDropdown className="number-dropdown" id="MOA" name="MOE" required={true} max={10} place_holder="Count" onChange={handleMOAChange} value={formData.MOE || ''} />
+                    </div>
                 </div>
                 <div className="stakeholders-column">
-                    <NumberDropdown className="number-dropdown" label="CLIN MGR" id="CLIN_MGR" name="clinMgr" required={true} max={10} place_holder="Count" onChange={handleClinMgrChange} value={formData.clinMgr || ''} />
-                    <NumberDropdown className="number-dropdown" label="CLIN OWN" id="CLIN_OWN" name="clinOwn" required={true} max={10} place_holder="Count" onChange={handleClinOwnChange} value={formData.clinOwn || ''} />
-                    <NumberDropdown className="number-dropdown" label="PCC - Mosaic" id="PCC_Mosaic" name="pccMosaic" required={true} max={10} place_holder="Count" onChange={handlePccMosaicChange} value={formData.pccMosaic || ''} />
-                    <NumberDropdown className="number-dropdown" label="PCC - Clinic" id="PCC_Clinic" name="pccClinic" required={true} max={10} place_holder="Count" onChange={handleNPccClinicChange} value={formData.pccClinic || ''} />
-                    <NumberDropdown className="number-dropdown" label="PF" id="PF" name="PF" required={true} max={10} place_holder="Count" onChange={handlePfChange} value={formData.PF || ''} />
+                    <div className="form-group">
+                        <label htmlFor="CLIN_MGR">
+                            CLIN MGR <HelpIcon explanation={fieldExplanations.clinMgr} />
+                        </label>
+                        <NumberDropdown className="number-dropdown" id="CLIN_MGR" name="clinMgr" required={true} max={10} place_holder="Count" onChange={handleClinMgrChange} value={formData.clinMgr || ''} />
+                    </div>
+                    <div className="form-group">
+                        <label htmlFor="CLIN_OWN">
+                            CLIN OWN <HelpIcon explanation={fieldExplanations.clinOwn} />
+                        </label>
+                        <NumberDropdown className="number-dropdown" id="CLIN_OWN" name="clinOwn" required={true} max={10} place_holder="Count" onChange={handleClinOwnChange} value={formData.clinOwn || ''} />
+                    </div>
+                    <div className="form-group">
+                        <label htmlFor="PCC_Mosaic">
+                            PCC - Mosaic <HelpIcon explanation={fieldExplanations.pccMosaic} />
+                        </label>
+                        <NumberDropdown className="number-dropdown" id="PCC_Mosaic" name="pccMosaic" required={true} max={10} place_holder="Count" onChange={handlePccMosaicChange} value={formData.pccMosaic || ''} />
+                    </div>
+                    <div className="form-group">
+                        <label htmlFor="PCC_Clinic">
+                            PCC - Clinic <HelpIcon explanation={fieldExplanations.pccClinic} />
+                        </label>
+                        <NumberDropdown className="number-dropdown" id="PCC_Clinic" name="pccClinic" required={true} max={10} place_holder="Count" onChange={handleNPccClinicChange} value={formData.pccClinic || ''} />
+                    </div>
+                    <div className="form-group">
+                        <label htmlFor="PF">
+                            PF <HelpIcon explanation={fieldExplanations.PF} />
+                        </label>
+                        <NumberDropdown className="number-dropdown" id="PF" name="PF" required={true} max={10} place_holder="Count" onChange={handlePfChange} value={formData.PF || ''} />
+                    </div>
                 </div>
                 <div className="stakeholders-column">
-                    <NumberDropdown className="number-dropdown" label="EMRS" id="EMRs" name="EMRS" required={true} max={10} place_holder="Count" onChange={handleEmrsChange} value={formData.EMRS || ''} />
-                    <NumberDropdown className="number-dropdown" label="HPF" id="HPF" name="HPF" required={true} max={10} place_holder="Count" onChange={handleHpfChange} value={formData.HPF || ''} />
-                    <NumberDropdown className="number-dropdown" label="Membership Coordinator" id="Membership_Coordinator" name="memberCoord" required={true} max={5} place_holder="Count" onChange={handleMemberCoordinatorChange} value={formData.memberCoord || ''} />
-                    <NumberDropdown className="number-dropdown" label="MDT" id="MDT" name="MDT" required={true} max={10} place_holder="Count" onChange={handleMdtChange} value={formData.MDT || ''} />
-                    <SelectDropdown className="select-dropdown" label="Dyad" id="Dyad" name="Dyad" options={yes_no_Options} onChange={handleDyadChange} value={formData.Dyad || ''} />
+                    <div className="form-group">
+                        <label htmlFor="EMRs">
+                            EMRS <HelpIcon explanation={fieldExplanations.EMRS} />
+                        </label>
+                        <NumberDropdown className="number-dropdown" id="EMRs" name="EMRS" required={true} max={10} place_holder="Count" onChange={handleEmrsChange} value={formData.EMRS || ''} />
+                    </div>
+                    <div className="form-group">
+                        <label htmlFor="HPF">
+                            HPF <HelpIcon explanation={fieldExplanations.HPF} />
+                        </label>
+                        <NumberDropdown className="number-dropdown" id="HPF" name="HPF" required={true} max={10} place_holder="Count" onChange={handleHpfChange} value={formData.HPF || ''} />
+                    </div>
+                    <div className="form-group">
+                        <label htmlFor="Membership_Coordinator">
+                            Membership Coordinator <HelpIcon explanation={fieldExplanations.memberCoord} />
+                        </label>
+                        <NumberDropdown className="number-dropdown" id="Membership_Coordinator" name="memberCoord" required={true} max={5} place_holder="Count" onChange={handleMemberCoordinatorChange} value={formData.memberCoord || ''} />
+
+                    </div>
+
+                    <div className="form-group">
+                        <label htmlFor="Membership_Coordinator">
+                            MDT <HelpIcon explanation={fieldExplanations.MDT} />
+                        </label>
+                        <NumberDropdown className="number-dropdown" id="MDT" name="MDT" required={true} max={10} place_holder="Count" onChange={handleMdtChange} value={formData.MDT || ''} />
+                    </div>
+
+                    <div className="form-group">
+                        <label htmlFor="Membership_Coordinator">
+                            Dyad <HelpIcon explanation={fieldExplanations.DYAD} />
+                        </label>
+                        <SelectDropdown className="select-dropdown" id="Dyad" name="Dyad" options={yes_no_Options} onChange={handleDyadChange} value={formData.Dyad || ''} />
+                    </div>
                 </div>
-            </stakeholders-form>
+            </div>
         </main>
     );
 };
