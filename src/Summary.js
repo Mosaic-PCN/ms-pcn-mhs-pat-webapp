@@ -20,7 +20,7 @@ const Summary = () => {
 
     const fieldLabels = {
         workDate: 'Date',
-        serviceLocation: 'Service Location',  // Updated key to 'location'
+        serviceLocation: 'Service Location',
         clinicName: 'Clinic Name',
         role: 'Role',
         isPcnMosaicInternal: 'Mosaic PCN - Internal',
@@ -79,7 +79,6 @@ const Summary = () => {
                         if (key === 'workDate' && value) {
                             value = new Date(value).toLocaleDateString();
                         }
-
                         return (
                             <p key={key}>
                                 <strong>{fieldLabels[key] || key.charAt(0).toUpperCase() + key.slice(1)}:</strong> {value.toString()}
@@ -105,9 +104,8 @@ const Summary = () => {
 
                     </div>
                     <div className="button-container">
-                        {/* <button type="button" className="btn btn-primary" onClick={() => navigate(-1)}>Previous</button> */}
-                        <button type="button" className="btn btn-primary" onClick={goToHomePage}>Home</button>
-                        <button type="button" className="btn btn-primary" onClick={handlePreviousPage}>Previous</button>
+                        <button type="button" className="btn btn-secondary" onClick={goToHomePage}>Home</button>
+                        <button type="button" className="btn btn-secondary" onClick={handlePreviousPage}>Previous</button>
                         <button type="submit" className="btn btn-primary" onClick={submitData}>Submit</button>
                     </div>
                     <ToastContainer />
