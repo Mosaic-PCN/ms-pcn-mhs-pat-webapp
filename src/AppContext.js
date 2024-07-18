@@ -29,17 +29,9 @@ export const AppProvider = ({ children }) => {
     };
 
     const fieldExplanations = {
-        workDate: 'The date of the encounter.',
-        location: 'The location where the encounter occurred.',
-        clinicName: 'The name of the clinic where the encounter took place.',
-        role: 'Your role during the encounter (e.g., EMR, PCC, PF).',
-        sessionType: 'Whether the session was virtual or in-person.',
-        meetingType: 'The type of meeting (e.g., 1:1, group, non-visit).',
-        orgTime: 'Time spent on organization during the encounter.',
-        gameTime: 'Time spent on game planning during the encounter.',
-        memberPhysMHSP: 'Number of Member Physicians specializing in MHSP.',
-        memberPhysGen: 'Number of Member Physicians in General Practice.',
-        nonMemberPhys: 'Number of Non-Member Physicians.',
+        memberPhysMHSP: 'Member physicians who are currently participanting MHSP.',
+        memberPhysGen: 'Member physicians who are not currently participanting MHSP',
+        nonMemberPhys: 'Pphysicians who are not MPCN member.',
     };
 
 

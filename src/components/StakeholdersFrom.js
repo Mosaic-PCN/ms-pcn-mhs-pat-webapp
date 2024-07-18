@@ -2,10 +2,11 @@ import React, { useState, useContext } from 'react';
 import { AppContext } from '../AppContext';
 import NumberDropdown from './NumberDropdown';
 import SelectDropdown from './SelectDropdown';
+import HelpIcon from '../HelpIcon'; // Import the HelpIcon component
 import './StakeholdersForm.css';
 
 const StakeholderForm = () => {
-    const { formData, updateFormData } = useContext(AppContext);
+    const { formData, updateFormData, fieldExplanations } = useContext(AppContext);
     // const [startDate, setStartDate] = useState(formData.workDate ? new Date(formData.workDate) : new Date());
 
     const yes_no_Options = [
@@ -81,7 +82,12 @@ const StakeholderForm = () => {
         <main className="container mt-5">
             <stakeholders-form>
                 <div className="stakeholders-column">
-                    <NumberDropdown className="number-dropdown" label="Member phys MHSP" id="Member_phys_MHSP" name="memberPhysMHSP" required={true} max={50} place_holder="Count" onChange={handleMemberPhysMhspChange} value={formData.memberPhysMHSP || ''} />
+                    <div className="form-group">
+                        <label htmlFor="Member_phys_MHSP">
+                            Member phys MHSP <HelpIcon explanation={fieldExplanations.memberPhysMHSP} />
+                        </label>
+                        <NumberDropdown className="number-dropdown" id="Member_phys_MHSP" name="memberPhysMHSP" required={true} max={50} place_holder="Count" onChange={handleMemberPhysMhspChange} value={formData.memberPhysMHSP || ''} />
+                    </div>
                     <NumberDropdown className="number-dropdown" label="Member phys General" id="Member_phys_General" name="memberPhysGen" required={true} max={50} place_holder="Count" onChange={handleMemberPhysGenChange} value={formData.memberPhysGen || ''} />
                     <NumberDropdown className="number-dropdown" label="Non-Member Phys" id="Non_Member_Phys" name="nonMemberPhys" required={true} max={10} place_holder="Count" onChange={handleNonMemberChange} value={formData.nonMemberPhys || ''} />
                     <NumberDropdown className="number-dropdown" label="NP - MHSP" id="NP_MHSP" name="NpMhsp" required={true} max={10} place_holder="Count" onChange={handleNpMhspChange} value={formData.NpMhsp || ''} />
