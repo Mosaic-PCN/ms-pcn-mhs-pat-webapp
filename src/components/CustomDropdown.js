@@ -7,13 +7,13 @@ import { generateTimeOptions } from '../utils';
 
 const CustomDropdown = ({ label, id, name, onChange, value, required, place_holder }) => {
     const { formData, updateFormData } = useContext(AppContext); // Access context
-    const options = generateTimeOptions();
 
     const handleChange = (selectedOption) => {
         updateFormData({ [name]: selectedOption?.value || null }); // Update formData
         onChange(selectedOption);
     };
 
+    const options = generateTimeOptions();
 
     return (
         <div className="form-group standard-width">

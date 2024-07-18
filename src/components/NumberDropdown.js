@@ -2,7 +2,6 @@ import Select from 'react-select';
 import React, { useContext } from 'react';
 import { AppContext } from '../AppContext';
 
-
 const NumberDropdown = ({ label, id, name, onChange, value, required, max, place_holder }) => {
     const { formData, updateFormData } = useContext(AppContext); // Access context
 
@@ -13,12 +12,14 @@ const NumberDropdown = ({ label, id, name, onChange, value, required, max, place
 
     const handleChange = (selectedOption) => {
         updateFormData({ [name]: selectedOption?.value || null }); // Update formData
-        onChange(selectedOption);
+        if (onChange) {
+            onChange(selectedOption);
+        }
     };
 
     return (
         <div className="form-group standard-width">
-            <label htmlFor={id}>{label}</label>
+            {label && <label htmlFor={id}>{label}</label>}
             <Select
                 id={id}
                 name={name}
