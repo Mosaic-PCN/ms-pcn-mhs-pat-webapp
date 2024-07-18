@@ -230,6 +230,8 @@ const EMRForm = () => {
         updateFormData({ TrainingClinicProvidersIndirectTime: selectedOption.value });
     };
 
+
+
     return (
         <main className="container mt-5">
             <div className="emr-form">

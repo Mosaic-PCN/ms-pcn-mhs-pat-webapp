@@ -44,7 +44,7 @@ function EMR() {
                                 <EMRForm />
                             </div>
                         </EMRCard>
-                        <div className="button-container"> {/* Place the buttons outside the card */}
+                        <div className="button-container">
                             <button type="button" className="btn btn-secondary" onClick={goToHomePage}>Previous</button>
                             <button type="Submit" className="btn btn-primary" onClick={goToNotesPage}>Next</button>
                         </div>

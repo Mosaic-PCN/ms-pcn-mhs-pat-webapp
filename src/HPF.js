@@ -36,7 +36,7 @@ function HPF() {
                             <HPFForm />
                         </HPFCard>
                         <div className="button-container">
-                            <button type="button" className="btn btn-primary" onClick={goToHomePage}>Previous</button>
+                            <button type="button" className="btn btn-secondary" onClick={goToHomePage}>Previous</button>
                             <button type="Submit" className="btn btn-primary" onClick={goToNotesPage}>Next</button>
                         </div>
                     </main>
