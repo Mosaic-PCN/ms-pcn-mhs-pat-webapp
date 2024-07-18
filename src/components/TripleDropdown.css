@@ -30,16 +30,17 @@
 
 .react-select-container {
     flex: 1;
-    min-width: 400px;
-    /* Increased width to 400px */
+    width: 1200px;
+    /* Set a fixed width */
     margin-bottom: 0.5rem;
 }
+
 
 
 /* Additional styles to ensure proper alignment */
 .dropdown-container {
     display: flex;
     flex-direction: column;
-    gap: 0.15rem;
+    gap: 0.2rem;
     /* Adjust the gap between label and dropdown */
 }

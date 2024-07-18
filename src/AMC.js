@@ -1,6 +1,5 @@
 import React, { useState } from 'react';
 import { Amplify } from 'aws-amplify';
-import { post } from 'aws-amplify/api';
 import { Authenticator, withAuthenticator } from '@aws-amplify/ui-react';
 import '@aws-amplify/ui-react/styles.css';
 import Header from './components/Header';

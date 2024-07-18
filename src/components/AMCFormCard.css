@@ -5,9 +5,9 @@
     box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
     padding: 16px;
     margin: 10px;
-    max-width: 1800px;
+    max-width: 1500px;
     /* Adjust based on your preference */
-    width: 100%;
+    width: 300%;
     /* Make the card take full width available */
     text-align: left;
     /* Ensure text is aligned to the left */

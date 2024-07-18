@@ -1,7 +1,7 @@
 .amc-form {
     display: flex;
     flex-direction: row;
-    justify-content: space-between;
+    justify-content: flex-start;
 }
 
 .amc-column {
@@ -12,24 +12,25 @@
 }
 
 .container {
-    max-width: 1800px;
+    max-width: 1600px;
     margin: auto;
 }
 
 .number-dropdown,
-.select-dropdown {
-    width: 200px;
-    /* Adjust the width as needed */
+.select-dropdown,
+.custom-dropdown {
+    width: 600px;
+    /* Increase this value */
 }
 
 .amc-form .amc-column {
-    flex: 1;
-    margin: 1rem;
+    /* flex: 1; */
+    margin: 1.8rem;
 }
 
 .amc-form .number-dropdown,
 .amc-form .select-dropdown {
-    padding: 0.25rem;
+    padding: 0.34rem;
     font-size: 0.875rem;
     /* Smaller font size */
 }
@@ -40,7 +41,7 @@
 }
 
 .dropdown-container {
-    flex: 1;
+    /* flex: 1; */
     margin: 0;
     /* Remove any margin */
 }
