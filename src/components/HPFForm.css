@@ -16,7 +16,7 @@
     flex-direction: column;
     gap: 0.2rem;
     /* Adjust the gap between dropdowns */
-    min-width: 360px;
+    min-width: 340px;
     /* Ensure each column has a minimum width */
 }
 

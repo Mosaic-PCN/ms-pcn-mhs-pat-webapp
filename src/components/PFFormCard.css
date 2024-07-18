@@ -1,11 +1,11 @@
 .pf-card {
-    background-color: #fffefe;
+    background-color: #fff;
     border: 1px solid #ddd;
     border-radius: 8px;
     box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
     padding: 16px;
     margin: 10px;
-    max-width: 1800px;
+    max-width: 1450px;
     /* Adjust based on your preference */
     width: 100%;
     /* Make the card take full width available */
@@ -15,8 +15,23 @@
     /* Adjust this value to your liking */
     border-style: solid;
     /* This makes the border visible */
-    border-color: rgb(110, 93, 93);
+    border-color: rgb(170, 165, 165);
     /* Change this to the color you want */
+    position: relative;
+    /* Make card positioned relative */
+}
+
+.pf-button-container {
+    position: absolute;
+    top: 10px;
+    /* Adjust top position as needed */
+    right: 10px;
+    /* Adjust right position as needed */
+    display: flex;
+    flex-direction: column;
+    /* Stack buttons vertically */
+    gap: 5px;
+    /* Add some gap between buttons */
 }
 
 .pf-card-title {
