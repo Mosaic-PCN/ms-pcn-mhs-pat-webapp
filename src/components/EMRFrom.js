@@ -428,7 +428,8 @@ const EMRForm = () => {
                             max_count={100}
                             onChangeCount={handleTrainingClinicProvidersOnChangeCount}
                             onChangeDirectTime={handleTrainingClinicProvidersOnChangeDirectTime}
-                            onChangeIndirectTime={handleTrainingClinicProvidersOnChangeIndirectTime} />
+                            onChangeIndirectTime={handleTrainingClinicProvidersOnChangeIndirectTime}
+                        />
                     </div>
                 </TooltipProvider>
 

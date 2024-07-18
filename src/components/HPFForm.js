@@ -153,6 +153,30 @@ const HPFForm = () => {
         updateFormData({ TrainingMaterialCreationIndirectTime: selectedOption.value });
     };
 
+    const handleTrainingClinicAdminsOnChangeCount = (selectedOption) => {
+        updateFormData({ TrainingClinicAdminsCount: selectedOption.value });
+    };
+
+    const handleTrainingClinicAdminsOnChangeDirectTime = (selectedOption) => {
+        updateFormData({ TrainingClinicAdminsDirectTime: selectedOption.value });
+    };
+
+    const handleTrainingClinicAdminsOnChangeIndirectTime = (selectedOption) => {
+        updateFormData({ TrainingClinicAdminsIndirectTime: selectedOption.value });
+    };
+
+    const handleTrainingClinicProvidersOnChangeCount = (selectedOption) => {
+        updateFormData({ TrainingClinicProvidersCount: selectedOption.value });
+    };
+
+    const handleTrainingClinicProvidersOnChangeDirectTime = (selectedOption) => {
+        updateFormData({ TrainingClinicProvidersDirectTime: selectedOption.value });
+    };
+
+    const handleTrainingClinicProvidersOnChangeIndirectTime = (selectedOption) => {
+        updateFormData({ TrainingClinicProvidersIndirectTime: selectedOption.value });
+    };
+
 
     return (
         <main className="container mt-5">
@@ -222,8 +246,6 @@ const HPFForm = () => {
                         onChangeDirectTime={handleProvideOrClinicInquiryOnChangeDirectTime}
                         onChangeIndirectTime={handleProvideOrClinicInquiryOnChangeIndirectTime}
                     />
-                </div>
-                <div className="hpf-column">
                     <TripleDropdown
                         label={<>Meeting - C&C<HelpIcon id="Meeting_C_C_help" explanation={fieldExplanations['MeetingCC']} /></>}
                         id="Meeting_C_C"
@@ -252,6 +274,8 @@ const HPFForm = () => {
                         onChangeIndirectTime={handleMeetingCIICPAROnChangeIndirectTime}
                     />
 
+                </div>
+                <div className="hpf-column">
                     <TripleDropdown
                         label={<>Meeting - QI<HelpIcon id="Meeting_QI_help" explanation={fieldExplanations['MeetingQI']} /></>}
                         id="Meeting_QI"
@@ -279,9 +303,46 @@ const HPFForm = () => {
                         onChangeDirectTime={handleClinicActivityOtherOnChangeDirectTime}
                         onChangeIndirectTime={handleClinicActivityOtherOnChangeIndirectTime}
                     />
+                    <TripleDropdown
+                        label={<>Recieving training<HelpIcon id="Recieving_training_help" explanation={fieldExplanations['RecievingTraining']} /></>}
+                        id="Recieving_training"
+                        name="RecievingTraining"
+                        max_count={10}
+                        onChangeCount={handleRecievingTrainingOnChangeCount}
+                        onChangeDirectTime={handleRecievingTrainingOnChangeDirectTime}
+                        onChangeIndirectTime={handleRecievingTrainingOnChangeIndirectTime} />
+                    <TripleDropdown
+                        label={<>Training material creation<HelpIcon id="Training_material_creation_help" explanation={fieldExplanations['TrainingMaterialCreation']} /></>}
+                        id="Training_material_creation"
+                        name="TrainingMaterialCreation"
+                        max_count={10}
+                        onChangeCount={handleTrainingMaterialCreationOnChangeCount}
+                        onChangeDirectTime={handleTrainingMaterialCreationOnChangeDirectTime}
+                        onChangeIndirectTime={handleTrainingMaterialCreationOnChangeIndirectTime}
+                    />
+                    <TripleDropdown
+                        label={<>Training clinic administrative staff<HelpIcon id="Training_clinic_adminins_help" explanation={fieldExplanations['TrainingClinicAdmins']} /></>}
+                        id="Training_clinic_adminins"
+                        name="TrainingClinicAdmins"
+                        max_count={10}
+                        onChangeCount={handleTrainingClinicAdminsOnChangeCount}
+                        onChangeDirectTime={handleTrainingClinicAdminsOnChangeDirectTime}
+                        onChangeIndirectTime={handleTrainingClinicAdminsOnChangeIndirectTime}
+                    />
+                    <TripleDropdown
+                        label={<>Training clinic providers (physician, NP, MDT)<HelpIcon id="Training_clinic_providers_help" explanation={fieldExplanations['TrainingClinicProviders']} /></>}
+                        id="Training_clinic_providers"
+                        name="TrainingClinicProviders"
+                        max_count={100}
+                        onChangeCount={handleTrainingClinicProvidersOnChangeCount}
+                        onChangeDirectTime={handleTrainingClinicProvidersOnChangeDirectTime}
+                        onChangeIndirectTime={handleTrainingClinicProvidersOnChangeIndirectTime}
+                    />
+
 
                 </div>
                 <div className="hpf-column">
+
                 </div>
             </div>
         </main>
