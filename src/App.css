@@ -27,18 +27,23 @@
 }
 
 .button-container {
+  position: fixed;
+  /* Make the position fixed */
+  bottom: 0;
+  /* Position at the bottom of the page */
+  right: 0;
+  /* Position at the right of the page */
   display: flex;
   flex-direction: column;
-  /* Stack buttons vertically */
   align-items: flex-end;
-  /* Align buttons to the right edge */
-  margin-top: 1rem;
-  /* Optional: Add some space above buttons */
+  margin: 1rem;
+  /* Add some space around the buttons */
 }
 
 .btn-primary {
   margin: 0.5rem 1;
   /* Adjust vertical margin between buttons */
+  font-weight: bold;
 }
 
 .btn-secondary {
@@ -83,4 +88,14 @@
     margin: 10px 0;
     /* Adjust margin for vertical stacking */
   }
+}
+
+.btn-primary,
+.btn-secondary {
+  margin: 0.24rem 1rem;
+  /* Add right and left margins */
+  width: 150px;
+  /* Set a specific width */
+  text-align: center;
+  /* Center the text inside the button */
 }

@@ -32,7 +32,6 @@ function MainForm() {
     const navigate = useNavigate();
     const [timer, setTimer] = useState(null);
 
-
     const handleRoleChange = (selectedRole) => {
         setSelectedRole(selectedRole);
     };
