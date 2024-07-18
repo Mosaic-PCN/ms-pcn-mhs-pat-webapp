@@ -177,6 +177,54 @@ const HPFForm = () => {
         updateFormData({ TrainingClinicProvidersIndirectTime: selectedOption.value });
     };
 
+    const handleQIProjectsStartedOnChangeCount = (selectedOption) => {
+        updateFormData({ QIProjectsStartedCount: selectedOption.value });
+    };
+
+    const handleQIProjectsStartedOnChangeDirectTime = (selectedOption) => {
+        updateFormData({ QIProjectsStartedDirectTime: selectedOption.value });
+    };
+
+    const handleQIProjectsStartedOnChangeIndirectTime = (selectedOption) => {
+        updateFormData({ QIProjectsStartedIndirectTime: selectedOption.value });
+    };
+
+    const handleQIProjectsAdoptedOnChangeCount = (selectedOption) => {
+        updateFormData({ QIProjectsAdoptedCount: selectedOption.value });
+    };
+
+    const handleQIProjectsAdoptedOnChangeDirectTime = (selectedOption) => {
+        updateFormData({ QIProjectsAdoptedDirectTime: selectedOption.value });
+    };
+
+    const handleQIProjectsAdoptedOnChangeIndirectTime = (selectedOption) => {
+        updateFormData({ QIProjectsAdoptedIndirectTime: selectedOption.value });
+    };
+
+    const handleQIProjectCancelledOnChangeCount = (selectedOption) => {
+        updateFormData({ QIProjectCancelledCount: selectedOption.value });
+    };
+
+    const handleQIProjectCancelledOnChangeDirectTime = (selectedOption) => {
+        updateFormData({ QIProjectCancelledDirectTime: selectedOption.value });
+    };
+
+    const handleQIProjectCancelledOnChangeIndirectTime = (selectedOption) => {
+        updateFormData({ QIProjectCancelledIndirectTime: selectedOption.value });
+    };
+
+    const handleQIProjectsAdaptedOnChangeCount = (selectedOption) => {
+        updateFormData({ QIProjectsAdaptedCount: selectedOption.value });
+    };
+
+    const handleQIProjectsAdaptedOnChangeDirectTime = (selectedOption) => {
+        updateFormData({ QIProjectsAdaptedDirectTime: selectedOption.value });
+    };
+
+    const handleQIProjectsAdaptedOnChangeIndirectTime = (selectedOption) => {
+        updateFormData({ QIProjectsAdaptedIndirectTime: selectedOption.value });
+    };
+
 
     return (
         <main className="container mt-5">
@@ -273,7 +321,6 @@ const HPFForm = () => {
                         onChangeDirectTime={handleMeetingCIICPAROnChangeDirectTime}
                         onChangeIndirectTime={handleMeetingCIICPAROnChangeIndirectTime}
                     />
-
                 </div>
                 <div className="hpf-column">
                     <TripleDropdown
@@ -338,11 +385,52 @@ const HPFForm = () => {
                         onChangeDirectTime={handleTrainingClinicProvidersOnChangeDirectTime}
                         onChangeIndirectTime={handleTrainingClinicProvidersOnChangeIndirectTime}
                     />
-
-
                 </div>
                 <div className="hpf-column">
-
+                    <TripleDropdown
+                        label={<>QI projects Started <HelpIcon id="QI_projects_Started_help" explanation={fieldExplanations['QIProjectsStarted']} /></>}
+                        id="QI_projects_Started"
+                        name="QIProjectsStarted"
+                        max_count={10}
+                        onChangeCount={handleQIProjectsStartedOnChangeCount}
+                        onChangeDirectTime={handleQIProjectsStartedOnChangeDirectTime}
+                        onChangeIndirectTime={handleQIProjectsStartedOnChangeIndirectTime}
+                    />
+                    <TripleDropdown
+                        label={<>QI projects adopted<HelpIcon id="QI_projects_adopted_help" explanation={fieldExplanations['QIProjectsAdopted']} /></>}
+                        id="QI_projects_adopted"
+                        name="QIProjectsAdopted"
+                        max_count={10}
+                        onChangeCount={handleQIProjectsAdoptedOnChangeCount}
+                        onChangeDirectTime={handleQIProjectsAdoptedOnChangeDirectTime}
+                        onChangeIndirectTime={handleQIProjectsAdoptedOnChangeIndirectTime} />
+                    <TripleDropdown
+                        label={<>QI projects adapted<HelpIcon id="QI_projects_adapted_help" explanation={fieldExplanations['QIProjectsAdapted']} /></>}
+                        id="QI_projects_adapted"
+                        name="QIProjectsAdapted"
+                        max_count={10}
+                        onChangeCount={handleQIProjectsAdaptedOnChangeCount}
+                        onChangeDirectTime={handleQIProjectsAdaptedOnChangeDirectTime}
+                        onChangeIndirectTime={handleQIProjectsAdaptedOnChangeIndirectTime}
+                    />
+                    <TripleDropdown
+                        label={<>QI projects abandoned<HelpIcon id="Training_clinic_adminins_help" explanation={fieldExplanations['TrainingClinicAdmins']} /></>}
+                        id="QI projects abandoned"
+                        name="QI projects abandoned"
+                        max_count={10}
+                        onChangeCount={handleTrainingClinicAdminsOnChangeCount}
+                        onChangeDirectTime={handleTrainingClinicAdminsOnChangeDirectTime}
+                        onChangeIndirectTime={handleTrainingClinicAdminsOnChangeIndirectTime}
+                    />
+                    <TripleDropdown
+                        label={<>QI project cancelled<HelpIcon id="QI_project_cancelled_help" explanation={fieldExplanations['QIProjectCancelled']} /></>}
+                        id="QI_project_cancelled"
+                        name="QIProjectCancelled"
+                        max_count={100}
+                        onChangeCount={handleQIProjectCancelledOnChangeCount}
+                        onChangeDirectTime={handleQIProjectCancelledOnChangeDirectTime}
+                        onChangeIndirectTime={handleQIProjectCancelledOnChangeIndirectTime}
+                    />
                 </div>
             </div>
         </main>

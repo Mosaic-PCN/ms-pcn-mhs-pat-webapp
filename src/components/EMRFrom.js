@@ -205,7 +205,6 @@ const EMRForm = () => {
         updateFormData({ TrainingMaterialCreationIndirectTime: selectedOption.value });
     };
 
-
     const handleTrainingClinicAdminsOnChangeCount = (selectedOption) => {
         updateFormData({ TrainingClinicAdminsCount: selectedOption.value });
     };
