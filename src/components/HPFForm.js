@@ -225,6 +225,18 @@ const HPFForm = () => {
         updateFormData({ QIProjectsAdaptedIndirectTime: selectedOption.value });
     };
 
+    const handleCollaborationWithEvalPartnersOnChangeCount = (selectedOption) => {
+        updateFormData({ CollaborationWithEvalPartnersCount: selectedOption.value });
+    };
+
+    const handleCollaborationWithEvalPartnersOnChangeDirectTime = (selectedOption) => {
+        updateFormData({ CollaborationWithEvalPartnersDirectTime: selectedOption.value });
+    };
+
+    const handleCollaborationWithEvalPartnersOnChangeIndirectTime = (selectedOption) => {
+        updateFormData({ CollaborationWithEvalPartnersIndirectTime: selectedOption.value });
+    };
+
 
     return (
         <main className="container mt-5">
@@ -424,6 +436,41 @@ const HPFForm = () => {
                     />
                     <TripleDropdown
                         label={<>QI project cancelled<HelpIcon id="QI_project_cancelled_help" explanation={fieldExplanations['QIProjectCancelled']} /></>}
+                        id="QI_project_cancelled"
+                        name="QIProjectCancelled"
+                        max_count={100}
+                        onChangeCount={handleQIProjectCancelledOnChangeCount}
+                        onChangeDirectTime={handleQIProjectCancelledOnChangeDirectTime}
+                        onChangeIndirectTime={handleQIProjectCancelledOnChangeIndirectTime}
+                    />
+                    <TripleDropdown
+                        label={<>Collaboration with eval partners<HelpIcon id="Collaboration_with_eval_partners_help" explanation={fieldExplanations['CollaborationWithEvalPartners']} /></>}
+                        id="Collaboration_with_eval_partners"
+                        name="CollaborationWithEvalPartners"
+                        max_count={10}
+                        onChangeCount={handleCollaborationWithEvalPartnersOnChangeCount}
+                        onChangeDirectTime={handleCollaborationWithEvalPartnersOnChangeDirectTime}
+                        onChangeIndirectTime={handleCollaborationWithEvalPartnersOnChangeIndirectTime} />
+                    <TripleDropdown
+                        label={<>Environmental scan/situational analysis<HelpIcon id="QI_projects_adapted_help" explanation={fieldExplanations['QIProjectsAdapted']} /></>}
+                        id="QI_projects_adapted"
+                        name="QIProjectsAdapted"
+                        max_count={10}
+                        onChangeCount={handleQIProjectsAdaptedOnChangeCount}
+                        onChangeDirectTime={handleQIProjectsAdaptedOnChangeDirectTime}
+                        onChangeIndirectTime={handleQIProjectsAdaptedOnChangeIndirectTime}
+                    />
+                    <TripleDropdown
+                        label={<>Data analysis<HelpIcon id="Training_clinic_adminins_help" explanation={fieldExplanations['TrainingClinicAdmins']} /></>}
+                        id="QI projects abandoned"
+                        name="QI projects abandoned"
+                        max_count={10}
+                        onChangeCount={handleTrainingClinicAdminsOnChangeCount}
+                        onChangeDirectTime={handleTrainingClinicAdminsOnChangeDirectTime}
+                        onChangeIndirectTime={handleTrainingClinicAdminsOnChangeIndirectTime}
+                    />
+                    <TripleDropdown
+                        label={<>Creating evaluation frameworks<HelpIcon id="QI_project_cancelled_help" explanation={fieldExplanations['QIProjectCancelled']} /></>}
                         id="QI_project_cancelled"
                         name="QIProjectCancelled"
                         max_count={100}
