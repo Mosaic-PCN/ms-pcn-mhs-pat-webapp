@@ -27,6 +27,7 @@
 /* Style the field-value span within p tag */
 .summary-container p .field-value {
     font-style: italic;
+    font-weight: bold;
     /* Italic style for values */
 }
 
