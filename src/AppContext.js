@@ -66,7 +66,11 @@ export const AppProvider = ({ children }) => {
         RecievingTraining: 'Training sessions received regarding the clinic supports. E.g, AMA, EMR user group',
         TrainingMaterialCreation: 'Time spent on creating the tranning materials',
         TrainingClinicAdmins: 'Providing trainning for clinic administrative staff',
-        TrainingClinicProviders: 'Providing trainning for clinic providers (physician, NP, MDT)'
+        TrainingClinicProviders: 'Providing trainning for clinic providers (physician, NP, MDT)',
+        PatientCalls: 'How many patient calls made for screening, panel management, team-based care etc.',
+        Netcare: 'How many patients netcare that have been check for screening, panel management, team-based care, EMR optimization etc.',
+        PanelCleanUp: 'How much time spent  for how many physicians on quarterly  panel clean up?',
+        SchedulingPatientAppointmen: 'How many patients appointments were booked for screening, team-based care etc.',
     };
 
 

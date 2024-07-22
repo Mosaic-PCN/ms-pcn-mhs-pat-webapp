@@ -7,7 +7,7 @@
     font-size: 14px;
 }
 
-.box-container {
+.amc-box-container {
     display: flex;
     flex-direction: row;
     /* Arrange boxes horizontally */
@@ -17,36 +17,36 @@
     /* This will allow the boxes to wrap */
 }
 
-.box {
+.amc-box {
     /* ... your existing box styles ... */
     margin-left: 20px;
     /* Add left margin to create gaps */
 }
 
-.box:first-child {
+.amc-box:first-child {
     /* Remove the left margin from the first box */
     margin-left: 0;
 }
 
 /* Width adjustments (optional) */
-.box1 {
+.amc-box1 {
     width: 800px;
     /* Example for first box */
 }
 
-.box2 {
+.amc-box2 {
     width: 100px;
     /* Example for second box */
 }
 
-.box3 {
+.amc-box3 {
     width: 100px;
     /* Example for third box */
 }
 
-.form-group label,
+.amc-form-group label,
 /* Targets all labels within .form-group */
-.dropdown-item label {
+.amc-dropdown-item label {
     /* Targets labels within .dropdown-item */
     font-size: 16px;
     /* Adjust this to match the dropdown font size */

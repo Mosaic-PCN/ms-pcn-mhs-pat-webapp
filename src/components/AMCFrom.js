@@ -174,8 +174,8 @@ const AMCForm = () => {
     };
 
     return (
-        <div className="box-container">
-            <Box title="Member Services Admin Support" className="box1">
+        <div className="amc-box-container">
+            <Box title="Member Services Admin Support" className="amc-box1">
                 <TripleDropdown
                     label={<>Administration - physiotherapy program<HelpIcon id="Administration_physiotherapy_programg_help" explanation={fieldExplanations['AdministrationPhysiotherapyProgram']} /></>}
                     id="Administration_physiotherapy_program"

@@ -1,14 +1,10 @@
 import Select from 'react-select';
 import React, { useContext } from 'react';
+import './CustomDropdown.css';
 import { AppContext } from '../AppContext';
 
 const NumberDropdown = ({ label, id, name, onChange, value, required, max, place_holder }) => {
     const { formData, updateFormData } = useContext(AppContext); // Access context
-
-    const options = [];
-    for (let i = 0; i <= max; i++) {
-        options.push({ value: i, label: i.toString() });
-    }
 
     const handleChange = (selectedOption) => {
         updateFormData({ [name]: selectedOption?.value || null }); // Update formData
@@ -16,6 +12,11 @@ const NumberDropdown = ({ label, id, name, onChange, value, required, max, place
             onChange(selectedOption);
         }
     };
+
+    const options = [];
+    for (let i = 0; i <= max; i++) {
+        options.push({ value: i, label: i.toString() });
+    }
 
     return (
         <div className="form-group standard-width">
