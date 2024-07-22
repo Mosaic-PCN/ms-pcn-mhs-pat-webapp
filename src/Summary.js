@@ -18,7 +18,7 @@ const Summary = () => {
     const navigate = useNavigate();
     const location = useLocation();
 
-    const fieldLabels = {
+    let fieldLabels = {
         workDate: 'Date',
         serviceLocation: 'Service Location',
         clinicName: 'Clinic Name',
@@ -52,10 +52,10 @@ const Summary = () => {
         DocumentationOther: 'Documentation - Other',
         SchedulingAppointments: 'Scheduling appointments',
         LiaiseWithExternalPartnersDirectTime: 'Liaise with external partners - Direct Time',
-        LiaiseWithExternalPartnersIndirecTime: 'Liaise with external partners - Indirect Time',
-        ProvideOrClinicInquiryberPhysCount: 'Provider or clinic inquiry - Count',
-        ProvideOrClinicInquiryberPhysDirectTime: 'Provider or clinic inquiry - Direct Time',
-        ProvideOrClinicInquiryberPhysIndirectTIme: 'Provider or clinic inquiry - Indirect Time',
+        LiaiseWithExternalPartnersIndirectTime: 'Liaise with external partners - Indirect Time',
+        ProvideOrClinicInquiryCount: 'Provider or clinic inquiry - Count',
+        ProvideOrClinicInquiryDirectTime: 'Provider or clinic inquiry - Direct Time',
+        ProvideOrClinicInquiryIndirectTIme: 'Provider or clinic inquiry - Indirect Time',
         EmrMappingCount: 'EMR mapping - Count',
         EmrMappingDirectTime: 'EMR mapping - Direct Time',
         EmrMappingIndirectTime: 'EMR mapping - Indirect Time',
@@ -90,13 +90,114 @@ const Summary = () => {
         RecievingTrainingDirectTime: 'Recieving training - Direct Time',
         RecievingTrainingIndirectTime: 'Recieving training - Indirect Time',
         TrainingMaterialCreation: 'Training material creation',
-        TrainingClinicAdminsCount: 'Training clinic administrative staff - Count',
-        TrainingClinicAdminsDirectTime: 'Training clinic administrative staff - Direct Time',
-        TrainingClinicAdminsIndirectTime: 'Training clinic administrative staff',
+        TrainingClinicAdministrativeStaffCount: 'Training clinic administrative staff - Count',
+        TrainingClinicAdministrativeStaffDirectTime: 'Training clinic administrative staff - Direct Time',
+        TrainingClinicAdministrativeStaffIndirectTime: 'Training clinic administrative staff',
         TrainingClinicProvidersCount: 'Training clinic provider - Count - Count',
         TrainingClinicProvidersDirectTime: 'Training clinic provider - Direct Time',
         TrainingClinicProvidersIndirectTime: 'Training clinic provider - Indirect Time',
+        QIProjectsStartedCount: 'QI Projects Started - Count',
+        QIProjectsStartedDirectTime: 'QI Projects Started - DirectTime',
+        QIProjectsStartedIndirectTime: 'QI Projects Started - Indirect Time',
+        QIProjectsAdoptedIndirectTime: 'QI Projects Adopted - Indirect Time',
+        QIProjectsAdoptedDirectTime: 'QI Projects Adopted - Direct Time',
+        QIProjectsAdoptedCount: 'QI Projects Adopted  -Count',
+        QIProjectsAdaptedCount: 'QI Projects Adapted - Count',
+        QIProjectsAdaptedIndirectTime: 'QI Projects Adapted  -Indirect Time',
+        QIProjectsAdaptedDirectTime: 'QI Projects Adapted Direct Time',
+        QIProjectsAbandonedIndirectTime: 'QI Projects Abandoned - Indirect Time',
+        QIProjectsAbandonedDirectTime: 'QI Projects Abandoned  -DirectTime',
+        QIProjectsAbandonedCount: 'QI Projects Abandoned - Count',
+        QIProjectCancelledCount: 'QI Project Cancelled - Count',
+        QIProjectCancelledDirectTime: 'QI Project Cancelled Direct - Time',
+        QIProjectCancelledIndirectTime: 'QI Project Cancelled Indirect - Time',
+        CollaborationWithEvalPartnersCount: 'Collaboration With Eval Partners - Count',
+        CollaborationWithEvalPartnersDirectTime: 'Collaboration With Eval Partners - Direct Time',
+        CollaborationWithEvalPartnersIndirectTime: 'Collaboration With Eval Partners - Indirect Time',
+        EnvironmentalScanAnalysisIndirectTime: 'Environmental Scan nalysis - Indirect Time',
+        EnvironmentalScanAnalysisDirectTime: 'Environmental Scan Analysis - Direct Time',
+        EnvironmentalScanAnalysisCount: 'Environmental ScanAnalysis - Count',
+        DataAnalysisCount: 'Data Analysis - Count',
+        DataAnalysisDirectTime: 'Data Analysis - DirectTime',
+        DataAnalysisIndirectTime: 'Data Analysis- Indirect Time',
+        CreatingEvaluationFrameworksCount: 'Creating Evaluation Frameworks - Count',
+        CreatingEvaluationFrameworksDirectTime: 'Creating Evaluation Frameworks - Direct Time',
+        CreatingEvaluationFrameworksIndirectTime: 'Creating Evaluation Frameworks - Indirect Time',
+        rovideOrClinicInquiryIndirectTime: '',
+        PatientCallsCount: 'Patient Calls - Count',
+        PatientCallsDirectTime: 'Patient Calls - Direct Time',
+        PatientCallsIndirectTime: 'Patient Calls - Indirect Time',
+        NetcareCount: 'Netcare - Count',
+        NetcareDirectTime: 'Netcare - Direct Time',
+        NetcareIndirectTime: 'Netcare - Indirect Time',
+        PanelCleanUpCount: 'Panel Clean Up - Count',
+        PanelCleanUpDirectTime: 'Panel Clean Up - Direct Time',
+        PanelCleanUpIndirectTime: 'Panel Clean Up - Indirect Time',
+        SchedulingPatientAppointment: 'Scheduling Patient Appointment',
+        ScreeningOffersPapTest: 'Screening Offers - Pap Test',
+        ScreeningOffersMammogram: 'Screening Offers - Mammogram',
+        ScreeningOffersColorectal: 'Screening Offers - Colorectal',
+        ScreeningOffersAnnualPhysical: 'Screening Offers - Annual Physical',
+        ScreeningOffersDiabetes: 'Screening Offers - Diabetes',
+        ScreeningOffersLipidProfile: 'Screening Offers - Lipid Profile',
+        ScreeningOffersCVRisk: 'Screening Offers - CV Risk',
+        ScreeningOffersLungCancerTobaccoe: 'Screenin Offers - Lung Cancer / Tobaccoe',
+        ScreeningOffersOther: 'Screening Offers - Other',
+        BeingTrainedByEMRCount: 'Being Trained By EMR Count',
+        BeingTrainedByEMRDirectTime: 'Being Trained By EMR - Direct Time',
+        BeingTrainedByEMRIndirectTime: 'Being Trained By EMR - IndirectT ime',
+        AdministrationPhysiotherapyProgramCount: 'AdministrationPhysiotherapyProgramCount',
+        AdministrationPhysiotherapyProgramDirectTime: 'AdministrationPhysiotherapyProgramDirectTime',
+        AdministrationPhysiotherapyProgramIndirectTime: 'AdministrationPhysiotherapyProgramIndirectTime',
+        AdministrationASPCount: 'AdministrationASPCount',
+        AdministrationASPIndirectTime: 'AdministrationASPIndirectTime',
+        AdministrationAFADCount: 'AdministrationAFADCount',
+        AdministrationAFADIndirectTime: 'AdministrationAFADIndirectTime',
+        AdministrationAFADDirectTime: 'AdministrationAFADDirectTime',
+        AdministrationASPDirectTime: 'AdministrationASPDirectTime',
+        AdministrationMemberSignuEndDateCount: 'AdministrationMemberSignuEndDateCount',
+        AdministrationMemberSignuEndDateDirectTime: 'AdministrationMemberSignuEndDateDirectTime',
+        AdministrationQuarterlyPacksCount: 'AdministrationQuarterlyPacksCount',
+        AdministrationQuarterlyPacksDirectTime: 'AdministrationQuarterlyPacksDirectTime',
+        AdministrationQuarterlyPacksyDirectTime: 'AdministrationQuarterlyPacksyDirectTime',
+        AdministrationQuarterlyPacksIndirectTime: 'AdministrationQuarterlyPacksIndirectTime',
+        AdministrationMemberSignuEndDateIndirectTime: 'AdministrationMemberSignuEndDateIndirectTime',
+        AdministrationAgreementsCount: 'AdministrationAgreementsCount',
+        AdministrationAgreementsDirectTime: 'AdministrationAgreementsDirectTime',
+        AdministrationAgreementsIndirectTime: 'AdministrationAgreementsIndirectTime',
+        ExternalPartnerCommunicationCount: 'ExternalPartnerCommunicationCount',
+        ExternalPartnerCommunicationDirectTime: 'ExternalPartnerCommunicationDirectTime',
+        ExternalPartnerCommunicationIndirectTime: 'ExternalPartnerCommunicationIndirectTime',
+        MemberCommunicationIndirectTime: 'MemberCommunicationIndirectTime',
+        MemberCommunicationDirectTime: 'MemberCommunicationDirectTime',
+        MemberCommunicationCount: 'MemberCommunicationCount',
+        MaintenanceCount: 'MaintenanceCount',
+        MaintenanceDirectTime: 'MaintenanceDirectTime',
+        MaintenanceIndirectTime: 'MaintenanceIndirectTime',
+        TroubleshootingIndirectTime: 'TroubleshootingIndirectTime',
+        TroubleshootingDirectTime: 'TroubleshootingDirectTime',
+        TroubleshootingCount: 'TroubleshootingCount',
+        DocumentationOtherCount: 'DocumentationOtherCount',
+        DocumentationOtherDirectTime: 'DocumentationOtherDirectTime',
+        DocumentationOtherIndirectTime: 'DocumentationOtherIndirectTime',
+        DocumentationProcessesIndirectTime: 'DocumentationProcessesIndirectTime',
+        DocumentationProcessesDirectTime: 'DocumentationProcessesDirectTime',
+        DocumentationProcessesCount: 'DocumentationProcessesCount',
+        AdministrationOtherCount: 'AdministrationOtherCount',
+        AdministrationOtherDirectTime: 'AdministrationOtherDirectTime',
+        AdministrationOtherIndirectTime: 'AdministrationOtherIndirectTime',
     };
+
+    // Append " minutes" to relevant fields
+    // fieldLabels = Object.keys(fieldLabels).reduce((acc, key) => {
+    //     if (key.includes('DirectTime') || key.includes('IndirectTime')) {
+    //         acc[key] = `${fieldLabels[key]} minutes`;
+    //     } else {
+    //         acc[key] = fieldLabels[key];
+    //     }
+    //     console.log('Key:', key)
+    //     return acc;
+    // }, {});
 
     const submitData = () => {
         if (Object.keys(formData).length === 0) {
@@ -140,6 +241,8 @@ const Summary = () => {
                         let value = formData[key];
                         if (key === 'workDate' && value) {
                             value = new Date(value).toLocaleDateString();
+                        } else if (key.includes('DirectTime') || key.includes('IndirectTime')) {
+                            value = `${value} mins`;
                         }
                         return (
                             <p key={key}>

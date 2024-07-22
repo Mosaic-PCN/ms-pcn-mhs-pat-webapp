@@ -71,6 +71,7 @@ export const AppProvider = ({ children }) => {
         Netcare: 'How many patients netcare that have been check for screening, panel management, team-based care, EMR optimization etc.',
         PanelCleanUp: 'How much time spent  for how many physicians on quarterly  panel clean up?',
         SchedulingPatientAppointmen: 'How many patients appointments were booked for screening, team-based care etc.',
+
     };
 
 

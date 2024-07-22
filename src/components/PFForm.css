@@ -9,9 +9,9 @@
 }
 
 .pf-box {
-    padding: 5px 5px 5px 5px;
+    padding: 1px 1px 1px 1px;
     /* Adjust as needed */
-    margin-left: 10px;
+    margin-left: 5px;
     /* Add left margin to create gaps */
 }
 
@@ -22,23 +22,23 @@
 
 /* Width adjustments (optional) */
 .pf-box1 {
-    width: 520px;
+    width: 510px;
     /* Example for first box */
 }
 
 .pf-box2 {
-    width: 520px;
+    width: 510px;
     /* Example for second box */
 }
 
 .pf-box3 {
-    width: 520px;
+    width: 510px;
     /* Example for third box */
 }
 
 
 .pf-box4 {
-    width: 520px;
+    width: 510px;
     /* Example for second box */
 }
 

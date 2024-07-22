@@ -148,7 +148,7 @@ const HPFForm = () => {
                     name="RecievingTraining"
                     max_count={10}
                     onChangeCount={handleChange('RecievingTrainingCount')}
-                    onChangeDirectTime={handleChange('B]RecievingTrainingDirectTime')}
+                    onChangeDirectTime={handleChange('BRecievingTrainingDirectTime')}
                     onChangeIndirectTime={handleChange('RecievingTrainingIndirectTime')}
                 />
                 <CustomDropdown

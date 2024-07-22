@@ -10,7 +10,7 @@
 
 .pcc-box {
     /* ... your existing box styles ... */
-    margin-left: 20px;
+    margin-left: 5px 5px 5px 5px;
     /* Add left margin to create gaps */
 }
 
@@ -21,16 +21,16 @@
 
 /* Width adjustments (optional) */
 .pcc-box1 {
-    width: 500px;
+    width: 510px;
     /* Example for first box */
 }
 
 .pcc-box2 {
-    width: 650px;
+    width: 510px;
     /* Example for second box */
 }
 
 .pcc-box3 {
-    width: 650px;
+    width: 510px;
     /* Example for third box */
 }

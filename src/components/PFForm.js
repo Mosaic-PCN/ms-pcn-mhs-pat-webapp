@@ -18,8 +18,8 @@ const PFForm = () => {
     };
 
     return (
-        <div className="hpf-box-container">
-            <Box title="Admin Support" className="hpf-box1">
+        <div className="pf-box-container">
+            <Box title="Admin Support" className="pf-box1">
                 <CustomDropdown
                     label={<>Documentation - C&C visit<HelpIcon id="C_C_visit_help" explanation={fieldExplanations['CcVisit']} /></>}
                     id="C_C_visit"
@@ -141,14 +141,14 @@ const PFForm = () => {
                     onChangeIndirectTime={handleChange('ClinicActivityOtherIndirectTime')}
                 />
             </Box>
-            <Box title="Training Activity" className="hpf-box3">
+            <Box title="Training Activity" className="pf-box3">
                 <TripleDropdown
                     label={<>Recieving training<HelpIcon id="Recieving_training_help" explanation={fieldExplanations['RecievingTraining']} /></>}
                     id="Recieving_training"
                     name="RecievingTraining"
                     max_count={10}
                     onChangeCount={handleChange('RecievingTrainingCount')}
-                    onChangeDirectTime={handleChange('B]RecievingTrainingDirectTime')}
+                    onChangeDirectTime={handleChange('BRecievingTrainingDirectTime')}
                     onChangeIndirectTime={handleChange('RecievingTrainingIndirectTime')}
                 />
                 <CustomDropdown
@@ -178,7 +178,7 @@ const PFForm = () => {
                     onChangeIndirectTime={handleChange('ProvideOrClinicInquiryIndirectTime')}
                 />
             </Box>
-            <Box title="QI Activity" className="hpf-box4">
+            <Box title="QI Activity" className="pf-box4">
                 <TripleDropdown
                     label={<>QI projects Started <HelpIcon id="QI_projects_Started_help" explanation={fieldExplanations['QIProjectsStarted']} /></>}
                     id="QI_projects_Started"
