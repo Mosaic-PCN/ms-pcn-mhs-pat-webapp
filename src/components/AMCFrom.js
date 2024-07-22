@@ -1,11 +1,11 @@
 import React, { useContext } from 'react';
-import NumberDropdown from './NumberDropdown';
-import SelectDropdown from './SelectDropdown';
 import TripleDropdown from './TripleDropdown';
+import DoubleDropdown from './DoubleDropdown';
 import { AppContext } from '../AppContext';
 import HelpIcon from '../HelpIcon';
 import { TooltipProvider } from 'react-tooltip';
-
+import Box from './Box';
+import '../TestBox.css';
 import './AMCForm.css';
 
 const AMCForm = () => {
@@ -16,10 +16,6 @@ const AMCForm = () => {
         { label: 'Yes', value: 'yes' },
         { label: 'No', value: 'non' },
     ];
-
-    // const label1 = "Count";
-    // const label2 = "Direct Time";
-    // const label3 = "Indirect Time";
 
     const handleAdministrationPhysiotherapyProgramOnChangeCount = (selectedOption) => {
         updateFormData({ AdministrationPhysiotherapyProgramCount: selectedOption.value });
@@ -56,7 +52,6 @@ const AMCForm = () => {
     const handleAdministrationAFADOnChangeIndirectTime = (selectedOption) => {
         updateFormData({ AdministrationAFADIndirectTime: selectedOption.value });
     };
-
 
     const handleAdministrationMemberSignuEndDateOnChangeCount = (selectedOption) => {
         updateFormData({ AdministrationMemberSignuEndDateCount: selectedOption.value });
@@ -179,138 +174,127 @@ const AMCForm = () => {
     };
 
     return (
-        <main className="container mt-5">
-            <div className="amc-form">
-                <div className="amc-column">
-                    <TripleDropdown
-                        label={<>Administration - physiotherapy program<HelpIcon id="Administration_physiotherapy_programg_help" explanation={fieldExplanations['AdministrationPhysiotherapyProgram']} /></>}
-                        id="Administration_physiotherapy_program"
-                        name="AdministrationPhysiotherapyProgram"
-                        max_count={20}
-                        onChangeCount={handleAdministrationPhysiotherapyProgramOnChangeCount}
-                        onChangeDirectTime={handleTrainingClinicProvidersOnChangeDirectTime}
-                        onChangeIndirectTime={handleTrainingClinicProvidersOnChangeIndirectTime}
-                    />
-                    <TripleDropdown
-                        label={<>Administration - ASP<HelpIcon id="Administration_ASP_help" explanation={fieldExplanations['AdministrationASP']} /></>}
-                        id="Administration_ASP"
-                        name="AdministrationASP"
-                        max_count={20}
-                        onChangeCount={handleAdministrationASPOnChangeCount}
-                        onChangeDirectTime={handleAdministrationASPsOnChangeDirectTime}
-                        onChangeIndirectTime={handleAdministrationASPOnChangeIndirectTime}
-                    />
-                    <TripleDropdown
-                        label={<>Administration - AFAD<HelpIcon id="Administration_AFAD_help" explanation={fieldExplanations['AdministrationAFAD']} /></>}
-                        id="Administration_AFAD"
-                        name="AdministrationAFAD"
-                        max_count={20}
-                        onChangeCount={handleAdministrationAFADOnChangeCount}
-                        onChangeDirectTime={handleAdministrationAFADOnChangeDirectTime}
-                        onChangeIndirectTime={handleAdministrationAFADOnChangeIndirectTime}
-                    />
-                    <TripleDropdown
-                        label={<>Administration - member signup/end date<HelpIcon id="Administration_member_signup_end_date_help" explanation={fieldExplanations['AdministrationMemberSignuEndDate']} /></>}
-                        id="Administration_member_signup_end_date"
-                        name="AdministrationMemberSignuEndDate"
-                        max_count={20}
-                        onChangeCount={handleAdministrationMemberSignuEndDateOnChangeCount}
-                        onChangeDirectTime={handleAdministrationMemberSignuEndDateOnChangeDirectTime}
-                        onChangeIndirectTime={handleAdministrationMemberSignuEndDateOnChangeIndirectTime}
-                    />
-                    <TripleDropdown
-                        label={<>Administration - quarterly packs<HelpIcon id="Administration_quarterly_packs_help" explanation={fieldExplanations['AdministrationQuarterlyPacks']} /></>}
-                        id="Administration_quarterly_packs"
-                        name="AdministrationQuarterlyPacks"
-                        max_count={20}
-                        onChangeCount={handleAdministrationQuarterlyPacksOnChangeCount}
-                        onChangeDirectTime={handleAdministrationQuarterlyPacksOnChangeDirectTime}
-                        onChangeIndirectTime={handleAdministrationQuarterlyPacksOnChangeIndirectTime}
-                    />
-                </div>
-                <div className="amc-column">
-                    <TripleDropdown
-                        label={<>Administration - agreements<HelpIcon id="Administration_agreements_help" explanation={fieldExplanations['AdministrationAgreements']} /></>}
-                        id="Administration_agreements"
-                        name="AdministrationAgreements"
-                        max_count={20}
-                        onChangeCount={handleAdministrationAgreementsOnChangeCount}
-                        onChangeDirectTime={handleAdministrationAgreementsOnChangeDirectTime}
-                        onChangeIndirectTime={handleAdministrationAgreementsOnChangeIndirectTime}
-                    />
-                    <TripleDropdown
-                        label={<>Administration - other<HelpIcon id="Administration_other_help" explanation={fieldExplanations['AdministrationOther']} /></>}
-                        id="Administration_other"
-                        name="AdministrationOther"
-                        max_count={20}
-                        onChangeCount={handleAdministrationOtherOnChangeCount}
-                        onChangeDirectTime={handleAdministrationOtherOnChangeDirectTime}
-                        onChangeIndirectTime={handleAdministrationOtherOnChangeIndirectTime}
-                    />
-                    <TripleDropdown
-                        label={<>Documentation - processes<HelpIcon id="Documentation_processes_help" explanation={fieldExplanations['DocumentationProcesses']} /></>}
-                        id="Documentation_processes"
-                        name="DocumentationProcesses"
-                        max_count={20}
-                        onChangeCount={handleDocumentationProcessesOnChangeCount}
-                        onChangeDirectTime={handleDocumentationProcessesOnChangeDirectTime}
-                        onChangeIndirectTime={handleDocumentationProcessesOnChangeIndirectTime}
-                    />
-                    <TripleDropdown
-                        label={<>Documentation - Other<HelpIcon id="Documentation_Other_help" explanation={fieldExplanations['DocumentationOther']} /></>}
-                        id="Documentation_Other"
-                        name="DocumentationOther"
-                        max_count={20}
-                        onChangeCount={handleDocumentationOtherOnChangeCount}
-                        onChangeDirectTime={handleDocumentationOtherOnChangeDirectTime}
-                        onChangeIndirectTime={handleDocumentationOtherOnChangeIndirectTime}
-                    />
-                </div>
-                <div className="amc-column">
-
-                    <TripleDropdown
-                        label={<>Troubleshooting (portal, UptoDate, etc.)<HelpIcon id="Troubleshooting_help" explanation={fieldExplanations['Troubleshooting']} /></>}
-                        id="Troubleshooting"
-                        name="Troubleshooting"
-                        max_count={20}
-                        onChangeCount={handleTroubleshootingOnChangeCount}
-                        onChangeDirectTime={handleTroubleshootingOnChangeDirectTime}
-                        onChangeIndirectTime={handleTroubleshootingOnChangeIndirectTime}
-                    />
-                    <TripleDropdown
-                        label={<>Maintenance (PCN Admin, member lists, etc.)<HelpIcon id="Maintenance_help" explanation={fieldExplanations['Maintenance']} /></>}
-                        id="Maintenance"
-                        name="Maintenance"
-                        max_count={20}
-                        onChangeCount={handleMaintenanceOnChangeCount}
-                        onChangeDirectTime={handleMaintenanceOnChangeDirectTime}
-                        onChangeIndirectTime={handleMaintenanceOnChangeIndirectTime}
-                    />
-                    <TripleDropdown
-                        label={<>Member communication<HelpIcon id="Member_communication_help" explanation={fieldExplanations['MemberCommunication']} /></>}
-                        id="Member_communication"
-                        name="MemberCommunication"
-                        max_count={20}
-                        onChangeCount={handleMemberCommunicationOnChangeCount}
-                        onChangeDirectTime={handleMemberCommunicationOnChangeDirectTime}
-                        onChangeIndirectTime={handleMemberCommunicationOnChangeIndirectTime}
-                    />
-                    <TripleDropdown
-                        label={<>External partner communication (AH, Calgary zone)<HelpIcon id="External_partner_communication_help" explanation={fieldExplanations['ExternalPartnerCommunication']} /></>}
-                        id="External_partner_communication"
-                        name="ExternalPartnerCommunication"
-                        max_count={20}
-                        onChangeCount={handleExternalPartnerCommunicationOnChangeCount}
-                        onChangeDirectTime={handleExternalPartnerCommunicationOnChangeDirectTime}
-                        onChangeIndirectTime={handleExternalPartnerCommunicationOnChangeIndirectTime}
-                    />
-                    {/* <TripleDropdown label="Troubleshooting (portal, UptoDate, etc.)" id="QI_template" name="QI_template" required={true} options1={options1} options2={options2} options3={options3} label1={label1} label2={label2} label3={label3} />
-                    <TripleDropdown label="Maintenance (PCN Admin, member lists, etc.)" id="Service_templates" name="Service_templates" required={true} options1={options1} options2={options2} options3={options3} label1={label1} label2={label2} label3={label3} />
-                    <TripleDropdown label="Member communication" id="inputId" name="inputName" required={true} options1={options1} options2={options2} options3={options3} label1={label1} label2={label2} label3={label3} />
-                    <TripleDropdown label="External partner communication (AH, Calgary zone)" id="inputId" name="inputName" required={true} options1={options1} options2={options2} options3={options3} label1={label1} label2={label2} label3={label3} /> */}
-                </div>
-            </div>
-        </main >
+        <div className="box-container">
+            <Box title="Admin Support" className="box1">
+                <TripleDropdown
+                    label={<>Administration - physiotherapy program<HelpIcon id="Administration_physiotherapy_programg_help" explanation={fieldExplanations['AdministrationPhysiotherapyProgram']} /></>}
+                    id="Administration_physiotherapy_program"
+                    name="AdministrationPhysiotherapyProgram"
+                    max_count={20}
+                    onChangeCount={handleAdministrationPhysiotherapyProgramOnChangeCount}
+                    onChangeDirectTime={handleTrainingClinicProvidersOnChangeDirectTime}
+                    onChangeIndirectTime={handleTrainingClinicProvidersOnChangeIndirectTime}
+                />
+                <TripleDropdown
+                    label={<>Administration - ASP<HelpIcon id="Administration_ASP_help" explanation={fieldExplanations['AdministrationASP']} /></>}
+                    id="Administration_ASP"
+                    name="AdministrationASP"
+                    max_count={20}
+                    onChangeCount={handleAdministrationASPOnChangeCount}
+                    onChangeDirectTime={handleAdministrationASPsOnChangeDirectTime}
+                    onChangeIndirectTime={handleAdministrationASPOnChangeIndirectTime}
+                />
+                <TripleDropdown
+                    label={<>Administration - AFAD<HelpIcon id="Administration_AFAD_help" explanation={fieldExplanations['AdministrationAFAD']} /></>}
+                    id="Administration_AFAD"
+                    name="AdministrationAFAD"
+                    max_count={20}
+                    onChangeCount={handleAdministrationAFADOnChangeCount}
+                    onChangeDirectTime={handleAdministrationAFADOnChangeDirectTime}
+                    onChangeIndirectTime={handleAdministrationAFADOnChangeIndirectTime}
+                />
+                <TripleDropdown
+                    label={<>Administration - member signup/end date<HelpIcon id="Administration_member_signup_end_date_help" explanation={fieldExplanations['AdministrationMemberSignuEndDate']} /></>}
+                    id="Administration_member_signup_end_date"
+                    name="AdministrationMemberSignuEndDate"
+                    max_count={20}
+                    onChangeCount={handleAdministrationMemberSignuEndDateOnChangeCount}
+                    onChangeDirectTime={handleAdministrationMemberSignuEndDateOnChangeDirectTime}
+                    onChangeIndirectTime={handleAdministrationMemberSignuEndDateOnChangeIndirectTime}
+                />
+                <TripleDropdown
+                    label={<>Administration - quarterly packs<HelpIcon id="Administration_quarterly_packs_help" explanation={fieldExplanations['AdministrationQuarterlyPacks']} /></>}
+                    id="Administration_quarterly_packs"
+                    name="AdministrationQuarterlyPacks"
+                    max_count={20}
+                    onChangeCount={handleAdministrationQuarterlyPacksOnChangeCount}
+                    onChangeDirectTime={handleAdministrationQuarterlyPacksOnChangeDirectTime}
+                    onChangeIndirectTime={handleAdministrationQuarterlyPacksOnChangeIndirectTime}
+                />
+                <TripleDropdown
+                    label={<>Administration - agreements<HelpIcon id="Administration_agreements_help" explanation={fieldExplanations['AdministrationAgreements']} /></>}
+                    id="Administration_agreements"
+                    name="AdministrationAgreements"
+                    max_count={20}
+                    onChangeCount={handleAdministrationAgreementsOnChangeCount}
+                    onChangeDirectTime={handleAdministrationAgreementsOnChangeDirectTime}
+                    onChangeIndirectTime={handleAdministrationAgreementsOnChangeIndirectTime}
+                />
+                <TripleDropdown
+                    label={<>Administration - other<HelpIcon id="Administration_other_help" explanation={fieldExplanations['AdministrationOther']} /></>}
+                    id="Administration_other"
+                    name="AdministrationOther"
+                    max_count={20}
+                    onChangeCount={handleAdministrationOtherOnChangeCount}
+                    onChangeDirectTime={handleAdministrationOtherOnChangeDirectTime}
+                    onChangeIndirectTime={handleAdministrationOtherOnChangeIndirectTime}
+                />
+                <TripleDropdown
+                    label={<>Documentation - processes<HelpIcon id="Documentation_processes_help" explanation={fieldExplanations['DocumentationProcesses']} /></>}
+                    id="Documentation_processes"
+                    name="DocumentationProcesses"
+                    max_count={20}
+                    onChangeCount={handleDocumentationProcessesOnChangeCount}
+                    onChangeDirectTime={handleDocumentationProcessesOnChangeDirectTime}
+                    onChangeIndirectTime={handleDocumentationProcessesOnChangeIndirectTime}
+                />
+                <TripleDropdown
+                    label={<>Documentation - Other<HelpIcon id="Documentation_Other_help" explanation={fieldExplanations['DocumentationOther']} /></>}
+                    id="Documentation_Other"
+                    name="DocumentationOther"
+                    max_count={20}
+                    onChangeCount={handleDocumentationOtherOnChangeCount}
+                    onChangeDirectTime={handleDocumentationOtherOnChangeDirectTime}
+                    onChangeIndirectTime={handleDocumentationOtherOnChangeIndirectTime}
+                />
+                <TripleDropdown
+                    label={<>Troubleshooting (portal, UptoDate, etc.)<HelpIcon id="Troubleshooting_help" explanation={fieldExplanations['Troubleshooting']} /></>}
+                    id="Troubleshooting"
+                    name="Troubleshooting"
+                    max_count={20}
+                    onChangeCount={handleTroubleshootingOnChangeCount}
+                    onChangeDirectTime={handleTroubleshootingOnChangeDirectTime}
+                    onChangeIndirectTime={handleTroubleshootingOnChangeIndirectTime}
+                />
+                <TripleDropdown
+                    label={<>Maintenance (PCN Admin, member lists, etc.)<HelpIcon id="Maintenance_help" explanation={fieldExplanations['Maintenance']} /></>}
+                    id="Maintenance"
+                    name="Maintenance"
+                    max_count={20}
+                    onChangeCount={handleMaintenanceOnChangeCount}
+                    onChangeDirectTime={handleMaintenanceOnChangeDirectTime}
+                    onChangeIndirectTime={handleMaintenanceOnChangeIndirectTime}
+                />
+                <TripleDropdown
+                    label={<>Member communication<HelpIcon id="Member_communication_help" explanation={fieldExplanations['MemberCommunication']} /></>}
+                    id="Member_communication"
+                    name="MemberCommunication"
+                    max_count={20}
+                    onChangeCount={handleMemberCommunicationOnChangeCount}
+                    onChangeDirectTime={handleMemberCommunicationOnChangeDirectTime}
+                    onChangeIndirectTime={handleMemberCommunicationOnChangeIndirectTime}
+                />
+                <TripleDropdown
+                    label={<>External partner communication (AH, Calgary zone)<HelpIcon id="External_partner_communication_help" explanation={fieldExplanations['ExternalPartnerCommunication']} /></>}
+                    id="External_partner_communication"
+                    name="ExternalPartnerCommunication"
+                    max_count={20}
+                    onChangeCount={handleExternalPartnerCommunicationOnChangeCount}
+                    onChangeDirectTime={handleExternalPartnerCommunicationOnChangeDirectTime}
+                    onChangeIndirectTime={handleExternalPartnerCommunicationOnChangeIndirectTime}
+                />
+            </Box>
+        </div>
     );
 };
 

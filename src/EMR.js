@@ -1,17 +1,13 @@
 import React, { useState } from 'react';
 import { Amplify } from 'aws-amplify';
-import { post } from 'aws-amplify/api';
 import { Authenticator, withAuthenticator } from '@aws-amplify/ui-react';
 import '@aws-amplify/ui-react/styles.css';
 import Header from './components/Header';
 import EMRForm from './components/EMRFrom';
 import amplifyconfig from './amplifyconfiguration.json';
 import './App.css';
-import NextPage from './components/NextPage';
-import { useHistory } from 'react-router-dom';
 import { BrowserRouter as Router, Route, Routes, useNavigate } from 'react-router-dom';
-import EMRCard from './components/EMRFormCard';
-import HelpModal from './components/HelpModal'; // Import HelpModal
+import HelpModal from './components/HelpModal';
 
 
 Amplify.configure(amplifyconfig);
@@ -20,10 +16,6 @@ function EMR() {
 
     const navigate = useNavigate();
     const [isHelpModalOpen, setIsHelpModalOpen] = useState(false);
-
-    // const goToSummaryPage = () => {
-    //     navigate('/summary');
-    // };
 
     const goToNotesPage = () => {
         navigate('/notes');
@@ -40,11 +32,6 @@ function EMR() {
                     <Header signOut={signOut} user={user} />
                     <main className="App-main">
                         <EMRForm />
-                        {/* <EMRCard title="EMRS">
-                            <div className="card-content-wrapper">
-                                <EMRForm />
-                            </div>
-                        </EMRCard> */}
                         <div className="button-container">
                             <button type="button" className="btn btn-secondary" onClick={goToHomePage}>Previous</button>
                             <button type="Submit" className="btn btn-primary" onClick={goToNotesPage}>Next</button>

@@ -1,47 +1,56 @@
-.amc-form {
+.box-container {
     display: flex;
     flex-direction: row;
-    justify-content: flex-start;
+    /* Arrange boxes horizontally */
+    align-items: flex-start;
+    /* Align boxes to the top */
+    flex-wrap: wrap;
+    /* This will allow the boxes to wrap */
 }
 
-.amc-column {
-    flex: 1;
-    display: flex;
-    flex-direction: column;
-    gap: 1rem;
+.box {
+    /* ... your existing box styles ... */
+    margin-left: 20px;
+    /* Add left margin to create gaps */
 }
 
-.container {
-    max-width: 1600px;
-    margin: auto;
+.box:first-child {
+    /* Remove the left margin from the first box */
+    margin-left: 0;
 }
 
-.number-dropdown,
-.select-dropdown,
-.custom-dropdown {
-    width: 600px;
-    /* Increase this value */
+/* Width adjustments (optional) */
+.box1 {
+    width: 800px;
+    /* Example for first box */
 }
 
-.amc-form .amc-column {
-    /* flex: 1; */
-    margin: 1.8rem;
+.box2 {
+    width: 100px;
+    /* Example for second box */
 }
 
-.amc-form .number-dropdown,
-.amc-form .select-dropdown {
-    padding: 0.34rem;
-    font-size: 0.875rem;
-    /* Smaller font size */
+.box3 {
+    width: 100px;
+    /* Example for third box */
 }
 
-.dropdown-row {
-    display: flex;
-    justify-content: space-between;
-}
+/* Example media query for responsiveness */
+@media (max-width: 768px) {
+    .box-container {
+        flex-direction: column;
+        /* Stack boxes vertically on small screens */
+    }
 
-.dropdown-container {
-    /* flex: 1; */
-    margin: 0;
-    /* Remove any margin */
+    .box {
+        margin-left: 0;
+        /* Remove left margins on small screens */
+        margin-top: 20px;
+        /* Add top margin instead */
+    }
+
+    .box:first-child {
+        margin-top: 0;
+        /* Remove top margin from the first box on small screens */
+    }
 }

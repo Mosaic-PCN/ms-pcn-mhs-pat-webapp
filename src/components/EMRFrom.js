@@ -133,10 +133,6 @@ const EMRForm = () => {
         updateFormData({ MeetingNewMemberIndirectTime: selectedOption.value });
     };
 
-    const handleMeetingCIICPAROnChangeCount = (selectedOption) => {
-        updateFormData({ MeetingCIICPARCount: selectedOption.value });
-    };
-
     const handleMeetingCIICPAROnChangeDirectTime = (selectedOption) => {
         updateFormData({ MeetingCIICPARCDirectTime: selectedOption.value });
     };
@@ -157,20 +153,12 @@ const EMRForm = () => {
         updateFormData({ MeetingQIIndirectTime: selectedOption.value });
     };
 
-    const handleMaterialDropoffOnChangeCount = (selectedOption) => {
-        updateFormData({ MaterialDropoffQICount: selectedOption.value });
-    };
-
     const handleMaterialDropoffOnChangeDirectTime = (selectedOption) => {
         updateFormData({ MaterialDropoffDirectTime: selectedOption.value });
     };
 
     const handleMaterialDropoffOnChangeIndirectTime = (selectedOption) => {
         updateFormData({ MaterialDropoffIndirectTime: selectedOption.value });
-    };
-
-    const handleClinicActivityOtherOnChangeCount = (selectedOption) => {
-        updateFormData({ ClinicActivityOtherCount: selectedOption.value });
     };
 
     const handleClinicActivityOtherOnChangeDirectTime = (selectedOption) => {
@@ -374,7 +362,6 @@ const EMRForm = () => {
                 />
             </Box>
             <Box title="Training Activity" className="box3">
-
                 <TripleDropdown
                     label={<>Recieving training<HelpIcon id="Recieving_training_help" explanation={fieldExplanations['RecievingTraining']} /></>}
                     id="Recieving_training"
