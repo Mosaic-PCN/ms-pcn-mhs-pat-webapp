@@ -252,7 +252,7 @@ const HPFForm = () => {
 
 
     return (
-        <div className="emr-box-container">
+        <div className="hpf-box-container">
             <Box title="Admin Support" className="hpf-box1">
                 <CustomDropdown
                     label={<>Documentation - C&C visit<HelpIcon id="C_C_visit_help" explanation={fieldExplanations['CcVisit']} /></>}

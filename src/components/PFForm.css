@@ -1,54 +1,63 @@
-.pf-form {
+.pf-box-container {
     display: flex;
     flex-direction: row;
-    justify-content: start;
-    /* Ensure columns start from the left */
-    align-items: flex-stretch;
-    /* Align items to the start */
-    gap: 2.5em;
-    /* Adjust gap between columns as needed */
+    /* Arrange boxes horizontally */
+    align-items: flex-start;
+    /* Align boxes to the top */
+    flex-wrap: wrap;
+    /* This will allow the boxes to wrap */
 }
 
-.pf-column {
-    flex: 1 1 30%;
-    /* Adjust the flex-grow, flex-shrink, and flex-basis properties for flexibility */
-    display: flex;
-    flex-direction: column;
-    gap: 0.2rem;
-    /* Adjust the gap between dropdowns */
-    min-width: 340px;
-    /* Ensure each column has a minimum width */
+.pf-box {
+    padding: 5px 5px 5px 5px;
+    /* Adjust as needed */
+    margin-left: 10px;
+    /* Add left margin to create gaps */
 }
 
-.pf-container {
-    max-width: 100px;
-    /* Adjust the max-width as needed */
-    width: 100%;
-    margin: 0;
-    /* Center the container */
+.pf-box:first-child {
+    /* Remove the left margin from the first box */
+    margin-left: 0;
 }
 
-.number-dropdown,
-.select-dropdown,
-.custom-dropdown {
-    width: 100%;
-    /* Ensure dropdowns take full width of the container */
-    padding: 0.15rem;
-    font-size: 0.875rem;
-    margin-bottom: 0.15rem;
-    /* Reduce the vertical margin between dropdowns */
+/* Width adjustments (optional) */
+.pf-box1 {
+    width: 520px;
+    /* Example for first box */
 }
 
-.form-group {
-    margin-bottom: 0.2rem;
-    /* Reduce the margin-bottom to decrease vertical spacing */
+.pf-box2 {
+    width: 520px;
+    /* Example for second box */
 }
 
-.react-select-container {
-    margin-bottom: 0.2rem;
-    /* Reduce the margin-bottom to decrease vertical spacing */
+.pf-box3 {
+    width: 520px;
+    /* Example for third box */
 }
 
-.help-icon {
-    cursor: pointer;
+
+.pf-box4 {
+    width: 520px;
+    /* Example for second box */
+}
+
+/* Example media query for responsiveness */
+@media (max-width: 768px) {
+    .pf-box-container {
+        flex-direction: column;
+        /* Stack boxes vertically on small screens */
+    }
+
+    .pf-box {
+        margin-left: 0;
+        /* Remove left margins on small screens */
+        margin-top: 20px;
+        /* Add top margin instead */
+    }
+
+    .pf-box:first-child {
+        margin-top: 0;
+        /* Remove top margin from the first box on small screens */
+    }
 }
