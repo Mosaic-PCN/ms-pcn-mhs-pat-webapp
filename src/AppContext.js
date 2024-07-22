@@ -67,13 +67,28 @@ export const AppProvider = ({ children }) => {
         TrainingMaterialCreation: 'Time spent on creating the tranning materials',
         TrainingClinicAdmins: 'Providing trainning for clinic administrative staff',
         TrainingClinicProviders: 'Providing trainning for clinic providers (physician, NP, MDT)',
-        PatientCalls: 'How many patient calls made for screening, panel management, team-based care etc.',
-        Netcare: 'How many patients netcare that have been check for screening, panel management, team-based care, EMR optimization etc.',
+        BeingTrainedByEMR: 'Training sessions received regarding the clinic supports',
+        PatientCalls: 'How many patient calls made for screening, panel management, team-based care etc',
+        Netcare: 'How many patients netcare that have been check for screening, panel management, team-based care, EMR optimization etc',
         PanelCleanUp: 'How much time spent  for how many physicians on quarterly  panel clean up?',
-        SchedulingPatientAppointmen: 'How many patients appointments were booked for screening, team-based care etc.',
+        SchedulingPatientAppointment: 'How many patients appointments were booked for screening, team-based care etc',
+        ScreeningOffersPapTest: 'How many patient were offered pap test',
+        ScreeningOffersMammogram: 'How many patient were offered mammogram screening',
+        ScreeningOffersColorectal: 'How many patient were offered colorectal cancer screening',
+        ScreeningOffersAnnualPhysical: 'How many patient were offered  annual physical (Cpx) screening',
+        ScreeningOffersDiabetes: 'How many patient were offered diabetes screening',
+        ScreeningOffersLipidProfile: 'How many patient were offered lipid profile screening',
+        ScreeningOffersCVRisk: 'How many patient were offered CV risk screening',
+        ScreeningOffersLungCancerTobaccoe: 'How many patient were offered lung cancer and/or tobacco cessation screening',
+        ScreeningOffersOther: 'How many patient were offered other screening that are not list above',
+        QIProjectsStarted: 'How many QI projects started with the clinic on this date',
+        QIProjectsAdopted: 'How many QI projects adopted with the clinic on this date',
+        QIProjectsAdapted: 'How many QI projects adapted with the clinic on this date',
+        QIProjectsAbandoned: 'How many QI projects abandoned with the clinic on this date',
+        QIProjectCancelled: 'How many QI projects cancelled with the clinic on this date',
+
 
     };
-
 
     useEffect(() => {
         localStorage.setItem('formData', JSON.stringify(formData));

@@ -169,7 +169,7 @@ const PCCForm = () => {
                     onChangeIndirectTime={handleChange('ClinicActivityOtherIndirectTime')}
                 />
                 <NumberDropdown
-                    label={<>Scheduling patient appointment<HelpIcon id="Scheduling_patient_appointment_help" explanation={fieldExplanations['SchedulingPatientAppointmen']} /></>}
+                    label={<>Scheduling patient appointment<HelpIcon id="Scheduling_patient_appointment_help" explanation={fieldExplanations['SchedulingPatientAppointment']} /></>}
                     id="Scheduling_patient_appointment"
                     name="SchedulingPatientAppointment"
                     required={true}
