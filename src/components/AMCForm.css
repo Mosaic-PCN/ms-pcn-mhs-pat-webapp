@@ -1,3 +1,12 @@
+.react-select-container .react-select__control,
+.react-select-container .react-select__value-container,
+.react-select-container .react-select__input,
+.react-select-container .react-select__single-value,
+.react-select-container .react-select__menu,
+.react-select-container .react-select__option {
+    font-size: 14px;
+}
+
 .box-container {
     display: flex;
     flex-direction: row;
@@ -34,6 +43,22 @@
     width: 100px;
     /* Example for third box */
 }
+
+.form-group label,
+/* Targets all labels within .form-group */
+.dropdown-item label {
+    /* Targets labels within .dropdown-item */
+    font-size: 16px;
+    /* Adjust this to match the dropdown font size */
+}
+
+/* Adjust Dropdown Width */
+.react-select-container {
+    width: 100%;
+    margin-bottom: 10px;
+    /* Adjust spacing as needed */
+}
+
 
 /* Example media query for responsiveness */
 @media (max-width: 768px) {
