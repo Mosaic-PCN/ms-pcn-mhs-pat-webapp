@@ -86,7 +86,10 @@ export const AppProvider = ({ children }) => {
         QIProjectsAdapted: 'How many QI projects adapted with the clinic on this date',
         QIProjectsAbandoned: 'How many QI projects abandoned with the clinic on this date',
         QIProjectCancelled: 'How many QI projects cancelled with the clinic on this date',
-
+        CreatingEvaluationFrameworks: 'How many frameworks the staff work on? And how many minutes the staff working meeting, documentation with parterner: REDI, clinic etc. This is for external/clinic or internal only',
+        DataAnalysis: 'How much time spent on data analysis by the staff by themselves',
+        EnvironmentalScanAnalysis: 'How much time spent on environmental scan, literature review, situational analysis',
+        CollaborationWithEvalPartners: 'How much time spent on meeting and documentations and other format of collaboration with REDI, HQCA',
 
     };
 
