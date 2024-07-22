@@ -12,201 +12,8 @@ import './EMRForm.css';
 const EMRForm = () => {
     const { formData, updateFormData, fieldExplanations } = useContext(AppContext);
 
-    const yes_no_Options = [
-        { label: 'Yes', value: 'yes' },
-        { label: 'No', value: 'no' },
-    ];
-
-    const handleCcVisitChange = (selectedOption) => {
-        updateFormData({ CcVisit: selectedOption.value });
-    };
-
-    const handleQiTemplateChange = (selectedOption) => {
-        updateFormData({ QiTemplate: selectedOption.value });
-    };
-
-    const handleServiceTemplatesChange = (selectedOption) => {
-        updateFormData({ ServiceTemplates: selectedOption.value });
-    };
-
-    const handleDocumentationClinicProcessesChange = (selectedOption) => {
-        updateFormData({ DocumentationClinicProcesses: selectedOption.value });
-    };
-
-    const handleDocumentationOtherChange = (selectedOption) => {
-        updateFormData({ DocumentationOther: selectedOption.value });
-    };
-
-    const handleSchedulingAppointmentsChange = (selectedOption) => {
-        updateFormData({ SchedulingAppointments: selectedOption.value });
-    };
-
-    const handleLiaiseWithExternalPartnersOnChangeDirectTime = (selectedOption) => {
-        updateFormData({ LiaiseWithExternalPartnersDirectTime: selectedOption.value });
-    };
-
-    const handleLiaiseWithExternalPartnersOnChangeInirectTime = (selectedOption) => {
-        updateFormData({ LiaiseWithExternalPartnersIndirectTime: selectedOption.value });
-    };
-
-    const handleProvideOrClinicInquiryOnChangeCount = (selectedOption) => {
-        updateFormData({ ProvideOrClinicInquiryCount: selectedOption.value });
-    };
-
-    const handleProvideOrClinicInquiryOnChangeDirectTime = (selectedOption) => {
-        updateFormData({ ProvideOrClinicInquiryDirectTime: selectedOption.value });
-    };
-
-    const handleProvideOrClinicInquiryOnChangeIndirectTime = (selectedOption) => {
-        updateFormData({ ProvideOrClinicInquiryIndirectTime: selectedOption.value });
-    };
-
-    const handleEmrMappingOnChangeCount = (selectedOption) => {
-        updateFormData({ EmrMappingCount: selectedOption.value });
-    };
-
-    const handleEmrMappingOnChangeDirectTime = (selectedOption) => {
-        updateFormData({ EmrMappingDirectTime: selectedOption.value });
-    };
-
-    const handleEmrMappingOnChangeIndirectTime = (selectedOption) => {
-        updateFormData({ EmrMappingIndirectTime: selectedOption.value });
-    };
-
-    const handleEmrSearchesOnChangeCount = (selectedOption) => {
-        updateFormData({ EmrSearchesCount: selectedOption.value });
-    };
-
-    const handleEmrSearchesOnChangeDirectTime = (selectedOption) => {
-        updateFormData({ EmrSearchesDirectTime: selectedOption.value });
-    };
-
-    const handleEmrSearchesOnChangeIndirectTime = (selectedOption) => {
-        updateFormData({ EmrSearchesIndirectTime: selectedOption.value });
-    };
-
-    const handleEmrDataCollectionOnChangeCount = (selectedOption) => {
-        updateFormData({ EmrDataCollectionCount: selectedOption.value });
-    };
-
-    const handleEmrDataCollectionOnChangeDirectTime = (selectedOption) => {
-        updateFormData({ EmrDataCollectionDirectTime: selectedOption.value });
-    };
-
-    const handleEmrDataCollectionOnChangeIndirectTime = (selectedOption) => {
-        updateFormData({ EmrDataCollectionIndirectTime: selectedOption.value });
-    };
-
-    const handleEmrDataEntryOnChangeCount = (selectedOption) => {
-        updateFormData({ EmrDataEntryCount: selectedOption.value });
-    };
-
-    const handleEmrDataEntryOnChangeDirectTime = (selectedOption) => {
-        updateFormData({ EmrDataEntryDirectTime: selectedOption.value });
-    };
-
-    const handleEmrDataEntryOnChangeIndirectTime = (selectedOption) => {
-        updateFormData({ EmrDataEntryIndirectTime: selectedOption.value });
-    };
-
-    const handleMeetingCCOnChangeCount = (selectedOption) => {
-        updateFormData({ MeetingCCCount: selectedOption.value });
-    };
-
-    const handleMeetingCCOnChangeDirectTime = (selectedOption) => {
-        updateFormData({ MeetingCCDirectTime: selectedOption.value });
-    };
-
-    const handleMeetingCCOnChangeIndirectTime = (selectedOption) => {
-        updateFormData({ MeetingCCIndirectTime: selectedOption.value });
-    };
-
-    const handleMeetingNewMemberOnChangeCount = (selectedOption) => {
-        updateFormData({ MeetingNewMemberCount: selectedOption.value });
-    };
-
-    const handleMeetingNewMemberOnChangeDirectTime = (selectedOption) => {
-        updateFormData({ MeetingNewMemberCDirectTime: selectedOption.value });
-    };
-
-    const handleMeetingNewMemberOnChangeIndirectTime = (selectedOption) => {
-        updateFormData({ MeetingNewMemberIndirectTime: selectedOption.value });
-    };
-
-    const handleMeetingCIICPAROnChangeDirectTime = (selectedOption) => {
-        updateFormData({ MeetingCIICPARCDirectTime: selectedOption.value });
-    };
-
-    const handleMeetingCIICPAROnChangeIndirectTime = (selectedOption) => {
-        updateFormData({ MeetingCIICPARIndirectTime: selectedOption.value });
-    };
-
-    const handleMeetingQIOnChangeCount = (selectedOption) => {
-        updateFormData({ MeetingQICount: selectedOption.value });
-    };
-
-    const handleMeetingQIOnChangeDirectTime = (selectedOption) => {
-        updateFormData({ MeetingQIDirectTime: selectedOption.value });
-    };
-
-    const handleMeetingQIOnChangeIndirectTime = (selectedOption) => {
-        updateFormData({ MeetingQIIndirectTime: selectedOption.value });
-    };
-
-    const handleMaterialDropoffOnChangeDirectTime = (selectedOption) => {
-        updateFormData({ MaterialDropoffDirectTime: selectedOption.value });
-    };
-
-    const handleMaterialDropoffOnChangeIndirectTime = (selectedOption) => {
-        updateFormData({ MaterialDropoffIndirectTime: selectedOption.value });
-    };
-
-    const handleClinicActivityOtherOnChangeDirectTime = (selectedOption) => {
-        updateFormData({ ClinicActivityOtherDirectTime: selectedOption.value });
-    };
-
-    const handleClinicActivityOtherOnChangeIndirectTime = (selectedOption) => {
-        updateFormData({ ClinicActivityOtherIndirectTime: selectedOption.value });
-    };
-
-    const handleRecievingTrainingOnChangeCount = (selectedOption) => {
-        updateFormData({ RecievingTrainingCount: selectedOption.value });
-    };
-
-    const handleRecievingTrainingOnChangeDirectTime = (selectedOption) => {
-        updateFormData({ RecievingTrainingDirectTime: selectedOption.value });
-    };
-
-    const handleRecievingTrainingOnChangeIndirectTime = (selectedOption) => {
-        updateFormData({ RecievingTrainingIndirectTime: selectedOption.value });
-    };
-
-    const handleTrainingMaterialCreationChange = (selectedOption) => {
-        updateFormData({ TrainingMaterialCreation: selectedOption.value });
-    };
-
-    const handleTrainingClinicAdminsOnChangeCount = (selectedOption) => {
-        updateFormData({ TrainingClinicAdminsCount: selectedOption.value });
-    };
-
-    const handleTrainingClinicAdminsOnChangeDirectTime = (selectedOption) => {
-        updateFormData({ TrainingClinicAdminsDirectTime: selectedOption.value });
-    };
-
-    const handleTrainingClinicAdminsOnChangeIndirectTime = (selectedOption) => {
-        updateFormData({ TrainingClinicAdminsIndirectTime: selectedOption.value });
-    };
-
-    const handleTrainingClinicProvidersOnChangeCount = (selectedOption) => {
-        updateFormData({ TrainingClinicProvidersCount: selectedOption.value });
-    };
-
-    const handleTrainingClinicProvidersOnChangeDirectTime = (selectedOption) => {
-        updateFormData({ TrainingClinicProvidersDirectTime: selectedOption.value });
-    };
-
-    const handleTrainingClinicProvidersOnChangeIndirectTime = (selectedOption) => {
-        updateFormData({ TrainingClinicProvidersIndirectTime: selectedOption.value });
+    const handleChange = (field) => (selectedOption) => {
+        updateFormData({ [field]: selectedOption.value });
     };
 
     return (
@@ -217,23 +24,23 @@ const EMRForm = () => {
                     id="C_C_visit"
                     name="CcVisit"
                     place_holder="Indirect Time"
-                    onChange={handleCcVisitChange}
-                    value={formData.CcVisit || ''} max_count={100}
+                    onChange={handleChange('CcVisit')}
+                    value={formData.CcVisit || ''}
                 />
                 <CustomDropdown
                     label={<>Documentation - QI template<HelpIcon id="QI_template_help" explanation={fieldExplanations['QiTemplate']} /></>}
                     id="QI_template"
                     name="QiTemplate"
                     place_holder="Indirect Time"
-                    onChange={handleQiTemplateChange}
-                    value={formData.QiTemplate || ''} max_count={100}
+                    onChange={handleChange('QiTemplate')}
+                    value={formData.QiTemplate || ''}
                 />
                 <CustomDropdown
                     label={<>Documentation - Menu of Service templates<HelpIcon id="Service_templates_help" explanation={fieldExplanations['ServiceTemplates']} /></>}
                     id="Service_templates"
                     name="ServiceTemplates"
                     place_holder="Indirect Time"
-                    onChange={handleServiceTemplatesChange}
+                    onChange={handleChange('ServiceTemplates')}
                     value={formData.ServiceTemplates || ''}
                 />
                 <CustomDropdown
@@ -241,7 +48,7 @@ const EMRForm = () => {
                     id="Documentation_Clinic_Processes"
                     name="DocumentationClinicProcesses"
                     place_holder="Indirect Time"
-                    onChange={handleDocumentationClinicProcessesChange}
+                    onChange={handleChange('DocumentationClinicProcesses')}
                     value={formData.orgTime || ''}
                 />
                 <CustomDropdown
@@ -249,7 +56,7 @@ const EMRForm = () => {
                     id="Documentation_Other"
                     name="DocumentationOther"
                     place_holder="Indirect Time"
-                    onChange={handleDocumentationOtherChange}
+                    onChange={handleChange('DocumentationOther')}
                     value={formData.DocumentationOther || ''}
                 />
                 <CustomDropdown
@@ -257,26 +64,25 @@ const EMRForm = () => {
                     id="Scheduling_appointments"
                     name="SchedulingAppointments"
                     place_holder="Indirect Time"
-                    onChange={handleSchedulingAppointmentsChange}
+                    onChange={handleChange('SchedulingAppointments')}
                     value={formData.SchedulingAppointments || ''}
                 />
                 <DoubleDropdown
                     label={<>Liaise with external partners<HelpIcon id="Liaise_with_external_partners_help" explanation={fieldExplanations['LiaiseWithExternalPartners']} /></>}
                     id="Liaise_with_external_partners"
                     name="LiaiseWithExternalPartners"
-                    onChangeDirectTime={handleLiaiseWithExternalPartnersOnChangeDirectTime}
-                    onChangeIndirectTime={handleLiaiseWithExternalPartnersOnChangeInirectTime}
+                    onChangeDirectTime={handleChange('LiaiseWithExternalPartnersDirectTime')}
+                    onChangeIndirectTime={handleChange('LiaiseWithExternalPartnersIndirectTime')}
                 />
                 <TripleDropdown
                     label={<>Provider or clinic inquiry<HelpIcon id="Provider_or_clinic_inquiry_help" explanation={fieldExplanations['ProvideOrClinicInquiry']} /></>}
                     id="Provider_or_clinic_inquiry"
                     name="ProvideOrClinicInquiry"
                     max_count={100}
-                    onChangeCount={handleProvideOrClinicInquiryOnChangeCount}
-                    onChangeDirectTime={handleProvideOrClinicInquiryOnChangeDirectTime}
-                    onChangeIndirectTime={handleProvideOrClinicInquiryOnChangeIndirectTime}
+                    onChangeCount={handleChange('ProvideOrClinicInquiryCount')}
+                    onChangeDirectTime={handleChange('ProvideOrClinicInquiryDirectTime')}
+                    onChangeIndirectTime={handleChange('ProvideOrClinicInquiryIndirectTime')}
                 />
-
             </Box>
             <Box title="Clinic Activity" className="emr-box2">
                 <TripleDropdown
@@ -284,81 +90,81 @@ const EMRForm = () => {
                     id="EMR_mapping"
                     name="EmrMapping"
                     max_count={20}
-                    onChangeCount={handleEmrMappingOnChangeCount}
-                    onChangeDirectTime={handleEmrMappingOnChangeDirectTime}
-                    onChangeIndirectTime={handleEmrMappingOnChangeIndirectTime}
+                    onChangeCount={handleChange('PatientCallsCount')}
+                    onChangeDirectTime={handleChange('PatientCallsDirectTime')}
+                    onChangeIndirectTime={handleChange('PatientCallsIndirectTime')}
                 />
                 <TripleDropdown
                     label={<>EMR searches<HelpIcon id="EMR_searches_help" explanation={fieldExplanations['EmrSearches']} /></>}
                     id="EMR_searches"
                     name="EmrSearches"
                     max_count={20}
-                    onChangeCount={handleEmrSearchesOnChangeCount}
-                    onChangeDirectTime={handleEmrSearchesOnChangeDirectTime}
-                    onChangeIndirectTime={handleEmrSearchesOnChangeIndirectTime}
+                    onChangeCount={handleChange('PatientCallsCount')}
+                    onChangeDirectTime={handleChange('PatientCallsDirectTime')}
+                    onChangeIndirectTime={handleChange('PatientCallsIndirectTime')}
                 />
                 <TripleDropdown
                     label={<>EMR data collection<HelpIcon id="EMR_data_collection_help" explanation={fieldExplanations['EmrDataCollection']} /></>}
                     id="EMR_data_collection"
                     name="EmrDataCollection"
                     max_count={20}
-                    onChangeCount={handleEmrDataCollectionOnChangeCount}
-                    onChangeDirectTime={handleEmrDataCollectionOnChangeDirectTime}
-                    onChangeIndirectTime={handleEmrDataCollectionOnChangeIndirectTime}
+                    onChangeCount={handleChange('PatientCallsCount')}
+                    onChangeDirectTime={handleChange('PatientCallsDirectTime')}
+                    onChangeIndirectTime={handleChange('PatientCallsIndirectTime')}
                 />
                 <TripleDropdown
                     label={<>EMR data entry<HelpIcon id="EMR_data_entry" explanation={fieldExplanations['EmrDataEntry']} /></>}
                     id="EMR_data_entry"
                     name="EmrDataEntry"
                     max_count={20}
-                    onChangeCount={handleEmrDataEntryOnChangeCount}
-                    onChangeDirectTime={handleEmrDataEntryOnChangeDirectTime}
-                    onChangeIndirectTime={handleEmrDataEntryOnChangeIndirectTime}
+                    onChangeCount={handleChange('PatientCallsCount')}
+                    onChangeDirectTime={handleChange('PatientCallsDirectTime')}
+                    onChangeIndirectTime={handleChange('PatientCallsIndirectTime')}
                 />
                 <TripleDropdown
                     label={<>Meeting - New Member<HelpIcon id="Meeting_New_Member_help" explanation={fieldExplanations['MeetingNewMember']} /></>}
                     id="Meeting_New_Member"
                     name="MeetingNewMember"
                     max_count={20}
-                    onChangeCount={handleMeetingNewMemberOnChangeCount}
-                    onChangeDirectTime={handleMeetingNewMemberOnChangeDirectTime}
-                    onChangeIndirectTime={handleMeetingNewMemberOnChangeIndirectTime}
+                    onChangeCount={handleChange('PatientCallsCount')}
+                    onChangeDirectTime={handleChange('PatientCallsDirectTime')}
+                    onChangeIndirectTime={handleChange('PatientCallsIndirectTime')}
                 />
 
                 <DoubleDropdown
                     label={<>Meeting - C&C<HelpIcon id="Meeting_C_C_help" explanation={fieldExplanations['MeetingCC']} /></>}
                     id="Meeting_C_C"
                     name="MeetingCC"
-                    onChangeDirectTime={handleMeetingCCOnChangeDirectTime}
-                    onChangeIndirectTime={handleMeetingCCOnChangeIndirectTime}
+                    onChangeDirectTime={handleChange('MeetingCCDirectTime')}
+                    onChangeIndirectTime={handleChange('MeetingCCIndirectTime')}
                 />
                 <DoubleDropdown
                     label={<>Meeting - CII/CPAR<HelpIcon id="Meeting_CII_CPAR_help" explanation={fieldExplanations['MeetingCIICPAR']} /></>}
                     id="Meeting_CII_CPAR"
                     name="MeetingCIICPAR"
-                    onChangeDirectTime={handleMeetingCIICPAROnChangeDirectTime}
-                    onChangeIndirectTime={handleMeetingCIICPAROnChangeIndirectTime}
+                    onChangeDirectTime={handleChange('MeetingCIICPARDirectTime')}
+                    onChangeIndirectTime={handleChange('MeetingCIICPARIndirectTime')}
                 />
                 <DoubleDropdown
                     label={<>Meeting - QI<HelpIcon id="Meeting_QI_help" explanation={fieldExplanations['MeetingQI']} /></>}
                     id="Meeting_QI"
                     name="MeetingQI"
-                    onChangeDirectTime={handleMeetingQIOnChangeDirectTime}
-                    onChangeIndirectTime={handleMeetingQIOnChangeIndirectTime}
+                    onChangeDirectTime={handleChange('MeetingQIDirectTime')}
+                    onChangeIndirectTime={handleChange('MeetingQIIndirectTime')}
                 />
                 <DoubleDropdown
                     label={<>Material dropoff<HelpIcon id="Material_dropoff_help" explanation={fieldExplanations['MaterialDropoff']} /></>}
                     id="Material_dropoff"
                     name="MaterialDropoff"
-                    onChangeDirectTime={handleMaterialDropoffOnChangeDirectTime}
-                    onChangeIndirectTime={handleMaterialDropoffOnChangeIndirectTime}
+                    onChangeDirectTime={handleChange('MaterialDropoffDirectTime')}
+                    onChangeIndirectTime={handleChange('MaterialDropoffIndirectTime')}
                 />
                 <DoubleDropdown
                     label={<>Clinic Activity - other<HelpIcon id="Clinic_Activity_other_help" explanation={fieldExplanations['ClinicActivityOther']} /></>}
                     id="Clinic_Activity_other"
                     name="ClinicActivityOther"
-                    onChangeDirectTime={handleClinicActivityOtherOnChangeDirectTime}
-                    onChangeIndirectTime={handleClinicActivityOtherOnChangeIndirectTime}
+                    onChangeDirectTime={handleChange('ClinicActivityOtherDirectTime')}
+                    onChangeIndirectTime={handleChange('ClinicActivityOtherIndirectTime')}
                 />
             </Box>
             <Box title="Training Activity" className="emr-box3">
@@ -367,15 +173,16 @@ const EMRForm = () => {
                     id="Recieving_training"
                     name="RecievingTraining"
                     max_count={10}
-                    onChangeCount={handleRecievingTrainingOnChangeCount}
-                    onChangeDirectTime={handleRecievingTrainingOnChangeDirectTime}
-                    onChangeIndirectTime={handleRecievingTrainingOnChangeIndirectTime} />
+                    onChangeCount={handleChange('RecievingTrainingCount')}
+                    onChangeDirectTime={handleChange('RecievingTrainingDirectTime')}
+                    onChangeIndirectTime={handleChange('RecievingTrainingIndirectTime')}
+                />
                 <CustomDropdown
                     label={<>Training material creation<HelpIcon id="Training_material_creation_help" explanation={fieldExplanations['TrainingMaterialCreation']} /></>}
                     id="Training_material_creation"
                     name="TrainingMaterialCreation"
                     place_holder="Indirect Time"
-                    onChange={handleTrainingMaterialCreationChange}
+                    onChange={handleChange('TrainingMaterialCreation')}
                     value={formData.TrainingMaterialCreation || ''}
                 />
                 <TripleDropdown
@@ -383,18 +190,18 @@ const EMRForm = () => {
                     id="Training_clinic_adminins"
                     name="TrainingClinicAdmins"
                     max_count={10}
-                    onChangeCount={handleTrainingClinicAdminsOnChangeCount}
-                    onChangeDirectTime={handleTrainingClinicAdminsOnChangeDirectTime}
-                    onChangeIndirectTime={handleTrainingClinicAdminsOnChangeIndirectTime}
+                    onChangeCount={handleChange('TrainingClinicAdminsCount')}
+                    onChangeDirectTime={handleChange('TrainingClinicAdminsDirectTime')}
+                    onChangeIndirectTime={handleChange('TrainingClinicAdminsIndirectTime')}
                 />
                 <TripleDropdown
                     label={<>Training clinic providers (physician, NP, MDT)<HelpIcon id="Training_clinic_providers_help" explanation={fieldExplanations['TrainingClinicProviders']} /></>}
                     id="Training_clinic_providers"
                     name="TrainingClinicProviders"
                     max_count={100}
-                    onChangeCount={handleTrainingClinicProvidersOnChangeCount}
-                    onChangeDirectTime={handleTrainingClinicProvidersOnChangeDirectTime}
-                    onChangeIndirectTime={handleTrainingClinicProvidersOnChangeIndirectTime}
+                    onChangeCount={handleChange('TrainingClinicProvidersCount')}
+                    onChangeDirectTime={handleChange('TrainingClinicProvidersDirectTime')}
+                    onChangeIndirectTime={handleChange('TrainingClinicProvidersIndirectTime')}
                 />
             </Box>
         </div >

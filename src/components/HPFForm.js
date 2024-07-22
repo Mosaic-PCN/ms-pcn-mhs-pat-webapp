@@ -160,13 +160,13 @@ const HPFForm = () => {
                     value={formData.TrainingMaterialCreation || ''}
                 />
                 <TripleDropdown
-                    label={<>Training clinic administrative staff<HelpIcon id="Training_clinic_administrative_staff_help" explanation={fieldExplanations['TrainingClinicAdministrativeStaff']} /></>}
+                    label={<>Training clinic administrative staff<HelpIcon id="Training_clinic_administrative_staff_help" explanation={fieldExplanations['TrainingClinicAdminStaff']} /></>}
                     id="Training_clinic_administrative_staff"
-                    name="TrainingClinicAdministrativeStaff"
+                    name="TrainingClinicAdminStaff"
                     max_count={10}
-                    onChangeCount={handleChange('TrainingClinicAdministrativeStaffCount')}
-                    onChangeDirectTime={handleChange('TrainingClinicAdministrativeStaffDirectTime')}
-                    onChangeIndirectTime={handleChange('TrainingClinicAdministrativeStaffIndirectTime')}
+                    onChangeCount={handleChange('TrainingClinicAdminStaffCount')}
+                    onChangeDirectTime={handleChange('TrainingClinicAdminStaffDirectTime')}
+                    onChangeIndirectTime={handleChange('TrainingClinicAdminStaffIndirectTime')}
                 />
                 <TripleDropdown
                     label={<>Training clinic providers <HelpIcon id="Provider_or_clinic_inquiry_help" explanation={fieldExplanations['ProvideOrClinicInquiry']} /></>}
