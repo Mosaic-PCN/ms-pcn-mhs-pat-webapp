@@ -13,243 +13,9 @@ import { TooltipProvider } from 'react-tooltip';
 
 const HPFForm = () => {
     const { formData, updateFormData, fieldExplanations } = useContext(AppContext);
-
-    const handleCcVisitChange = (selectedOption) => {
-        updateFormData({ CcVisit: selectedOption.value });
+    const handleChange = (field) => (selectedOption) => {
+        updateFormData({ [field]: selectedOption.value });
     };
-
-    const handleQiTemplateChange = (selectedOption) => {
-        updateFormData({ QiTemplate: selectedOption.value });
-    };
-
-    const handleServiceTemplatesChange = (selectedOption) => {
-        updateFormData({ ServiceTemplates: selectedOption.value });
-    };
-
-    const handleDocumentationClinicProcessesChange = (selectedOption) => {
-        updateFormData({ DocumentationClinicProcesses: selectedOption.value });
-    };
-
-    const handleDocumentationOtherChange = (selectedOption) => {
-        updateFormData({ DocumentationOther: selectedOption.value });
-    };
-
-    const handleSchedulingAppointmentsChange = (selectedOption) => {
-        updateFormData({ SchedulingAppointments: selectedOption.value });
-    };
-
-    const handleLiaiseWithExternalPartnersOnChangeDirectTime = (selectedOption) => {
-        updateFormData({ LiaiseWithExternalPartnersDirectTime: selectedOption.value });
-    };
-
-    const handleLiaiseWithExternalPartnersOnChangeInirectTime = (selectedOption) => {
-        updateFormData({ LiaiseWithExternalPartnersIndirectTime: selectedOption.value });
-    };
-
-    const handleProvideOrClinicInquiryOnChangeCount = (selectedOption) => {
-        updateFormData({ ProvideOrClinicInquiryCount: selectedOption.value });
-    };
-
-    const handleProvideOrClinicInquiryOnChangeDirectTime = (selectedOption) => {
-        updateFormData({ ProvideOrClinicInquiryDirectTime: selectedOption.value });
-    };
-
-    const handleProvideOrClinicInquiryOnChangeIndirectTime = (selectedOption) => {
-        updateFormData({ ProvideOrClinicInquiryIndirectTime: selectedOption.value });
-    };
-
-    const handleMeetingCCOnChangeCount = (selectedOption) => {
-        updateFormData({ MeetingCCCount: selectedOption.value });
-    };
-
-    const handleMeetingCCOnChangeDirectTime = (selectedOption) => {
-        updateFormData({ MeetingCCDirectTime: selectedOption.value });
-    };
-
-    const handleMeetingCCOnChangeIndirectTime = (selectedOption) => {
-        updateFormData({ MeetingCCIndirectTime: selectedOption.value });
-    };
-
-    const handleMeetingNewMemberOnChangeCount = (selectedOption) => {
-        updateFormData({ MeetingNewMemberCount: selectedOption.value });
-    };
-
-    const handleMeetingNewMemberOnChangeDirectTime = (selectedOption) => {
-        updateFormData({ MeetingNewMemberCDirectTime: selectedOption.value });
-    };
-
-    const handleMeetingNewMemberOnChangeIndirectTime = (selectedOption) => {
-        updateFormData({ MeetingNewMemberIndirectTime: selectedOption.value });
-    };
-
-    const handleMeetingCIICPAROnChangeCount = (selectedOption) => {
-        updateFormData({ MeetingCIICPARCount: selectedOption.value });
-    };
-
-    const handleMeetingCIICPAROnChangeDirectTime = (selectedOption) => {
-        updateFormData({ MeetingCIICPARCDirectTime: selectedOption.value });
-    };
-
-    const handleMeetingCIICPAROnChangeIndirectTime = (selectedOption) => {
-        updateFormData({ MeetingCIICPARIndirectTime: selectedOption.value });
-    };
-
-    const handleMeetingQIOnChangeCount = (selectedOption) => {
-        updateFormData({ MeetingQICount: selectedOption.value });
-    };
-
-    const handleMeetingQIOnChangeDirectTime = (selectedOption) => {
-        updateFormData({ MeetingQIDirectTime: selectedOption.value });
-    };
-
-    const handleMeetingQIOnChangeIndirectTime = (selectedOption) => {
-        updateFormData({ MeetingQIIndirectTime: selectedOption.value });
-    };
-
-    const handleMaterialDropoffOnChangeCount = (selectedOption) => {
-        updateFormData({ MaterialDropoffQICount: selectedOption.value });
-    };
-
-    const handleMaterialDropoffOnChangeDirectTime = (selectedOption) => {
-        updateFormData({ MaterialDropoffDirectTime: selectedOption.value });
-    };
-
-    const handleMaterialDropoffOnChangeIndirectTime = (selectedOption) => {
-        updateFormData({ MaterialDropoffIndirectTime: selectedOption.value });
-    };
-
-    const handleClinicActivityOtherOnChangeCount = (selectedOption) => {
-        updateFormData({ ClinicActivityOtherCount: selectedOption.value });
-    };
-
-    const handleClinicActivityOtherOnChangeDirectTime = (selectedOption) => {
-        updateFormData({ ClinicActivityOtherDirectTime: selectedOption.value });
-    };
-
-    const handleClinicActivityOtherOnChangeIndirectTime = (selectedOption) => {
-        updateFormData({ ClinicActivityOtherIndirectTime: selectedOption.value });
-    };
-
-    const handleRecievingTrainingOnChangeCount = (selectedOption) => {
-        updateFormData({ RecievingTrainingCount: selectedOption.value });
-    };
-
-    const handleRecievingTrainingOnChangeDirectTime = (selectedOption) => {
-        updateFormData({ RecievingTrainingDirectTime: selectedOption.value });
-    };
-
-    const handleRecievingTrainingOnChangeIndirectTime = (selectedOption) => {
-        updateFormData({ RecievingTrainingIndirectTime: selectedOption.value });
-    };
-
-    const handleTrainingMaterialCreationOnChangeCount = (selectedOption) => {
-        updateFormData({ TrainingMaterialCreationCount: selectedOption.value });
-    };
-
-    const handleTrainingMaterialCreationOnChangeDirectTime = (selectedOption) => {
-        updateFormData({ TrainingMaterialCreationDirectTime: selectedOption.value });
-    };
-
-    const handleTrainingMaterialCreationOnChangeIndirectTime = (selectedOption) => {
-        updateFormData({ TrainingMaterialCreationIndirectTime: selectedOption.value });
-    };
-
-    const handleTrainingClinicAdminsOnChangeCount = (selectedOption) => {
-        updateFormData({ TrainingClinicAdminsCount: selectedOption.value });
-    };
-
-    const handleTrainingClinicAdminsOnChangeDirectTime = (selectedOption) => {
-        updateFormData({ TrainingClinicAdminsDirectTime: selectedOption.value });
-    };
-
-    const handleTrainingClinicAdminsOnChangeIndirectTime = (selectedOption) => {
-        updateFormData({ TrainingClinicAdminsIndirectTime: selectedOption.value });
-    };
-
-    const handleTrainingClinicProvidersOnChangeCount = (selectedOption) => {
-        updateFormData({ TrainingClinicProvidersCount: selectedOption.value });
-    };
-
-    const handleTrainingClinicProvidersOnChangeDirectTime = (selectedOption) => {
-        updateFormData({ TrainingClinicProvidersDirectTime: selectedOption.value });
-    };
-
-    const handleTrainingClinicProvidersOnChangeIndirectTime = (selectedOption) => {
-        updateFormData({ TrainingClinicProvidersIndirectTime: selectedOption.value });
-    };
-
-    const handleQIProjectsStartedOnChangeCount = (selectedOption) => {
-        updateFormData({ QIProjectsStartedCount: selectedOption.value });
-    };
-
-    const handleQIProjectsStartedOnChangeDirectTime = (selectedOption) => {
-        updateFormData({ QIProjectsStartedDirectTime: selectedOption.value });
-    };
-
-    const handleQIProjectsStartedOnChangeIndirectTime = (selectedOption) => {
-        updateFormData({ QIProjectsStartedIndirectTime: selectedOption.value });
-    };
-
-    const handleQIProjectsAdoptedOnChangeCount = (selectedOption) => {
-        updateFormData({ QIProjectsAdoptedCount: selectedOption.value });
-    };
-
-    const handleQIProjectsAdoptedOnChangeDirectTime = (selectedOption) => {
-        updateFormData({ QIProjectsAdoptedDirectTime: selectedOption.value });
-    };
-
-    const handleQIProjectsAdoptedOnChangeIndirectTime = (selectedOption) => {
-        updateFormData({ QIProjectsAdoptedIndirectTime: selectedOption.value });
-    };
-
-    const handleQIProjectCancelledOnChangeCount = (selectedOption) => {
-        updateFormData({ QIProjectCancelledCount: selectedOption.value });
-    };
-
-    const handleQIProjectCancelledOnChangeDirectTime = (selectedOption) => {
-        updateFormData({ QIProjectCancelledDirectTime: selectedOption.value });
-    };
-
-    const handleQIProjectCancelledOnChangeIndirectTime = (selectedOption) => {
-        updateFormData({ QIProjectCancelledIndirectTime: selectedOption.value });
-    };
-
-    const handleQIProjectsAdaptedOnChangeCount = (selectedOption) => {
-        updateFormData({ QIProjectsAdaptedCount: selectedOption.value });
-    };
-
-    const handleQIProjectsAdaptedOnChangeDirectTime = (selectedOption) => {
-        updateFormData({ QIProjectsAdaptedDirectTime: selectedOption.value });
-    };
-
-    const handleQIProjectsAdaptedOnChangeIndirectTime = (selectedOption) => {
-        updateFormData({ QIProjectsAdaptedIndirectTime: selectedOption.value });
-    };
-
-    const handleCollaborationWithEvalPartnersOnChangeCount = (selectedOption) => {
-        updateFormData({ CollaborationWithEvalPartnersCount: selectedOption.value });
-    };
-
-    const handleCollaborationWithEvalPartnersOnChangeDirectTime = (selectedOption) => {
-        updateFormData({ CollaborationWithEvalPartnersDirectTime: selectedOption.value });
-    };
-
-    const handleCollaborationWithEvalPartnersOnChangeIndirectTime = (selectedOption) => {
-        updateFormData({ CollaborationWithEvalPartnersIndirectTime: selectedOption.value });
-    };
-
-    const handleQEnvironmentalScanAnalysisOnChangeCount = (selectedOption) => {
-        updateFormData({ EnvironmentalScanAnalysisPartnersCount: selectedOption.value });
-    };
-
-    const handleEnvironmentalScanAnalysisOnChangeDirectTime = (selectedOption) => {
-        updateFormData({ EnvironmentalScanAnalysisDirectTime: selectedOption.value });
-    };
-
-    const handleEnvironmentalScanAnalysisOnChangeIndirectTime = (selectedOption) => {
-        updateFormData({ EnvironmentalScanAnalysisIndirectTime: selectedOption.value });
-    };
-
 
     return (
         <div className="hpf-box-container">
@@ -259,7 +25,7 @@ const HPFForm = () => {
                     id="C_C_visit"
                     name="CcVisit"
                     place_holder="Indirect Time"
-                    onChange={handleCcVisitChange}
+                    onChange={handleChange('CcVisit')}
                     value={formData.CcVisit || ''} max_count={100}
                 />
                 <CustomDropdown
@@ -267,7 +33,7 @@ const HPFForm = () => {
                     id="QI_template"
                     name="QiTemplate"
                     place_holder="Indirect Time"
-                    onChange={handleQiTemplateChange}
+                    onChange={handleChange('QiTemplate')}
                     value={formData.QiTemplate || ''} max_count={100}
                 />
                 <CustomDropdown
@@ -275,7 +41,7 @@ const HPFForm = () => {
                     id="Service_templates"
                     name="ServiceTemplates"
                     place_holder="Indirect Time"
-                    onChange={handleServiceTemplatesChange}
+                    onChange={handleChange('ServiceTemplates')}
                     value={formData.ServiceTemplates || ''}
                 />
                 <CustomDropdown
@@ -283,7 +49,7 @@ const HPFForm = () => {
                     id="Documentation_Clinic_Processes"
                     name="DocumentationClinicProcesses"
                     place_holder="Indirect Time"
-                    onChange={handleDocumentationClinicProcessesChange}
+                    onChange={handleChange('DocumentationClinicProcesses')}
                     value={formData.orgTime || ''}
                 />
                 <CustomDropdown
@@ -291,7 +57,7 @@ const HPFForm = () => {
                     id="Documentation_Other"
                     name="DocumentationOther"
                     place_holder="Indirect Time"
-                    onChange={handleDocumentationOtherChange}
+                    onChange={handleChange('DocumentationOther')}
                     value={formData.DocumentationOther || ''}
                 />
                 <CustomDropdown
@@ -299,24 +65,24 @@ const HPFForm = () => {
                     id="Scheduling_appointments"
                     name="SchedulingAppointments"
                     place_holder="Indirect Time"
-                    onChange={handleSchedulingAppointmentsChange}
+                    onChange={handleChange('SchedulingAppointments')}
                     value={formData.SchedulingAppointments || ''}
                 />
                 <DoubleDropdown
                     label={<>Liaise with external partners<HelpIcon id="Liaise_with_external_partners_help" explanation={fieldExplanations['LiaiseWithExternalPartners']} /></>}
                     id="Liaise_with_external_partners"
                     name="LiaiseWithExternalPartners"
-                    onChangeDirectTime={handleLiaiseWithExternalPartnersOnChangeDirectTime}
-                    onChangeIndirectTime={handleLiaiseWithExternalPartnersOnChangeInirectTime}
+                    onChangeDirectTime={handleChange('LiaiseWithExternalPartnersDirectTime')}
+                    onChangeIndirectTime={handleChange('LiaiseWithExternalPartnersIndirectTime')}
                 />
                 <TripleDropdown
                     label={<>Provider or clinic inquiry<HelpIcon id="Provider_or_clinic_inquiry_help" explanation={fieldExplanations['ProvideOrClinicInquiry']} /></>}
                     id="Provider_or_clinic_inquiry"
                     name="ProvideOrClinicInquiry"
                     max_count={100}
-                    onChangeCount={handleProvideOrClinicInquiryOnChangeCount}
-                    onChangeDirectTime={handleProvideOrClinicInquiryOnChangeDirectTime}
-                    onChangeIndirectTime={handleProvideOrClinicInquiryOnChangeIndirectTime}
+                    onChangeCount={handleChange('ProvideOrClinicInquiryCount')}
+                    onChangeDirectTime={handleChange('ProvideOrClinicInquiryDirectTime')}
+                    onChangeIndirectTime={handleChange('ProvideOrClinicInquiryIndirectTime')}
                 />
             </Box>
             <Box title="Clinic Activity" className="hpf-box2">
@@ -325,54 +91,54 @@ const HPFForm = () => {
                     id="Meeting_C_C"
                     name="MeetingCC"
                     max_count={20}
-                    onChangeCount={handleMeetingCCOnChangeCount}
-                    onChangeDirectTime={handleMeetingCCOnChangeDirectTime}
-                    onChangeIndirectTime={handleMeetingCCOnChangeIndirectTime}
+                    onChangeCount={handleChange('MeetingCCCount')}
+                    onChangeDirectTime={handleChange('MeetingCCDirectTime')}
+                    onChangeIndirectTime={handleChange('MeetingCCIndirectTime')}
                 />
                 <TripleDropdown
                     label={<>Meeting - New Member<HelpIcon id="Meeting_New_Member_help" explanation={fieldExplanations['MeetingNewMember']} /></>}
                     id="Meeting_New_Member"
                     name="MeetingNewMember"
                     max_count={20}
-                    onChangeCount={handleMeetingNewMemberOnChangeCount}
-                    onChangeDirectTime={handleMeetingNewMemberOnChangeDirectTime}
-                    onChangeIndirectTime={handleMeetingNewMemberOnChangeIndirectTime}
+                    onChangeCount={handleChange('MeetingNewMemberCount')}
+                    onChangeDirectTime={handleChange('MeetingNewMemberDirectTime')}
+                    onChangeIndirectTime={handleChange('MeetingNewMemberIndirectTime')}
                 />
                 <TripleDropdown
                     label={<>Meeting - CII/CPAR<HelpIcon id="Meeting_CII_CPAR_help" explanation={fieldExplanations['MeetingCIICPAR']} /></>}
                     id="Meeting_CII_CPAR"
                     name="MeetingCIICPAR"
                     max_count={20}
-                    onChangeCount={handleMeetingCIICPAROnChangeCount}
-                    onChangeDirectTime={handleMeetingCIICPAROnChangeDirectTime}
-                    onChangeIndirectTime={handleMeetingCIICPAROnChangeIndirectTime}
+                    onChangeCount={handleChange('MeetingCIICPARCount')}
+                    onChangeDirectTime={handleChange('MeetingCIICPARDirectTime')}
+                    onChangeIndirectTime={handleChange('MeetingCIICPARIndirectTime')}
                 />
                 <TripleDropdown
                     label={<>Meeting - QI<HelpIcon id="Meeting_QI_help" explanation={fieldExplanations['MeetingQI']} /></>}
                     id="Meeting_QI"
                     name="MeetingQI"
                     max_count={10}
-                    onChangeCount={handleMeetingQIOnChangeCount}
-                    onChangeDirectTime={handleMeetingQIOnChangeDirectTime}
-                    onChangeIndirectTime={handleMeetingQIOnChangeIndirectTime}
+                    onChangeCount={handleChange('MeetingQICount')}
+                    onChangeDirectTime={handleChange('MeetingQIDirectTime')}
+                    onChangeIndirectTime={handleChange('MeetingQIIndirectTime')}
                 />
                 <TripleDropdown
                     label={<>Material dropoff<HelpIcon id="Material_dropoff_help" explanation={fieldExplanations['MaterialDropoff']} /></>}
                     id="Material_dropoff"
                     name="MaterialDropoff"
                     max_count={10}
-                    onChangeCount={handleMaterialDropoffOnChangeCount}
-                    onChangeDirectTime={handleMaterialDropoffOnChangeDirectTime}
-                    onChangeIndirectTime={handleMaterialDropoffOnChangeIndirectTime}
+                    onChangeCount={handleChange('MaterialDropoffCount')}
+                    onChangeDirectTime={handleChange('MaterialDropoffDirectTime')}
+                    onChangeIndirectTime={handleChange('MaterialDropoffIndirectTime')}
                 />
                 <TripleDropdown
                     label={<>Clinic Activity - other<HelpIcon id="Clinic_Activity_other_help" explanation={fieldExplanations['ClinicActivityOther']} /></>}
                     id="Clinic_Activity_other"
                     name="ClinicActivityOther"
                     max_count={10}
-                    onChangeCount={handleClinicActivityOtherOnChangeCount}
-                    onChangeDirectTime={handleClinicActivityOtherOnChangeDirectTime}
-                    onChangeIndirectTime={handleClinicActivityOtherOnChangeIndirectTime}
+                    onChangeCount={handleChange('ClinicActivityOtherCount')}
+                    onChangeDirectTime={handleChange('ClinicActivityOtherDirectTime')}
+                    onChangeIndirectTime={handleChange('ClinicActivityOtherIndirectTime')}
                 />
             </Box>
             <Box title="Training Activity" className="hpf-box3">
@@ -381,35 +147,35 @@ const HPFForm = () => {
                     id="Recieving_training"
                     name="RecievingTraining"
                     max_count={10}
-                    onChangeCount={handleRecievingTrainingOnChangeCount}
-                    onChangeDirectTime={handleRecievingTrainingOnChangeDirectTime}
-                    onChangeIndirectTime={handleRecievingTrainingOnChangeIndirectTime} />
-                <TripleDropdown
+                    onChangeCount={handleChange('RecievingTrainingCount')}
+                    onChangeDirectTime={handleChange('B]RecievingTrainingDirectTime')}
+                    onChangeIndirectTime={handleChange('RecievingTrainingIndirectTime')}
+                />
+                <CustomDropdown
                     label={<>Training material creation<HelpIcon id="Training_material_creation_help" explanation={fieldExplanations['TrainingMaterialCreation']} /></>}
                     id="Training_material_creation"
                     name="TrainingMaterialCreation"
-                    max_count={10}
-                    onChangeCount={handleTrainingMaterialCreationOnChangeCount}
-                    onChangeDirectTime={handleTrainingMaterialCreationOnChangeDirectTime}
-                    onChangeIndirectTime={handleTrainingMaterialCreationOnChangeIndirectTime}
+                    place_holder="Indirect Time"
+                    onChange={handleChange('TrainingMaterialCreation')}
+                    value={formData.TrainingMaterialCreation || ''}
                 />
                 <TripleDropdown
-                    label={<>Training clinic administrative staff<HelpIcon id="Training_clinic_adminins_help" explanation={fieldExplanations['TrainingClinicAdmins']} /></>}
-                    id="Training_clinic_adminins"
-                    name="TrainingClinicAdmins"
+                    label={<>Training clinic administrative staff<HelpIcon id="Training_clinic_administrative_staff_help" explanation={fieldExplanations['TrainingClinicAdministrativeStaff']} /></>}
+                    id="Training_clinic_administrative_staff"
+                    name="TrainingClinicAdministrativeStaff"
                     max_count={10}
-                    onChangeCount={handleTrainingClinicAdminsOnChangeCount}
-                    onChangeDirectTime={handleTrainingClinicAdminsOnChangeDirectTime}
-                    onChangeIndirectTime={handleTrainingClinicAdminsOnChangeIndirectTime}
+                    onChangeCount={handleChange('TrainingClinicAdministrativeStaffCount')}
+                    onChangeDirectTime={handleChange('TrainingClinicAdministrativeStaffDirectTime')}
+                    onChangeIndirectTime={handleChange('TrainingClinicAdministrativeStaffIndirectTime')}
                 />
                 <TripleDropdown
-                    label={<>Training clinic providers (physician, NP, MDT)<HelpIcon id="Training_clinic_providers_help" explanation={fieldExplanations['TrainingClinicProviders']} /></>}
-                    id="Training_clinic_providers"
-                    name="TrainingClinicProviders"
+                    label={<>Training clinic providers <HelpIcon id="Provider_or_clinic_inquiry_help" explanation={fieldExplanations['ProvideOrClinicInquiry']} /></>}
+                    id="Provider_or_clinic_inquiry"
+                    name="ProvideOrClinicInquiry"
                     max_count={100}
-                    onChangeCount={handleTrainingClinicProvidersOnChangeCount}
-                    onChangeDirectTime={handleTrainingClinicProvidersOnChangeDirectTime}
-                    onChangeIndirectTime={handleTrainingClinicProvidersOnChangeIndirectTime}
+                    onChangeCount={handleChange('ProvideOrClinicInquiryCount')}
+                    onChangeDirectTime={handleChange('ProvideOrClinicInquiryDirectTime')}
+                    onChangeIndirectTime={handleChange('ProvideOrClinicInquiryIndirectTime')}
                 />
             </Box>
             <Box title="QI Activity" className="hpf-box4">
@@ -418,44 +184,45 @@ const HPFForm = () => {
                     id="QI_projects_Started"
                     name="QIProjectsStarted"
                     max_count={10}
-                    onChangeCount={handleQIProjectsStartedOnChangeCount}
-                    onChangeDirectTime={handleQIProjectsStartedOnChangeDirectTime}
-                    onChangeIndirectTime={handleQIProjectsStartedOnChangeIndirectTime}
+                    onChangeCount={handleChange('QIProjectsStartedCount')}
+                    onChangeDirectTime={handleChange('QIProjectsStartedDirectTime')}
+                    onChangeIndirectTime={handleChange('QIProjectsStartedIndirectTime')}
                 />
                 <TripleDropdown
                     label={<>QI projects adopted<HelpIcon id="QI_projects_adopted_help" explanation={fieldExplanations['QIProjectsAdopted']} /></>}
                     id="QI_projects_adopted"
                     name="QIProjectsAdopted"
                     max_count={10}
-                    onChangeCount={handleQIProjectsAdoptedOnChangeCount}
-                    onChangeDirectTime={handleQIProjectsAdoptedOnChangeDirectTime}
-                    onChangeIndirectTime={handleQIProjectsAdoptedOnChangeIndirectTime} />
+                    onChangeCount={handleChange('QIProjectsAdoptedCount')}
+                    onChangeDirectTime={handleChange('QIProjectsAdoptedDirectTime')}
+                    onChangeIndirectTime={handleChange('QIProjectsAdoptedIndirectTime')}
+                />
                 <TripleDropdown
                     label={<>QI projects adapted<HelpIcon id="QI_projects_adapted_help" explanation={fieldExplanations['QIProjectsAdapted']} /></>}
                     id="QI_projects_adapted"
                     name="QIProjectsAdapted"
                     max_count={10}
-                    onChangeCount={handleQIProjectsAdaptedOnChangeCount}
-                    onChangeDirectTime={handleQIProjectsAdaptedOnChangeDirectTime}
-                    onChangeIndirectTime={handleQIProjectsAdaptedOnChangeIndirectTime}
+                    onChangeCount={handleChange('QIProjectsAdaptedCount')}
+                    onChangeDirectTime={handleChange('QIProjectsAdaptedDirectTime')}
+                    onChangeIndirectTime={handleChange('QIProjectsAdaptedIndirectTime')}
                 />
                 <TripleDropdown
                     label={<>QI projects abandoned<HelpIcon id="Training_clinic_adminins_help" explanation={fieldExplanations['TrainingClinicAdmins']} /></>}
                     id="QI projects abandoned"
                     name="QIProjectsAbandoned"
                     max_count={10}
-                    onChangeCount={handleTrainingClinicAdminsOnChangeCount}
-                    onChangeDirectTime={handleTrainingClinicAdminsOnChangeDirectTime}
-                    onChangeIndirectTime={handleTrainingClinicAdminsOnChangeIndirectTime}
+                    onChangeCount={handleChange('QIProjectsAbandonedCount')}
+                    onChangeDirectTime={handleChange('QIProjectsAbandonedDirectTime')}
+                    onChangeIndirectTime={handleChange('QIProjectsAbandonedIndirectTime')}
                 />
                 <TripleDropdown
                     label={<>QI project cancelled<HelpIcon id="QI_project_cancelled_help" explanation={fieldExplanations['QIProjectCancelled']} /></>}
                     id="QI_project_cancelled"
                     name="QIProjectCancelled"
                     max_count={100}
-                    onChangeCount={handleQIProjectCancelledOnChangeCount}
-                    onChangeDirectTime={handleQIProjectCancelledOnChangeDirectTime}
-                    onChangeIndirectTime={handleQIProjectCancelledOnChangeIndirectTime}
+                    onChangeCount={handleChange('QIProjectCancelledCount')}
+                    onChangeDirectTime={handleChange('QIProjectCancelledDirectTime')}
+                    onChangeIndirectTime={handleChange('QIProjectCancelledIndirectTime')}
                 />
             </Box>
             <Box title="Evaluation Activity" className="hpf-box5">
@@ -464,35 +231,36 @@ const HPFForm = () => {
                     id="Collaboration_with_eval_partners"
                     name="CollaborationWithEvalPartners"
                     max_count={10}
-                    onChangeCount={handleCollaborationWithEvalPartnersOnChangeCount}
-                    onChangeDirectTime={handleCollaborationWithEvalPartnersOnChangeDirectTime}
-                    onChangeIndirectTime={handleCollaborationWithEvalPartnersOnChangeIndirectTime} />
+                    onChangeCount={handleChange('CollaborationWithEvalPartnersCount')}
+                    onChangeDirectTime={handleChange('CollaborationWithEvalPartnersDirectTime')}
+                    onChangeIndirectTime={handleChange('CollaborationWithEvalPartnersIndirectTime')}
+                />
                 <TripleDropdown
                     label={<>Environmental scan/situational analysis<HelpIcon id="Environmental_scan_analysis_help" explanation={fieldExplanations['EnvironmentalScanAnalysis']} /></>}
                     id="Environmental_scan_analysis"
                     name="EnvironmentalScanAnalysis"
                     max_count={10}
-                    onChangeCount={handleQEnvironmentalScanAnalysisOnChangeCount}
-                    onChangeDirectTime={handleEnvironmentalScanAnalysisOnChangeDirectTime}
-                    onChangeIndirectTime={handleEnvironmentalScanAnalysisOnChangeIndirectTime}
+                    onChangeCount={handleChange('EnvironmentalScanAnalysisCount')}
+                    onChangeDirectTime={handleChange('EnvironmentalScanAnalysisDirectTime')}
+                    onChangeIndirectTime={handleChange('EnvironmentalScanAnalysisIndirectTime')}
                 />
                 <TripleDropdown
                     label={<>Data analysis<HelpIcon id="Data_analysisd_help" explanation={fieldExplanations['DataAnalysis']} /></>}
                     id="Data_analysisd"
                     name="DataAnalysis"
                     max_count={10}
-                    onChangeCount={handleTrainingClinicAdminsOnChangeCount}
-                    onChangeDirectTime={handleTrainingClinicAdminsOnChangeDirectTime}
-                    onChangeIndirectTime={handleTrainingClinicAdminsOnChangeIndirectTime}
+                    onChangeCount={handleChange('DataAnalysisCount')}
+                    onChangeDirectTime={handleChange('DataAnalysisDirectTime')}
+                    onChangeIndirectTime={handleChange('DataAnalysisIndirectTime')}
                 />
                 <TripleDropdown
-                    label={<>Creating evaluation frameworks<HelpIcon id="QI_project_cancelled_help" explanation={fieldExplanations['QIProjectCancelled']} /></>}
-                    id="QI_project_cancelled"
-                    name="QIProjectCancelled"
+                    label={<>Creating evaluation frameworks<HelpIcon id="Creating_Evaluation_Frameworks_help" explanation={fieldExplanations['CreatingEvaluationFrameworks']} /></>}
+                    id="Creating_Evaluation_Frameworks"
+                    name="CreatingEvaluationFrameworks"
                     max_count={100}
-                    onChangeCount={handleQIProjectCancelledOnChangeCount}
-                    onChangeDirectTime={handleQIProjectCancelledOnChangeDirectTime}
-                    onChangeIndirectTime={handleQIProjectCancelledOnChangeIndirectTime}
+                    onChangeCount={handleChange('CreatingEvaluationFrameworksCount')}
+                    onChangeDirectTime={handleChange('CreatingEvaluationFrameworksDirectTime')}
+                    onChangeIndirectTime={handleChange('CreatingEvaluationFrameworksIndirectTime')}
                 />
             </Box>
         </div >

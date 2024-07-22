@@ -5,7 +5,6 @@ import TripleDropdown from './TripleDropdown';
 import CustomDropdown from './CustomDropdown';
 import DoubleDropdown from './DoubleDropdown';
 import { AppContext } from '../AppContext';
-
 import './PFForm.css';
 import HelpIcon from '../HelpIcon';
 import { TooltipProvider } from 'react-tooltip';
@@ -86,7 +85,7 @@ const PFForm = () => {
                     onChangeIndirectTime={handleChange('ProvideOrClinicInquiryIndirectTime')}
                 />
             </Box>
-            <Box title="Clinic Activity" className="hpf-box2">
+            <Box title="Clinic Activity" className="pf-box2">
                 <TripleDropdown
                     label={<>Meeting - C&C<HelpIcon id="Meeting_C_C_help" explanation={fieldExplanations['MeetingCC']} /></>}
                     id="Meeting_C_C"
