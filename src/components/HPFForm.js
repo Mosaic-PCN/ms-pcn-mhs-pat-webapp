@@ -442,7 +442,7 @@ const HPFForm = () => {
                 <TripleDropdown
                     label={<>QI projects abandoned<HelpIcon id="Training_clinic_adminins_help" explanation={fieldExplanations['TrainingClinicAdmins']} /></>}
                     id="QI projects abandoned"
-                    name="QI projects abandoned"
+                    name="QIProjectsAbandoned"
                     max_count={10}
                     onChangeCount={handleTrainingClinicAdminsOnChangeCount}
                     onChangeDirectTime={handleTrainingClinicAdminsOnChangeDirectTime}
