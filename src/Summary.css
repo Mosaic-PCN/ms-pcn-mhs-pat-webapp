@@ -1,8 +1,8 @@
 .summary-container {
-    padding: 20px;
+    padding: 10px;
     background: #f9f9f9;
     border-radius: 8px;
-    max-width: 1400px;
+    max-width: 2400px;
     margin: auto;
     margin-top: 80px;
     /* Adjust this value to create enough space below the header */
@@ -17,8 +17,8 @@
 }
 
 .summary-list {
-    column-count: 3;
-    column-gap: 3em;
+    column-count: 6;
+    column-gap: 5em;
 }
 
 .notes-container {
