@@ -159,7 +159,7 @@ const Summary = () => {
         AdministrationMemberSignuEndDateDirectTime: 'Administration - Member Signup End Date - Direct Time',
         AdministrationQuarterlyPacksCount: 'Administration - Quarterly Packs - Count',
         AdministrationQuarterlyPacksDirectTime: 'AdministrationQuarterly Packs - Direct Time',
-        AdministrationQuarterlyPacksyDirectTime: 'Administration Quarterly Packsy - Direct Time',
+        AdministrationQuarterlyPacksyDirectTime: 'Administration Quarterly Packs - Direct Time',
         AdministrationQuarterlyPacksIndirectTime: 'Administration Quarterly Packs - Indirect Time',
         AdministrationMemberSignuEndDateIndirectTime: 'Administration - Member Signup End Date - Indirect Time',
         AdministrationAgreementsCount: 'Administration - Agreements - Count',
@@ -187,17 +187,6 @@ const Summary = () => {
         AdministrationOtherDirectTime: 'Administration Other - Direct Time',
         AdministrationOtherIndirectTime: 'Administration Other - Indirect Time',
     };
-
-    // Append " minutes" to relevant fields
-    // fieldLabels = Object.keys(fieldLabels).reduce((acc, key) => {
-    //     if (key.includes('DirectTime') || key.includes('IndirectTime')) {
-    //         acc[key] = `${fieldLabels[key]} minutes`;
-    //     } else {
-    //         acc[key] = fieldLabels[key];
-    //     }
-    //     console.log('Key:', key)
-    //     return acc;
-    // }, {});
 
     const submitData = () => {
         if (Object.keys(formData).length === 0) {
@@ -246,7 +235,8 @@ const Summary = () => {
                         }
                         return (
                             <p key={key}>
-                                <strong>{fieldLabels[key] || key.charAt(0).toUpperCase() + key.slice(1)}:</strong> {value.toString()}
+                                <span className="field-label">{fieldLabels[key] || key.charAt(0).toUpperCase() + key.slice(1)}:</span>
+                                <span className="field-value"> {value.toString()} </span>
                             </p>
                         );
                     })}

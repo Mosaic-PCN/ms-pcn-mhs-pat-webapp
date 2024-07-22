@@ -5,7 +5,6 @@
     max-width: 2400px;
     margin: auto;
     margin-top: 80px;
-    /* Adjust this value to create enough space below the header */
 }
 
 .summary-container h2 {
@@ -13,13 +12,35 @@
 }
 
 .summary-container p {
+    font-weight: normal;
+    font-style: normal;
     margin: 10px 0;
 }
+
+
+/* Style the field-label span within p tag */
+.summary-container p .field-label {
+    font-weight: normal;
+    /* Normal font weight for labels */
+}
+
+/* Style the field-value span within p tag */
+.summary-container p .field-value {
+    font-style: italic;
+    /* Italic style for values */
+}
+
+/* Add a colon after field label */
+.summary-container p .field-label::after {
+    content: ": ";
+}
+
 
 .summary-list {
     column-count: 6;
     column-gap: 5em;
 }
+
 
 .notes-container {
     border: 1px solid #ccc;
