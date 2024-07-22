@@ -21,6 +21,10 @@ import amplifyconfig from './amplifyconfiguration.json';
 import './App.css';
 import { BrowserRouter as Router, Route, Routes, useNavigate } from 'react-router-dom';
 import { AppProvider } from './AppContext';
+import { ToastContainer, toast } from 'react-toastify';
+import 'react-toastify/dist/ReactToastify.css';
+
+
 
 Amplify.configure(amplifyconfig);
 
@@ -30,11 +34,22 @@ const INACTIVITY_TIMEOUT_MS = 1 * 60 * 1000; // 5 minutes
 function MainForm() {
     const { formData, resetFormData } = useContext(AppContext);
     const [selectedRole, setSelectedRole] = useState(formData.role || '');
+    const [clinicName, setClinicName] = useState(formData.clinicName || '');
+    const [serviceLocation, setServiceLocation] = useState(formData.serviceLocation || '');
     const navigate = useNavigate();
     const [timer, setTimer] = useState(null);
+    const [showError, setShowError] = useState(false); // State to control error banner
 
     const handleRoleChange = (selectedRole) => {
         setSelectedRole(selectedRole);
+    };
+
+    const handleClinicNameChange = (selectedClinicName) => {
+        setClinicName(selectedClinicName);
+    };
+
+    const handleServiceLocationChange = (selectedServiceLocation) => {
+        setServiceLocation(selectedServiceLocation);
     };
 
     const handleResetClick = () => {
@@ -45,6 +60,26 @@ function MainForm() {
     };
 
     const handleNextClick = () => {
+
+        // Check if role is empty or hasn't changedz from the initial value
+        // if (formData.role === (localStorage.getItem("formData") ? JSON.parse(localStorage.getItem("formData")).role : '')) {
+        if (!selectedRole || !clinicName || !serviceLocation) {
+            console.log('Error:', formData.role)
+            console.log('selected role:', selectedRole)
+            console.log('clinic Name:', clinicName)
+            console.log('service Location:', serviceLocation)
+            toast.error('Please fill in all mandatory fields for Encounter Information before proceeding.!', {
+                position: "top-left",
+                autoClose: 5000,
+                hideProgressBar: false,
+                closeOnClick: true,
+                pauseOnHover: true,
+                draggable: true,
+                progress: undefined,
+            });
+            return;
+        }
+
         if (formData.isPcnMosaicInternal) {
             navigate('/notes', { state: { formData } });
         } else {
@@ -109,7 +144,9 @@ function MainForm() {
                     <main className="App-main">
                         <Card title="Encounter Information">
                             <div className="card-content-wrapper">
-                                <EncounterForm onRoleChange={handleRoleChange} />
+                                <EncounterForm onRoleChange={handleRoleChange}
+                                    onServiceLocationChange={handleServiceLocationChange}
+                                    onClinicNameChange={handleClinicNameChange} />
                             </div>
                         </Card>
                         <StakeholdersCard title="Stakeholders">
@@ -120,6 +157,8 @@ function MainForm() {
                             <button type="submit" className="btn btn-primary" onClick={handleNextClick}>Next</button>
                         </div>
                     </main>
+                    <ToastContainer />
+
                 </div>
             )}
         </Authenticator>

@@ -8,7 +8,7 @@ import RadioButtonGroup from './RadioButtonGroup';
 import 'react-datepicker/dist/react-datepicker.css';
 import './EncounterForm.css';
 
-const EncounterForm = ({ onRoleChange }) => {
+const EncounterForm = ({ onRoleChange, onServiceLocationChange, onClinicNameChange }) => {
     const { formData, updateFormData, errors } = useContext(AppContext);
     const [startDate, setStartDate] = useState(formData.workDate ? new Date(formData.workDate) : new Date());
     const [isPcnMosaicInternal, setIsPcnMosaicInternal] = useState(formData.isPcnMosaicInternal || false);
@@ -31,11 +31,15 @@ const EncounterForm = ({ onRoleChange }) => {
     };
 
     const handleLocationChange = (selectedOption) => {
+        const serviceLocation = selectedOption.value;
         updateFormData({ serviceLocation: selectedOption.value });
+        onServiceLocationChange(serviceLocation)
     };
 
     const handleClinicNameChange = (selectedOption) => {
+        const clinicName = selectedOption.value;
         updateFormData({ clinicName: selectedOption.value });
+        onClinicNameChange(clinicName)
     };
 
     const handleCheckboxChange = (event) => {
