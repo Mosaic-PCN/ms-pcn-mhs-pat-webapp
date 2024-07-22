@@ -17,7 +17,6 @@
     margin: 10px 0;
 }
 
-
 /* Style the field-label span within p tag */
 .summary-container p .field-label {
     font-weight: normal;
@@ -36,12 +35,10 @@
     content: ": ";
 }
 
-
 .summary-list {
     column-count: 6;
     column-gap: 5em;
 }
-
 
 .notes-container {
     border: 1px solid #ccc;

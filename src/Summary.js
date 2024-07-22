@@ -235,7 +235,7 @@ const Summary = () => {
                         }
                         return (
                             <p key={key}>
-                                <span className="field-label">{fieldLabels[key] || key.charAt(0).toUpperCase() + key.slice(1)}:</span>
+                                <span className="field-label">{fieldLabels[key] || key.charAt(0).toUpperCase() + key.slice(1)}</span>
                                 <span className="field-value"> {value.toString()} </span>
                             </p>
                         );

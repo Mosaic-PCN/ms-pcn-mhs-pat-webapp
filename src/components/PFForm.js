@@ -164,9 +164,9 @@ const PFForm = () => {
                     id="Training_clinic_administrative_staff"
                     name="TrainingClinicAdminStaff"
                     max_count={10}
-                    onChangeCount={handleChange('TrainingClinicAdminStaffCount')}
-                    onChangeDirectTime={handleChange('TrainingClinicAdminStaffDirectTime')}
-                    onChangeIndirectTime={handleChange('TrainingClinicAdminIndirectTime')}
+                    onChangeCount={handleChange('TrainingClinicAdminsCount')}
+                    onChangeDirectTime={handleChange('TrainingClinicAdminsDirectTime')}
+                    onChangeIndirectTime={handleChange('TrainingClinicAdminsIndirectTime')}
                 />
                 <TripleDropdown
                     label={<>Training clinic providers <HelpIcon id="Provider_or_clinic_inquiry_help" explanation={fieldExplanations['ProvideOrClinicInquiry']} /></>}
