@@ -4,18 +4,32 @@ import './TripleDropdown.css';
 import CustomDropdown from './CustomDropdown';
 
 
-const DoubleDropdown = ({ label, id, name, required, label1, label2 }) => {
+const DoubleDropdown = ({ label, id, name, onChangeDirectTime, onChangeIndirectTime }) => {
     return (
-        <div className="form-group standard-width">
-            <label htmlFor={id}>{label}</label>
-            <div className="dropdown-row">
-                <div className="dropdown-container">
-                    <CustomDropdown label={label1} id={`${id}-direct`} name="duration" place_holder='Direct Time' />
+        <div className="dropdown-group">
+            <div className="group-label">{label}</div>
+            <div className="dropdown-container">
+                <div className="dropdown-item">
+                    <label htmlFor="dropdown2">Direct Time</label>
+                    <CustomDropdown
+                        className="custom-dropdown width2" // Added width2 class
+                        id={`${id}-directTime`}
+                        name={`${name}DirectTime`}
+                        place_holder="Choose"
+                        onChange={onChangeDirectTime}
+                    />
                 </div>
-                <div className="dropdown-container">
-                    <CustomDropdown label={label2} id={`${id}-indirect`} name="duration" place_holder='Indirect Time' />
-                </div>
-            </div>
+                <div className="dropdown-item">
+                    <label htmlFor="dropdown3">Indirect Time</label>
+                    <CustomDropdown
+                        className="custom-dropdown width3" // Added width3 class
+                        id={`${id}-indirectTime`}
+                        name={`${name}IndirectTime`}
+                        place_holder="Choose"
+                        onChange={onChangeIndirectTime}
+                    />
+                </div >
+            </div >
         </div>
     );
 };

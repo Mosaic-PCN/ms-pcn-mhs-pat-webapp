@@ -193,16 +193,8 @@ const EMRForm = () => {
         updateFormData({ RecievingTrainingIndirectTime: selectedOption.value });
     };
 
-    const handleTrainingMaterialCreationOnChangeCount = (selectedOption) => {
-        updateFormData({ TrainingMaterialCreationCount: selectedOption.value });
-    };
-
-    const handleTrainingMaterialCreationOnChangeDirectTime = (selectedOption) => {
-        updateFormData({ TrainingMaterialCreationDirectTime: selectedOption.value });
-    };
-
-    const handleTrainingMaterialCreationOnChangeIndirectTime = (selectedOption) => {
-        updateFormData({ TrainingMaterialCreationIndirectTime: selectedOption.value });
+    const handleTrainingMaterialCreationChange = (selectedOption) => {
+        updateFormData({ TrainingMaterialCreation: selectedOption.value });
     };
 
     const handleTrainingClinicAdminsOnChangeCount = (selectedOption) => {
@@ -336,15 +328,6 @@ const EMRForm = () => {
                     onChangeIndirectTime={handleEmrDataEntryOnChangeIndirectTime}
                 />
                 <TripleDropdown
-                    label={<>Meeting - C&C<HelpIcon id="Meeting_C_C_help" explanation={fieldExplanations['MeetingCC']} /></>}
-                    id="Meeting_C_C"
-                    name="MeetingCC"
-                    max_count={20}
-                    onChangeCount={handleMeetingCCOnChangeCount}
-                    onChangeDirectTime={handleMeetingCCOnChangeDirectTime}
-                    onChangeIndirectTime={handleMeetingCCOnChangeIndirectTime}
-                />
-                <TripleDropdown
                     label={<>Meeting - New Member<HelpIcon id="Meeting_New_Member_help" explanation={fieldExplanations['MeetingNewMember']} /></>}
                     id="Meeting_New_Member"
                     name="MeetingNewMember"
@@ -353,39 +336,39 @@ const EMRForm = () => {
                     onChangeDirectTime={handleMeetingNewMemberOnChangeDirectTime}
                     onChangeIndirectTime={handleMeetingNewMemberOnChangeIndirectTime}
                 />
-                <TripleDropdown
+
+                <DoubleDropdown
+                    label={<>Meeting - C&C<HelpIcon id="Meeting_C_C_help" explanation={fieldExplanations['MeetingCC']} /></>}
+                    id="Meeting_C_C"
+                    name="MeetingCC"
+                    onChangeDirectTime={handleMeetingCCOnChangeDirectTime}
+                    onChangeIndirectTime={handleMeetingCCOnChangeIndirectTime}
+                />
+                <DoubleDropdown
                     label={<>Meeting - CII/CPAR<HelpIcon id="Meeting_CII_CPAR_help" explanation={fieldExplanations['MeetingCIICPAR']} /></>}
                     id="Meeting_CII_CPAR"
                     name="MeetingCIICPAR"
-                    max_count={20}
-                    onChangeCount={handleMeetingCIICPAROnChangeCount}
                     onChangeDirectTime={handleMeetingCIICPAROnChangeDirectTime}
                     onChangeIndirectTime={handleMeetingCIICPAROnChangeIndirectTime}
                 />
-                <TripleDropdown
+                <DoubleDropdown
                     label={<>Meeting - QI<HelpIcon id="Meeting_QI_help" explanation={fieldExplanations['MeetingQI']} /></>}
                     id="Meeting_QI"
                     name="MeetingQI"
-                    max_count={10}
-                    onChangeCount={handleMeetingQIOnChangeCount}
                     onChangeDirectTime={handleMeetingQIOnChangeDirectTime}
                     onChangeIndirectTime={handleMeetingQIOnChangeIndirectTime}
                 />
-                <TripleDropdown
+                <DoubleDropdown
                     label={<>Material dropoff<HelpIcon id="Material_dropoff_help" explanation={fieldExplanations['MaterialDropoff']} /></>}
                     id="Material_dropoff"
                     name="MaterialDropoff"
-                    max_count={10}
-                    onChangeCount={handleMaterialDropoffOnChangeCount}
                     onChangeDirectTime={handleMaterialDropoffOnChangeDirectTime}
                     onChangeIndirectTime={handleMaterialDropoffOnChangeIndirectTime}
                 />
-                <TripleDropdown
+                <DoubleDropdown
                     label={<>Clinic Activity - other<HelpIcon id="Clinic_Activity_other_help" explanation={fieldExplanations['ClinicActivityOther']} /></>}
                     id="Clinic_Activity_other"
                     name="ClinicActivityOther"
-                    max_count={10}
-                    onChangeCount={handleClinicActivityOtherOnChangeCount}
                     onChangeDirectTime={handleClinicActivityOtherOnChangeDirectTime}
                     onChangeIndirectTime={handleClinicActivityOtherOnChangeIndirectTime}
                 />
@@ -400,14 +383,13 @@ const EMRForm = () => {
                     onChangeCount={handleRecievingTrainingOnChangeCount}
                     onChangeDirectTime={handleRecievingTrainingOnChangeDirectTime}
                     onChangeIndirectTime={handleRecievingTrainingOnChangeIndirectTime} />
-                <TripleDropdown
+                <CustomDropdown
                     label={<>Training material creation<HelpIcon id="Training_material_creation_help" explanation={fieldExplanations['TrainingMaterialCreation']} /></>}
                     id="Training_material_creation"
                     name="TrainingMaterialCreation"
-                    max_count={10}
-                    onChangeCount={handleTrainingMaterialCreationOnChangeCount}
-                    onChangeDirectTime={handleTrainingMaterialCreationOnChangeDirectTime}
-                    onChangeIndirectTime={handleTrainingMaterialCreationOnChangeIndirectTime}
+                    place_holder="Indirect Time"
+                    onChange={handleTrainingMaterialCreationChange}
+                    value={formData.TrainingMaterialCreation || ''}
                 />
                 <TripleDropdown
                     label={<>Training clinic administrative staff<HelpIcon id="Training_clinic_adminins_help" explanation={fieldExplanations['TrainingClinicAdmins']} /></>}

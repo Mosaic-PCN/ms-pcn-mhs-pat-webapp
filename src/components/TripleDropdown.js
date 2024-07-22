@@ -39,16 +39,6 @@ const TripleDropdown = ({ label, id, name, max_count, onChangeCount, onChangeDir
                         onChange={onChangeIndirectTime}
                     />
                 </div >
-                {/* <div className="form-group standard-width"> */}
-                {/* <label htmlFor={id}>{label}</label> */}
-                {/* <div className="dropdown-row"> */}
-                {/* <div className="dropdown-container"> */}
-
-                {/* </div>
-                    <div className="dropdown-container">
-                    </div>
-                    <div className="dropdown-container">
-                    </div> */}
             </div >
         </div>
     );
