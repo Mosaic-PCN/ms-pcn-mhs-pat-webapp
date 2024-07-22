@@ -1,3 +1,12 @@
+.react-select-container .react-select__control,
+.react-select-container .react-select__value-container,
+.react-select-container .react-select__input,
+.react-select-container .react-select__single-value,
+.react-select-container .react-select__menu,
+.react-select-container .react-select__option {
+    font-size: 14px;
+}
+
 .hpf-box-container {
     display: flex;
     flex-direction: row;

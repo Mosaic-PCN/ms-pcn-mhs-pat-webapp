@@ -119,7 +119,6 @@ const EncounterForm = ({ onRoleChange }) => {
                     onChange={handleClinicNameChange}
                     required
                 />}
-                {/* <Dropdown label="Clinic Name" id="clinic_name" name="clinicName" onChange={handleClinicNameChange} required /> */}
                 <SelectDropdown label="Role" id="role" name="role" options={roleOptions} onChange={handleRoleChange} value={formData.role || ''} />
                 {!showMosaicPCNFields && <RadioButtonGroup label="Session Type:" name="sessionType" options={radioOptions_virtual} onChange={handleSessionTypeChange} value={formData.sessionType || ''} />}
                 {!showMosaicPCNFields && < RadioButtonGroup label="Meeting Type:" name="meetingType" options={radioOptions_group} onChange={handleMeetingTypeChange} value={formData.meetingType || ''} />}
