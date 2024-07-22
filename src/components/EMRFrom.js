@@ -210,8 +210,8 @@ const EMRForm = () => {
     };
 
     return (
-        <div className="box-container">
-            <Box title="Admin Support" className="box1">
+        <div className="emr-box-container">
+            <Box title="Admin Support" className="emr-box1">
                 <CustomDropdown
                     label={<>Documentation - C&C visit<HelpIcon id="C_C_visit_help" explanation={fieldExplanations['CcVisit']} /></>}
                     id="C_C_visit"
@@ -278,7 +278,7 @@ const EMRForm = () => {
                 />
 
             </Box>
-            <Box title="Clinic Activity" className="box2">
+            <Box title="Clinic Activity" className="emr-box2">
                 <TripleDropdown
                     label={<>EMR mapping<HelpIcon id="EMR_mapping_help" explanation={fieldExplanations['EmrMapping']} /></>}
                     id="EMR_mapping"
@@ -361,7 +361,7 @@ const EMRForm = () => {
                     onChangeIndirectTime={handleClinicActivityOtherOnChangeIndirectTime}
                 />
             </Box>
-            <Box title="Training Activity" className="box3">
+            <Box title="Training Activity" className="emr-box3">
                 <TripleDropdown
                     label={<>Recieving training<HelpIcon id="Recieving_training_help" explanation={fieldExplanations['RecievingTraining']} /></>}
                     id="Recieving_training"

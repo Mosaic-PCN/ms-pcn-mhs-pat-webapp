@@ -271,15 +271,13 @@ const PCCForm = () => {
                 />
             </Box >
             <Box title="Training Activity" className="pcc-box3">
-
-                <TripleDropdown
+                <CustomDropdown
                     label={<>Training material creation<HelpIcon id="Training_material_creation_help" explanation={fieldExplanations['TrainingMaterialCreation']} /></>}
                     id="Training_material_creation"
                     name="TrainingMaterialCreation"
-                    max_count={10}
-                    onChangeCount={handleChange('TrainingMaterialCreationCount')}
-                    onChangeDirectTime={handleChange('TrainingMaterialCreationDirectTime')}
-                    onChangeIndirectTime={handleChange('TrainingMaterialCreationIndirectTime')}
+                    place_holder="Indirect Time"
+                    onChange={handleChange('TrainingMaterialCreation')}
+                    value={formData.TrainingMaterialCreation || ''}
                 />
                 <TripleDropdown
                     label={<>Being trained by EMR-S<HelpIcon id="Being_trained_EMRS_help" explanation={fieldExplanations['BeingTrainedByEMR']} /></>}

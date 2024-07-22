@@ -1,4 +1,4 @@
-.box-container {
+.emr-box-container {
     display: flex;
     flex-direction: row;
     /* Arrange boxes horizontally */
@@ -8,48 +8,48 @@
     /* This will allow the boxes to wrap */
 }
 
-.box {
+.emr-box {
     /* ... your existing box styles ... */
     margin-left: 20px;
     /* Add left margin to create gaps */
 }
 
-.box:first-child {
+.emr-box:first-child {
     /* Remove the left margin from the first box */
     margin-left: 0;
 }
 
 /* Width adjustments (optional) */
-.box1 {
+.emr-box1 {
     width: 520px;
     /* Example for first box */
 }
 
-.box2 {
+.emr-box2 {
     width: 600px;
     /* Example for second box */
 }
 
-.box3 {
+.emr-box3 {
     width: 600px;
     /* Example for third box */
 }
 
 /* Example media query for responsiveness */
 @media (max-width: 768px) {
-    .box-container {
+    .emr-box-container {
         flex-direction: column;
         /* Stack boxes vertically on small screens */
     }
 
-    .box {
+    .emr-box {
         margin-left: 0;
         /* Remove left margins on small screens */
         margin-top: 20px;
         /* Add top margin instead */
     }
 
-    .box:first-child {
+    .emr-box:first-child {
         margin-top: 0;
         /* Remove top margin from the first box on small screens */
     }

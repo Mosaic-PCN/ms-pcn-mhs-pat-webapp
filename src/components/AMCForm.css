@@ -62,19 +62,19 @@
 
 /* Example media query for responsiveness */
 @media (max-width: 768px) {
-    .box-container {
+    .amc-box-container {
         flex-direction: column;
         /* Stack boxes vertically on small screens */
     }
 
-    .box {
+    .amc-box {
         margin-left: 0;
         /* Remove left margins on small screens */
         margin-top: 20px;
         /* Add top margin instead */
     }
 
-    .box:first-child {
+    .amc-box:first-child {
         margin-top: 0;
         /* Remove top margin from the first box on small screens */
     }
