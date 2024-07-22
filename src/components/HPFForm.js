@@ -237,6 +237,18 @@ const HPFForm = () => {
         updateFormData({ CollaborationWithEvalPartnersIndirectTime: selectedOption.value });
     };
 
+    const handleQEnvironmentalScanAnalysisOnChangeCount = (selectedOption) => {
+        updateFormData({ EnvironmentalScanAnalysisPartnersCount: selectedOption.value });
+    };
+
+    const handleEnvironmentalScanAnalysisOnChangeDirectTime = (selectedOption) => {
+        updateFormData({ EnvironmentalScanAnalysisDirectTime: selectedOption.value });
+    };
+
+    const handleEnvironmentalScanAnalysisOnChangeIndirectTime = (selectedOption) => {
+        updateFormData({ EnvironmentalScanAnalysisIndirectTime: selectedOption.value });
+    };
+
 
     return (
         <main className="container mt-5">
@@ -452,18 +464,18 @@ const HPFForm = () => {
                         onChangeDirectTime={handleCollaborationWithEvalPartnersOnChangeDirectTime}
                         onChangeIndirectTime={handleCollaborationWithEvalPartnersOnChangeIndirectTime} />
                     <TripleDropdown
-                        label={<>Environmental scan/situational analysis<HelpIcon id="QI_projects_adapted_help" explanation={fieldExplanations['QIProjectsAdapted']} /></>}
-                        id="QI_projects_adapted"
-                        name="QIProjectsAdapted"
+                        label={<>Environmental scan/situational analysis<HelpIcon id="Environmental_scan_analysis_help" explanation={fieldExplanations['EnvironmentalScanAnalysis']} /></>}
+                        id="Environmental_scan_analysis"
+                        name="EnvironmentalScanAnalysis"
                         max_count={10}
-                        onChangeCount={handleQIProjectsAdaptedOnChangeCount}
-                        onChangeDirectTime={handleQIProjectsAdaptedOnChangeDirectTime}
-                        onChangeIndirectTime={handleQIProjectsAdaptedOnChangeIndirectTime}
+                        onChangeCount={handleQEnvironmentalScanAnalysisOnChangeCount}
+                        onChangeDirectTime={handleEnvironmentalScanAnalysisOnChangeDirectTime}
+                        onChangeIndirectTime={handleEnvironmentalScanAnalysisOnChangeIndirectTime}
                     />
                     <TripleDropdown
-                        label={<>Data analysis<HelpIcon id="Training_clinic_adminins_help" explanation={fieldExplanations['TrainingClinicAdmins']} /></>}
-                        id="QI projects abandoned"
-                        name="QI projects abandoned"
+                        label={<>Data analysis<HelpIcon id="Data_analysisd_help" explanation={fieldExplanations['DataAnalysis']} /></>}
+                        id="Data_analysisd"
+                        name="DataAnalysis"
                         max_count={10}
                         onChangeCount={handleTrainingClinicAdminsOnChangeCount}
                         onChangeDirectTime={handleTrainingClinicAdminsOnChangeDirectTime}

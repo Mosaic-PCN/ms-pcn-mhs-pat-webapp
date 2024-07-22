@@ -24,24 +24,16 @@
           "deploymentBucketName": "amplify-mspcnmhspatwebapp-dev-9a22e-deployment",
           "s3Key": "amplify-builds/mspcnmhspatwebappcc393683-3763504761736355696b-build.zip"
         },
-        "MhsPatSubmissionHandler": {
+        "EncounterHandler": {
           "deploymentBucketName": "amplify-mspcnmhspatwebapp-dev-9a22e-deployment",
-          "s3Key": "amplify-builds/MhsPatSubmissionHandler-53473263633448554732-build.zip"
-        },
-        "MshPatUserHandler": {
-          "deploymentBucketName": "amplify-mspcnmhspatwebapp-dev-9a22e-deployment",
-          "s3Key": "amplify-builds/MshPatUserHandler-46434134734f78466457-build.zip"
-        },
-        "SubmissionHandler": {
-          "deploymentBucketName": "amplify-mspcnmhspatwebapp-dev-9a22e-deployment",
-          "s3Key": "amplify-builds/SubmissionHandler-31536c794d6852794163-build.zip"
+          "s3Key": "amplify-builds/EncounterHandler-504c61794d5935475130-build.zip"
         }
       },
       "api": {
-        "apia60e6b50": {},
-        "submissionAPI": {},
-        "mspcnmhspatwebapp": {},
-        "recordSubmission": {}
+        "apia60e6b50": {}
+      },
+      "storage": {
+        "MhsPatDBStorage": {}
       }
     }
   },
@@ -55,30 +47,20 @@
       "UnauthRoleName": "amplify-mspcnmhspatwebapp-prd-44764-unauthRole",
       "StackName": "amplify-mspcnmhspatwebapp-prd-44764",
       "StackId": "arn:aws:cloudformation:ca-central-1:560740352519:stack/amplify-mspcnmhspatwebapp-prd-44764/c592a200-3e03-11ef-b167-06cb159b3a7b",
-      "AmplifyAppId": "d2inwrh4j3omsh"
+      "AmplifyAppId": "d2inwrh4j3omsh",
+      "APIGatewayAuthURL": "https://s3.amazonaws.com/amplify-mspcnmhspatwebapp-prd-44764-deployment/amplify-cfn-templates/api/APIGatewayAuthStack.json"
     },
     "categories": {
       "auth": {
         "mspcnmhspatwebapp1a41336f": {}
       },
-      "function": {
-        "MhsPatSubmissionHandler": {
-          "deploymentBucketName": "amplify-mspcnmhspatwebapp-prd-44764-deployment",
-          "s3Key": "amplify-builds/MhsPatSubmissionHandler-324d714430437162736b-build.zip"
-        },
-        "MshPatUserHandler": {
-          "deploymentBucketName": "amplify-mspcnmhspatwebapp-prd-44764-deployment",
-          "s3Key": "amplify-builds/MshPatUserHandler-464e787134396c457875-build.zip"
-        },
-        "SubmissionHandler": {
-          "deploymentBucketName": "amplify-mspcnmhspatwebapp-prd-44764-deployment",
-          "s3Key": "amplify-builds/SubmissionHandler-676b4657584243397255-build.zip"
-        }
-      },
       "api": {
         "submissionAPI": {},
         "recordSubmission": {},
         "mspcnmhspatwebapp": {}
+      },
+      "function": {
+        "dynamoDB": {}
       }
     }
   }

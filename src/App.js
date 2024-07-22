@@ -7,6 +7,7 @@ import Header from './components/Header';
 import { AppContext } from './AppContext';
 import EMR from './EMR';
 import PCC from './PCC';
+import TestBox from './TestBox';
 import PF from './PF';
 import HPF from './HPF';
 import AMC from './AMC';
@@ -138,6 +139,8 @@ function App() {
                     <Route path="/amc" element={<AMC />} />
                     <Route path="/summary" element={<Summary />} />
                     <Route path="/notes" element={<Notes />} />
+                    <Route path="/test" element={<TestBox />} />
+
                 </Routes>
             </Router>
         </AppProvider>

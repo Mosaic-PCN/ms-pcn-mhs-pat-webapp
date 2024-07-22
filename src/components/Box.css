@@ -1,0 +1,28 @@
+/* Box.css */
+.box {
+    border: 1px solid #ccc;
+    border-radius: 8px;
+    padding: 20px;
+    margin: 20px 0;
+    background-color: #f9f9f9;
+    width: 100%;
+    /* Make the box take the full width of the parent container */
+}
+
+.box-title {
+    font-size: 1.5em;
+    margin-bottom: 5%;
+    margin-top: 0;
+    /* Remove top margin */
+
+}
+
+.box-content {
+    display: flex;
+    flex-direction: column;
+}
+
+.wide-box {
+    width: 100% !important;
+    /* Adjust the width as needed */
+}

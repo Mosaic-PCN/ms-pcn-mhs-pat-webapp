@@ -8,29 +8,29 @@
 .form-group label {
     flex-shrink: 0;
     /* Prevent the label from shrinking */
-    white-space: nowrap;
+    /* white-space: nowrap; */
     /* Prevent the label from breaking into multiple lines */
     margin-right: 1px;
     /* Add some space between the label and the dropdown */
 }
 
 .react-select-container {
-    flex-grow: 1;
+    /* flex-grow: 1; */
     /* Allow the dropdown to take up the remaining space */
     min-width: 50%;
     /* Set a minimum width for the dropdown */
-    width: 300%;
+    width: 100%;
 }
 
 .standard-width {
-    max-width: 300px;
+    max-width: 100px;
     /* Adjust the value as needed */
     width: 300%;
 }
 
 .react-select-container {
     flex: 1;
-    width: 1200px;
+    width: 100px;
     /* Set a fixed width */
     margin-bottom: 0.5rem;
 }

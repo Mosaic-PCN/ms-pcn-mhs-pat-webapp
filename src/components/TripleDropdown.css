@@ -1,46 +1,64 @@
-.form-group {
-    margin-bottom: 0.5rem;
-    /* Reduce the margin-bottom */
-}
-
-.form-group label {
-    display: block;
-    margin-bottom: 0.15rem;
-    /* Reduce the margin-bottom */
-    font-weight: bold;
-}
-
-.form-group .ind-menu {
-    font-weight: normal;
-}
-
-.form-control {
-    width: 100%;
-    padding: 0.2rem;
-    margin-bottom: 0.2rem;
-    /* Reduce the margin-bottom */
-    font-size: 1rem;
-}
-
-.dropdown-row {
-    display: flex;
-    gap: 0rem;
-    /* Space between dropdowns */
-}
-
-.react-select-container {
-    flex: 1;
-    width: 1200px;
-    /* Set a fixed width */
-    margin-bottom: 0.5rem;
-}
-
-
-
-/* Additional styles to ensure proper alignment */
-.dropdown-container {
+.dropdown-group {
     display: flex;
     flex-direction: column;
-    gap: 0.2rem;
+    margin-bottom: 5px;
+    /* Adjust as needed */
+}
+
+.group-label {
+    font-weight: bold;
+    margin-bottom: 2px;
+    /* Adjust as needed */
+    text-align: left;
+}
+
+/* Dropdown Container */
+.dropdown-container {
+    display: flex;
+    justify-content: space-between;
+}
+
+/* Dropdown Items */
+.dropdown-item {
+    display: flex;
+    flex-direction: column;
+    gap: 0rem;
     /* Adjust the gap between label and dropdown */
+    /* width: 33.3%; */
+    /* Equal width for all dropdown items */
+    margin-right: 0%;
+}
+
+.dropdown-item:last-child {
+    margin-right: 0;
+}
+
+.dropdown-item label {
+    text-align: left;
+    /* font-weight: bold; */
+    margin-bottom: 0.15em;
+}
+
+
+/* Adjust Dropdown Width */
+.react-select-container {
+    width: 100%;
+    /* Dropdowns will take full width of their container */
+    margin-bottom: 0.15rem;
+}
+
+/* Width Classes for Each Dropdown */
+.width1 {
+    width: 100px;
+    /* Set the width for the first dropdown */
+}
+
+.width2 {
+    width: 200px;
+    /* Set the width for the second dropdown */
+}
+
+.width3 {
+    width: 150px;
+    /* Set the width for the third dropdown */
 }

@@ -1,52 +1,5 @@
 {
-  "api": {
-    "mspcnmhspatwebapp": {
-      "dependsOn": [],
-      "output": {
-        "authConfig": {
-          "additionalAuthenticationProviders": [],
-          "defaultAuthentication": {
-            "apiKeyConfig": {
-              "apiKeyExpirationDate": "2025-07-13T03:49:26.530Z",
-              "apiKeyExpirationDays": 365,
-              "description": "mhs-pat"
-            },
-            "authenticationType": "API_KEY"
-          }
-        }
-      },
-      "providerPlugin": "awscloudformation",
-      "service": "AppSync"
-    },
-    "recordSubmission": {
-      "dependsOn": [
-        {
-          "attributes": [
-            "Name",
-            "Arn"
-          ],
-          "category": "function",
-          "resourceName": "SubmissionHandler"
-        }
-      ],
-      "providerPlugin": "awscloudformation",
-      "service": "API Gateway"
-    },
-    "submissionAPI": {
-      "dependsOn": [
-        {
-          "attributes": [
-            "Name",
-            "Arn"
-          ],
-          "category": "function",
-          "resourceName": "SubmissionHandler"
-        }
-      ],
-      "providerPlugin": "awscloudformation",
-      "service": "API Gateway"
-    }
-  },
+  "api": {},
   "auth": {
     "mspcnmhspatwebapp1a41336f": {
       "customAuth": false,
@@ -75,88 +28,11 @@
       "service": "Cognito"
     }
   },
-  "function": {
-    "MhsPatSubmissionHandler": {
-      "build": true,
+  "function": {},
+  "storage": {
+    "dynamoDB": {
       "providerPlugin": "awscloudformation",
-      "service": "Lambda"
-    },
-    "MshPatUserHandler": {
-      "build": true,
-      "providerPlugin": "awscloudformation",
-      "service": "Lambda"
-    },
-    "SubmissionHandler": {
-      "build": true,
-      "dependsOn": [],
-      "providerPlugin": "awscloudformation",
-      "service": "Lambda"
-    }
-  },
-  "parameters": {
-    "AMPLIFY_function_MhsPatSubmissionHandler_deploymentBucketName": {
-      "usedBy": [
-        {
-          "category": "function",
-          "resourceName": "MhsPatSubmissionHandler"
-        }
-      ]
-    },
-    "AMPLIFY_function_MhsPatSubmissionHandler_s3Key": {
-      "usedBy": [
-        {
-          "category": "function",
-          "resourceName": "MhsPatSubmissionHandler"
-        }
-      ]
-    },
-    "AMPLIFY_function_MshPatUserHandler_deploymentBucketName": {
-      "usedBy": [
-        {
-          "category": "function",
-          "resourceName": "MshPatUserHandler"
-        }
-      ]
-    },
-    "AMPLIFY_function_MshPatUserHandler_s3Key": {
-      "usedBy": [
-        {
-          "category": "function",
-          "resourceName": "MshPatUserHandler"
-        }
-      ]
-    },
-    "AMPLIFY_function_SubmissionHandler_deploymentBucketName": {
-      "usedBy": [
-        {
-          "category": "function",
-          "resourceName": "SubmissionHandler"
-        }
-      ]
-    },
-    "AMPLIFY_function_SubmissionHandler_s3Key": {
-      "usedBy": [
-        {
-          "category": "function",
-          "resourceName": "SubmissionHandler"
-        }
-      ]
-    },
-    "AMPLIFY_function_mspcnmhspatwebappcc393683_deploymentBucketName": {
-      "usedBy": [
-        {
-          "category": "function",
-          "resourceName": "mspcnmhspatwebappcc393683"
-        }
-      ]
-    },
-    "AMPLIFY_function_mspcnmhspatwebappcc393683_s3Key": {
-      "usedBy": [
-        {
-          "category": "function",
-          "resourceName": "mspcnmhspatwebappcc393683"
-        }
-      ]
+      "service": "DynamoDB"
     }
   }
 }

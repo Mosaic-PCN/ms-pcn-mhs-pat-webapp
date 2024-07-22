@@ -5,7 +5,8 @@ import DoubleDropdown from './DoubleDropdown';
 import { AppContext } from '../AppContext';
 import HelpIcon from '../HelpIcon';
 import { TooltipProvider } from 'react-tooltip';
-
+import Box from './Box';
+import '../TestBox.css';
 import './EMRForm.css';
 
 const EMRForm = () => {
@@ -168,7 +169,6 @@ const EMRForm = () => {
         updateFormData({ MaterialDropoffIndirectTime: selectedOption.value });
     };
 
-
     const handleClinicActivityOtherOnChangeCount = (selectedOption) => {
         updateFormData({ ClinicActivityOtherCount: selectedOption.value });
     };
@@ -229,211 +229,206 @@ const EMRForm = () => {
         updateFormData({ TrainingClinicProvidersIndirectTime: selectedOption.value });
     };
 
-
-
     return (
-        <main className="container mt-5">
-            <div className="emr-form">
-                <TooltipProvider>
-                    <div className="emr-column">
-                        <CustomDropdown
-                            label={<>Documentation - C&C visit<HelpIcon id="C_C_visit_help" explanation={fieldExplanations['CcVisit']} /></>}
-                            id="C_C_visit"
-                            name="CcVisit"
-                            place_holder="Indirect Time"
-                            onChange={handleCcVisitChange}
-                            value={formData.CcVisit || ''} max_count={100}
-                        />
-                        <CustomDropdown
-                            label={<>Documentation - QI template<HelpIcon id="QI_template_help" explanation={fieldExplanations['QiTemplate']} /></>}
-                            id="QI_template"
-                            name="QiTemplate"
-                            place_holder="Indirect Time"
-                            onChange={handleQiTemplateChange}
-                            value={formData.QiTemplate || ''} max_count={100}
-                        />
-                        <CustomDropdown
-                            label={<>Documentation - Menu of Service templates<HelpIcon id="Service_templates_help" explanation={fieldExplanations['ServiceTemplates']} /></>}
-                            id="Service_templates"
-                            name="ServiceTemplates"
-                            place_holder="Indirect Time"
-                            onChange={handleServiceTemplatesChange}
-                            value={formData.ServiceTemplates || ''}
-                        />
-                        <CustomDropdown
-                            label={<>Documentation - Clinic Processes<HelpIcon id="Documentation_Clinic_Processes_help" explanation={fieldExplanations['DocumentationClinicProcesses']} /></>}
-                            id="Documentation_Clinic_Processes"
-                            name="DocumentationClinicProcesses"
-                            place_holder="Indirect Time"
-                            onChange={handleDocumentationClinicProcessesChange}
-                            value={formData.orgTime || ''}
-                        />
-                        <CustomDropdown
-                            label={<>Documentation - Other<HelpIcon id="Documentation_Other_help" explanation={fieldExplanations['DocumentationOther']} /></>}
-                            id="Documentation_Other"
-                            name="DocumentationOther"
-                            place_holder="Indirect Time"
-                            onChange={handleDocumentationOtherChange}
-                            value={formData.DocumentationOther || ''}
-                        />
-                        <CustomDropdown
-                            label={<>Scheduling appointments<HelpIcon id="Scheduling_appointments_help" explanation={fieldExplanations['SchedulingAppointments']} /></>}
-                            id="Scheduling_appointments"
-                            name="SchedulingAppointments"
-                            place_holder="Indirect Time"
-                            onChange={handleSchedulingAppointmentsChange}
-                            value={formData.SchedulingAppointments || ''}
-                        />
-                        <DoubleDropdown
-                            label={<>Liaise with external partners<HelpIcon id="Liaise_with_external_partners_help" explanation={fieldExplanations['LiaiseWithExternalPartners']} /></>}
-                            id="Liaise_with_external_partners"
-                            name="LiaiseWithExternalPartners"
-                            onChangeDirectTime={handleLiaiseWithExternalPartnersOnChangeDirectTime}
-                            onChangeIndirectTime={handleLiaiseWithExternalPartnersOnChangeInirectTime}
-                        />
-                        <TripleDropdown
-                            label={<>Provider or clinic inquiry<HelpIcon id="Provider_or_clinic_inquiry_help" explanation={fieldExplanations['ProvideOrClinicInquiry']} /></>}
-                            id="Provider_or_clinic_inquiry"
-                            name="ProvideOrClinicInquiry"
-                            max_count={100}
-                            onChangeCount={handleProvideOrClinicInquiryOnChangeCount}
-                            onChangeDirectTime={handleProvideOrClinicInquiryOnChangeDirectTime}
-                            onChangeIndirectTime={handleProvideOrClinicInquiryOnChangeIndirectTime}
-                        />
-                    </div>
-                    <div className="emr-column">
-                        <TripleDropdown
-                            label={<>EMR mapping<HelpIcon id="EMR_mapping_help" explanation={fieldExplanations['EmrMapping']} /></>}
-                            id="EMR_mapping"
-                            name="EmrMapping"
-                            max_count={20}
-                            onChangeCount={handleEmrMappingOnChangeCount}
-                            onChangeDirectTime={handleEmrMappingOnChangeDirectTime}
-                            onChangeIndirectTime={handleEmrMappingOnChangeIndirectTime}
-                        />
-                        <TripleDropdown
-                            label={<>EMR searches<HelpIcon id="EMR_searches_help" explanation={fieldExplanations['EmrSearches']} /></>}
-                            id="EMR_searches"
-                            name="EmrSearches"
-                            max_count={20}
-                            onChangeCount={handleEmrSearchesOnChangeCount}
-                            onChangeDirectTime={handleEmrSearchesOnChangeDirectTime}
-                            onChangeIndirectTime={handleEmrSearchesOnChangeIndirectTime}
-                        />
-                        <TripleDropdown
-                            label={<>EMR data collection<HelpIcon id="EMR_data_collection_help" explanation={fieldExplanations['EmrDataCollection']} /></>}
-                            id="EMR_data_collection"
-                            name="EmrDataCollection"
-                            max_count={20}
-                            onChangeCount={handleEmrDataCollectionOnChangeCount}
-                            onChangeDirectTime={handleEmrDataCollectionOnChangeDirectTime}
-                            onChangeIndirectTime={handleEmrDataCollectionOnChangeIndirectTime}
-                        />
-                        <TripleDropdown
-                            label={<>EMR data entry<HelpIcon id="EMR_data_entry" explanation={fieldExplanations['EmrDataEntry']} /></>}
-                            id="EMR_data_entry"
-                            name="EmrDataEntry"
-                            max_count={20}
-                            onChangeCount={handleEmrDataEntryOnChangeCount}
-                            onChangeDirectTime={handleEmrDataEntryOnChangeDirectTime}
-                            onChangeIndirectTime={handleEmrDataEntryOnChangeIndirectTime}
-                        />
-                        <TripleDropdown
-                            label={<>Meeting - C&C<HelpIcon id="Meeting_C_C_help" explanation={fieldExplanations['MeetingCC']} /></>}
-                            id="Meeting_C_C"
-                            name="MeetingCC"
-                            max_count={20}
-                            onChangeCount={handleMeetingCCOnChangeCount}
-                            onChangeDirectTime={handleMeetingCCOnChangeDirectTime}
-                            onChangeIndirectTime={handleMeetingCCOnChangeIndirectTime}
-                        />
-                        <TripleDropdown
-                            label={<>Meeting - New Member<HelpIcon id="Meeting_New_Member_help" explanation={fieldExplanations['MeetingNewMember']} /></>}
-                            id="Meeting_New_Member"
-                            name="MeetingNewMember"
-                            max_count={20}
-                            onChangeCount={handleMeetingNewMemberOnChangeCount}
-                            onChangeDirectTime={handleMeetingNewMemberOnChangeDirectTime}
-                            onChangeIndirectTime={handleMeetingNewMemberOnChangeIndirectTime}
-                        />
-                        <TripleDropdown
-                            label={<>Meeting - CII/CPAR<HelpIcon id="Meeting_CII_CPAR_help" explanation={fieldExplanations['MeetingCIICPAR']} /></>}
-                            id="Meeting_CII_CPAR"
-                            name="MeetingCIICPAR"
-                            max_count={20}
-                            onChangeCount={handleMeetingCIICPAROnChangeCount}
-                            onChangeDirectTime={handleMeetingCIICPAROnChangeDirectTime}
-                            onChangeIndirectTime={handleMeetingCIICPAROnChangeIndirectTime}
-                        />
-                    </div>
-                    <div className="emr-column">
-                        <TripleDropdown
-                            label={<>Meeting - QI<HelpIcon id="Meeting_QI_help" explanation={fieldExplanations['MeetingQI']} /></>}
-                            id="Meeting_QI"
-                            name="MeetingQI"
-                            max_count={10}
-                            onChangeCount={handleMeetingQIOnChangeCount}
-                            onChangeDirectTime={handleMeetingQIOnChangeDirectTime}
-                            onChangeIndirectTime={handleMeetingQIOnChangeIndirectTime}
-                        />
-                        <TripleDropdown
-                            label={<>Material dropoff<HelpIcon id="Material_dropoff_help" explanation={fieldExplanations['MaterialDropoff']} /></>}
-                            id="Material_dropoff"
-                            name="MaterialDropoff"
-                            max_count={10}
-                            onChangeCount={handleMaterialDropoffOnChangeCount}
-                            onChangeDirectTime={handleMaterialDropoffOnChangeDirectTime}
-                            onChangeIndirectTime={handleMaterialDropoffOnChangeIndirectTime}
-                        />
-                        <TripleDropdown
-                            label={<>Clinic Activity - other<HelpIcon id="Clinic_Activity_other_help" explanation={fieldExplanations['ClinicActivityOther']} /></>}
-                            id="Clinic_Activity_other"
-                            name="ClinicActivityOther"
-                            max_count={10}
-                            onChangeCount={handleClinicActivityOtherOnChangeCount}
-                            onChangeDirectTime={handleClinicActivityOtherOnChangeDirectTime}
-                            onChangeIndirectTime={handleClinicActivityOtherOnChangeIndirectTime}
-                        />
-                        <TripleDropdown
-                            label={<>Recieving training<HelpIcon id="Recieving_training_help" explanation={fieldExplanations['RecievingTraining']} /></>}
-                            id="Recieving_training"
-                            name="RecievingTraining"
-                            max_count={10}
-                            onChangeCount={handleRecievingTrainingOnChangeCount}
-                            onChangeDirectTime={handleRecievingTrainingOnChangeDirectTime}
-                            onChangeIndirectTime={handleRecievingTrainingOnChangeIndirectTime} />
-                        <TripleDropdown
-                            label={<>Training material creation<HelpIcon id="Training_material_creation_help" explanation={fieldExplanations['TrainingMaterialCreation']} /></>}
-                            id="Training_material_creation"
-                            name="TrainingMaterialCreation"
-                            max_count={10}
-                            onChangeCount={handleTrainingMaterialCreationOnChangeCount}
-                            onChangeDirectTime={handleTrainingMaterialCreationOnChangeDirectTime}
-                            onChangeIndirectTime={handleTrainingMaterialCreationOnChangeIndirectTime}
-                        />
-                        <TripleDropdown
-                            label={<>Training clinic administrative staff<HelpIcon id="Training_clinic_adminins_help" explanation={fieldExplanations['TrainingClinicAdmins']} /></>}
-                            id="Training_clinic_adminins"
-                            name="TrainingClinicAdmins"
-                            max_count={10}
-                            onChangeCount={handleTrainingClinicAdminsOnChangeCount}
-                            onChangeDirectTime={handleTrainingClinicAdminsOnChangeDirectTime}
-                            onChangeIndirectTime={handleTrainingClinicAdminsOnChangeIndirectTime}
-                        />
-                        <TripleDropdown
-                            label={<>Training clinic providers (physician, NP, MDT)<HelpIcon id="Training_clinic_providers_help" explanation={fieldExplanations['TrainingClinicProviders']} /></>}
-                            id="Training_clinic_providers"
-                            name="TrainingClinicProviders"
-                            max_count={100}
-                            onChangeCount={handleTrainingClinicProvidersOnChangeCount}
-                            onChangeDirectTime={handleTrainingClinicProvidersOnChangeDirectTime}
-                            onChangeIndirectTime={handleTrainingClinicProvidersOnChangeIndirectTime}
-                        />
-                    </div>
-                </TooltipProvider>
+        <div className="box-container">
+            <Box title="Admin Support" className="box1">
+                <CustomDropdown
+                    label={<>Documentation - C&C visit<HelpIcon id="C_C_visit_help" explanation={fieldExplanations['CcVisit']} /></>}
+                    id="C_C_visit"
+                    name="CcVisit"
+                    place_holder="Indirect Time"
+                    onChange={handleCcVisitChange}
+                    value={formData.CcVisit || ''} max_count={100}
+                />
+                <CustomDropdown
+                    label={<>Documentation - QI template<HelpIcon id="QI_template_help" explanation={fieldExplanations['QiTemplate']} /></>}
+                    id="QI_template"
+                    name="QiTemplate"
+                    place_holder="Indirect Time"
+                    onChange={handleQiTemplateChange}
+                    value={formData.QiTemplate || ''} max_count={100}
+                />
+                <CustomDropdown
+                    label={<>Documentation - Menu of Service templates<HelpIcon id="Service_templates_help" explanation={fieldExplanations['ServiceTemplates']} /></>}
+                    id="Service_templates"
+                    name="ServiceTemplates"
+                    place_holder="Indirect Time"
+                    onChange={handleServiceTemplatesChange}
+                    value={formData.ServiceTemplates || ''}
+                />
+                <CustomDropdown
+                    label={<>Documentation - Clinic Processes<HelpIcon id="Documentation_Clinic_Processes_help" explanation={fieldExplanations['DocumentationClinicProcesses']} /></>}
+                    id="Documentation_Clinic_Processes"
+                    name="DocumentationClinicProcesses"
+                    place_holder="Indirect Time"
+                    onChange={handleDocumentationClinicProcessesChange}
+                    value={formData.orgTime || ''}
+                />
+                <CustomDropdown
+                    label={<>Documentation - Other<HelpIcon id="Documentation_Other_help" explanation={fieldExplanations['DocumentationOther']} /></>}
+                    id="Documentation_Other"
+                    name="DocumentationOther"
+                    place_holder="Indirect Time"
+                    onChange={handleDocumentationOtherChange}
+                    value={formData.DocumentationOther || ''}
+                />
+                <CustomDropdown
+                    label={<>Scheduling appointments<HelpIcon id="Scheduling_appointments_help" explanation={fieldExplanations['SchedulingAppointments']} /></>}
+                    id="Scheduling_appointments"
+                    name="SchedulingAppointments"
+                    place_holder="Indirect Time"
+                    onChange={handleSchedulingAppointmentsChange}
+                    value={formData.SchedulingAppointments || ''}
+                />
+                <DoubleDropdown
+                    label={<>Liaise with external partners<HelpIcon id="Liaise_with_external_partners_help" explanation={fieldExplanations['LiaiseWithExternalPartners']} /></>}
+                    id="Liaise_with_external_partners"
+                    name="LiaiseWithExternalPartners"
+                    onChangeDirectTime={handleLiaiseWithExternalPartnersOnChangeDirectTime}
+                    onChangeIndirectTime={handleLiaiseWithExternalPartnersOnChangeInirectTime}
+                />
+                <TripleDropdown
+                    label={<>Provider or clinic inquiry<HelpIcon id="Provider_or_clinic_inquiry_help" explanation={fieldExplanations['ProvideOrClinicInquiry']} /></>}
+                    id="Provider_or_clinic_inquiry"
+                    name="ProvideOrClinicInquiry"
+                    max_count={100}
+                    onChangeCount={handleProvideOrClinicInquiryOnChangeCount}
+                    onChangeDirectTime={handleProvideOrClinicInquiryOnChangeDirectTime}
+                    onChangeIndirectTime={handleProvideOrClinicInquiryOnChangeIndirectTime}
+                />
 
-            </div>
-        </main >
+            </Box>
+            <Box title="Clinic Activity" className="box2">
+                <TripleDropdown
+                    label={<>EMR mapping<HelpIcon id="EMR_mapping_help" explanation={fieldExplanations['EmrMapping']} /></>}
+                    id="EMR_mapping"
+                    name="EmrMapping"
+                    max_count={20}
+                    onChangeCount={handleEmrMappingOnChangeCount}
+                    onChangeDirectTime={handleEmrMappingOnChangeDirectTime}
+                    onChangeIndirectTime={handleEmrMappingOnChangeIndirectTime}
+                />
+                <TripleDropdown
+                    label={<>EMR searches<HelpIcon id="EMR_searches_help" explanation={fieldExplanations['EmrSearches']} /></>}
+                    id="EMR_searches"
+                    name="EmrSearches"
+                    max_count={20}
+                    onChangeCount={handleEmrSearchesOnChangeCount}
+                    onChangeDirectTime={handleEmrSearchesOnChangeDirectTime}
+                    onChangeIndirectTime={handleEmrSearchesOnChangeIndirectTime}
+                />
+                <TripleDropdown
+                    label={<>EMR data collection<HelpIcon id="EMR_data_collection_help" explanation={fieldExplanations['EmrDataCollection']} /></>}
+                    id="EMR_data_collection"
+                    name="EmrDataCollection"
+                    max_count={20}
+                    onChangeCount={handleEmrDataCollectionOnChangeCount}
+                    onChangeDirectTime={handleEmrDataCollectionOnChangeDirectTime}
+                    onChangeIndirectTime={handleEmrDataCollectionOnChangeIndirectTime}
+                />
+                <TripleDropdown
+                    label={<>EMR data entry<HelpIcon id="EMR_data_entry" explanation={fieldExplanations['EmrDataEntry']} /></>}
+                    id="EMR_data_entry"
+                    name="EmrDataEntry"
+                    max_count={20}
+                    onChangeCount={handleEmrDataEntryOnChangeCount}
+                    onChangeDirectTime={handleEmrDataEntryOnChangeDirectTime}
+                    onChangeIndirectTime={handleEmrDataEntryOnChangeIndirectTime}
+                />
+                <TripleDropdown
+                    label={<>Meeting - C&C<HelpIcon id="Meeting_C_C_help" explanation={fieldExplanations['MeetingCC']} /></>}
+                    id="Meeting_C_C"
+                    name="MeetingCC"
+                    max_count={20}
+                    onChangeCount={handleMeetingCCOnChangeCount}
+                    onChangeDirectTime={handleMeetingCCOnChangeDirectTime}
+                    onChangeIndirectTime={handleMeetingCCOnChangeIndirectTime}
+                />
+                <TripleDropdown
+                    label={<>Meeting - New Member<HelpIcon id="Meeting_New_Member_help" explanation={fieldExplanations['MeetingNewMember']} /></>}
+                    id="Meeting_New_Member"
+                    name="MeetingNewMember"
+                    max_count={20}
+                    onChangeCount={handleMeetingNewMemberOnChangeCount}
+                    onChangeDirectTime={handleMeetingNewMemberOnChangeDirectTime}
+                    onChangeIndirectTime={handleMeetingNewMemberOnChangeIndirectTime}
+                />
+                <TripleDropdown
+                    label={<>Meeting - CII/CPAR<HelpIcon id="Meeting_CII_CPAR_help" explanation={fieldExplanations['MeetingCIICPAR']} /></>}
+                    id="Meeting_CII_CPAR"
+                    name="MeetingCIICPAR"
+                    max_count={20}
+                    onChangeCount={handleMeetingCIICPAROnChangeCount}
+                    onChangeDirectTime={handleMeetingCIICPAROnChangeDirectTime}
+                    onChangeIndirectTime={handleMeetingCIICPAROnChangeIndirectTime}
+                />
+                <TripleDropdown
+                    label={<>Meeting - QI<HelpIcon id="Meeting_QI_help" explanation={fieldExplanations['MeetingQI']} /></>}
+                    id="Meeting_QI"
+                    name="MeetingQI"
+                    max_count={10}
+                    onChangeCount={handleMeetingQIOnChangeCount}
+                    onChangeDirectTime={handleMeetingQIOnChangeDirectTime}
+                    onChangeIndirectTime={handleMeetingQIOnChangeIndirectTime}
+                />
+                <TripleDropdown
+                    label={<>Material dropoff<HelpIcon id="Material_dropoff_help" explanation={fieldExplanations['MaterialDropoff']} /></>}
+                    id="Material_dropoff"
+                    name="MaterialDropoff"
+                    max_count={10}
+                    onChangeCount={handleMaterialDropoffOnChangeCount}
+                    onChangeDirectTime={handleMaterialDropoffOnChangeDirectTime}
+                    onChangeIndirectTime={handleMaterialDropoffOnChangeIndirectTime}
+                />
+                <TripleDropdown
+                    label={<>Clinic Activity - other<HelpIcon id="Clinic_Activity_other_help" explanation={fieldExplanations['ClinicActivityOther']} /></>}
+                    id="Clinic_Activity_other"
+                    name="ClinicActivityOther"
+                    max_count={10}
+                    onChangeCount={handleClinicActivityOtherOnChangeCount}
+                    onChangeDirectTime={handleClinicActivityOtherOnChangeDirectTime}
+                    onChangeIndirectTime={handleClinicActivityOtherOnChangeIndirectTime}
+                />
+            </Box>
+            <Box title="Training Activity" className="box3">
+
+                <TripleDropdown
+                    label={<>Recieving training<HelpIcon id="Recieving_training_help" explanation={fieldExplanations['RecievingTraining']} /></>}
+                    id="Recieving_training"
+                    name="RecievingTraining"
+                    max_count={10}
+                    onChangeCount={handleRecievingTrainingOnChangeCount}
+                    onChangeDirectTime={handleRecievingTrainingOnChangeDirectTime}
+                    onChangeIndirectTime={handleRecievingTrainingOnChangeIndirectTime} />
+                <TripleDropdown
+                    label={<>Training material creation<HelpIcon id="Training_material_creation_help" explanation={fieldExplanations['TrainingMaterialCreation']} /></>}
+                    id="Training_material_creation"
+                    name="TrainingMaterialCreation"
+                    max_count={10}
+                    onChangeCount={handleTrainingMaterialCreationOnChangeCount}
+                    onChangeDirectTime={handleTrainingMaterialCreationOnChangeDirectTime}
+                    onChangeIndirectTime={handleTrainingMaterialCreationOnChangeIndirectTime}
+                />
+                <TripleDropdown
+                    label={<>Training clinic administrative staff<HelpIcon id="Training_clinic_adminins_help" explanation={fieldExplanations['TrainingClinicAdmins']} /></>}
+                    id="Training_clinic_adminins"
+                    name="TrainingClinicAdmins"
+                    max_count={10}
+                    onChangeCount={handleTrainingClinicAdminsOnChangeCount}
+                    onChangeDirectTime={handleTrainingClinicAdminsOnChangeDirectTime}
+                    onChangeIndirectTime={handleTrainingClinicAdminsOnChangeIndirectTime}
+                />
+                <TripleDropdown
+                    label={<>Training clinic providers (physician, NP, MDT)<HelpIcon id="Training_clinic_providers_help" explanation={fieldExplanations['TrainingClinicProviders']} /></>}
+                    id="Training_clinic_providers"
+                    name="TrainingClinicProviders"
+                    max_count={100}
+                    onChangeCount={handleTrainingClinicProvidersOnChangeCount}
+                    onChangeDirectTime={handleTrainingClinicProvidersOnChangeDirectTime}
+                    onChangeIndirectTime={handleTrainingClinicProvidersOnChangeIndirectTime}
+                />
+            </Box>
+        </div >
     );
 };
 

@@ -16,14 +16,14 @@
 
 .react-select-container {
     flex-grow: 1;
-    /* Allow the dropdown to take up the remaining space */
-    min-width: 30px;
+    /* Allow the dropdown t o take up the remaining space */
+    min-width: 160px;
     /* Set a minimum width for the dropdown */
     width: 100%;
 }
 
 .standard-width {
-    max-width: 300px;
+    max-width: 100px;
     /* Adjust the value as needed */
     width: 100%;
 }

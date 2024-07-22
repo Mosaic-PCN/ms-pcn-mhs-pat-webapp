@@ -1,0 +1,28 @@
+{
+  "resourceName": "dynamoDB",
+  "tableName": "mhs-pat-encounter-table",
+  "partitionKey": {
+    "fieldName": "encounterId",
+    "fieldType": "string"
+  },
+  "sortKey": {
+    "fieldName": "createdAt",
+    "fieldType": "string"
+  },
+  "gsi": [
+    {
+      "name": "EncounterByUserId",
+      "partitionKey": {
+        "fieldName": "userId",
+        "fieldType": "string"
+      },
+      "sortKey": {
+        "fieldName": "createdAt",
+        "fieldType": "string"
+      }
+    }
+  ],
+  "triggerFunctions": [
+    "dynamoDBTrigger451bc6fa"
+  ]
+}
