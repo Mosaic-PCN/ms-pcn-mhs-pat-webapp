@@ -289,9 +289,9 @@ const PCCForm = () => {
                     onChangeIndirectTime={handleChange('BeingTrainedByEMRIndirectTime')}
                 />
                 <TripleDropdown
-                    label={<>Training clinic administrative staff<HelpIcon id="Training_clinic_administrative_staff_help" explanation={fieldExplanations['TrainingClinicAdminStaff']} /></>}
-                    id="Training_clinic_administrative_staff"
-                    name="TrainingClinicAdminStaff"
+                    label={<>Training clinic administrative staff<HelpIcon id="Training_clinic_admins_help" explanation={fieldExplanations['TrainingClinicAdmins']} /></>}
+                    id="Training_clinic_admins"
+                    name="TrainingClinicAdmins"
                     max_count={10}
                     onChangeCount={handleChange('TrainingClinicAdminsCount')}
                     onChangeDirectTime={handleChange('TrainingClinicAdminsDirectTime')}

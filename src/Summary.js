@@ -92,7 +92,7 @@ const Summary = () => {
         TrainingMaterialCreation: 'Training material creation',
         TrainingClinicAdminsCount: 'Training clinic administrative staff - Count',
         TrainingClinicAdminsDirectTime: 'Training clinic administrative staff - Direct Time',
-        TrainingClinicAdminsIndirectTime: 'Training clinic administrative staff',
+        TrainingClinicAdminsIndirectTime: 'Training clinic administrative staff - Indirect Time',
         TrainingClinicProvidersCount: 'Training clinic provider - Count - Count',
         TrainingClinicProvidersDirectTime: 'Training clinic provider - Direct Time',
         TrainingClinicProvidersIndirectTime: 'Training clinic provider - Indirect Time',

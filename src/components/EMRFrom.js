@@ -186,8 +186,8 @@ const EMRForm = () => {
                     value={formData.TrainingMaterialCreation || ''}
                 />
                 <TripleDropdown
-                    label={<>Training clinic administrative staff<HelpIcon id="Training_clinic_adminins_help" explanation={fieldExplanations['TrainingClinicAdmins']} /></>}
-                    id="Training_clinic_adminins"
+                    label={<>Training clinic administrative staff<HelpIcon id="Training_clinic_admins_help" explanation={fieldExplanations['TrainingClinicAdmins']} /></>}
+                    id="Training_clinic_admins"
                     name="TrainingClinicAdmins"
                     max_count={10}
                     onChangeCount={handleChange('TrainingClinicAdminsCount')}

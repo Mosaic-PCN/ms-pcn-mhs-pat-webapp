@@ -160,9 +160,9 @@ const HPFForm = () => {
                     value={formData.TrainingMaterialCreation || ''}
                 />
                 <TripleDropdown
-                    label={<>Training clinic administrative staff<HelpIcon id="Training_clinic_administrative_staff_help" explanation={fieldExplanations['TrainingClinicAdminStaff']} /></>}
-                    id="Training_clinic_administrative_staff"
-                    name="TrainingClinicAdminStaff"
+                    label={<>Training clinic administrative staff<HelpIcon id="Training_clinic_admins_help" explanation={fieldExplanations['TrainingClinicAdmins']} /></>}
+                    id="Training_clinic_admins"
+                    name="TrainingClinicAdmins"
                     max_count={10}
                     onChangeCount={handleChange('TrainingClinicAdminsCount')}
                     onChangeDirectTime={handleChange('TrainingClinicAdminsDirectTime')}
@@ -207,7 +207,7 @@ const HPFForm = () => {
                     onChangeIndirectTime={handleChange('QIProjectsAdaptedIndirectTime')}
                 />
                 <TripleDropdown
-                    label={<>QI projects abandoned<HelpIcon id="Training_clinic_adminins_help" explanation={fieldExplanations['TrainingClinicAdmins']} /></>}
+                    label={<>QI projects abandoned<HelpIcon id="Training_clinic_adminins_help" explanation={fieldExplanations['QIProjectsAbandoned']} /></>}
                     id="QI projects abandoned"
                     name="QIProjectsAbandoned"
                     max_count={10}
