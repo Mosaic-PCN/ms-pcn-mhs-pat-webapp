@@ -78,32 +78,32 @@ function MainForm() {
     };
 
     const handleNextClick = () => {
-        const errorMessage = 'Please fill in all mandatory fields for Encounter Information before proceeding.';
-        if (formData.isPcnMosaicInternal) {
-            if (!selectedRole || !serviceLocation || !orgTime || !gamePlanTime) {
-                toast.error(errorMessage, {
-                    position: "top-left",
-                    autoClose: 5000,
-                    hideProgressBar: false,
-                    closeOnClick: true,
-                    pauseOnHover: true,
-                    draggable: true,
-                });
-                return;
-            }
-        } else {
-            if (!selectedRole || !clinicName || !serviceLocation || !sessionType || !meetingType) {
-                toast.error(errorMessage, {
-                    position: "top-left",
-                    autoClose: 5000,
-                    hideProgressBar: false,
-                    closeOnClick: true,
-                    pauseOnHover: true,
-                    draggable: true,
-                });
-                return;
-            }
-        }
+        // const errorMessage = 'Please fill in all mandatory fields for Encounter Information before proceeding.';
+        // if (formData.isPcnMosaicInternal) {
+        //     if (!selectedRole || !serviceLocation || !orgTime || !gamePlanTime) {
+        //         toast.error(errorMessage, {
+        //             position: "top-left",
+        //             autoClose: 5000,
+        //             hideProgressBar: false,
+        //             closeOnClick: true,
+        //             pauseOnHover: true,
+        //             draggable: true,
+        //         });
+        //         return;
+        //     }
+        // } else {
+        //     if (!selectedRole || !clinicName || !serviceLocation || !sessionType || !meetingType) {
+        //         toast.error(errorMessage, {
+        //             position: "top-left",
+        //             autoClose: 5000,
+        //             hideProgressBar: false,
+        //             closeOnClick: true,
+        //             pauseOnHover: true,
+        //             draggable: true,
+        //         });
+        //         return;
+        //     }
+        // }
 
         if (formData.isPcnMosaicInternal) {
             navigate('/notes', { state: { formData } });
@@ -128,7 +128,6 @@ function MainForm() {
                     console.log('Invalid role');
             }
         }
-        console.log(selectedRole);
     };
 
     // const resetTimer = useCallback(() => {
@@ -171,13 +170,15 @@ function MainForm() {
                             <div className="card-content-wrapper">
                                 <EncounterForm
                                     onRoleChange={handleRoleChange}
-                                    onServiceLocationChange={handleServiceLocationChange}
-                                    onClinicNameChange={handleClinicNameChange}
-                                    onSessionTypeChange={handleSessionTypeChange}
-                                    onMeetingTypeChange={handleMeetingTypeChange}
-                                    onOrgTimeChange={handleOrgTimeChange}
-                                    onGamePlanTimeChange={handleGamePlanTimeChange}
                                 />
+
+                                {/* // onServiceLocationChange={handleServiceLocationChange}
+                                // onClinicNameChange={handleClinicNameChange}
+                                // onSessionTypeChange={handleSessionTypeChange}
+                                // onMeetingTypeChange={handleMeetingTypeChange}
+                                // onOrgTimeChange={handleOrgTimeChange}
+                                // onGamePlanTimeChange={handleGamePlanTimeChange}
+                                /> */}
                             </div>
                         </Card>
                         <StakeholdersCard title="Stakeholders">
