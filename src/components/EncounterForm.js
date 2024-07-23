@@ -8,7 +8,7 @@ import RadioButtonGroup from './RadioButtonGroup';
 import 'react-datepicker/dist/react-datepicker.css';
 import './EncounterForm.css';
 
-const EncounterForm = ({ onRoleChange, onServiceLocationChange, onClinicNameChange }) => {
+const EncounterForm = ({ onRoleChange, onServiceLocationChange, onClinicNameChange, onSessionTypeChange, onMeetingTypeChange }) => {
     const { formData, updateFormData, errors } = useContext(AppContext);
     const [startDate, setStartDate] = useState(formData.workDate ? new Date(formData.workDate) : new Date());
     const [isPcnMosaicInternal, setIsPcnMosaicInternal] = useState(formData.isPcnMosaicInternal || false);
@@ -33,13 +33,13 @@ const EncounterForm = ({ onRoleChange, onServiceLocationChange, onClinicNameChan
     const handleLocationChange = (selectedOption) => {
         const serviceLocation = selectedOption.value;
         updateFormData({ serviceLocation: selectedOption.value });
-        onServiceLocationChange(serviceLocation)
+        onServiceLocationChange(serviceLocation);
     };
 
     const handleClinicNameChange = (selectedOption) => {
         const clinicName = selectedOption.value;
         updateFormData({ clinicName: selectedOption.value });
-        onClinicNameChange(clinicName)
+        onClinicNameChange(clinicName);
     };
 
     const handleCheckboxChange = (event) => {
@@ -50,11 +50,17 @@ const EncounterForm = ({ onRoleChange, onServiceLocationChange, onClinicNameChan
     };
 
     const handleSessionTypeChange = (selectedOption) => {
+        const sessionType = selectedOption.value;
         updateFormData({ sessionType: selectedOption.value });
+        onSessionTypeChange(sessionType);
+
     };
 
     const handleMeetingTypeChange = (selectedOption) => {
+        const meetingType = selectedOption.value;
         updateFormData({ meetingType: selectedOption.value });
+        onMeetingTypeChange(meetingType)
+
     };
 
     const handleOrgTimeChange = (selectedOption) => {

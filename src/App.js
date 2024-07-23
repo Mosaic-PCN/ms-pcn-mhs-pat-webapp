@@ -24,18 +24,18 @@ import { AppProvider } from './AppContext';
 import { ToastContainer, toast } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
 
-
-
 Amplify.configure(amplifyconfig);
 
 const INACTIVITY_TIMEOUT_MS = 1 * 60 * 1000; // 5 minutes
-
 
 function MainForm() {
     const { formData, resetFormData } = useContext(AppContext);
     const [selectedRole, setSelectedRole] = useState(formData.role || '');
     const [clinicName, setClinicName] = useState(formData.clinicName || '');
     const [serviceLocation, setServiceLocation] = useState(formData.serviceLocation || '');
+    const [sessionType, setSessionType] = useState(formData.sessionType || '');
+    const [meetingType, setMeetingType] = useState(formData.sessionType || '');
+
     const navigate = useNavigate();
     const [timer, setTimer] = useState(null);
     const [showError, setShowError] = useState(false); // State to control error banner
@@ -52,6 +52,14 @@ function MainForm() {
         setServiceLocation(selectedServiceLocation);
     };
 
+    const handleSessionTypeChange = (selectedSessionType) => {
+        setSessionType(selectedSessionType);
+    };
+
+    const handleMeetingTypeChange = (selectedMeetingType) => {
+        setMeetingType(selectedMeetingType);
+    };
+
     const handleResetClick = () => {
         resetFormData();
         setSelectedRole('');
@@ -60,24 +68,31 @@ function MainForm() {
     };
 
     const handleNextClick = () => {
-
-        // Check if role is empty or hasn't changedz from the initial value
-        // if (formData.role === (localStorage.getItem("formData") ? JSON.parse(localStorage.getItem("formData")).role : '')) {
-        if (!selectedRole || !clinicName || !serviceLocation) {
-            console.log('Error:', formData.role)
-            console.log('selected role:', selectedRole)
-            console.log('clinic Name:', clinicName)
-            console.log('service Location:', serviceLocation)
-            toast.error('Please fill in all mandatory fields for Encounter Information before proceeding.!', {
-                position: "top-left",
-                autoClose: 5000,
-                hideProgressBar: false,
-                closeOnClick: true,
-                pauseOnHover: true,
-                draggable: true,
-                progress: undefined,
-            });
-            return;
+        const errorMessage = 'Please fill in all mandatory fields for Encounter Information before proceeding.';
+        if (formData.isPcnMosaicInternal) {
+            if (!selectedRole || !serviceLocation) {
+                toast.error(errorMessage, {
+                    position: "top-left",
+                    autoClose: 5000,
+                    hideProgressBar: false,
+                    closeOnClick: true,
+                    pauseOnHover: true,
+                    draggable: true,
+                });
+                return;
+            }
+        } else {
+            if (!selectedRole || !clinicName || !serviceLocation || !sessionType || !meetingType) {
+                toast.error(errorMessage, {
+                    position: "top-left",
+                    autoClose: 5000,
+                    hideProgressBar: false,
+                    closeOnClick: true,
+                    pauseOnHover: true,
+                    draggable: true,
+                });
+                return;
+            }
         }
 
         if (formData.isPcnMosaicInternal) {
@@ -144,9 +159,13 @@ function MainForm() {
                     <main className="App-main">
                         <Card title="Encounter Information">
                             <div className="card-content-wrapper">
-                                <EncounterForm onRoleChange={handleRoleChange}
+                                <EncounterForm
+                                    onRoleChange={handleRoleChange}
                                     onServiceLocationChange={handleServiceLocationChange}
-                                    onClinicNameChange={handleClinicNameChange} />
+                                    onClinicNameChange={handleClinicNameChange}
+                                    onSessionTypeChange={handleSessionTypeChange}
+                                    onMeetingTypeChange={handleMeetingTypeChange}
+                                />
                             </div>
                         </Card>
                         <StakeholdersCard title="Stakeholders">
