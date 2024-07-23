@@ -34,7 +34,9 @@ function MainForm() {
     const [clinicName, setClinicName] = useState(formData.clinicName || '');
     const [serviceLocation, setServiceLocation] = useState(formData.serviceLocation || '');
     const [sessionType, setSessionType] = useState(formData.sessionType || '');
-    const [meetingType, setMeetingType] = useState(formData.sessionType || '');
+    const [meetingType, setMeetingType] = useState(formData.meetingType || '');
+    const [orgTime, setOrgTime] = useState(formData.orgTime || '');
+    const [gamePlanTime, setGamePlanTime] = useState(formData.gamePlanTime || '');
 
     const navigate = useNavigate();
     const [timer, setTimer] = useState(null);
@@ -60,6 +62,14 @@ function MainForm() {
         setMeetingType(selectedMeetingType);
     };
 
+    const handleOrgTimeChange = (selectedOrgTime) => {
+        setOrgTime(selectedOrgTime);
+    };
+
+    const handleGamePlanTimeChange = (selectedGamePlanTime) => {
+        setGamePlanTime(selectedGamePlanTime);
+    };
+
     const handleResetClick = () => {
         resetFormData();
         setSelectedRole('');
@@ -70,7 +80,7 @@ function MainForm() {
     const handleNextClick = () => {
         const errorMessage = 'Please fill in all mandatory fields for Encounter Information before proceeding.';
         if (formData.isPcnMosaicInternal) {
-            if (!selectedRole || !serviceLocation) {
+            if (!selectedRole || !serviceLocation || !orgTime || !gamePlanTime) {
                 toast.error(errorMessage, {
                     position: "top-left",
                     autoClose: 5000,
@@ -165,6 +175,8 @@ function MainForm() {
                                     onClinicNameChange={handleClinicNameChange}
                                     onSessionTypeChange={handleSessionTypeChange}
                                     onMeetingTypeChange={handleMeetingTypeChange}
+                                    onOrgTimeChange={handleOrgTimeChange}
+                                    onGamePlanTimeChange={handleGamePlanTimeChange}
                                 />
                             </div>
                         </Card>
@@ -197,8 +209,6 @@ function App() {
                     <Route path="/amc" element={<AMC />} />
                     <Route path="/summary" element={<Summary />} />
                     <Route path="/notes" element={<Notes />} />
-                    <Route path="/test" element={<TestBox />} />
-
                 </Routes>
             </Router>
         </AppProvider>

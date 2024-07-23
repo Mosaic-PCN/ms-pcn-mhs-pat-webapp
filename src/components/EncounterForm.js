@@ -8,7 +8,7 @@ import RadioButtonGroup from './RadioButtonGroup';
 import 'react-datepicker/dist/react-datepicker.css';
 import './EncounterForm.css';
 
-const EncounterForm = ({ onRoleChange, onServiceLocationChange, onClinicNameChange, onSessionTypeChange, onMeetingTypeChange }) => {
+const EncounterForm = ({ onRoleChange, onServiceLocationChange, onClinicNameChange, onSessionTypeChange, onMeetingTypeChange, onOrgTimeChange, onGamePlanTimeChange }) => {
     const { formData, updateFormData, errors } = useContext(AppContext);
     const [startDate, setStartDate] = useState(formData.workDate ? new Date(formData.workDate) : new Date());
     const [isPcnMosaicInternal, setIsPcnMosaicInternal] = useState(formData.isPcnMosaicInternal || false);
@@ -53,22 +53,24 @@ const EncounterForm = ({ onRoleChange, onServiceLocationChange, onClinicNameChan
         const sessionType = selectedOption.value;
         updateFormData({ sessionType: selectedOption.value });
         onSessionTypeChange(sessionType);
-
     };
 
     const handleMeetingTypeChange = (selectedOption) => {
         const meetingType = selectedOption.value;
         updateFormData({ meetingType: selectedOption.value });
         onMeetingTypeChange(meetingType)
-
     };
 
     const handleOrgTimeChange = (selectedOption) => {
+        const orgTime = selectedOption.value;
         updateFormData({ orgTime: selectedOption.value });
+        onOrgTimeChange(orgTime)
     };
 
     const handleGamePlanTimeChange = (selectedOption) => {
+        const gamePlanTime = selectedOption.value;
         updateFormData({ gameTime: selectedOption.value });
+        onGamePlanTimeChange(gamePlanTime)
     };
     const radioOptions_virtual = [
         { label: 'Virtual', value: 'Virtual' },
